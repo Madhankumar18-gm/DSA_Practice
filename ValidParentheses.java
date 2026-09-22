@@ -15,4 +15,9 @@ public class ValidParentheses {
     public static boolean isValid(String s) {
         return isValidNaive(s);
     }
+
+    public static void main(String[] args) {
+        String test1 = "()[]{}";
+        System.out.println("Is '" + test1 + "' valid? " + isValid(test1));
+    }
 }
