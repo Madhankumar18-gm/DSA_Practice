@@ -5,9 +5,16 @@ import java.util.Arrays;
  * 
  * Given an integer array `coins` representing coins of different denominations and an integer `amount`,
  * return the fewest number of coins that you need to make up that amount.
+ * 
+ * Time Complexity: O(amount * N) where N is the number of coins.
+ * Space Complexity: O(amount) for DP table.
  */
 public class CoinChange {
 
+    /**
+     * Calculates minimum coins needed using 1D DP array.
+     * Time: O(amount * N), Space: O(amount)
+     */
     public static int coinChangeDP(int[] coins, int amount) {
         if (amount < 0 || coins == null || coins.length == 0) return -1;
         if (amount == 0) return 0;
@@ -33,7 +40,6 @@ public class CoinChange {
 
     public static void main(String[] args) {
         System.out.println("Coins [1,2,5], Amount 11 -> " + coinChange(new int[]{1, 2, 5}, 11));
-        System.out.println("Null coins guard          -> " + coinChange(null, 5));
-        System.out.println("Negative amount guard     -> " + coinChange(new int[]{1, 2}, -5));
+        System.out.println("Coins [2],     Amount 3  -> " + coinChange(new int[]{2}, 3));
     }
 }
