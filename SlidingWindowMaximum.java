@@ -6,9 +6,16 @@ import java.util.Deque;
  * Problem 13: Sliding Window Maximum
  * 
  * You are given an array of integers `nums`, there is a sliding window of size `k`.
+ * 
+ * Time Complexity: O(N) each index added/removed at most once.
+ * Space Complexity: O(k) for Monotonic Deque storage.
  */
 public class SlidingWindowMaximum {
 
+    /**
+     * Finds maximum in sliding windows using Monotonic Deque.
+     * Time: O(N), Space: O(k)
+     */
     public static int[] maxSlidingWindowDeque(int[] nums, int k) {
         if (nums == null || nums.length == 0 || k <= 0) {
             return new int[]{};
@@ -39,7 +46,7 @@ public class SlidingWindowMaximum {
     }
 
     public static void main(String[] args) {
-        System.out.println("Null Guard:  " + Arrays.toString(maxSlidingWindow(null, 3)));
-        System.out.println("Empty Guard: " + Arrays.toString(maxSlidingWindow(new int[]{}, 3)));
+        int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
+        System.out.println("Result: " + Arrays.toString(maxSlidingWindow(nums, 3)));
     }
 }
