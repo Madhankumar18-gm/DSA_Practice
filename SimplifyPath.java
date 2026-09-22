@@ -13,4 +13,9 @@ public class SimplifyPath {
     public static String simplifyPath(String path) {
         return simplifyPathBasic(path);
     }
+
+    public static void main(String[] args) {
+        String path = "/home//foo/";
+        System.out.println("Result: " + simplifyPath(path));
+    }
 }
