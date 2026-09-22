@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Stack;
 
 /**
  * Problem 10: Daily Temperatures
@@ -7,22 +8,24 @@ import java.util.Arrays;
  */
 public class DailyTemperatures {
 
-    public static int[] dailyTemperaturesBruteForce(int[] temperatures) {
+    // Monotonic Decreasing Stack O(N) time complexity
+    public static int[] dailyTemperaturesStack(int[] temperatures) {
         int n = temperatures.length;
-        int[] result = new int[n];
+        int[] answer = new int[n];
+        Stack<Integer> stack = new Stack<>();
+
         for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (temperatures[j] > temperatures[i]) {
-                    result[i] = j - i;
-                    break;
-                }
+            while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
+                int prevIndex = stack.pop();
+                answer[prevIndex] = i - prevIndex;
             }
+            stack.push(i);
         }
-        return result;
+        return answer;
     }
 
     public static int[] dailyTemperatures(int[] temperatures) {
-        return dailyTemperaturesBruteForce(temperatures);
+        return dailyTemperaturesStack(temperatures);
     }
 
     public static void main(String[] args) {
