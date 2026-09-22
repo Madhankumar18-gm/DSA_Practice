@@ -12,7 +12,6 @@ public class ImplementQueueUsingStacks {
 
         public MyQueue() { }
 
-        // Naive push: transfer all to s2, push x to s1, transfer back
         public void push(int x) {
             while (!s1.isEmpty()) {
                 s2.push(s1.pop());
@@ -34,5 +33,12 @@ public class ImplementQueueUsingStacks {
         public boolean empty() {
             return s1.isEmpty();
         }
+    }
+
+    public static void main(String[] args) {
+        MyQueue queue = new MyQueue();
+        queue.push(1);
+        queue.push(2);
+        System.out.println("Peek: " + queue.peek()); // 1
     }
 }
