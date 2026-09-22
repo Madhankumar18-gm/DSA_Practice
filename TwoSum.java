@@ -12,6 +12,9 @@ public class TwoSum {
 
     // Brute Force Approach: O(N^2) time complexity
     public static int[] twoSumBruteForce(int[] nums, int target) {
+        if (nums == null || nums.length < 2) {
+            return new int[]{};
+        }
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
@@ -24,6 +27,9 @@ public class TwoSum {
 
     // Optimized Approach: O(N) time complexity using HashMap
     public static int[] twoSumOptimized(int[] nums, int target) {
+        if (nums == null || nums.length < 2) {
+            return new int[]{};
+        }
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
@@ -50,5 +56,8 @@ public class TwoSum {
 
         int[] test3 = {3, 3};
         System.out.println("Test 3 Result: " + Arrays.toString(twoSum(test3, 6)));
+
+        System.out.println("Test 4 (null): " + Arrays.toString(twoSum(null, 5)));
+        System.out.println("Test 5 (empty): " + Arrays.toString(twoSum(new int[]{}, 5)));
     }
 }
