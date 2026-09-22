@@ -9,6 +9,9 @@ import java.util.Arrays;
 public class CoinChange {
 
     public static int coinChangeDP(int[] coins, int amount) {
+        if (amount < 0 || coins == null || coins.length == 0) return -1;
+        if (amount == 0) return 0;
+
         int max = amount + 1;
         int[] dp = new int[amount + 1];
         Arrays.fill(dp, max);
@@ -30,7 +33,7 @@ public class CoinChange {
 
     public static void main(String[] args) {
         System.out.println("Coins [1,2,5], Amount 11 -> " + coinChange(new int[]{1, 2, 5}, 11));
-        System.out.println("Coins [2],     Amount 3  -> " + coinChange(new int[]{2}, 3));
-        System.out.println("Coins [1],     Amount 0  -> " + coinChange(new int[]{1}, 0));
+        System.out.println("Null coins guard          -> " + coinChange(null, 5));
+        System.out.println("Negative amount guard     -> " + coinChange(new int[]{1, 2}, -5));
     }
 }
