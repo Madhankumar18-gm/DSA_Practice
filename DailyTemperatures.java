@@ -7,7 +7,6 @@ import java.util.Arrays;
  */
 public class DailyTemperatures {
 
-    // Brute Force O(N^2) time complexity
     public static int[] dailyTemperaturesBruteForce(int[] temperatures) {
         int n = temperatures.length;
         int[] result = new int[n];
@@ -24,5 +23,10 @@ public class DailyTemperatures {
 
     public static int[] dailyTemperatures(int[] temperatures) {
         return dailyTemperaturesBruteForce(temperatures);
+    }
+
+    public static void main(String[] args) {
+        int[] temps = {73, 74, 75, 71, 69, 72, 76, 73};
+        System.out.println("Result: " + Arrays.toString(dailyTemperatures(temps)));
     }
 }
