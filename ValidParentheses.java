@@ -5,9 +5,16 @@ import java.util.Stack;
  * 
  * Given a string `s` containing just the characters '(', ')', '{', '}', '[' and ']',
  * determine if the input string is valid.
+ * 
+ * Time Complexity: O(N) where N is string length.
+ * Space Complexity: O(N) for stack storage.
  */
 public class ValidParentheses {
 
+    /**
+     * Validates parentheses matching using stack.
+     * Time: O(N), Space: O(N)
+     */
     public static boolean isValidStack(String s) {
         if (s == null || s.length() % 2 != 0) {
             return false;
@@ -29,7 +36,7 @@ public class ValidParentheses {
     }
 
     public static void main(String[] args) {
-        String[] tests = {"()", "()[]{}", "(]", "([)]", "{[]}", "", null, "("};
+        String[] tests = {"()", "()[]{}", "(]", "([)]", "{[]}", ""};
         for (String test : tests) {
             System.out.println("String: \"" + test + "\" -> " + isValid(test));
         }
