@@ -22,10 +22,12 @@ public class ImplementStackUsingQueues {
         }
 
         public int pop() {
+            if (empty()) throw new IllegalStateException("Stack is empty");
             return queue.poll();
         }
 
         public int top() {
+            if (empty()) throw new IllegalStateException("Stack is empty");
             return queue.peek();
         }
 
@@ -36,10 +38,6 @@ public class ImplementStackUsingQueues {
 
     public static void main(String[] args) {
         MyStack s = new MyStack();
-        s.push(10);
-        s.push(20);
-        System.out.println("Pop:   " + s.pop());   // 20
-        System.out.println("Top:   " + s.top());   // 10
-        System.out.println("Empty? " + s.empty()); // false
+        System.out.println("Is Empty: " + s.empty());
     }
 }
