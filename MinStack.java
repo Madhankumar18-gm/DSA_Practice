@@ -24,12 +24,19 @@ public class MinStack {
         return stack.peek();
     }
     
-    // Naive O(N) scan for minimum element
     public int getMin() {
         int min = Integer.MAX_VALUE;
         for (int val : stack) {
             min = Math.min(min, val);
         }
         return min;
+    }
+
+    public static void main(String[] args) {
+        MinStack minStack = new MinStack();
+        minStack.push(-2);
+        minStack.push(0);
+        minStack.push(-3);
+        System.out.println("Min: " + minStack.getMin());
     }
 }
