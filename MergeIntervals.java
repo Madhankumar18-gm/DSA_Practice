@@ -10,7 +10,9 @@ import java.util.List;
 public class MergeIntervals {
 
     public static int[][] mergeOptimal(int[][] intervals) {
-        if (intervals.length <= 1) return intervals;
+        if (intervals == null || intervals.length <= 1) {
+            return intervals == null ? new int[0][0] : intervals;
+        }
 
         Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
         List<int[]> merged = new ArrayList<>();
@@ -40,7 +42,7 @@ public class MergeIntervals {
         int[][] input1 = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
         System.out.println("Test 1: " + Arrays.deepToString(merge(input1)));
 
-        int[][] input2 = {{1, 4}, {4, 5}};
-        System.out.println("Test 2: " + Arrays.deepToString(merge(input2)));
+        System.out.println("Null Guard: " + Arrays.deepToString(merge(null)));
+        System.out.println("Empty Guard: " + Arrays.deepToString(merge(new int[0][0])));
     }
 }
