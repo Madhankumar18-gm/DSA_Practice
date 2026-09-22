@@ -4,9 +4,16 @@ import java.util.Stack;
  * Problem 15: Decode String
  * 
  * Given an encoded string, return its decoded string.
+ * 
+ * Time Complexity: O(N) where N is length of decoded output string.
+ * Space Complexity: O(N) for stack storage of nested contexts.
  */
 public class DecodeString {
 
+    /**
+     * Decodes nested bracket pattern using Count and String Stacks.
+     * Time: O(N), Space: O(N)
+     */
     public static String decodeStringStack(String s) {
         if (s == null || s.isEmpty()) return "";
 
@@ -42,7 +49,6 @@ public class DecodeString {
     }
 
     public static void main(String[] args) {
-        System.out.println("Null String Guard:  \"" + decodeString(null) + "\"");
-        System.out.println("Empty String Guard: \"" + decodeString("") + "\"");
+        System.out.println("Decoded: " + decodeString("3[a]2[bc]"));
     }
 }
