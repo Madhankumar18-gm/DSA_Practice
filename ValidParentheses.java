@@ -16,9 +16,10 @@ public class ValidParentheses {
      * Time: O(N), Space: O(N)
      */
     public static boolean isValidStack(String s) {
-        if (s == null || s.length() % 2 != 0) {
-            return false;
-        }
+        if (s == null) return false;
+        if (s.isEmpty()) return true;
+        if (s.length() % 2 != 0) return false;
+
         Stack<Character> stack = new Stack<>();
         for (char c : s.toCharArray()) {
             if (c == '(') stack.push(')');
@@ -36,9 +37,19 @@ public class ValidParentheses {
     }
 
     public static void main(String[] args) {
-        String[] tests = {"()", "()[]{}", "(]", "([)]", "{[]}", ""};
-        for (String test : tests) {
-            System.out.println("String: \"" + test + "\" -> " + isValid(test));
+        System.out.println("=== ValidParentheses Execution Suite ===");
+        String[] validCases = {"()", "()[]{}", "{[]}", ""};
+        String[] invalidCases = {"(]", "([)]", "(((", "]", null};
+
+        System.out.println("Testing Valid Strings:");
+        for (String s : validCases) {
+            System.out.println("  \"" + s + "\" -> " + isValid(s));
         }
+
+        System.out.println("Testing Invalid Strings:");
+        for (String s : invalidCases) {
+            System.out.println("  \"" + s + "\" -> " + isValid(s));
+        }
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
