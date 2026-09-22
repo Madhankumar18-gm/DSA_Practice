@@ -9,7 +9,6 @@ import java.util.List;
  */
 public class MergeIntervals {
 
-    // Optimal Sorting + Greedy Merging: O(N log N)
     public static int[][] mergeOptimal(int[][] intervals) {
         if (intervals.length <= 1) return intervals;
 
@@ -38,7 +37,10 @@ public class MergeIntervals {
     }
 
     public static void main(String[] args) {
-        int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
-        System.out.println("Merged Intervals: " + Arrays.deepToString(merge(intervals)));
+        int[][] input1 = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+        System.out.println("Test 1: " + Arrays.deepToString(merge(input1)));
+
+        int[][] input2 = {{1, 4}, {4, 5}};
+        System.out.println("Test 2: " + Arrays.deepToString(merge(input2)));
     }
 }
