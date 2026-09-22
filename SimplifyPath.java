@@ -4,9 +4,16 @@ import java.util.Stack;
  * Problem 17: Simplify Path
  * 
  * Given an absolute path for a Unix-style file system, transform it to the simplified canonical path.
+ * 
+ * Time Complexity: O(N) scanning path characters.
+ * Space Complexity: O(N) stack storage for directory tokens.
  */
 public class SimplifyPath {
 
+    /**
+     * Canonicalizes Unix path using Stack.
+     * Time: O(N), Space: O(N)
+     */
     public static String simplifyPathStack(String path) {
         if (path == null || path.isEmpty()) return "/";
 
@@ -37,7 +44,6 @@ public class SimplifyPath {
     }
 
     public static void main(String[] args) {
-        System.out.println("Null Path Guard:  " + simplifyPath(null));
-        System.out.println("Empty Path Guard: " + simplifyPath(""));
+        System.out.println("Canonical: " + simplifyPath("/home//foo/"));
     }
 }
