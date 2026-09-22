@@ -24,7 +24,6 @@ public class ReverseLinkedList {
         return prev;
     }
 
-    // Recursive approach to reverse linked list
     public static ListNode reverseListRecursive(ListNode head) {
         if (head == null || head.next == null) {
             return head;
@@ -49,12 +48,12 @@ public class ReverseLinkedList {
     }
 
     public static void main(String[] args) {
-        ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
-        System.out.print("Original: ");
-        printList(head);
-        
-        ListNode reversed = reverseList(head);
-        System.out.print("Reversed: ");
-        printList(reversed);
+        System.out.println("--- Testing Iterative Reversal ---");
+        ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(3)));
+        printList(reverseListIterative(list1));
+
+        System.out.println("--- Testing Recursive Reversal ---");
+        ListNode list2 = new ListNode(10, new ListNode(20, new ListNode(30)));
+        printList(reverseListRecursive(list2));
     }
 }
