@@ -3,14 +3,36 @@ import java.util.Stack;
 /**
  * Problem 11: Implement Queue using Stacks
  * 
- * Implement a first-in first-out (FIFO) queue using only two stacks.
+ * Implement a first-in first-out (FIFO) queue using two stacks.
  */
 public class ImplementQueueUsingStacks {
     public static class MyQueue {
+        private Stack<Integer> s1 = new Stack<>();
+        private Stack<Integer> s2 = new Stack<>();
+
         public MyQueue() { }
-        public void push(int x) { }
-        public int pop() { return 0; }
-        public int peek() { return 0; }
-        public boolean empty() { return true; }
+
+        // Naive push: transfer all to s2, push x to s1, transfer back
+        public void push(int x) {
+            while (!s1.isEmpty()) {
+                s2.push(s1.pop());
+            }
+            s1.push(x);
+            while (!s2.isEmpty()) {
+                s1.push(s2.pop());
+            }
+        }
+
+        public int pop() {
+            return s1.pop();
+        }
+
+        public int peek() {
+            return s1.peek();
+        }
+
+        public boolean empty() {
+            return s1.isEmpty();
+        }
     }
 }
