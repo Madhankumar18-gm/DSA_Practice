@@ -22,19 +22,20 @@ public class MinStack {
     }
     
     public void pop() {
-        if (!stack.isEmpty()) {
-            int popped = stack.pop();
-            if (popped == minStack.peek()) {
-                minStack.pop();
-            }
+        if (stack.isEmpty()) return;
+        int popped = stack.pop();
+        if (popped == minStack.peek()) {
+            minStack.pop();
         }
     }
     
     public int top() {
+        if (stack.isEmpty()) throw new IllegalStateException("Stack is empty");
         return stack.peek();
     }
     
     public int getMin() {
+        if (minStack.isEmpty()) throw new IllegalStateException("Stack is empty");
         return minStack.peek();
     }
 
@@ -43,9 +44,9 @@ public class MinStack {
         minStack.push(-2);
         minStack.push(0);
         minStack.push(-3);
-        System.out.println("Get Min: " + minStack.getMin()); // -3
+        System.out.println("Get Min: " + minStack.getMin());
         minStack.pop();
-        System.out.println("Top:     " + minStack.top());    // 0
-        System.out.println("Get Min: " + minStack.getMin()); // -2
+        System.out.println("Top:     " + minStack.top());
+        System.out.println("Get Min: " + minStack.getMin());
     }
 }
