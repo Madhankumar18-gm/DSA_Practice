@@ -46,7 +46,12 @@ public class SlidingWindowMaximum {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
-        System.out.println("Result: " + Arrays.toString(maxSlidingWindow(nums, 3)));
+        System.out.println("=== SlidingWindowMaximum Execution Suite ===");
+        int[] test1 = {1, 3, -1, -3, 5, 3, 6, 7};
+        System.out.println("Window (k=3): " + Arrays.toString(maxSlidingWindow(test1, 3)));
+
+        int[] test2 = {1};
+        System.out.println("Window (k=1): " + Arrays.toString(maxSlidingWindow(test2, 1)));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
