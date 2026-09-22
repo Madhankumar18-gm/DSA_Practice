@@ -8,8 +8,11 @@ import java.util.Stack;
 public class EvaluateReversePolishNotation {
 
     public static int evalRPNStack(String[] tokens) {
+        if (tokens == null || tokens.length == 0) return 0;
+
         Stack<Integer> stack = new Stack<>();
         for (String token : tokens) {
+            if (token == null) continue;
             if (token.equals("+")) {
                 stack.push(stack.pop() + stack.pop());
             } else if (token.equals("-")) {
@@ -26,7 +29,7 @@ public class EvaluateReversePolishNotation {
                 stack.push(Integer.parseInt(token));
             }
         }
-        return stack.pop();
+        return stack.isEmpty() ? 0 : stack.pop();
     }
 
     public static int evalRPN(String[] tokens) {
@@ -34,10 +37,7 @@ public class EvaluateReversePolishNotation {
     }
 
     public static void main(String[] args) {
-        String[] expr1 = {"4", "13", "5", "/", "+"};
-        System.out.println("Expr 1 Result: " + evalRPN(expr1));
-
-        String[] expr2 = {"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"};
-        System.out.println("Expr 2 Result: " + evalRPN(expr2));
+        System.out.println("Null tokens guard:  " + evalRPN(null));
+        System.out.println("Empty tokens guard: " + evalRPN(new String[]{}));
     }
 }
