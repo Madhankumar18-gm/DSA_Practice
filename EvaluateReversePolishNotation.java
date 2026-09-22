@@ -8,7 +8,6 @@ import java.util.List;
  */
 public class EvaluateReversePolishNotation {
 
-    // Naive List simulation
     public static int evalRPNNaive(String[] tokens) {
         List<String> list = new ArrayList<>();
         for (String t : tokens) list.add(t);
@@ -38,5 +37,10 @@ public class EvaluateReversePolishNotation {
 
     public static int evalRPN(String[] tokens) {
         return evalRPNNaive(tokens);
+    }
+
+    public static void main(String[] args) {
+        String[] tokens = {"2", "1", "+", "3", "*"};
+        System.out.println("Result: " + evalRPN(tokens));
     }
 }
