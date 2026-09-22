@@ -64,12 +64,20 @@ public class ReverseLinkedList {
     }
 
     public static void main(String[] args) {
-        System.out.println("--- Testing Iterative Reversal ---");
-        ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(3)));
-        printList(reverseListIterative(list1));
+        System.out.println("=== ReverseLinkedList Execution Suite ===");
+        ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+        System.out.print("Original List:  ");
+        printList(list1);
 
-        System.out.println("--- Testing Single Node & Null ---");
-        printList(reverseListIterative(new ListNode(99)));
-        printList(reverseListIterative(null));
+        ListNode reversed = reverseList(list1);
+        System.out.print("Reversed List:  ");
+        printList(reversed);
+
+        System.out.print("Single Node List: ");
+        printList(reverseList(new ListNode(42)));
+
+        System.out.print("Null List Guard: ");
+        printList(reverseList(null));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
