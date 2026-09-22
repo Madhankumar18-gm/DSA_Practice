@@ -8,31 +8,23 @@ import java.util.Set;
  */
 public class LongestSubstring {
 
-    public static int lengthOfLongestSubstringBruteForce(String s) {
-        int maxLen = 0;
-        int n = s.length();
-        for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j <= n; j++) {
-                if (allUnique(s, i, j)) {
-                    maxLen = Math.max(maxLen, j - i);
-                }
+    // Optimized Sliding Window O(N) approach
+    public static int lengthOfLongestSubstringSlidingWindow(String s) {
+        Set<Character> set = new HashSet<>();
+        int left = 0, maxLen = 0;
+        for (int right = 0; right < s.length(); right++) {
+            while (set.contains(s.charAt(right))) {
+                set.remove(s.charAt(left));
+                left++;
             }
+            set.add(s.charAt(right));
+            maxLen = Math.max(maxLen, right - left + 1);
         }
         return maxLen;
     }
 
-    private static boolean allUnique(String s, int start, int end) {
-        Set<Character> set = new HashSet<>();
-        for (int i = start; i < end; i++) {
-            char ch = s.charAt(i);
-            if (set.contains(ch)) return false;
-            set.add(ch);
-        }
-        return true;
-    }
-
     public static int lengthOfLongestSubstring(String s) {
-        return lengthOfLongestSubstringBruteForce(s);
+        return lengthOfLongestSubstringSlidingWindow(s);
     }
 
     public static void main(String[] args) {
