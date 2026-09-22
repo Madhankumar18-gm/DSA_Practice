@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
  * Problem 3: Valid Parentheses
  * 
@@ -5,15 +7,22 @@
  * determine if the input string is valid.
  */
 public class ValidParentheses {
-    public static boolean isValidNaive(String s) {
-        while (s.contains("()") || s.contains("{}") || s.contains("[]")) {
-            s = s.replace("()", "").replace("{}", "").replace("[]", "");
+
+    public static boolean isValidStack(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            if (c == '(') stack.push(')');
+            else if (c == '{') stack.push('}');
+            else if (c == '[') stack.push(']');
+            else if (stack.isEmpty() || stack.pop() != c) {
+                return false;
+            }
         }
-        return s.isEmpty();
+        return stack.isEmpty();
     }
 
     public static boolean isValid(String s) {
-        return isValidNaive(s);
+        return isValidStack(s);
     }
 
     public static void main(String[] args) {
