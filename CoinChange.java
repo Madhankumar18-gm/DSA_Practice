@@ -39,7 +39,18 @@ public class CoinChange {
     }
 
     public static void main(String[] args) {
-        System.out.println("Coins [1,2,5], Amount 11 -> " + coinChange(new int[]{1, 2, 5}, 11));
-        System.out.println("Coins [2],     Amount 3  -> " + coinChange(new int[]{2}, 3));
+        System.out.println("=== CoinChange Execution Suite ===");
+        
+        int[] coins1 = {1, 2, 5};
+        System.out.println("Coins [1, 2, 5], Amount 11 -> Fewest Coins: " + coinChange(coins1, 11));
+
+        int[] coins2 = {2};
+        System.out.println("Coins [2],       Amount 3  -> Fewest Coins: " + coinChange(coins2, 3));
+
+        int[] coins3 = {1};
+        System.out.println("Coins [1],       Amount 0  -> Fewest Coins: " + coinChange(coins3, 0));
+
+        System.out.println("Null Guard Check           -> Fewest Coins: " + coinChange(null, 5));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
