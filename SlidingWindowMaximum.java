@@ -1,4 +1,6 @@
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Deque;
 
 /**
  * Problem 13: Sliding Window Maximum
@@ -7,21 +9,32 @@ import java.util.Arrays;
  */
 public class SlidingWindowMaximum {
 
-    public static int[] maxSlidingWindowBrute(int[] nums, int k) {
+    // Monotonic Deque O(N) solution
+    public static int[] maxSlidingWindowDeque(int[] nums, int k) {
         int n = nums.length;
-        int[] res = new int[n - k + 1];
-        for (int i = 0; i <= n - k; i++) {
-            int max = nums[i];
-            for (int j = i; j < i + k; j++) {
-                max = Math.max(max, nums[j]);
+        int[] result = new int[n - k + 1];
+        Deque<Integer> deque = new ArrayDeque<>();
+
+        for (int i = 0; i < n; i++) {
+            // Remove indices out of window bounds
+            if (!deque.isEmpty() && deque.peekFirst() < i - k + 1) {
+                deque.pollFirst();
             }
-            res[i] = max;
+            // Maintain monotonic decreasing deque order
+            while (!deque.isEmpty() && nums[deque.peekLast()] < nums[i]) {
+                deque.pollLast();
+            }
+            deque.offerLast(i);
+
+            if (i >= k - 1) {
+                result[i - k + 1] = nums[deque.peekFirst()];
+            }
         }
-        return res;
+        return result;
     }
 
     public static int[] maxSlidingWindow(int[] nums, int k) {
-        return maxSlidingWindowBrute(nums, k);
+        return maxSlidingWindowDeque(nums, k);
     }
 
     public static void main(String[] args) {
