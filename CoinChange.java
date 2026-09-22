@@ -8,7 +8,6 @@ import java.util.Arrays;
  */
 public class CoinChange {
 
-    // Optimal 1D Dynamic Programming O(amount * N)
     public static int coinChangeDP(int[] coins, int amount) {
         int max = amount + 1;
         int[] dp = new int[amount + 1];
@@ -30,8 +29,8 @@ public class CoinChange {
     }
 
     public static void main(String[] args) {
-        int[] coins = {1, 2, 5};
-        int amount = 11;
-        System.out.println("Coins for amount " + amount + ": " + coinChange(coins, amount));
+        System.out.println("Coins [1,2,5], Amount 11 -> " + coinChange(new int[]{1, 2, 5}, 11));
+        System.out.println("Coins [2],     Amount 3  -> " + coinChange(new int[]{2}, 3));
+        System.out.println("Coins [1],     Amount 0  -> " + coinChange(new int[]{1}, 0));
     }
 }
