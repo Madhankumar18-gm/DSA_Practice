@@ -8,6 +8,8 @@ import java.util.Stack;
 public class DecodeString {
 
     public static String decodeStringStack(String s) {
+        if (s == null || s.isEmpty()) return "";
+
         Stack<Integer> countStack = new Stack<>();
         Stack<StringBuilder> stringStack = new Stack<>();
         StringBuilder currentString = new StringBuilder();
@@ -40,7 +42,7 @@ public class DecodeString {
     }
 
     public static void main(String[] args) {
-        System.out.println("3[a2[c]]: " + decodeString("3[a2[c]]")); // accaccacc
-        System.out.println("2[abc]3[cd]ef: " + decodeString("2[abc]3[cd]ef"));
+        System.out.println("Null String Guard:  \"" + decodeString(null) + "\"");
+        System.out.println("Empty String Guard: \"" + decodeString("") + "\"");
     }
 }
