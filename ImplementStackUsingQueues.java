@@ -12,7 +12,6 @@ public class ImplementStackUsingQueues {
 
         public MyStack() { }
 
-        // Single Queue Push by rotating elements
         public void push(int x) {
             queue.add(x);
             int sz = queue.size();
@@ -36,9 +35,11 @@ public class ImplementStackUsingQueues {
     }
 
     public static void main(String[] args) {
-        MyStack stack = new MyStack();
-        stack.push(1);
-        stack.push(2);
-        System.out.println("Top: " + stack.top());
+        MyStack s = new MyStack();
+        s.push(10);
+        s.push(20);
+        System.out.println("Pop:   " + s.pop());   // 20
+        System.out.println("Top:   " + s.top());   // 10
+        System.out.println("Empty? " + s.empty()); // false
     }
 }
