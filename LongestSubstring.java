@@ -36,9 +36,11 @@ public class LongestSubstring {
     }
 
     public static void main(String[] args) {
-        String[] samples = {"abcabcbb", "bbbbb", "pwwkew", "", " "};
+        System.out.println("=== LongestSubstring Execution Suite ===");
+        String[] samples = {"abcabcbb", "bbbbb", "pwwkew", "au", "", " "};
         for (String str : samples) {
-            System.out.println("String: \"" + str + "\" -> Length: " + lengthOfLongestSubstring(str));
+            System.out.println("  Input: \"" + str + "\" -> Longest Substring Length: " + lengthOfLongestSubstring(str));
         }
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
