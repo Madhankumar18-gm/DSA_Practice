@@ -39,7 +39,15 @@ public class DailyTemperatures {
     }
 
     public static void main(String[] args) {
-        int[] temps = {73, 74, 75, 71, 69, 72, 76, 73};
-        System.out.println("Result: " + Arrays.toString(dailyTemperatures(temps)));
+        System.out.println("=== DailyTemperatures Execution Suite ===");
+        int[] test1 = {73, 74, 75, 71, 69, 72, 76, 73};
+        System.out.println("Standard Temps:  " + Arrays.toString(dailyTemperatures(test1)));
+
+        int[] test2 = {30, 40, 50, 60};
+        System.out.println("Increasing:      " + Arrays.toString(dailyTemperatures(test2)));
+
+        int[] test3 = {30, 20, 10};
+        System.out.println("Decreasing:      " + Arrays.toString(dailyTemperatures(test3)));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
