@@ -23,6 +23,8 @@ public class BinaryTreeInorderTraversal {
 
     public static List<Integer> inorderIterative(TreeNode root) {
         List<Integer> result = new ArrayList<>();
+        if (root == null) return result;
+        
         Stack<TreeNode> stack = new Stack<>();
         TreeNode curr = root;
 
@@ -43,12 +45,7 @@ public class BinaryTreeInorderTraversal {
     }
 
     public static void main(String[] args) {
-        // Tree 1: [1, null, 2, 3]
-        TreeNode tree1 = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
-        System.out.println("Tree 1: " + inorderTraversal(tree1));
-
-        // Tree 2: Complete Binary Tree [4, 2, 5, 1, 3]
-        TreeNode tree2 = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3));
-        System.out.println("Tree 2: " + inorderTraversal(tree2));
+        System.out.println("Null Root: " + inorderTraversal(null));
+        System.out.println("Single Node: " + inorderTraversal(new TreeNode(42)));
     }
 }
