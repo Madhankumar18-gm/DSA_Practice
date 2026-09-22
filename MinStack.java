@@ -3,7 +3,10 @@ import java.util.Stack;
 /**
  * Problem 8: Min Stack
  * 
- * Design a stack that supports push, pop, top, and retrieving the minimum element in O(1) time.
+ * Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+ * 
+ * Time Complexity: O(1) for all operations (push, pop, top, getMin).
+ * Space Complexity: O(N) where N is number of elements pushed.
  */
 public class MinStack {
     private Stack<Integer> stack;
@@ -14,6 +17,7 @@ public class MinStack {
         minStack = new Stack<>();
     }
     
+    /** Pushes element onto stack. O(1) time */
     public void push(int val) {
         stack.push(val);
         if (minStack.isEmpty() || val <= minStack.peek()) {
@@ -21,6 +25,7 @@ public class MinStack {
         }
     }
     
+    /** Removes element on top. O(1) time */
     public void pop() {
         if (stack.isEmpty()) return;
         int popped = stack.pop();
@@ -29,11 +34,13 @@ public class MinStack {
         }
     }
     
+    /** Gets top element. O(1) time */
     public int top() {
         if (stack.isEmpty()) throw new IllegalStateException("Stack is empty");
         return stack.peek();
     }
     
+    /** Retrieves minimum element. O(1) time */
     public int getMin() {
         if (minStack.isEmpty()) throw new IllegalStateException("Stack is empty");
         return minStack.peek();
