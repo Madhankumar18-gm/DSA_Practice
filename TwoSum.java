@@ -40,9 +40,15 @@ public class TwoSum {
     }
 
     public static void main(String[] args) {
-        int[] nums = {2, 7, 11, 15};
-        int target = 9;
-        int[] result = twoSum(nums, target);
-        System.out.println("Two Sum Result: " + Arrays.toString(result));
+        System.out.println("--- Running TwoSum Tests ---");
+        
+        int[] test1 = {2, 7, 11, 15};
+        System.out.println("Test 1 Result: " + Arrays.toString(twoSum(test1, 9)));
+
+        int[] test2 = {3, 2, 4};
+        System.out.println("Test 2 Result: " + Arrays.toString(twoSum(test2, 6)));
+
+        int[] test3 = {3, 3};
+        System.out.println("Test 3 Result: " + Arrays.toString(twoSum(test3, 6)));
     }
 }
