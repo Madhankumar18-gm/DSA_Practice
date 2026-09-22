@@ -2,6 +2,9 @@
  * Problem 2: Reverse Linked List
  * 
  * Given the head of a singly linked list, reverse the list, and return the reversed list.
+ * 
+ * Time Complexity: O(N) where N is the number of nodes in the linked list.
+ * Space Complexity: O(1) for iterative, O(N) for recursive call stack.
  */
 public class ReverseLinkedList {
 
@@ -12,6 +15,10 @@ public class ReverseLinkedList {
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 
+    /**
+     * Reverses list iteratively.
+     * Time: O(N), Space: O(1)
+     */
     public static ListNode reverseListIterative(ListNode head) {
         if (head == null) return null;
         ListNode prev = null;
@@ -25,6 +32,10 @@ public class ReverseLinkedList {
         return prev;
     }
 
+    /**
+     * Reverses list recursively.
+     * Time: O(N), Space: O(N) call stack
+     */
     public static ListNode reverseListRecursive(ListNode head) {
         if (head == null || head.next == null) {
             return head;
