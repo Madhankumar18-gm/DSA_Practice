@@ -5,12 +5,19 @@ import java.util.Set;
  * Problem 5: Longest Substring Without Repeating Characters
  * 
  * Given a string `s`, find the length of the longest substring without repeating characters.
+ * 
+ * Time Complexity: O(N) where N is string length.
+ * Space Complexity: O(min(N, M)) where M is alphabet size.
  */
 public class LongestSubstring {
 
+    /**
+     * Sliding Window approach using HashSet.
+     * Time: O(N), Space: O(min(N, M))
+     */
     public static int lengthOfLongestSubstringSlidingWindow(String s) {
         if (s == null || s.isEmpty()) return 0;
-        
+
         Set<Character> set = new HashSet<>();
         int left = 0, maxLen = 0;
         for (int right = 0; right < s.length(); right++) {
@@ -29,7 +36,7 @@ public class LongestSubstring {
     }
 
     public static void main(String[] args) {
-        String[] samples = {"abcabcbb", "bbbbb", "pwwkew", "", null, " "};
+        String[] samples = {"abcabcbb", "bbbbb", "pwwkew", "", " "};
         for (String str : samples) {
             System.out.println("String: \"" + str + "\" -> Length: " + lengthOfLongestSubstring(str));
         }
