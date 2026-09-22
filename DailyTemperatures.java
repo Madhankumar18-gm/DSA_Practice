@@ -9,6 +9,10 @@ import java.util.Stack;
 public class DailyTemperatures {
 
     public static int[] dailyTemperaturesStack(int[] temperatures) {
+        if (temperatures == null || temperatures.length == 0) {
+            return new int[]{};
+        }
+
         int n = temperatures.length;
         int[] answer = new int[n];
         Stack<Integer> stack = new Stack<>();
@@ -28,10 +32,7 @@ public class DailyTemperatures {
     }
 
     public static void main(String[] args) {
-        int[] test1 = {30, 40, 50, 60};
-        System.out.println("Strictly Increasing: " + Arrays.toString(dailyTemperatures(test1)));
-
-        int[] test2 = {30, 20, 10};
-        System.out.println("Strictly Decreasing: " + Arrays.toString(dailyTemperatures(test2)));
+        System.out.println("Null Guard:  " + Arrays.toString(dailyTemperatures(null)));
+        System.out.println("Empty Guard: " + Arrays.toString(dailyTemperatures(new int[]{})));
     }
 }
