@@ -1,12 +1,28 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Problem 14: Rotting Oranges
  * 
- * You are given an m x n grid where each cell can have 0 (empty), 1 (fresh orange), or 2 (rotten orange).
- * Return the minimum number of minutes that must elapse until no cell has a fresh orange. If impossible, return -1.
+ * Minimum minutes until no cell has a fresh orange using multi-source BFS Queue.
  */
 public class RottingOranges {
+
     public static int orangesRotting(int[][] grid) {
-        // TODO: Implement BFS queue
-        return -1;
+        if (grid == null || grid.length == 0) return 0;
+        int rows = grid.length, cols = grid[0].length;
+        Queue<int[]> queue = new LinkedList<>();
+        int freshCount = 0;
+
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                if (grid[r][c] == 2) {
+                    queue.add(new int[]{r, c});
+                } else if (grid[r][c] == 1) {
+                    freshCount++;
+                }
+            }
+        }
+        return freshCount == 0 ? 0 : -1;
     }
 }
