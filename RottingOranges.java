@@ -5,9 +5,16 @@ import java.util.Queue;
  * Problem 14: Rotting Oranges
  * 
  * Minimum minutes until no cell has a fresh orange using multi-source BFS Queue.
+ * 
+ * Time Complexity: O(R * C) visiting each grid cell at most once.
+ * Space Complexity: O(R * C) queue storing positions.
  */
 public class RottingOranges {
 
+    /**
+     * Calculates rotting time using Multi-Source BFS Queue.
+     * Time: O(R * C), Space: O(R * C)
+     */
     public static int orangesRottingBFS(int[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) return 0;
         int rows = grid.length, cols = grid[0].length;
@@ -51,7 +58,7 @@ public class RottingOranges {
     }
 
     public static void main(String[] args) {
-        System.out.println("Null Grid Guard:  " + orangesRotting(null));
-        System.out.println("Empty Grid Guard: " + orangesRotting(new int[][]{}));
+        int[][] grid = {{2, 1, 1}, {1, 1, 0}, {0, 1, 1}};
+        System.out.println("Minutes: " + orangesRotting(grid));
     }
 }
