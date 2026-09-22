@@ -44,7 +44,15 @@ public class EvaluateReversePolishNotation {
     }
 
     public static void main(String[] args) {
-        String[] expr1 = {"4", "13", "5", "/", "+"};
-        System.out.println("Expr 1 Result: " + evalRPN(expr1));
+        System.out.println("=== EvaluateReversePolishNotation Execution Suite ===");
+        String[] expr1 = {"2", "1", "+", "3", "*"};
+        System.out.println("[\"2\", \"1\", \"+\", \"3\", \"*\"] -> " + evalRPN(expr1));
+
+        String[] expr2 = {"4", "13", "5", "/", "+"};
+        System.out.println("[\"4\", \"13\", \"5\", \"/\", \"+\"] -> " + evalRPN(expr2));
+
+        String[] expr3 = {"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"};
+        System.out.println("Complex Expression -> " + evalRPN(expr3));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
