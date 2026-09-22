@@ -12,8 +12,20 @@ public class ReverseLinkedList {
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 
+    // Iterative approach to reverse linked list
+    public static ListNode reverseListIterative(ListNode head) {
+        ListNode prev = null;
+        ListNode current = head;
+        while (current != null) {
+            ListNode nextTemp = current.next;
+            current.next = prev;
+            prev = current;
+            current = nextTemp;
+        }
+        return prev;
+    }
+
     public static ListNode reverseList(ListNode head) {
-        // TODO: Implement reversal
-        return head;
+        return reverseListIterative(head);
     }
 }
