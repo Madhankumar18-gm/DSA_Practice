@@ -6,6 +6,9 @@ import java.util.Stack;
  * Problem 4: Binary Tree Inorder Traversal
  * 
  * Given the root of a binary tree, return the inorder traversal of its nodes' values.
+ * 
+ * Time Complexity: O(N) visiting each node once.
+ * Space Complexity: O(H) where H is tree height for stack storage.
  */
 public class BinaryTreeInorderTraversal {
 
@@ -21,10 +24,14 @@ public class BinaryTreeInorderTraversal {
         }
     }
 
+    /**
+     * Traverses binary tree in-order (Left, Root, Right).
+     * Time: O(N), Space: O(H)
+     */
     public static List<Integer> inorderIterative(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) return result;
-        
+
         Stack<TreeNode> stack = new Stack<>();
         TreeNode curr = root;
 
