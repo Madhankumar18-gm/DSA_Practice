@@ -9,6 +9,8 @@ import java.util.Set;
 public class LongestSubstring {
 
     public static int lengthOfLongestSubstringSlidingWindow(String s) {
+        if (s == null || s.isEmpty()) return 0;
+        
         Set<Character> set = new HashSet<>();
         int left = 0, maxLen = 0;
         for (int right = 0; right < s.length(); right++) {
@@ -27,7 +29,7 @@ public class LongestSubstring {
     }
 
     public static void main(String[] args) {
-        String[] samples = {"abcabcbb", "bbbbb", "pwwkew", ""};
+        String[] samples = {"abcabcbb", "bbbbb", "pwwkew", "", null, " "};
         for (String str : samples) {
             System.out.println("String: \"" + str + "\" -> Length: " + lengthOfLongestSubstring(str));
         }
