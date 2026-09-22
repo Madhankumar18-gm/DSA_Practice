@@ -4,9 +4,16 @@ import java.util.Stack;
  * Problem 9: Evaluate Reverse Polish Notation
  * 
  * Evaluate the value of an arithmetic expression in Reverse Polish Notation (RPN).
+ * 
+ * Time Complexity: O(N) scanning tokens once.
+ * Space Complexity: O(N) for stack storage of operands.
  */
 public class EvaluateReversePolishNotation {
 
+    /**
+     * Evaluates RPN expressions using Stack.
+     * Time: O(N), Space: O(N)
+     */
     public static int evalRPNStack(String[] tokens) {
         if (tokens == null || tokens.length == 0) return 0;
 
@@ -37,7 +44,7 @@ public class EvaluateReversePolishNotation {
     }
 
     public static void main(String[] args) {
-        System.out.println("Null tokens guard:  " + evalRPN(null));
-        System.out.println("Empty tokens guard: " + evalRPN(new String[]{}));
+        String[] expr1 = {"4", "13", "5", "/", "+"};
+        System.out.println("Expr 1 Result: " + evalRPN(expr1));
     }
 }
