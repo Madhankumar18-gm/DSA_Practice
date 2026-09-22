@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
  * Problem 17: Simplify Path
  * 
@@ -5,13 +7,32 @@
  */
 public class SimplifyPath {
 
-    public static String simplifyPathBasic(String path) {
-        if (path == null || path.isEmpty()) return "/";
-        return path.replaceAll("/+", "/");
+    // Optimal Stack O(N) directory traversal solution
+    public static String simplifyPathStack(String path) {
+        Stack<String> stack = new Stack<>();
+        String[] components = path.split("/");
+
+        for (String comp : components) {
+            if (comp.equals("") || comp.equals(".")) {
+                continue;
+            } else if (comp.equals("..")) {
+                if (!stack.isEmpty()) {
+                    stack.pop();
+                }
+            } else {
+                stack.push(comp);
+            }
+        }
+
+        StringBuilder result = new StringBuilder();
+        for (String dir : stack) {
+            result.append("/").append(dir);
+        }
+        return result.length() == 0 ? "/" : result.toString();
     }
 
     public static String simplifyPath(String path) {
-        return simplifyPathBasic(path);
+        return simplifyPathStack(path);
     }
 
     public static void main(String[] args) {
