@@ -7,12 +7,16 @@ import java.util.Arrays;
  */
 public class AsteroidCollision {
 
-    // Naive pass placeholder
     public static int[] asteroidCollisionNaive(int[] asteroids) {
         return asteroids;
     }
 
     public static int[] asteroidCollision(int[] asteroids) {
         return asteroidCollisionNaive(asteroids);
+    }
+
+    public static void main(String[] args) {
+        int[] asteroids = {5, 10, -5};
+        System.out.println("Result: " + Arrays.toString(asteroidCollision(asteroids)));
     }
 }
