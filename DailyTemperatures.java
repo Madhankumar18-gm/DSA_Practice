@@ -8,7 +8,6 @@ import java.util.Stack;
  */
 public class DailyTemperatures {
 
-    // Monotonic Decreasing Stack O(N) time complexity
     public static int[] dailyTemperaturesStack(int[] temperatures) {
         int n = temperatures.length;
         int[] answer = new int[n];
@@ -29,7 +28,10 @@ public class DailyTemperatures {
     }
 
     public static void main(String[] args) {
-        int[] temps = {73, 74, 75, 71, 69, 72, 76, 73};
-        System.out.println("Result: " + Arrays.toString(dailyTemperatures(temps)));
+        int[] test1 = {30, 40, 50, 60};
+        System.out.println("Strictly Increasing: " + Arrays.toString(dailyTemperatures(test1)));
+
+        int[] test2 = {30, 20, 10};
+        System.out.println("Strictly Decreasing: " + Arrays.toString(dailyTemperatures(test2)));
     }
 }
