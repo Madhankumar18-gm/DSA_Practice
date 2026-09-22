@@ -7,7 +7,6 @@ import java.util.Arrays;
  */
 public class SlidingWindowMaximum {
 
-    // Brute Force O(N * k) solution
     public static int[] maxSlidingWindowBrute(int[] nums, int k) {
         int n = nums.length;
         int[] res = new int[n - k + 1];
@@ -23,5 +22,11 @@ public class SlidingWindowMaximum {
 
     public static int[] maxSlidingWindow(int[] nums, int k) {
         return maxSlidingWindowBrute(nums, k);
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
+        int k = 3;
+        System.out.println("Max Sliding Window: " + Arrays.toString(maxSlidingWindow(nums, k)));
     }
 }
