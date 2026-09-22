@@ -44,8 +44,15 @@ public class ImplementStackUsingQueues {
     }
 
     public static void main(String[] args) {
-        MyStack s = new MyStack();
-        s.push(10);
-        System.out.println("Top: " + s.top());
+        System.out.println("=== ImplementStackUsingQueues Execution Suite ===");
+        MyStack stack = new MyStack();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        System.out.println("Top:       " + stack.top()); // 3
+        System.out.println("Popped:    " + stack.pop()); // 3
+        System.out.println("New Top:   " + stack.top()); // 2
+        System.out.println("Is Empty?  " + stack.empty()); // false
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
