@@ -20,7 +20,6 @@ public class BinaryTreeInorderTraversal {
         }
     }
 
-    // Recursive Inorder Traversal (Left -> Root -> Right)
     public static void helperRecursive(TreeNode root, List<Integer> result) {
         if (root == null) return;
         helperRecursive(root.left, result);
@@ -32,5 +31,11 @@ public class BinaryTreeInorderTraversal {
         List<Integer> result = new ArrayList<>();
         helperRecursive(root, result);
         return result;
+    }
+
+    public static void main(String[] args) {
+        // Tree: 1 -> right: 2 -> left: 3
+        TreeNode root = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
+        System.out.println("Inorder Result: " + inorderTraversal(root));
     }
 }
