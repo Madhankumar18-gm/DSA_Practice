@@ -10,6 +10,10 @@ import java.util.Deque;
 public class SlidingWindowMaximum {
 
     public static int[] maxSlidingWindowDeque(int[] nums, int k) {
+        if (nums == null || nums.length == 0 || k <= 0) {
+            return new int[]{};
+        }
+
         int n = nums.length;
         int[] result = new int[n - k + 1];
         Deque<Integer> deque = new ArrayDeque<>();
@@ -35,7 +39,7 @@ public class SlidingWindowMaximum {
     }
 
     public static void main(String[] args) {
-        System.out.println("k = 1 Test: " + Arrays.toString(maxSlidingWindow(new int[]{1}, 1)));
-        System.out.println("k = 3 Test: " + Arrays.toString(maxSlidingWindow(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
+        System.out.println("Null Guard:  " + Arrays.toString(maxSlidingWindow(null, 3)));
+        System.out.println("Empty Guard: " + Arrays.toString(maxSlidingWindow(new int[]{}, 3)));
     }
 }
