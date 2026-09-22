@@ -3,21 +3,31 @@ import java.util.Stack;
 /**
  * Problem 8: Min Stack
  * 
- * Design a stack that supports push, pop, top, and retrieving the minimum element.
+ * Design a stack that supports push, pop, top, and retrieving the minimum element in O(1) time.
  */
 public class MinStack {
     private Stack<Integer> stack;
+    private Stack<Integer> minStack;
 
     public MinStack() {
         stack = new Stack<>();
+        minStack = new Stack<>();
     }
     
     public void push(int val) {
         stack.push(val);
+        if (minStack.isEmpty() || val <= minStack.peek()) {
+            minStack.push(val);
+        }
     }
     
     public void pop() {
-        if (!stack.isEmpty()) stack.pop();
+        if (!stack.isEmpty()) {
+            int popped = stack.pop();
+            if (popped == minStack.peek()) {
+                minStack.pop();
+            }
+        }
     }
     
     public int top() {
@@ -25,11 +35,7 @@ public class MinStack {
     }
     
     public int getMin() {
-        int min = Integer.MAX_VALUE;
-        for (int val : stack) {
-            min = Math.min(min, val);
-        }
-        return min;
+        return minStack.peek();
     }
 
     public static void main(String[] args) {
