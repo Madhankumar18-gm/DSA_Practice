@@ -7,7 +7,6 @@ import java.util.Stack;
  */
 public class DecodeString {
 
-    // Optimal Two Stack O(N) solution
     public static String decodeStringStack(String s) {
         Stack<Integer> countStack = new Stack<>();
         Stack<StringBuilder> stringStack = new Stack<>();
@@ -41,7 +40,7 @@ public class DecodeString {
     }
 
     public static void main(String[] args) {
-        String test = "3[a]2[bc]";
-        System.out.println("Decoded: " + decodeString(test));
+        System.out.println("3[a2[c]]: " + decodeString("3[a2[c]]")); // accaccacc
+        System.out.println("2[abc]3[cd]ef: " + decodeString("2[abc]3[cd]ef"));
     }
 }
