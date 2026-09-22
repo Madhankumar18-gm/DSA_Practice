@@ -6,7 +6,6 @@
  */
 public class CoinChange {
 
-    // Recursive Backtracking solution (Brute Force)
     public static int coinChangeRecursive(int[] coins, int amount) {
         if (amount == 0) return 0;
         if (amount < 0) return -1;
@@ -23,5 +22,11 @@ public class CoinChange {
 
     public static int coinChange(int[] coins, int amount) {
         return coinChangeRecursive(coins, amount);
+    }
+
+    public static void main(String[] args) {
+        int[] coins = {1, 2, 5};
+        int amount = 11;
+        System.out.println("Coins for amount " + amount + ": " + coinChange(coins, amount));
     }
 }
