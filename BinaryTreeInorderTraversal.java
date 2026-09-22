@@ -52,7 +52,16 @@ public class BinaryTreeInorderTraversal {
     }
 
     public static void main(String[] args) {
-        System.out.println("Null Root: " + inorderTraversal(null));
-        System.out.println("Single Node: " + inorderTraversal(new TreeNode(42)));
+        System.out.println("=== BinaryTreeInorderTraversal Execution Suite ===");
+        
+        TreeNode tree1 = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
+        System.out.println("Tree [1, null, 2, 3]: " + inorderTraversal(tree1));
+
+        TreeNode tree2 = new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(5));
+        System.out.println("BST [4, 2, 5, 1, 3]: " + inorderTraversal(tree2));
+
+        System.out.println("Null Tree Test:     " + inorderTraversal(null));
+        System.out.println("Single Node Test:   " + inorderTraversal(new TreeNode(42)));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
