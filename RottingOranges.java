@@ -8,7 +8,6 @@ import java.util.Queue;
  */
 public class RottingOranges {
 
-    // Multi-source BFS Queue O(R * C) solution
     public static int orangesRottingBFS(int[][] grid) {
         if (grid == null || grid.length == 0) return 0;
         int rows = grid.length, cols = grid[0].length;
@@ -52,7 +51,10 @@ public class RottingOranges {
     }
 
     public static void main(String[] args) {
-        int[][] grid = {{2, 1, 1}, {1, 1, 0}, {0, 1, 1}};
-        System.out.println("Minutes to Rot All: " + orangesRotting(grid));
+        int[][] impossibleGrid = {{2, 1, 1}, {0, 1, 1}, {1, 0, 1}};
+        System.out.println("Impossible Grid: " + orangesRotting(impossibleGrid));
+
+        int[][] noFreshGrid = {{0, 2}};
+        System.out.println("No Fresh Grid:   " + orangesRotting(noFreshGrid));
     }
 }
