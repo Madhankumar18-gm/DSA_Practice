@@ -20,8 +20,17 @@ public class BinaryTreeInorderTraversal {
         }
     }
 
+    // Recursive Inorder Traversal (Left -> Root -> Right)
+    public static void helperRecursive(TreeNode root, List<Integer> result) {
+        if (root == null) return;
+        helperRecursive(root.left, result);
+        result.add(root.val);
+        helperRecursive(root.right, result);
+    }
+
     public static List<Integer> inorderTraversal(TreeNode root) {
-        // TODO: Implement traversal
-        return new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
+        helperRecursive(root, result);
+        return result;
     }
 }
