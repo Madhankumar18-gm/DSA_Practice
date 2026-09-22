@@ -8,7 +8,6 @@ import java.util.Set;
  */
 public class LongestSubstring {
 
-    // Optimized Sliding Window O(N) approach
     public static int lengthOfLongestSubstringSlidingWindow(String s) {
         Set<Character> set = new HashSet<>();
         int left = 0, maxLen = 0;
@@ -28,7 +27,9 @@ public class LongestSubstring {
     }
 
     public static void main(String[] args) {
-        String test = "abcabcbb";
-        System.out.println("Longest substring of '" + test + "': " + lengthOfLongestSubstring(test));
+        String[] samples = {"abcabcbb", "bbbbb", "pwwkew", ""};
+        for (String str : samples) {
+            System.out.println("String: \"" + str + "\" -> Length: " + lengthOfLongestSubstring(str));
+        }
     }
 }
