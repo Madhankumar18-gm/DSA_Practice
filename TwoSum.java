@@ -7,10 +7,17 @@ import java.util.Map;
  * 
  * Given an array of integers `nums` and an integer `target`, return indices of 
  * the two numbers such that they add up to target.
+ * 
+ * Time Complexity: O(N) where N is the length of array
+ * Space Complexity: O(N) for hash map storing elements
  */
 public class TwoSum {
 
-    // Brute Force Approach: O(N^2) time complexity
+    /**
+     * Finds indices using Brute Force approach.
+     * Time Complexity: O(N^2)
+     * Space Complexity: O(1)
+     */
     public static int[] twoSumBruteForce(int[] nums, int target) {
         if (nums == null || nums.length < 2) {
             return new int[]{};
@@ -25,7 +32,11 @@ public class TwoSum {
         return new int[]{};
     }
 
-    // Optimized Approach: O(N) time complexity using HashMap
+    /**
+     * Finds indices using One-pass HashMap lookup.
+     * Time Complexity: O(N)
+     * Space Complexity: O(N)
+     */
     public static int[] twoSumOptimized(int[] nums, int target) {
         if (nums == null || nums.length < 2) {
             return new int[]{};
