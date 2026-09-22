@@ -24,6 +24,17 @@ public class ReverseLinkedList {
         return prev;
     }
 
+    // Recursive approach to reverse linked list
+    public static ListNode reverseListRecursive(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode reversedSubproblem = reverseListRecursive(head.next);
+        head.next.next = head;
+        head.next = null;
+        return reversedSubproblem;
+    }
+
     public static ListNode reverseList(ListNode head) {
         return reverseListIterative(head);
     }
