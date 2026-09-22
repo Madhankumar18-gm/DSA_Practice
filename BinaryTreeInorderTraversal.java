@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Problem 4: Binary Tree Inorder Traversal
@@ -27,14 +28,29 @@ public class BinaryTreeInorderTraversal {
         helperRecursive(root.right, result);
     }
 
-    public static List<Integer> inorderTraversal(TreeNode root) {
+    // Iterative Inorder Traversal using Stack
+    public static List<Integer> inorderIterative(TreeNode root) {
         List<Integer> result = new ArrayList<>();
-        helperRecursive(root, result);
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
+
+        while (curr != null || !stack.isEmpty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+            result.add(curr.val);
+            curr = curr.right;
+        }
         return result;
     }
 
+    public static List<Integer> inorderTraversal(TreeNode root) {
+        return inorderIterative(root);
+    }
+
     public static void main(String[] args) {
-        // Tree: 1 -> right: 2 -> left: 3
         TreeNode root = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
         System.out.println("Inorder Result: " + inorderTraversal(root));
     }
