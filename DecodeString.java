@@ -1,20 +1,43 @@
+import java.util.Stack;
+
 /**
  * Problem 15: Decode String
  * 
- * Given an encoded string, return its decoded string: k[encoded_string] repeated k times.
+ * Given an encoded string, return its decoded string.
  */
 public class DecodeString {
 
-    public static String decodeSimple(String s) {
-        StringBuilder sb = new StringBuilder();
+    // Optimal Two Stack O(N) solution
+    public static String decodeStringStack(String s) {
+        Stack<Integer> countStack = new Stack<>();
+        Stack<StringBuilder> stringStack = new Stack<>();
+        StringBuilder currentString = new StringBuilder();
+        int k = 0;
+
         for (char ch : s.toCharArray()) {
-            if (Character.isLetter(ch)) sb.append(ch);
+            if (Character.isDigit(ch)) {
+                k = k * 10 + (ch - '0');
+            } else if (ch == '[') {
+                countStack.push(k);
+                stringStack.push(currentString);
+                currentString = new StringBuilder();
+                k = 0;
+            } else if (ch == ']') {
+                StringBuilder decoded = stringStack.pop();
+                int currentK = countStack.pop();
+                for (int i = 0; i < currentK; i++) {
+                    decoded.append(currentString);
+                }
+                currentString = decoded;
+            } else {
+                currentString.append(ch);
+            }
         }
-        return sb.toString();
+        return currentString.toString();
     }
 
     public static String decodeString(String s) {
-        return decodeSimple(s);
+        return decodeStringStack(s);
     }
 
     public static void main(String[] args) {
