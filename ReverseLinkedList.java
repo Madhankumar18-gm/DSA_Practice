@@ -13,6 +13,7 @@ public class ReverseLinkedList {
     }
 
     public static ListNode reverseListIterative(ListNode head) {
+        if (head == null) return null;
         ListNode prev = null;
         ListNode current = head;
         while (current != null) {
@@ -39,6 +40,10 @@ public class ReverseLinkedList {
     }
 
     public static void printList(ListNode head) {
+        if (head == null) {
+            System.out.println("EMPTY_LIST");
+            return;
+        }
         ListNode curr = head;
         while (curr != null) {
             System.out.print(curr.val + (curr.next != null ? " -> " : ""));
@@ -52,8 +57,8 @@ public class ReverseLinkedList {
         ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(3)));
         printList(reverseListIterative(list1));
 
-        System.out.println("--- Testing Recursive Reversal ---");
-        ListNode list2 = new ListNode(10, new ListNode(20, new ListNode(30)));
-        printList(reverseListRecursive(list2));
+        System.out.println("--- Testing Single Node & Null ---");
+        printList(reverseListIterative(new ListNode(99)));
+        printList(reverseListIterative(null));
     }
 }
