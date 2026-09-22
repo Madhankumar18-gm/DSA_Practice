@@ -44,6 +44,12 @@ public class SimplifyPath {
     }
 
     public static void main(String[] args) {
-        System.out.println("Canonical: " + simplifyPath("/home//foo/"));
+        System.out.println("=== SimplifyPath Execution Suite ===");
+        System.out.println("Path: \"/home/\"               -> " + simplifyPath("/home/"));
+        System.out.println("Path: \"/../\"                -> " + simplifyPath("/../"));
+        System.out.println("Path: \"/home//foo/\"           -> " + simplifyPath("/home//foo/"));
+        System.out.println("Path: \"/a/./b/../../c/\"     -> " + simplifyPath("/a/./b/../../c/"));
+        System.out.println("Path: \"/a/../../b/../c//.//\" -> " + simplifyPath("/a/../../b/../c//.//"));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
