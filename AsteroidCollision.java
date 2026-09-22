@@ -5,9 +5,16 @@ import java.util.Stack;
  * Problem 16: Asteroid Collision
  * 
  * Find out the state of the asteroids after all collisions.
+ * 
+ * Time Complexity: O(N) each asteroid pushed/popped at most once.
+ * Space Complexity: O(N) for stack storing surviving asteroids.
  */
 public class AsteroidCollision {
 
+    /**
+     * Simulates asteroid collision using Stack.
+     * Time: O(N), Space: O(N)
+     */
     public static int[] asteroidCollisionStack(int[] asteroids) {
         if (asteroids == null || asteroids.length == 0) {
             return new int[]{};
@@ -42,7 +49,7 @@ public class AsteroidCollision {
     }
 
     public static void main(String[] args) {
-        System.out.println("Null Guard:  " + Arrays.toString(asteroidCollision(null)));
-        System.out.println("Empty Guard: " + Arrays.toString(asteroidCollision(new int[]{})));
+        int[] asteroids = {5, 10, -5};
+        System.out.println("Result: " + Arrays.toString(asteroidCollision(asteroids)));
     }
 }
