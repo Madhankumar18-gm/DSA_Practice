@@ -6,9 +6,16 @@ import java.util.List;
  * Problem 6: Merge Intervals
  * 
  * Given an array of `intervals` where intervals[i] = [starti, endi], merge all overlapping intervals.
+ * 
+ * Time Complexity: O(N log N) due to sorting step.
+ * Space Complexity: O(N) for output merged array list.
  */
 public class MergeIntervals {
 
+    /**
+     * Merges overlapping intervals after sorting by start times.
+     * Time: O(N log N), Space: O(N)
+     */
     public static int[][] mergeOptimal(int[][] intervals) {
         if (intervals == null || intervals.length <= 1) {
             return intervals == null ? new int[0][0] : intervals;
@@ -41,8 +48,5 @@ public class MergeIntervals {
     public static void main(String[] args) {
         int[][] input1 = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
         System.out.println("Test 1: " + Arrays.deepToString(merge(input1)));
-
-        System.out.println("Null Guard: " + Arrays.deepToString(merge(null)));
-        System.out.println("Empty Guard: " + Arrays.deepToString(merge(new int[0][0])));
     }
 }
