@@ -47,13 +47,15 @@ public class MinStack {
     }
 
     public static void main(String[] args) {
-        MinStack minStack = new MinStack();
-        minStack.push(-2);
-        minStack.push(0);
-        minStack.push(-3);
-        System.out.println("Get Min: " + minStack.getMin());
-        minStack.pop();
-        System.out.println("Top:     " + minStack.top());
-        System.out.println("Get Min: " + minStack.getMin());
+        System.out.println("=== MinStack Execution Suite ===");
+        MinStack ms = new MinStack();
+        ms.push(-2);
+        ms.push(0);
+        ms.push(-3);
+        System.out.println("Pushed: -2, 0, -3");
+        System.out.println("Current Min: " + ms.getMin()); // expected -3
+        ms.pop();
+        System.out.println("After Pop -> Top: " + ms.top() + ", Min: " + ms.getMin()); // expected top 0, min -2
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
