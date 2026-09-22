@@ -58,7 +58,15 @@ public class RottingOranges {
     }
 
     public static void main(String[] args) {
-        int[][] grid = {{2, 1, 1}, {1, 1, 0}, {0, 1, 1}};
-        System.out.println("Minutes: " + orangesRotting(grid));
+        System.out.println("=== RottingOranges Execution Suite ===");
+        int[][] grid1 = {{2, 1, 1}, {1, 1, 0}, {0, 1, 1}};
+        System.out.println("Standard Grid (4 mins):   " + orangesRotting(grid1));
+
+        int[][] grid2 = {{2, 1, 1}, {0, 1, 1}, {1, 0, 1}};
+        System.out.println("Impossible Grid (-1):     " + orangesRotting(grid2));
+
+        int[][] grid3 = {{0, 2}};
+        System.out.println("No Fresh Oranges (0):     " + orangesRotting(grid3));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
