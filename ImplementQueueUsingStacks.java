@@ -3,7 +3,7 @@ import java.util.Stack;
 /**
  * Problem 11: Implement Queue using Stacks
  * 
- * Implement a first-in first-out (FIFO) queue using two stacks (inStack & outStack).
+ * Implement a first-in first-out (FIFO) queue using two stacks.
  */
 public class ImplementQueueUsingStacks {
     public static class MyQueue {
@@ -12,18 +12,15 @@ public class ImplementQueueUsingStacks {
 
         public MyQueue() { }
 
-        // Amortized O(1) Push
         public void push(int x) {
             inStack.push(x);
         }
 
-        // Amortized O(1) Pop
         public int pop() {
             peek();
             return outStack.pop();
         }
 
-        // Amortized O(1) Peek
         public int peek() {
             if (outStack.isEmpty()) {
                 while (!inStack.isEmpty()) {
@@ -39,9 +36,12 @@ public class ImplementQueueUsingStacks {
     }
 
     public static void main(String[] args) {
-        MyQueue queue = new MyQueue();
-        queue.push(1);
-        queue.push(2);
-        System.out.println("Peek: " + queue.peek());
+        MyQueue q = new MyQueue();
+        q.push(10);
+        q.push(20);
+        System.out.println("Pop:   " + q.pop());   // 10
+        q.push(30);
+        System.out.println("Peek:  " + q.peek());  // 20
+        System.out.println("Empty? " + q.empty()); // false
     }
 }
