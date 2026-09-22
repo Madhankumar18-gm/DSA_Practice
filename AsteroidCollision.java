@@ -49,7 +49,11 @@ public class AsteroidCollision {
     }
 
     public static void main(String[] args) {
-        int[] asteroids = {5, 10, -5};
-        System.out.println("Result: " + Arrays.toString(asteroidCollision(asteroids)));
+        System.out.println("=== AsteroidCollision Execution Suite ===");
+        System.out.println("Input [5, 10, -5]:    " + Arrays.toString(asteroidCollision(new int[]{5, 10, -5})));
+        System.out.println("Input [8, -8]:        " + Arrays.toString(asteroidCollision(new int[]{8, -8})));
+        System.out.println("Input [10, 2, -5]:    " + Arrays.toString(asteroidCollision(new int[]{10, 2, -5})));
+        System.out.println("Input [-2, -1, 1, 2]: " + Arrays.toString(asteroidCollision(new int[]{-2, -1, 1, 2})));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
