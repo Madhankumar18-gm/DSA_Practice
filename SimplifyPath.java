@@ -8,6 +8,8 @@ import java.util.Stack;
 public class SimplifyPath {
 
     public static String simplifyPathStack(String path) {
+        if (path == null || path.isEmpty()) return "/";
+
         Stack<String> stack = new Stack<>();
         String[] components = path.split("/");
 
@@ -35,8 +37,7 @@ public class SimplifyPath {
     }
 
     public static void main(String[] args) {
-        System.out.println("/../:                " + simplifyPath("/../"));
-        System.out.println("/a/./b/../../c/:     " + simplifyPath("/a/./b/../../c/"));
-        System.out.println("/a/../../b/../c//.//: " + simplifyPath("/a/../../b/../c//.//"));
+        System.out.println("Null Path Guard:  " + simplifyPath(null));
+        System.out.println("Empty Path Guard: " + simplifyPath(""));
     }
 }
