@@ -17,11 +17,13 @@ public class ImplementQueueUsingStacks {
         }
 
         public int pop() {
+            if (empty()) throw new IllegalStateException("Queue is empty");
             peek();
             return outStack.pop();
         }
 
         public int peek() {
+            if (empty()) throw new IllegalStateException("Queue is empty");
             if (outStack.isEmpty()) {
                 while (!inStack.isEmpty()) {
                     outStack.push(inStack.pop());
@@ -37,11 +39,6 @@ public class ImplementQueueUsingStacks {
 
     public static void main(String[] args) {
         MyQueue q = new MyQueue();
-        q.push(10);
-        q.push(20);
-        System.out.println("Pop:   " + q.pop());   // 10
-        q.push(30);
-        System.out.println("Peek:  " + q.peek());  // 20
-        System.out.println("Empty? " + q.empty()); // false
+        System.out.println("Is Empty: " + q.empty());
     }
 }
