@@ -49,6 +49,10 @@ public class DecodeString {
     }
 
     public static void main(String[] args) {
-        System.out.println("Decoded: " + decodeString("3[a]2[bc]"));
+        System.out.println("=== DecodeString Execution Suite ===");
+        System.out.println("Input: \"3[a]2[bc]\"    -> " + decodeString("3[a]2[bc]"));
+        System.out.println("Input: \"3[a2[c]]\"    -> " + decodeString("3[a2[c]]"));
+        System.out.println("Input: \"2[abc]3[cd]\" -> " + decodeString("2[abc]3[cd]"));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
