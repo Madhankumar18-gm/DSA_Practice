@@ -9,18 +9,15 @@ import java.util.Deque;
  */
 public class SlidingWindowMaximum {
 
-    // Monotonic Deque O(N) solution
     public static int[] maxSlidingWindowDeque(int[] nums, int k) {
         int n = nums.length;
         int[] result = new int[n - k + 1];
         Deque<Integer> deque = new ArrayDeque<>();
 
         for (int i = 0; i < n; i++) {
-            // Remove indices out of window bounds
             if (!deque.isEmpty() && deque.peekFirst() < i - k + 1) {
                 deque.pollFirst();
             }
-            // Maintain monotonic decreasing deque order
             while (!deque.isEmpty() && nums[deque.peekLast()] < nums[i]) {
                 deque.pollLast();
             }
@@ -38,8 +35,7 @@ public class SlidingWindowMaximum {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
-        int k = 3;
-        System.out.println("Max Sliding Window: " + Arrays.toString(maxSlidingWindow(nums, k)));
+        System.out.println("k = 1 Test: " + Arrays.toString(maxSlidingWindow(new int[]{1}, 1)));
+        System.out.println("k = 3 Test: " + Arrays.toString(maxSlidingWindow(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
     }
 }
