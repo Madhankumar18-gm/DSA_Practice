@@ -7,7 +7,6 @@ import java.util.Stack;
  */
 public class SimplifyPath {
 
-    // Optimal Stack O(N) directory traversal solution
     public static String simplifyPathStack(String path) {
         Stack<String> stack = new Stack<>();
         String[] components = path.split("/");
@@ -36,7 +35,8 @@ public class SimplifyPath {
     }
 
     public static void main(String[] args) {
-        String path = "/home//foo/";
-        System.out.println("Result: " + simplifyPath(path));
+        System.out.println("/../:                " + simplifyPath("/../"));
+        System.out.println("/a/./b/../../c/:     " + simplifyPath("/a/./b/../../c/"));
+        System.out.println("/a/../../b/../c//.//: " + simplifyPath("/a/../../b/../c//.//"));
     }
 }
