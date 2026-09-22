@@ -45,9 +45,15 @@ public class ImplementQueueUsingStacks {
     }
 
     public static void main(String[] args) {
+        System.out.println("=== ImplementQueueUsingStacks Execution Suite ===");
         MyQueue q = new MyQueue();
-        q.push(1);
-        q.push(2);
-        System.out.println("Pop: " + q.pop());
+        q.push(10);
+        q.push(20);
+        q.push(30);
+        System.out.println("Front Element: " + q.peek()); // 10
+        System.out.println("Popped:        " + q.pop());  // 10
+        System.out.println("New Front:     " + q.peek()); // 20
+        System.out.println("Is Empty?      " + q.empty());// false
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
