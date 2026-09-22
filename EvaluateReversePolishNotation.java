@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Stack;
 
 /**
  * Problem 9: Evaluate Reverse Polish Notation
@@ -8,35 +7,31 @@ import java.util.List;
  */
 public class EvaluateReversePolishNotation {
 
-    public static int evalRPNNaive(String[] tokens) {
-        List<String> list = new ArrayList<>();
-        for (String t : tokens) list.add(t);
-
-        int i = 0;
-        while (list.size() > 1) {
-            String token = list.get(i);
-            if (token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/")) {
-                int a = Integer.parseInt(list.get(i - 2));
-                int b = Integer.parseInt(list.get(i - 1));
-                int res = 0;
-                if (token.equals("+")) res = a + b;
-                else if (token.equals("-")) res = a - b;
-                else if (token.equals("*")) res = a * b;
-                else if (token.equals("/")) res = a / b;
-
-                list.remove(i);
-                list.remove(i - 1);
-                list.set(i - 2, String.valueOf(res));
-                i = 0;
+    // Optimal Stack O(N) evaluation
+    public static int evalRPNStack(String[] tokens) {
+        Stack<Integer> stack = new Stack<>();
+        for (String token : tokens) {
+            if (token.equals("+")) {
+                stack.push(stack.pop() + stack.pop());
+            } else if (token.equals("-")) {
+                int b = stack.pop();
+                int a = stack.pop();
+                stack.push(a - b);
+            } else if (token.equals("*")) {
+                stack.push(stack.pop() * stack.pop());
+            } else if (token.equals("/")) {
+                int b = stack.pop();
+                int a = stack.pop();
+                stack.push(a / b);
             } else {
-                i++;
+                stack.push(Integer.parseInt(token));
             }
         }
-        return Integer.parseInt(list.get(0));
+        return stack.pop();
     }
 
     public static int evalRPN(String[] tokens) {
-        return evalRPNNaive(tokens);
+        return evalRPNStack(tokens);
     }
 
     public static void main(String[] args) {
