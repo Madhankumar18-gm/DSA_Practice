@@ -7,7 +7,6 @@ import java.util.Stack;
  */
 public class EvaluateReversePolishNotation {
 
-    // Optimal Stack O(N) evaluation
     public static int evalRPNStack(String[] tokens) {
         Stack<Integer> stack = new Stack<>();
         for (String token : tokens) {
@@ -35,7 +34,10 @@ public class EvaluateReversePolishNotation {
     }
 
     public static void main(String[] args) {
-        String[] tokens = {"2", "1", "+", "3", "*"};
-        System.out.println("Result: " + evalRPN(tokens));
+        String[] expr1 = {"4", "13", "5", "/", "+"};
+        System.out.println("Expr 1 Result: " + evalRPN(expr1));
+
+        String[] expr2 = {"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"};
+        System.out.println("Expr 2 Result: " + evalRPN(expr2));
     }
 }
