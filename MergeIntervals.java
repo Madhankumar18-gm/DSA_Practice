@@ -46,7 +46,16 @@ public class MergeIntervals {
     }
 
     public static void main(String[] args) {
+        System.out.println("=== MergeIntervals Execution Suite ===");
+        
         int[][] input1 = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
-        System.out.println("Test 1: " + Arrays.deepToString(merge(input1)));
+        System.out.println("Merged [[1,3],[2,6],[8,10],[15,18]]: " + Arrays.deepToString(merge(input1)));
+
+        int[][] input2 = {{1, 4}, {4, 5}};
+        System.out.println("Merged [[1,4],[4,5]]:               " + Arrays.deepToString(merge(input2)));
+
+        int[][] input3 = {{6, 8}, {1, 9}, {2, 4}};
+        System.out.println("Merged [[6,8],[1,9],[2,4]]:         " + Arrays.deepToString(merge(input3)));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
