@@ -9,6 +9,9 @@ import java.util.Stack;
 public class ValidParentheses {
 
     public static boolean isValidStack(String s) {
+        if (s == null || s.length() % 2 != 0) {
+            return false;
+        }
         Stack<Character> stack = new Stack<>();
         for (char c : s.toCharArray()) {
             if (c == '(') stack.push(')');
@@ -26,7 +29,7 @@ public class ValidParentheses {
     }
 
     public static void main(String[] args) {
-        String[] tests = {"()", "()[]{}", "(]", "([)]", "{[]}"};
+        String[] tests = {"()", "()[]{}", "(]", "([)]", "{[]}", "", null, "("};
         for (String test : tests) {
             System.out.println("String: \"" + test + "\" -> " + isValid(test));
         }
