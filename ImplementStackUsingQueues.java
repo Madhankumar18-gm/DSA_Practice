@@ -4,7 +4,7 @@ import java.util.Queue;
 /**
  * Problem 12: Implement Stack using Queues
  * 
- * Implement a last-in-first-out (LIFO) stack using two queues.
+ * Implement a last-in-first-out (LIFO) stack using queues.
  */
 public class ImplementStackUsingQueues {
     public static class MyStack {
@@ -34,5 +34,12 @@ public class ImplementStackUsingQueues {
         public boolean empty() {
             return q1.isEmpty();
         }
+    }
+
+    public static void main(String[] args) {
+        MyStack stack = new MyStack();
+        stack.push(1);
+        stack.push(2);
+        System.out.println("Top: " + stack.top()); // 2
     }
 }
