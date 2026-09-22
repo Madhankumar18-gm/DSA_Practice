@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Problem 1: Two Sum
  * 
@@ -20,5 +22,12 @@ public class TwoSum {
 
     public static int[] twoSum(int[] nums, int target) {
         return twoSumBruteForce(nums, target);
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 7, 11, 15};
+        int target = 9;
+        int[] result = twoSum(nums, target);
+        System.out.println("Two Sum Result: " + Arrays.toString(result));
     }
 }
