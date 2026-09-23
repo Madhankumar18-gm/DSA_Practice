@@ -43,13 +43,24 @@ public class NQueens {
 
     public static List<List<String>> solveNQueens(int n) {
         List<List<String>> result = new ArrayList<>();
+        if (n <= 0) return result;
         char[][] board = new char[n][n];
         for (int i = 0; i < n; i++) Arrays.fill(board[i], '.');
         backtrack(0, board, result, n);
         return result;
     }
 
+    public static void printSolutions(List<List<String>> solutions) {
+        for (int k = 0; k < solutions.size(); k++) {
+            System.out.println("Solution " + (k + 1) + ":");
+            for (String row : solutions.get(k)) {
+                System.out.println("  " + row);
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        System.out.println("N=4 Solutions: " + solveNQueens(4).size());
+        List<List<String>> res = solveNQueens(4);
+        printSolutions(res);
     }
 }
