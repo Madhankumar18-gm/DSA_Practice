@@ -28,4 +28,10 @@ public class CombinationSum {
         backtrackBasic(0, candidates, target, new ArrayList<>(), result);
         return result;
     }
+
+    public static void main(String[] args) {
+        int[] candidates = {2, 3, 6, 7};
+        int target = 7;
+        System.out.println("Combinations: " + combinationSum(candidates, target));
+    }
 }
