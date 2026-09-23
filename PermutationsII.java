@@ -10,14 +10,17 @@ import java.util.Set;
  */
 public class PermutationsII {
 
-    // Naive HashSet deduplication
     public static List<List<Integer>> permuteUniqueNaive(int[] nums) {
         Set<List<Integer>> set = new HashSet<>();
-        // Deduplication container
         return new ArrayList<>(set);
     }
 
     public static List<List<Integer>> permuteUnique(int[] nums) {
         return permuteUniqueNaive(nums);
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 1, 2};
+        System.out.println("Unique Permutations: " + permuteUnique(nums).size());
     }
 }
