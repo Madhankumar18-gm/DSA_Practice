@@ -19,4 +19,8 @@ public class PalindromePartitioning {
         List<List<String>> result = new ArrayList<>();
         return result;
     }
+
+    public static void main(String[] args) {
+        System.out.println("Palindrome Partitions Count: " + partition("aab").size());
+    }
 }
