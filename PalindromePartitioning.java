@@ -31,14 +31,14 @@ public class PalindromePartitioning {
     }
 
     public static List<List<String>> partition(String s) {
+        if (s == null || s.isEmpty()) return new ArrayList<>();
         List<List<String>> result = new ArrayList<>();
-        if (s == null || s.isEmpty()) return result;
         backtrack(0, s, new ArrayList<>(), result);
         return result;
     }
 
     public static void main(String[] args) {
-        System.out.println("Partitions of 'a':       " + partition("a"));
-        System.out.println("Partitions of 'racecar': " + partition("racecar"));
+        System.out.println("Null Guard:  " + partition(null));
+        System.out.println("Empty Guard: " + partition(""));
     }
 }
