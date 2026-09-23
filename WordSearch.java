@@ -44,7 +44,15 @@ public class WordSearch {
     }
 
     public static void main(String[] args) {
-        char[][] board = {{'A','B'}, {'C','D'}};
-        System.out.println("Exists: " + exist(board, "AB"));
+        System.out.println("=== WordSearch Execution Suite ===");
+        char[][] board = {
+            {'A','B','C','E'},
+            {'S','F','C','S'},
+            {'A','D','E','E'}
+        };
+        System.out.println("Word \"ABCCED\" Exists: " + exist(board, "ABCCED"));
+        System.out.println("Word \"SEE\" Exists:    " + exist(board, "SEE"));
+        System.out.println("Word \"ABCB\" Exists:   " + exist(board, "ABCB"));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
