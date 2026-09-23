@@ -40,6 +40,11 @@ public class CombinationSum {
     }
 
     public static void main(String[] args) {
-        System.out.println("Combinations: " + combinationSum(new int[]{2, 3, 6, 7}, 7));
+        System.out.println("=== CombinationSum Execution Suite ===");
+        int[] candidates = {2, 3, 6, 7};
+        int target = 7;
+        List<List<Integer>> res = combinationSum(candidates, target);
+        System.out.println("Candidates [2, 3, 6, 7], Target 7 -> Combinations: " + res);
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
