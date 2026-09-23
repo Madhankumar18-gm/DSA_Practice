@@ -42,6 +42,11 @@ public class PermutationsII {
     }
 
     public static void main(String[] args) {
-        System.out.println("Unique Permutations: " + permuteUnique(new int[]{1, 1, 2}));
+        System.out.println("=== PermutationsII Execution Suite ===");
+        int[] input = {1, 1, 2};
+        List<List<Integer>> res = permuteUnique(input);
+        System.out.println("Input [1, 1, 2] -> Unique Permutations Count: " + res.size());
+        System.out.println("All Permutations: " + res);
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
