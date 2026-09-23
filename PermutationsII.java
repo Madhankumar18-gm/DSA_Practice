@@ -9,7 +9,6 @@ import java.util.List;
  */
 public class PermutationsII {
 
-    // Optimal Sorting + Duplicate Skipping Backtracking O(N * N!)
     private static void backtrack(int[] nums, boolean[] used, List<Integer> current, List<List<Integer>> result) {
         if (current.size() == nums.length) {
             result.add(new ArrayList<>(current));
@@ -17,7 +16,6 @@ public class PermutationsII {
         }
         for (int i = 0; i < nums.length; i++) {
             if (used[i]) continue;
-            // Skip duplicates: if previous equal number was not used in current branch
             if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) continue;
 
             used[i] = true;
@@ -36,8 +34,14 @@ public class PermutationsII {
         return result;
     }
 
+    public static void printPermutations(List<List<Integer>> perms) {
+        for (List<Integer> p : perms) {
+            System.out.println("  " + p);
+        }
+    }
+
     public static void main(String[] args) {
         int[] nums = {1, 1, 2};
-        System.out.println("Unique Permutations: " + permuteUnique(nums));
+        printPermutations(permuteUnique(nums));
     }
 }
