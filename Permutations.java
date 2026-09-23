@@ -29,4 +29,9 @@ public class Permutations {
         backtrackVisited(nums, new boolean[nums.length], new ArrayList<>(), result);
         return result;
     }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3};
+        System.out.println("Permutations count: " + permute(nums).size());
+    }
 }
