@@ -24,14 +24,7 @@ public class Subsets {
         return result;
     }
 
-    public static void printPowerSet(List<List<Integer>> powerSet) {
-        System.out.println("Power Set Size: " + powerSet.size());
-        for (List<Integer> sub : powerSet) {
-            System.out.println("  " + sub);
-        }
-    }
-
     public static void main(String[] args) {
-        printPowerSet(subsets(new int[]{1, 2, 3}));
+        System.out.println("Single Element [0] Subsets: " + subsets(new int[]{0}));
     }
 }
