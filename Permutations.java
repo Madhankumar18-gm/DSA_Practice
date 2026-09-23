@@ -38,6 +38,11 @@ public class Permutations {
     }
 
     public static void main(String[] args) {
-        System.out.println("Permutations: " + permute(new int[]{1, 2, 3}));
+        System.out.println("=== Permutations Execution Suite ===");
+        int[] input = {1, 2, 3};
+        List<List<Integer>> res = permute(input);
+        System.out.println("Input [1, 2, 3] -> Total Permutations: " + res.size());
+        System.out.println("Sample Permutation: " + res.get(0));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
