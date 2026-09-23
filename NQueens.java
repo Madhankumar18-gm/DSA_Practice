@@ -50,17 +50,9 @@ public class NQueens {
         return result;
     }
 
-    public static void printSolutions(List<List<String>> solutions) {
-        for (int k = 0; k < solutions.size(); k++) {
-            System.out.println("Solution " + (k + 1) + ":");
-            for (String row : solutions.get(k)) {
-                System.out.println("  " + row);
-            }
-        }
-    }
-
     public static void main(String[] args) {
-        List<List<String>> res = solveNQueens(4);
-        printSolutions(res);
+        System.out.println("N=1 Solution Count: " + solveNQueens(1).size());
+        System.out.println("N=4 Solution Count: " + solveNQueens(4).size());
+        System.out.println("N=8 Solution Count: " + solveNQueens(8).size());
     }
 }
