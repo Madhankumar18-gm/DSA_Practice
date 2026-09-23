@@ -6,8 +6,24 @@ import java.util.List;
  * Problem 18: N-Queens
  * 
  * Place n queens on an n x n chessboard such that no two queens attack each other.
+ * 
+ * Time Complexity: O(N!) since we prune invalid column branches.
+ * Space Complexity: O(N^2) for board storage and recursive stack depth.
  */
 public class NQueens {
+
+    /**
+     * Finds all distinct placements of N non-attacking queens.
+     * Time: O(N!), Space: O(N^2)
+     */
+    public static List<List<String>> solveNQueens(int n) {
+        if (n <= 0) return new ArrayList<>();
+        List<List<String>> result = new ArrayList<>();
+        char[][] board = new char[n][n];
+        for (int i = 0; i < n; i++) Arrays.fill(board[i], '.');
+        backtrack(0, board, result, n);
+        return result;
+    }
 
     private static boolean isSafe(char[][] board, int row, int col, int n) {
         for (int i = 0; i < row; i++) {
@@ -41,17 +57,7 @@ public class NQueens {
         }
     }
 
-    public static List<List<String>> solveNQueens(int n) {
-        if (n <= 0) return new ArrayList<>();
-        List<List<String>> result = new ArrayList<>();
-        char[][] board = new char[n][n];
-        for (int i = 0; i < n; i++) Arrays.fill(board[i], '.');
-        backtrack(0, board, result, n);
-        return result;
-    }
-
     public static void main(String[] args) {
-        System.out.println("N=0 Guard: " + solveNQueens(0).size());
-        System.out.println("N=-1 Guard: " + solveNQueens(-1).size());
+        System.out.println("N=4 Solutions: " + solveNQueens(4).size());
     }
 }
