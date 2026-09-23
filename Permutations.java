@@ -22,8 +22,8 @@ public class Permutations {
     }
 
     public static List<List<Integer>> permute(int[] nums) {
+        if (nums == null || nums.length == 0) return new ArrayList<>();
         List<List<Integer>> result = new ArrayList<>();
-        if (nums == null || nums.length == 0) return result;
         List<Integer> list = new ArrayList<>();
         for (int num : nums) list.add(num);
         backtrackSwap(0, list, result);
@@ -31,7 +31,7 @@ public class Permutations {
     }
 
     public static void main(String[] args) {
-        System.out.println("[0, 1] Permutations Count: " + permute(new int[]{0, 1}).size());
-        System.out.println("[1] Permutations Count:    " + permute(new int[]{1}).size());
+        System.out.println("Null Guard:  " + permute(null));
+        System.out.println("Empty Guard: " + permute(new int[]{}));
     }
 }
