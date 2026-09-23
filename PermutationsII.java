@@ -34,14 +34,7 @@ public class PermutationsII {
         return result;
     }
 
-    public static void printPermutations(List<List<Integer>> perms) {
-        for (List<Integer> p : perms) {
-            System.out.println("  " + p);
-        }
-    }
-
     public static void main(String[] args) {
-        int[] nums = {1, 1, 2};
-        printPermutations(permuteUnique(nums));
+        System.out.println("[2, 2, 1, 1] Unique Perms: " + permuteUnique(new int[]{2, 2, 1, 1}).size());
     }
 }
