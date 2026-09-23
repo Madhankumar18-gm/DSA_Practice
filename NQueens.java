@@ -42,8 +42,8 @@ public class NQueens {
     }
 
     public static List<List<String>> solveNQueens(int n) {
+        if (n <= 0) return new ArrayList<>();
         List<List<String>> result = new ArrayList<>();
-        if (n <= 0) return result;
         char[][] board = new char[n][n];
         for (int i = 0; i < n; i++) Arrays.fill(board[i], '.');
         backtrack(0, board, result, n);
@@ -51,8 +51,7 @@ public class NQueens {
     }
 
     public static void main(String[] args) {
-        System.out.println("N=1 Solution Count: " + solveNQueens(1).size());
-        System.out.println("N=4 Solution Count: " + solveNQueens(4).size());
-        System.out.println("N=8 Solution Count: " + solveNQueens(8).size());
+        System.out.println("N=0 Guard: " + solveNQueens(0).size());
+        System.out.println("N=-1 Guard: " + solveNQueens(-1).size());
     }
 }
