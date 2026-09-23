@@ -40,7 +40,6 @@ public class WordSearch {
             {'S','F','C','S'},
             {'A','D','E','E'}
         };
-        System.out.println("ABCCED Exists: " + exist(board, "ABCCED"));
-        System.out.println("SEE Exists:    " + exist(board, "SEE"));
+        System.out.println("ABCB Exists (False): " + exist(board, "ABCB"));
     }
 }
