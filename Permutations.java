@@ -30,14 +30,8 @@ public class Permutations {
         return result;
     }
 
-    public static void printPermutations(List<List<Integer>> perms) {
-        for (List<Integer> p : perms) {
-            System.out.println("  " + p);
-        }
-    }
-
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3};
-        printPermutations(permute(nums));
+        System.out.println("[0, 1] Permutations Count: " + permute(new int[]{0, 1}).size());
+        System.out.println("[1] Permutations Count:    " + permute(new int[]{1}).size());
     }
 }
