@@ -9,7 +9,6 @@ import java.util.List;
  */
 public class Permutations {
 
-    // Optimal Swap Backtracking O(N * N!) solution
     private static void backtrackSwap(int first, List<Integer> list, List<List<Integer>> result) {
         if (first == list.size()) {
             result.add(new ArrayList<>(list));
@@ -31,8 +30,14 @@ public class Permutations {
         return result;
     }
 
+    public static void printPermutations(List<List<Integer>> perms) {
+        for (List<Integer> p : perms) {
+            System.out.println("  " + p);
+        }
+    }
+
     public static void main(String[] args) {
         int[] nums = {1, 2, 3};
-        System.out.println("Permutations: " + permute(nums));
+        printPermutations(permute(nums));
     }
 }
