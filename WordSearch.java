@@ -24,7 +24,9 @@ public class WordSearch {
     }
 
     public static boolean exist(char[][] board, String word) {
-        if (board == null || board.length == 0 || word == null) return false;
+        if (board == null || board.length == 0 || board[0].length == 0 || word == null || word.isEmpty()) {
+            return false;
+        }
         int rows = board.length, cols = board[0].length;
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; c++) {
@@ -35,11 +37,7 @@ public class WordSearch {
     }
 
     public static void main(String[] args) {
-        char[][] board = {
-            {'A','B','C','E'},
-            {'S','F','C','S'},
-            {'A','D','E','E'}
-        };
-        System.out.println("ABCB Exists (False): " + exist(board, "ABCB"));
+        System.out.println("Null Board Guard: " + exist(null, "A"));
+        System.out.println("Empty Word Guard: " + exist(new char[][]{{'A'}}, ""));
     }
 }
