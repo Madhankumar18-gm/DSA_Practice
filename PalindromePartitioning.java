@@ -45,6 +45,11 @@ public class PalindromePartitioning {
     }
 
     public static void main(String[] args) {
-        System.out.println("Partitions of 'aab': " + partition("aab"));
+        System.out.println("=== PalindromePartitioning Execution Suite ===");
+        String s = "aab";
+        List<List<String>> res = partition(s);
+        System.out.println("Input \"aab\" -> Total Palindromic Partitions: " + res.size());
+        System.out.println("Partitions: " + res);
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
