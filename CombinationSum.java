@@ -32,13 +32,7 @@ public class CombinationSum {
         return result;
     }
 
-    public static void printCombinations(List<List<Integer>> combinations) {
-        for (List<Integer> c : combinations) {
-            System.out.println("  " + c);
-        }
-    }
-
     public static void main(String[] args) {
-        printCombinations(combinationSum(new int[]{2, 3, 5}, 8));
+        System.out.println("Impossible Target Test: " + combinationSum(new int[]{2}, 1));
     }
 }
