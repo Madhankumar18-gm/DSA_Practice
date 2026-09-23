@@ -15,6 +15,10 @@ public class SudokuSolver {
     }
 
     public static void solveSudoku(char[][] board) {
-        // Validation helper setup
+        // Runner setup
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Sudoku Solver Initialized.");
     }
 }
