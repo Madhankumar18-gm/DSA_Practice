@@ -27,14 +27,15 @@ public class PermutationsII {
     }
 
     public static List<List<Integer>> permuteUnique(int[] nums) {
+        if (nums == null || nums.length == 0) return new ArrayList<>();
         List<List<Integer>> result = new ArrayList<>();
-        if (nums == null || nums.length == 0) return result;
         Arrays.sort(nums);
         backtrack(nums, new boolean[nums.length], new ArrayList<>(), result);
         return result;
     }
 
     public static void main(String[] args) {
-        System.out.println("[2, 2, 1, 1] Unique Perms: " + permuteUnique(new int[]{2, 2, 1, 1}).size());
+        System.out.println("Null Guard:  " + permuteUnique(null));
+        System.out.println("Empty Guard: " + permuteUnique(new int[]{}));
     }
 }
