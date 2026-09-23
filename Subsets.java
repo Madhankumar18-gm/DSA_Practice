@@ -18,13 +18,14 @@ public class Subsets {
     }
 
     public static List<List<Integer>> subsets(int[] nums) {
+        if (nums == null) return new ArrayList<>();
         List<List<Integer>> result = new ArrayList<>();
-        if (nums == null) return result;
         backtrackLoop(0, nums, new ArrayList<>(), result);
         return result;
     }
 
     public static void main(String[] args) {
-        System.out.println("Single Element [0] Subsets: " + subsets(new int[]{0}));
+        System.out.println("Null Array Guard:  " + subsets(null));
+        System.out.println("Empty Array Guard: " + subsets(new int[]{}));
     }
 }
