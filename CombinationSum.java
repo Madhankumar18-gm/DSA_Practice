@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -8,24 +9,27 @@ import java.util.List;
  */
 public class CombinationSum {
 
-    private static void backtrackBasic(int start, int[] candidates, int remain, List<Integer> current, List<List<Integer>> result) {
+    // Optimal Sorted Backtracking with Early Pruning
+    private static void backtrackPruned(int start, int[] candidates, int remain, List<Integer> current, List<List<Integer>> result) {
         if (remain == 0) {
             result.add(new ArrayList<>(current));
             return;
         }
-        if (remain < 0) return;
 
         for (int i = start; i < candidates.length; i++) {
+            if (remain - candidates[i] < 0) break; // Early loop break due to sorting
+
             current.add(candidates[i]);
-            backtrackBasic(i, candidates, remain - candidates[i], current, result);
+            backtrackPruned(i, candidates, remain - candidates[i], current, result);
             current.remove(current.size() - 1);
         }
     }
 
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<>();
-        if (candidates == null) return result;
-        backtrackBasic(0, candidates, target, new ArrayList<>(), result);
+        if (candidates == null || target <= 0) return result;
+        Arrays.sort(candidates);
+        backtrackPruned(0, candidates, target, new ArrayList<>(), result);
         return result;
     }
 
