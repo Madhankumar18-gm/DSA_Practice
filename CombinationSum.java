@@ -25,14 +25,15 @@ public class CombinationSum {
     }
 
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
+        if (candidates == null || candidates.length == 0 || target <= 0) return new ArrayList<>();
         List<List<Integer>> result = new ArrayList<>();
-        if (candidates == null || target <= 0) return result;
         Arrays.sort(candidates);
         backtrackPruned(0, candidates, target, new ArrayList<>(), result);
         return result;
     }
 
     public static void main(String[] args) {
-        System.out.println("Impossible Target Test: " + combinationSum(new int[]{2}, 1));
+        System.out.println("Null Guard:     " + combinationSum(null, 7));
+        System.out.println("Zero Target:   " + combinationSum(new int[]{2, 3}, 0));
     }
 }
