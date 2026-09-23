@@ -9,7 +9,6 @@ import java.util.List;
  */
 public class NQueens {
 
-    // Helper method to build empty board
     public static char[][] createBoard(int n) {
         char[][] board = new char[n][n];
         for (int i = 0; i < n; i++) {
@@ -22,5 +21,9 @@ public class NQueens {
         List<List<String>> result = new ArrayList<>();
         char[][] board = createBoard(n);
         return result;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("N=4 Solutions: " + solveNQueens(4).size());
     }
 }
