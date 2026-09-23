@@ -1,0 +1,61 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * Problem 6: Merge Intervals
+ * 
+ * Given an array of `intervals` where intervals[i] = [starti, endi], merge all overlapping intervals.
+ * 
+ * Time Complexity: O(N log N) due to sorting step.
+ * Space Complexity: O(N) for output merged array list.
+ */
+public class MergeIntervals {
+
+    /**
+     * Merges overlapping intervals after sorting by start times.
+     * Time: O(N log N), Space: O(N)
+     */
+    public static int[][] mergeOptimal(int[][] intervals) {
+        if (intervals == null || intervals.length <= 1) {
+            return intervals == null ? new int[0][0] : intervals;
+        }
+
+        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+        List<int[]> merged = new ArrayList<>();
+        int[] currentInterval = intervals[0];
+        merged.add(currentInterval);
+
+        for (int[] interval : intervals) {
+            int currentEnd = currentInterval[1];
+            int nextStart = interval[0];
+            int nextEnd = interval[1];
+
+            if (currentEnd >= nextStart) {
+                currentInterval[1] = Math.max(currentEnd, nextEnd);
+            } else {
+                currentInterval = interval;
+                merged.add(currentInterval);
+            }
+        }
+        return merged.toArray(new int[merged.size()][]);
+    }
+
+    public static int[][] merge(int[][] intervals) {
+        return mergeOptimal(intervals);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== MergeIntervals Execution Suite ===");
+        
+        int[][] input1 = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+        System.out.println("Merged [[1,3],[2,6],[8,10],[15,18]]: " + Arrays.deepToString(merge(input1)));
+
+        int[][] input2 = {{1, 4}, {4, 5}};
+        System.out.println("Merged [[1,4],[4,5]]:               " + Arrays.deepToString(merge(input2)));
+
+        int[][] input3 = {{6, 8}, {1, 9}, {2, 4}};
+        System.out.println("Merged [[6,8],[1,9],[2,4]]:         " + Arrays.deepToString(merge(input3)));
+        System.out.println("=== All Tests Completed Successfully ===");
+    }
+}
