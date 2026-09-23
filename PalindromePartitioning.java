@@ -15,7 +15,6 @@ public class PalindromePartitioning {
         return true;
     }
 
-    // Optimal Backtracking O(N * 2^N) partition search
     private static void backtrack(int start, String s, List<String> current, List<List<String>> result) {
         if (start == s.length()) {
             result.add(new ArrayList<>(current));
@@ -38,7 +37,13 @@ public class PalindromePartitioning {
         return result;
     }
 
+    public static void printPartitions(List<List<String>> partitions) {
+        for (List<String> part : partitions) {
+            System.out.println("  " + part);
+        }
+    }
+
     public static void main(String[] args) {
-        System.out.println("Partitions of 'aab': " + partition("aab"));
+        printPartitions(partition("aab"));
     }
 }
