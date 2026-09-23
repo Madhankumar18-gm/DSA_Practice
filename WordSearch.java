@@ -5,7 +5,6 @@
  */
 public class WordSearch {
 
-    // Optimal 4-directional DFS Backtracking with cell marking
     private static boolean dfs(char[][] board, String word, int r, int c, int index) {
         if (index == word.length()) return true;
         if (r < 0 || r >= board.length || c < 0 || c >= board[0].length || board[r][c] != word.charAt(index)) {
@@ -13,14 +12,14 @@ public class WordSearch {
         }
 
         char temp = board[r][c];
-        board[r][c] = '#'; // mark visited
+        board[r][c] = '#';
 
         boolean found = dfs(board, word, r + 1, c, index + 1) ||
                         dfs(board, word, r - 1, c, index + 1) ||
                         dfs(board, word, r, c + 1, index + 1) ||
                         dfs(board, word, r, c - 1, index + 1);
 
-        board[r][c] = temp; // backtrack unmark
+        board[r][c] = temp;
         return found;
     }
 
@@ -36,7 +35,12 @@ public class WordSearch {
     }
 
     public static void main(String[] args) {
-        char[][] board = {{'A','B'}, {'C','D'}};
-        System.out.println("Word Search Exists: " + exist(board, "AB"));
+        char[][] board = {
+            {'A','B','C','E'},
+            {'S','F','C','S'},
+            {'A','D','E','E'}
+        };
+        System.out.println("ABCCED Exists: " + exist(board, "ABCCED"));
+        System.out.println("SEE Exists:    " + exist(board, "SEE"));
     }
 }
