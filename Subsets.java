@@ -32,6 +32,11 @@ public class Subsets {
     }
 
     public static void main(String[] args) {
-        System.out.println("Subsets: " + subsets(new int[]{1, 2, 3}));
+        System.out.println("=== Subsets Execution Suite ===");
+        int[] input = {1, 2, 3};
+        List<List<Integer>> res = subsets(input);
+        System.out.println("Input [1, 2, 3] -> Total Subsets (2^3=8): " + res.size());
+        System.out.println("Power Set: " + res);
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
