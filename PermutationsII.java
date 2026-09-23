@@ -6,8 +6,23 @@ import java.util.List;
  * Problem 21: Permutations II
  * 
  * Given a collection of numbers, `nums`, that might contain duplicates, return all possible unique permutations.
+ * 
+ * Time Complexity: O(N * N!) sorted array pruning avoids duplicate branches.
+ * Space Complexity: O(N) for used boolean array and recursion stack.
  */
 public class PermutationsII {
+
+    /**
+     * Generates all unique permutations avoiding duplicate outputs.
+     * Time: O(N * N!), Space: O(N)
+     */
+    public static List<List<Integer>> permuteUnique(int[] nums) {
+        if (nums == null || nums.length == 0) return new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+        backtrack(nums, new boolean[nums.length], new ArrayList<>(), result);
+        return result;
+    }
 
     private static void backtrack(int[] nums, boolean[] used, List<Integer> current, List<List<Integer>> result) {
         if (current.size() == nums.length) {
@@ -26,16 +41,7 @@ public class PermutationsII {
         }
     }
 
-    public static List<List<Integer>> permuteUnique(int[] nums) {
-        if (nums == null || nums.length == 0) return new ArrayList<>();
-        List<List<Integer>> result = new ArrayList<>();
-        Arrays.sort(nums);
-        backtrack(nums, new boolean[nums.length], new ArrayList<>(), result);
-        return result;
-    }
-
     public static void main(String[] args) {
-        System.out.println("Null Guard:  " + permuteUnique(null));
-        System.out.println("Empty Guard: " + permuteUnique(new int[]{}));
+        System.out.println("Unique Permutations: " + permuteUnique(new int[]{1, 1, 2}));
     }
 }
