@@ -14,8 +14,28 @@ public class SudokuSolver {
         return true;
     }
 
+    public static boolean solve(char[][] board) {
+        for (int r = 0; r < 9; r++) {
+            for (int c = 0; c < 9; c++) {
+                if (board[r][c] == '.') {
+                    for (char ch = '1'; ch <= '9'; ch++) {
+                        if (isValid(board, r, c, ch)) {
+                            board[r][c] = ch;
+                            if (solve(board)) return true;
+                            board[r][c] = '.';
+                        }
+                    }
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public static void solveSudoku(char[][] board) {
-        // Runner setup
+        if (board != null && board.length == 9) {
+            solve(board);
+        }
     }
 
     public static void main(String[] args) {
