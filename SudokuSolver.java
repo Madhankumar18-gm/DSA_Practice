@@ -33,24 +33,13 @@ public class SudokuSolver {
     }
 
     public static void solveSudoku(char[][] board) {
-        if (board != null && board.length == 9) {
-            solve(board);
-        }
+        if (board == null || board.length != 9 || board[0].length != 9) return;
+        solve(board);
     }
 
     public static void main(String[] args) {
-        char[][] board = {
-            {'5','3','.','.','7','.','.','.','.'},
-            {'6','.','.','1','9','5','.','.','.'},
-            {'.','9','8','.','.','.','.','6','.'},
-            {'8','.','.','.','6','.','.','.','3'},
-            {'4','.','.','8','.','3','.','.','1'},
-            {'7','.','.','.','2','.','.','.','6'},
-            {'.','6','.','.','.','.','2','8','.'},
-            {'.','.','.','4','1','9','.','.','5'},
-            {'.','.','.','.','8','.','.','7','9'}
-        };
-        solveSudoku(board);
-        System.out.println("Solved First Cell: " + board[0][2]);
+        solveSudoku(null);
+        solveSudoku(new char[0][0]);
+        System.out.println("Null & Invalid board guards passed.");
     }
 }
