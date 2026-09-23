@@ -5,15 +5,12 @@
  */
 public class WordSearch {
 
-    public static boolean dfsBasic(char[][] board, String word, int r, int c, int index) {
-        if (index == word.length()) return true;
-        if (r < 0 || r >= board.length || c < 0 || c >= board[0].length || board[r][c] != word.charAt(index)) {
-            return false;
-        }
+    public static boolean exist(char[][] board, String word) {
         return false;
     }
 
-    public static boolean exist(char[][] board, String word) {
-        return false;
+    public static void main(String[] args) {
+        char[][] board = {{'A','B'}, {'C','D'}};
+        System.out.println("Word Search Exists: " + exist(board, "AB"));
     }
 }
