@@ -1,7 +1,6 @@
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Problem 21: Permutations II
@@ -10,17 +9,35 @@ import java.util.Set;
  */
 public class PermutationsII {
 
-    public static List<List<Integer>> permuteUniqueNaive(int[] nums) {
-        Set<List<Integer>> set = new HashSet<>();
-        return new ArrayList<>(set);
+    // Optimal Sorting + Duplicate Skipping Backtracking O(N * N!)
+    private static void backtrack(int[] nums, boolean[] used, List<Integer> current, List<List<Integer>> result) {
+        if (current.size() == nums.length) {
+            result.add(new ArrayList<>(current));
+            return;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (used[i]) continue;
+            // Skip duplicates: if previous equal number was not used in current branch
+            if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) continue;
+
+            used[i] = true;
+            current.add(nums[i]);
+            backtrack(nums, used, current, result);
+            current.remove(current.size() - 1);
+            used[i] = false;
+        }
     }
 
     public static List<List<Integer>> permuteUnique(int[] nums) {
-        return permuteUniqueNaive(nums);
+        List<List<Integer>> result = new ArrayList<>();
+        if (nums == null || nums.length == 0) return result;
+        Arrays.sort(nums);
+        backtrack(nums, new boolean[nums.length], new ArrayList<>(), result);
+        return result;
     }
 
     public static void main(String[] args) {
         int[] nums = {1, 1, 2};
-        System.out.println("Unique Permutations: " + permuteUnique(nums).size());
+        System.out.println("Unique Permutations: " + permuteUnique(nums));
     }
 }
