@@ -8,7 +8,6 @@ import java.util.List;
  */
 public class Subsets {
 
-    // Optimal Cascading Backtracking Loop O(N * 2^N)
     private static void backtrackLoop(int start, int[] nums, List<Integer> current, List<List<Integer>> result) {
         result.add(new ArrayList<>(current));
         for (int i = start; i < nums.length; i++) {
@@ -25,8 +24,14 @@ public class Subsets {
         return result;
     }
 
+    public static void printPowerSet(List<List<Integer>> powerSet) {
+        System.out.println("Power Set Size: " + powerSet.size());
+        for (List<Integer> sub : powerSet) {
+            System.out.println("  " + sub);
+        }
+    }
+
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3};
-        System.out.println("Subsets: " + subsets(nums));
+        printPowerSet(subsets(new int[]{1, 2, 3}));
     }
 }
