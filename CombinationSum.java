@@ -9,7 +9,6 @@ import java.util.List;
  */
 public class CombinationSum {
 
-    // Optimal Sorted Backtracking with Early Pruning
     private static void backtrackPruned(int start, int[] candidates, int remain, List<Integer> current, List<List<Integer>> result) {
         if (remain == 0) {
             result.add(new ArrayList<>(current));
@@ -17,7 +16,7 @@ public class CombinationSum {
         }
 
         for (int i = start; i < candidates.length; i++) {
-            if (remain - candidates[i] < 0) break; // Early loop break due to sorting
+            if (remain - candidates[i] < 0) break;
 
             current.add(candidates[i]);
             backtrackPruned(i, candidates, remain - candidates[i], current, result);
@@ -33,9 +32,13 @@ public class CombinationSum {
         return result;
     }
 
+    public static void printCombinations(List<List<Integer>> combinations) {
+        for (List<Integer> c : combinations) {
+            System.out.println("  " + c);
+        }
+    }
+
     public static void main(String[] args) {
-        int[] candidates = {2, 3, 6, 7};
-        int target = 7;
-        System.out.println("Combinations: " + combinationSum(candidates, target));
+        printCombinations(combinationSum(new int[]{2, 3, 5}, 8));
     }
 }
