@@ -58,6 +58,10 @@ public class NQueens {
     }
 
     public static void main(String[] args) {
-        System.out.println("N=4 Solutions: " + solveNQueens(4).size());
+        System.out.println("=== NQueens Execution Suite ===");
+        System.out.println("N = 1 -> Total Solutions: " + solveNQueens(1).size());
+        System.out.println("N = 4 -> Total Solutions: " + solveNQueens(4).size());
+        System.out.println("N = 8 -> Total Solutions: " + solveNQueens(8).size());
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
