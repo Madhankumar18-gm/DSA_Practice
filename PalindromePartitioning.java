@@ -37,13 +37,8 @@ public class PalindromePartitioning {
         return result;
     }
 
-    public static void printPartitions(List<List<String>> partitions) {
-        for (List<String> part : partitions) {
-            System.out.println("  " + part);
-        }
-    }
-
     public static void main(String[] args) {
-        printPartitions(partition("aab"));
+        System.out.println("Partitions of 'a':       " + partition("a"));
+        System.out.println("Partitions of 'racecar': " + partition("racecar"));
     }
 }
