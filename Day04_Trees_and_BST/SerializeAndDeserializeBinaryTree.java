@@ -21,7 +21,6 @@ public class SerializeAndDeserializeBinaryTree {
     }
 
     public static class Codec {
-        // Optimal Preorder DFS Codec O(N)
         public String serialize(TreeNode root) {
             StringBuilder sb = new StringBuilder();
             buildString(root, sb);
@@ -56,9 +55,8 @@ public class SerializeAndDeserializeBinaryTree {
 
     public static void main(String[] args) {
         Codec codec = new Codec();
-        TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(3));
-        String serialized = codec.serialize(root);
-        TreeNode deserialized = codec.deserialize(serialized);
-        System.out.println("Deserialized Root Val: " + deserialized.val);
+        TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(3, new TreeNode(4), new TreeNode(5)));
+        String str = codec.serialize(root);
+        System.out.println("Full Serialized String: " + str);
     }
 }
