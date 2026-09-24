@@ -2,6 +2,9 @@
  * Problem 35: Balanced Binary Tree
  * 
  * Given a binary tree, determine if it is height-balanced.
+ * 
+ * Time Complexity: O(N) visiting each node once bottom-up.
+ * Space Complexity: O(H) recursion stack depth.
  */
 public class BalancedBinaryTree {
     public static class TreeNode {
@@ -16,6 +19,10 @@ public class BalancedBinaryTree {
         }
     }
 
+    /**
+     * Checks height balance using bottom-up DFS.
+     * Time: O(N), Space: O(H)
+     */
     public static boolean isBalanced(TreeNode root) {
         if (root == null) return true;
         return checkHeight(root) != -1;
@@ -32,6 +39,7 @@ public class BalancedBinaryTree {
     }
 
     public static void main(String[] args) {
-        System.out.println("Null Root Guard: " + isBalanced(null));
+        TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        System.out.println("Is Balanced? " + isBalanced(root));
     }
 }
