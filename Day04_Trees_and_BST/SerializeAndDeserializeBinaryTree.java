@@ -55,8 +55,9 @@ public class SerializeAndDeserializeBinaryTree {
 
     public static void main(String[] args) {
         Codec codec = new Codec();
-        TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(3, new TreeNode(4), new TreeNode(5)));
-        String str = codec.serialize(root);
-        System.out.println("Full Serialized String: " + str);
+        TreeNode single = new TreeNode(42);
+        String s = codec.serialize(single);
+        TreeNode d = codec.deserialize(s);
+        System.out.println("Single Node Reconstructed: " + d.val);
     }
 }
