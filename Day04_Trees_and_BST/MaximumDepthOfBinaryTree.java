@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Problem 26: Maximum Depth of Binary Tree
  * 
@@ -16,9 +19,14 @@ public class MaximumDepthOfBinaryTree {
         }
     }
 
-    public static int maxDepth(TreeNode root) {
+    // Optimal Recursive DFS O(N)
+    public static int maxDepthDFS(TreeNode root) {
         if (root == null) return 0;
-        return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+        return 1 + Math.max(maxDepthDFS(root.left), maxDepthDFS(root.right));
+    }
+
+    public static int maxDepth(TreeNode root) {
+        return maxDepthDFS(root);
     }
 
     public static void main(String[] args) {
