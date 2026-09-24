@@ -16,18 +16,23 @@ public class BalancedBinaryTree {
         }
     }
 
-    public static boolean isBalanced(TreeNode root) {
-        return checkHeight(root) != -1;
-    }
-
+    // Optimal Bottom-Up DFS O(N) balance checker
     private static int checkHeight(TreeNode node) {
         if (node == null) return 0;
-        int left = checkHeight(node.left);
-        if (left == -1) return -1;
-        int right = checkHeight(node.right);
-        if (right == -1) return -1;
-        if (Math.abs(left - right) > 1) return -1;
-        return 1 + Math.max(left, right);
+
+        int leftHeight = checkHeight(node.left);
+        if (leftHeight == -1) return -1;
+
+        int rightHeight = checkHeight(node.right);
+        if (rightHeight == -1) return -1;
+
+        if (Math.abs(leftHeight - rightHeight) > 1) return -1;
+
+        return 1 + Math.max(leftHeight, rightHeight);
+    }
+
+    public static boolean isBalanced(TreeNode root) {
+        return checkHeight(root) != -1;
     }
 
     public static void main(String[] args) {
