@@ -19,7 +19,6 @@ public class ConstructBinaryTreeFromPreorderAndInorder {
         }
     }
 
-    // Optimal HashMap Index Lookup Tree Construction O(N)
     private static int preIndex = 0;
     private static Map<Integer, Integer> inMap = new HashMap<>();
 
@@ -44,10 +43,19 @@ public class ConstructBinaryTreeFromPreorderAndInorder {
         return arrayToTree(preorder, 0, inorder.length - 1);
     }
 
+    public static void printPreorder(TreeNode root) {
+        if (root == null) return;
+        System.out.print(root.val + " ");
+        printPreorder(root.left);
+        printPreorder(root.right);
+    }
+
     public static void main(String[] args) {
         int[] preorder = {3, 9, 20, 15, 7};
         int[] inorder = {9, 3, 15, 20, 7};
         TreeNode root = buildTree(preorder, inorder);
-        System.out.println("Built Root Val: " + root.val);
+        System.out.print("Reconstructed Preorder: ");
+        printPreorder(root);
+        System.out.println();
     }
 }
