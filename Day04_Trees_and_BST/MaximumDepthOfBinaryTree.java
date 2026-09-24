@@ -19,30 +19,14 @@ public class MaximumDepthOfBinaryTree {
         }
     }
 
-    // Iterative BFS Queue level-order height calculation
-    public static int maxDepthBFS(TreeNode root) {
-        if (root == null) return 0;
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        int depth = 0;
-        while (!queue.isEmpty()) {
-            depth++;
-            int size = queue.size();
-            for (int i = 0; i < size; i++) {
-                TreeNode curr = queue.poll();
-                if (curr.left != null) queue.add(curr.left);
-                if (curr.right != null) queue.add(curr.right);
-            }
-        }
-        return depth;
-    }
-
     public static int maxDepth(TreeNode root) {
-        return maxDepthBFS(root);
+        if (root == null) return 0;
+        return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
-        System.out.println("Max Depth (BFS): " + maxDepth(root));
+        System.out.println("Single Node Depth: " + maxDepth(new TreeNode(1)));
+        TreeNode skewed = new TreeNode(1, null, new TreeNode(2, null, new TreeNode(3)));
+        System.out.println("Skewed Tree Depth: " + maxDepth(skewed));
     }
 }
