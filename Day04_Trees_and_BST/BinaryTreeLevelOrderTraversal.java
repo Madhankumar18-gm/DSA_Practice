@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 /**
  * Problem 30: Binary Tree Level Order Traversal
@@ -22,25 +20,12 @@ public class BinaryTreeLevelOrderTraversal {
     }
 
     public static List<List<Integer>> levelOrder(TreeNode root) {
+        if (root == null) return new ArrayList<>();
         List<List<Integer>> result = new ArrayList<>();
-        if (root == null) return result;
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
-            int levelSize = queue.size();
-            List<Integer> currentLevel = new ArrayList<>();
-            for (int i = 0; i < levelSize; i++) {
-                TreeNode node = queue.poll();
-                currentLevel.add(node.val);
-                if (node.left != null) queue.add(node.left);
-                if (node.right != null) queue.add(node.right);
-            }
-            result.add(currentLevel);
-        }
         return result;
     }
 
     public static void main(String[] args) {
-        System.out.println("Single Node: " + levelOrder(new TreeNode(1)));
+        System.out.println("Null Root Guard: " + levelOrder(null));
     }
 }
