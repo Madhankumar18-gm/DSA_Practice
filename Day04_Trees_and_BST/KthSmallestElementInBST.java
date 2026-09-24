@@ -18,29 +18,33 @@ public class KthSmallestElementInBST {
         }
     }
 
-    // Optimal Iterative Stack Inorder Traversal stopping at K
-    public static int kthSmallestStack(TreeNode root, int k) {
-        Stack<TreeNode> stack = new Stack<>();
-        TreeNode curr = root;
+    private static int count = 0;
+    private static int result = -1;
 
-        while (curr != null || !stack.isEmpty()) {
-            while (curr != null) {
-                stack.push(curr);
-                curr = curr.left;
-            }
-            curr = stack.pop();
-            if (--k == 0) return curr.val;
-            curr = curr.right;
+    private static void inorderDFS(TreeNode root, int k) {
+        if (root == null) return;
+        inorderDFS(root.left, k);
+        count++;
+        if (count == k) {
+            result = root.val;
+            return;
         }
-        return -1;
+        inorderDFS(root.right, k);
+    }
+
+    public static int kthSmallestRecursive(TreeNode root, int k) {
+        count = 0;
+        result = -1;
+        inorderDFS(root, k);
+        return result;
     }
 
     public static int kthSmallest(TreeNode root, int k) {
-        return kthSmallestStack(root, k);
+        return kthSmallestRecursive(root, k);
     }
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3, new TreeNode(1, null, new TreeNode(2)), new TreeNode(4));
-        System.out.println("1st Smallest: " + kthSmallest(root, 1));
+        System.out.println("1st Smallest (DFS): " + kthSmallest(root, 1));
     }
 }
