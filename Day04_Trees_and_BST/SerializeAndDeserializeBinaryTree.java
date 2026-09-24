@@ -1,3 +1,7 @@
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Problem 33: Serialize and Deserialize Binary Tree
  * 
@@ -17,7 +21,14 @@ public class SerializeAndDeserializeBinaryTree {
     }
 
     public static class Codec {
-        public String serialize(TreeNode root) { return ""; }
-        public TreeNode deserialize(String data) { return null; }
+        // Preorder DFS serialization baseline
+        public String serialize(TreeNode root) {
+            if (root == null) return "null,";
+            return root.val + "," + serialize(root.left) + serialize(root.right);
+        }
+
+        public TreeNode deserialize(String data) {
+            return null;
+        }
     }
 }
