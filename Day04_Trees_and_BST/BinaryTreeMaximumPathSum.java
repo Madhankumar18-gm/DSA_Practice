@@ -2,6 +2,9 @@
  * Problem 34: Binary Tree Maximum Path Sum
  * 
  * Return the maximum path sum of any non-empty path.
+ * 
+ * Time Complexity: O(N) visiting each node once.
+ * Space Complexity: O(H) recursion stack depth.
  */
 public class BinaryTreeMaximumPathSum {
     public static class TreeNode {
@@ -16,12 +19,12 @@ public class BinaryTreeMaximumPathSum {
         }
     }
 
+    /**
+     * Calculates maximum path sum using post-order DFS.
+     * Time: O(N), Space: O(H)
+     */
     public static int maxPathSum(TreeNode root) {
         if (root == null) return 0;
-        return maxGainHelper(root);
-    }
-
-    private static int maxGainHelper(TreeNode root) {
         int[] max = new int[]{Integer.MIN_VALUE};
         maxGain(root, max);
         return max[0];
@@ -36,6 +39,7 @@ public class BinaryTreeMaximumPathSum {
     }
 
     public static void main(String[] args) {
-        System.out.println("Null root guard: " + maxPathSum(null));
+        TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+        System.out.println("Max Path Sum: " + maxPathSum(root));
     }
 }
