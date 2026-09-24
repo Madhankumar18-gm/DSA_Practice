@@ -21,7 +21,6 @@ public class SerializeAndDeserializeBinaryTree {
     }
 
     public static class Codec {
-        // Preorder DFS serialization baseline
         public String serialize(TreeNode root) {
             if (root == null) return "null,";
             return root.val + "," + serialize(root.left) + serialize(root.right);
@@ -30,5 +29,12 @@ public class SerializeAndDeserializeBinaryTree {
         public TreeNode deserialize(String data) {
             return null;
         }
+    }
+
+    public static void main(String[] args) {
+        Codec codec = new Codec();
+        TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+        String serialized = codec.serialize(root);
+        System.out.println("Serialized: " + serialized);
     }
 }
