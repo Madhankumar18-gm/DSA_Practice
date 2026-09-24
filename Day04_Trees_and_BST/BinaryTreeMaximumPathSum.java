@@ -1,7 +1,6 @@
 /**
  * Problem 34: Binary Tree Maximum Path Sum
  * 
- * A path in a binary tree is a sequence of nodes where each pair of adjacent nodes has an edge connecting them.
  * Return the maximum path sum of any non-empty path.
  */
 public class BinaryTreeMaximumPathSum {
@@ -17,8 +16,20 @@ public class BinaryTreeMaximumPathSum {
         }
     }
 
+    private static int maxSum = Integer.MIN_VALUE;
+
+    private static int gainHelper(TreeNode node) {
+        if (node == null) return 0;
+        int leftGain = Math.max(gainHelper(node.left), 0);
+        int rightGain = Math.max(gainHelper(node.right), 0);
+        int currentPathSum = node.val + leftGain + rightGain;
+        maxSum = Math.max(maxSum, currentPathSum);
+        return node.val + Math.max(leftGain, rightGain);
+    }
+
     public static int maxPathSum(TreeNode root) {
-        // TODO: Implement max path sum
-        return 0;
+        maxSum = Integer.MIN_VALUE;
+        gainHelper(root);
+        return maxSum;
     }
 }
