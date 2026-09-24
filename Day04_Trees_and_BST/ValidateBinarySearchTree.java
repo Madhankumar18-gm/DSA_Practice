@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
  * Problem 27: Validate Binary Search Tree
  * 
@@ -16,15 +18,27 @@ public class ValidateBinarySearchTree {
         }
     }
 
-    // Optimal Range Validation using Long bounds O(N)
-    private static boolean validateRange(TreeNode node, long min, long max) {
-        if (node == null) return true;
-        if (node.val <= min || node.val >= max) return false;
-        return validateRange(node.left, min, node.val) && validateRange(node.right, node.val, max);
+    // Iterative Stack Inorder Traversal validation
+    public static boolean isValidBSTInorder(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
+        TreeNode prev = null;
+
+        while (curr != null || !stack.isEmpty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+            if (prev != null && curr.val <= prev.val) return false;
+            prev = curr;
+            curr = curr.right;
+        }
+        return true;
     }
 
     public static boolean isValidBST(TreeNode root) {
-        return validateRange(root, Long.MIN_VALUE, Long.MAX_VALUE);
+        return isValidBSTInorder(root);
     }
 
     public static void main(String[] args) {
