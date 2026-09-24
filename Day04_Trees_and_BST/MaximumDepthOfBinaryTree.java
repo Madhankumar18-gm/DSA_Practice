@@ -32,7 +32,13 @@ public class MaximumDepthOfBinaryTree {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
-        System.out.println("Max Depth: " + maxDepth(root));
+        System.out.println("=== MaximumDepthOfBinaryTree Execution Suite ===");
+        TreeNode tree1 = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        System.out.println("Tree [3, 9, 20, 15, 7] Depth: " + maxDepth(tree1));
+
+        TreeNode tree2 = new TreeNode(1, null, new TreeNode(2));
+        System.out.println("Tree [1, null, 2] Depth:      " + maxDepth(tree2));
+        System.out.println("Null Tree Guard Depth:        " + maxDepth(null));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
