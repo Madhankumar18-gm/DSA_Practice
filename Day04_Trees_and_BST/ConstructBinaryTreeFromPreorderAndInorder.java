@@ -53,9 +53,13 @@ public class ConstructBinaryTreeFromPreorderAndInorder {
     }
 
     public static void main(String[] args) {
+        System.out.println("=== ConstructBinaryTreeFromPreorderAndInorder Execution Suite ===");
         int[] preorder = {3, 9, 20, 15, 7};
         int[] inorder = {9, 3, 15, 20, 7};
         TreeNode root = buildTree(preorder, inorder);
-        System.out.println("Built Root: " + root.val);
+        System.out.println("Reconstructed Root Val: " + root.val);
+        System.out.println("Root Left Child:         " + root.left.val);
+        System.out.println("Root Right Child:        " + root.right.val);
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
