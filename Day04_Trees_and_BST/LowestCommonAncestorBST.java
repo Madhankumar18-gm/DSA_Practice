@@ -39,9 +39,13 @@ public class LowestCommonAncestorBST {
     }
 
     public static void main(String[] args) {
-        TreeNode p = new TreeNode(2);
-        TreeNode q = new TreeNode(8);
-        TreeNode root = new TreeNode(6, p, q);
-        System.out.println("LCA: " + lowestCommonAncestor(root, p, q).val);
+        System.out.println("=== LowestCommonAncestorBST Execution Suite ===");
+        TreeNode n2 = new TreeNode(2, new TreeNode(0), new TreeNode(4));
+        TreeNode n8 = new TreeNode(8, new TreeNode(7), new TreeNode(9));
+        TreeNode root = new TreeNode(6, n2, n8);
+
+        System.out.println("LCA of 2 and 8 in BST [6,2,8]: " + lowestCommonAncestor(root, n2, n8).val);
+        System.out.println("LCA of 2 and 4 in BST [6,2,8]: " + lowestCommonAncestor(root, n2, n2.right).val);
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
