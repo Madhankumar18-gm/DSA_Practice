@@ -25,7 +25,6 @@ public class InvertBinaryTree {
     }
 
     public static void main(String[] args) {
-        TreeNode single = new TreeNode(1);
-        System.out.println("Single Node Inverted Val: " + invertTree(single).val);
+        System.out.println("Null Root Invert Guard: " + (invertTree(null) == null));
     }
 }
