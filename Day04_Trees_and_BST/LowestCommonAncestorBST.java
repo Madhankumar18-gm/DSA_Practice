@@ -2,6 +2,9 @@
  * Problem 29: Lowest Common Ancestor of a Binary Search Tree
  * 
  * Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes in the BST.
+ * 
+ * Time Complexity: O(H) where H is tree height (O(log N) for balanced BST).
+ * Space Complexity: O(1) for iterative traversal.
  */
 public class LowestCommonAncestorBST {
     public static class TreeNode {
@@ -16,6 +19,10 @@ public class LowestCommonAncestorBST {
         }
     }
 
+    /**
+     * Finds LCA in BST using value bounds.
+     * Time: O(H), Space: O(1)
+     */
     public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || p == null || q == null) return null;
         TreeNode curr = root;
@@ -32,6 +39,9 @@ public class LowestCommonAncestorBST {
     }
 
     public static void main(String[] args) {
-        System.out.println("Null root guard: " + lowestCommonAncestor(null, new TreeNode(1), new TreeNode(2)));
+        TreeNode p = new TreeNode(2);
+        TreeNode q = new TreeNode(8);
+        TreeNode root = new TreeNode(6, p, q);
+        System.out.println("LCA: " + lowestCommonAncestor(root, p, q).val);
     }
 }
