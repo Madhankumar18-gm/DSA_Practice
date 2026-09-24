@@ -2,6 +2,9 @@
  * Problem 27: Validate Binary Search Tree
  * 
  * Given the root of a binary tree, determine if it is a valid binary search tree (BST).
+ * 
+ * Time Complexity: O(N) visiting each node once.
+ * Space Complexity: O(H) recursion stack depth.
  */
 public class ValidateBinarySearchTree {
     public static class TreeNode {
@@ -16,6 +19,10 @@ public class ValidateBinarySearchTree {
         }
     }
 
+    /**
+     * Validates BST properties using Min/Max range bounds.
+     * Time: O(N), Space: O(H)
+     */
     public static boolean isValidBST(TreeNode root) {
         return validateRange(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
@@ -27,6 +34,7 @@ public class ValidateBinarySearchTree {
     }
 
     public static void main(String[] args) {
-        System.out.println("Null Root Guard: " + isValidBST(null));
+        TreeNode root = new TreeNode(2, new TreeNode(1), new TreeNode(3));
+        System.out.println("Is Valid BST? " + isValidBST(root));
     }
 }
