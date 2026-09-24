@@ -16,8 +16,13 @@ public class MaximumDepthOfBinaryTree {
         }
     }
 
+    // Baseline recursive height helper
+    public static int heightHelper(TreeNode node) {
+        if (node == null) return 0;
+        return 1 + Math.max(heightHelper(node.left), heightHelper(node.right));
+    }
+
     public static int maxDepth(TreeNode root) {
-        // TODO: Implement max depth
-        return 0;
+        return heightHelper(root);
     }
 }
