@@ -16,9 +16,7 @@ public class LowestCommonAncestorBST {
         }
     }
 
-    // Optimal Iterative O(H) time, O(1) space solution
-    public static TreeNode lowestCommonAncestorIterative(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null || p == null || q == null) return null;
+    public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         TreeNode curr = root;
         while (curr != null) {
             if (p.val < curr.val && q.val < curr.val) {
@@ -32,14 +30,14 @@ public class LowestCommonAncestorBST {
         return null;
     }
 
-    public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        return lowestCommonAncestorIterative(root, p, q);
-    }
-
     public static void main(String[] args) {
-        TreeNode p = new TreeNode(2);
-        TreeNode q = new TreeNode(8);
-        TreeNode root = new TreeNode(6, p, q);
-        System.out.println("LCA Val: " + lowestCommonAncestor(root, p, q).val);
+        TreeNode n3 = new TreeNode(3);
+        TreeNode n5 = new TreeNode(5);
+        TreeNode n2 = new TreeNode(2, new TreeNode(0), new TreeNode(4, n3, n5));
+        TreeNode n8 = new TreeNode(8, new TreeNode(7), new TreeNode(9));
+        TreeNode root = new TreeNode(6, n2, n8);
+
+        System.out.println("LCA of 2 and 8: " + lowestCommonAncestor(root, n2, n8).val); // 6
+        System.out.println("LCA of 2 and 4: " + lowestCommonAncestor(root, n2, n2.right).val); // 2
     }
 }
