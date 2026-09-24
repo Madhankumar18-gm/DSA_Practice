@@ -16,7 +16,6 @@ public class BinaryTreeMaximumPathSum {
         }
     }
 
-    // Optimal Post-Order DFS Max Path Sum O(N)
     private static int globalMaxSum = Integer.MIN_VALUE;
 
     private static int maxGain(TreeNode node) {
@@ -39,7 +38,7 @@ public class BinaryTreeMaximumPathSum {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(3));
-        System.out.println("Max Path Sum: " + maxPathSum(root));
+        TreeNode complexTree = new TreeNode(-10, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        System.out.println("Complex Tree Max Path Sum: " + maxPathSum(complexTree)); // 42
     }
 }
