@@ -20,11 +20,13 @@ public class ConstructBinaryTreeFromPreorderAndInorder {
     }
 
     public static TreeNode buildTree(int[] preorder, int[] inorder) {
-        if (preorder == null || inorder == null || preorder.length == 0) return null;
+        if (preorder == null || inorder == null || preorder.length == 0 || preorder.length != inorder.length) {
+            return null;
+        }
         return new TreeNode(preorder[0]);
     }
 
     public static void main(String[] args) {
-        System.out.println("Single Node Tree: " + buildTree(new int[]{-1}, new int[]{-1}).val);
+        System.out.println("Null Guard: " + buildTree(null, null));
     }
 }
