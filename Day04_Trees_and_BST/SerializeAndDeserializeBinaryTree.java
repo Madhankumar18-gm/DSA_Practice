@@ -21,13 +21,36 @@ public class SerializeAndDeserializeBinaryTree {
     }
 
     public static class Codec {
+        // Optimal Preorder DFS Codec O(N)
         public String serialize(TreeNode root) {
-            if (root == null) return "null,";
-            return root.val + "," + serialize(root.left) + serialize(root.right);
+            StringBuilder sb = new StringBuilder();
+            buildString(root, sb);
+            return sb.toString();
+        }
+
+        private void buildString(TreeNode node, StringBuilder sb) {
+            if (node == null) {
+                sb.append("null,");
+            } else {
+                sb.append(node.val).append(",");
+                buildString(node.left, sb);
+                buildString(node.right, sb);
+            }
         }
 
         public TreeNode deserialize(String data) {
-            return null;
+            if (data == null || data.isEmpty()) return null;
+            Queue<String> nodes = new LinkedList<>(Arrays.asList(data.split(",")));
+            return buildTree(nodes);
+        }
+
+        private TreeNode buildTree(Queue<String> nodes) {
+            String val = nodes.poll();
+            if (val == null || val.equals("null")) return null;
+            TreeNode node = new TreeNode(Integer.parseInt(val));
+            node.left = buildTree(nodes);
+            node.right = buildTree(nodes);
+            return node;
         }
     }
 
@@ -35,6 +58,7 @@ public class SerializeAndDeserializeBinaryTree {
         Codec codec = new Codec();
         TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(3));
         String serialized = codec.serialize(root);
-        System.out.println("Serialized: " + serialized);
+        TreeNode deserialized = codec.deserialize(serialized);
+        System.out.println("Deserialized Root Val: " + deserialized.val);
     }
 }
