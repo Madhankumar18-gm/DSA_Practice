@@ -17,6 +17,7 @@ public class BalancedBinaryTree {
     }
 
     public static boolean isBalanced(TreeNode root) {
+        if (root == null) return true;
         return checkHeight(root) != -1;
     }
 
@@ -31,6 +32,6 @@ public class BalancedBinaryTree {
     }
 
     public static void main(String[] args) {
-        System.out.println("Single Node Balanced: " + isBalanced(new TreeNode(1)));
+        System.out.println("Null Root Guard: " + isBalanced(null));
     }
 }
