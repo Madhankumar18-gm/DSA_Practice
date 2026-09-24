@@ -1,6 +1,3 @@
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * Problem 28: Invert Binary Tree
  * 
@@ -19,29 +16,16 @@ public class InvertBinaryTree {
         }
     }
 
-    // Iterative BFS Queue tree inversion
-    public static TreeNode invertTreeBFS(TreeNode root) {
+    public static TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
-            TreeNode curr = queue.poll();
-            TreeNode temp = curr.left;
-            curr.left = curr.right;
-            curr.right = temp;
-            if (curr.left != null) queue.add(curr.left);
-            if (curr.right != null) queue.add(curr.right);
-        }
+        TreeNode tempLeft = root.left;
+        root.left = invertTree(root.right);
+        root.right = invertTree(tempLeft);
         return root;
     }
 
-    public static TreeNode invertTree(TreeNode root) {
-        return invertTreeBFS(root);
-    }
-
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(4, new TreeNode(2), new TreeNode(7));
-        TreeNode inverted = invertTree(root);
-        System.out.println("Inverted Root Left (BFS): " + inverted.left.val);
+        TreeNode single = new TreeNode(1);
+        System.out.println("Single Node Inverted Val: " + invertTree(single).val);
     }
 }
