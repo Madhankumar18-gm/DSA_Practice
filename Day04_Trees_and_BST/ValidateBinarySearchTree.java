@@ -19,20 +19,18 @@ public class ValidateBinarySearchTree {
         }
     }
 
-    // Inorder collection baseline helper
-    private static void inorder(TreeNode root, List<Integer> list) {
-        if (root == null) return;
-        inorder(root.left, list);
-        list.add(root.val);
-        inorder(root.right, list);
+    public static boolean isValidBST(TreeNode root) {
+        return validate(root, null, null);
     }
 
-    public static boolean isValidBST(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
-        inorder(root, list);
-        for (int i = 1; i < list.size(); i++) {
-            if (list.get(i) <= list.get(i - 1)) return false;
-        }
-        return true;
+    private static boolean validate(TreeNode node, Integer min, Integer max) {
+        if (node == null) return true;
+        if ((min != null && node.val <= min) || (max != null && node.val >= max)) return false;
+        return validate(node.left, min, node.val) && validate(node.right, node.val, max);
+    }
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(2, new TreeNode(1), new TreeNode(3));
+        System.out.println("Is Valid BST? " + isValidBST(root));
     }
 }
