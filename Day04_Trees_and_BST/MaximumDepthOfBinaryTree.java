@@ -25,8 +25,6 @@ public class MaximumDepthOfBinaryTree {
     }
 
     public static void main(String[] args) {
-        System.out.println("Single Node Depth: " + maxDepth(new TreeNode(1)));
-        TreeNode skewed = new TreeNode(1, null, new TreeNode(2, null, new TreeNode(3)));
-        System.out.println("Skewed Tree Depth: " + maxDepth(skewed));
+        System.out.println("Null Root Depth Guard: " + maxDepth(null));
     }
 }
