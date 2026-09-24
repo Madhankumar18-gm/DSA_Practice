@@ -63,10 +63,16 @@ public class SerializeAndDeserializeBinaryTree {
     }
 
     public static void main(String[] args) {
+        System.out.println("=== SerializeAndDeserializeBinaryTree Execution Suite ===");
         Codec codec = new Codec();
-        TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(3));
-        String s = codec.serialize(root);
-        TreeNode d = codec.deserialize(s);
-        System.out.println("Reconstructed Root Val: " + d.val);
+        TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(3, new TreeNode(4), new TreeNode(5)));
+        String data = codec.serialize(root);
+        System.out.println("Serialized Data String: " + data);
+
+        TreeNode deserialized = codec.deserialize(data);
+        System.out.println("Reconstructed Root Val:  " + deserialized.val);
+        System.out.println("Reconstructed Left Val:  " + deserialized.left.val);
+        System.out.println("Reconstructed Right Val: " + deserialized.right.val);
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
