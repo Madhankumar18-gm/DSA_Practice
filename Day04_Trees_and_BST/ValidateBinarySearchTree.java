@@ -27,8 +27,6 @@ public class ValidateBinarySearchTree {
     }
 
     public static void main(String[] args) {
-        // Invalid BST: 5 -> left: 1, right: 4 (left of 4 is 3, right is 6)
-        TreeNode invalidTree = new TreeNode(5, new TreeNode(1), new TreeNode(4, new TreeNode(3), new TreeNode(6)));
-        System.out.println("Invalid Tree Validated? " + isValidBST(invalidTree)); // false
+        System.out.println("Null Root Guard: " + isValidBST(null));
     }
 }
