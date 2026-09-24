@@ -16,19 +16,22 @@ public class BalancedBinaryTree {
         }
     }
 
-    private static int height(TreeNode node) {
-        if (node == null) return 0;
-        return 1 + Math.max(height(node.left), height(node.right));
-    }
-
-    // Naive O(N^2) balance check
-    public static boolean isBalancedNaive(TreeNode root) {
-        if (root == null) return true;
-        if (Math.abs(height(root.left) - height(root.right)) > 1) return false;
-        return isBalancedNaive(root.left) && isBalancedNaive(root.right);
-    }
-
     public static boolean isBalanced(TreeNode root) {
-        return isBalancedNaive(root);
+        return checkHeight(root) != -1;
+    }
+
+    private static int checkHeight(TreeNode node) {
+        if (node == null) return 0;
+        int left = checkHeight(node.left);
+        if (left == -1) return -1;
+        int right = checkHeight(node.right);
+        if (right == -1) return -1;
+        if (Math.abs(left - right) > 1) return -1;
+        return 1 + Math.max(left, right);
+    }
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        System.out.println("Is Balanced? " + isBalanced(root));
     }
 }
