@@ -19,18 +19,30 @@ public class MaximumDepthOfBinaryTree {
         }
     }
 
-    // Optimal Recursive DFS O(N)
-    public static int maxDepthDFS(TreeNode root) {
+    // Iterative BFS Queue level-order height calculation
+    public static int maxDepthBFS(TreeNode root) {
         if (root == null) return 0;
-        return 1 + Math.max(maxDepthDFS(root.left), maxDepthDFS(root.right));
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        int depth = 0;
+        while (!queue.isEmpty()) {
+            depth++;
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode curr = queue.poll();
+                if (curr.left != null) queue.add(curr.left);
+                if (curr.right != null) queue.add(curr.right);
+            }
+        }
+        return depth;
     }
 
     public static int maxDepth(TreeNode root) {
-        return maxDepthDFS(root);
+        return maxDepthBFS(root);
     }
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
-        System.out.println("Max Depth: " + maxDepth(root));
+        System.out.println("Max Depth (BFS): " + maxDepth(root));
     }
 }
