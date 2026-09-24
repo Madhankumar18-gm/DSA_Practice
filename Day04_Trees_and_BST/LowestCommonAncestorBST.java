@@ -32,7 +32,6 @@ public class LowestCommonAncestorBST {
     }
 
     public static void main(String[] args) {
-        TreeNode node = new TreeNode(2);
-        System.out.println("Same node LCA: " + lowestCommonAncestor(node, node, node).val);
+        System.out.println("Null root guard: " + lowestCommonAncestor(null, new TreeNode(1), new TreeNode(2)));
     }
 }
