@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 /**
  * Problem 30: Binary Tree Level Order Traversal
@@ -21,16 +19,14 @@ public class BinaryTreeLevelOrderTraversal {
         }
     }
 
-    // Baseline single queue pass
-    public static List<List<Integer>> levelOrderQueue(TreeNode root) {
+    public static List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         if (root == null) return result;
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
         return result;
     }
 
-    public static List<List<Integer>> levelOrder(TreeNode root) {
-        return levelOrderQueue(root);
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        System.out.println("Level Order: " + levelOrder(root));
     }
 }
