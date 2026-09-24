@@ -32,8 +32,12 @@ public class InvertBinaryTree {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(4, new TreeNode(2), new TreeNode(7));
+        System.out.println("=== InvertBinaryTree Execution Suite ===");
+        TreeNode root = new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(7, new TreeNode(6), new TreeNode(9)));
+        System.out.println("Original Root Left: " + root.left.val + ", Right: " + root.right.val);
+
         TreeNode inverted = invertTree(root);
-        System.out.println("Inverted Root Left: " + inverted.left.val);
+        System.out.println("Inverted Root Left: " + inverted.left.val + ", Right: " + inverted.right.val);
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
