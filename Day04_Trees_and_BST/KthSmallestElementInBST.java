@@ -19,6 +19,7 @@ public class KthSmallestElementInBST {
     }
 
     public static int kthSmallest(TreeNode root, int k) {
+        if (root == null || k <= 0) return -1;
         Stack<TreeNode> stack = new Stack<>();
         TreeNode curr = root;
 
@@ -35,7 +36,7 @@ public class KthSmallestElementInBST {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(5, new TreeNode(3, new TreeNode(2, new TreeNode(1), null), new TreeNode(4)), new TreeNode(6));
-        System.out.println("3rd Smallest: " + kthSmallest(root, 3)); // 3
+        System.out.println("Null root guard: " + kthSmallest(null, 1));
+        System.out.println("Invalid k guard: " + kthSmallest(new TreeNode(1), 0));
     }
 }
