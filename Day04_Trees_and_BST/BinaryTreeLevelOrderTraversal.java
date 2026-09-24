@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Problem 30: Binary Tree Level Order Traversal
@@ -19,29 +21,26 @@ public class BinaryTreeLevelOrderTraversal {
         }
     }
 
-    // Recursive DFS level-indexed alternative solution
-    private static void dfsLevel(TreeNode node, int level, List<List<Integer>> result) {
-        if (node == null) return;
-        if (level == result.size()) {
-            result.add(new ArrayList<>());
-        }
-        result.get(level).add(node.val);
-        dfsLevel(node.left, level + 1, result);
-        dfsLevel(node.right, level + 1, result);
-    }
-
-    public static List<List<Integer>> levelOrderDFS(TreeNode root) {
+    public static List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
-        dfsLevel(root, 0, result);
+        if (root == null) return result;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            int levelSize = queue.size();
+            List<Integer> currentLevel = new ArrayList<>();
+            for (int i = 0; i < levelSize; i++) {
+                TreeNode node = queue.poll();
+                currentLevel.add(node.val);
+                if (node.left != null) queue.add(node.left);
+                if (node.right != null) queue.add(node.right);
+            }
+            result.add(currentLevel);
+        }
         return result;
     }
 
-    public static List<List<Integer>> levelOrder(TreeNode root) {
-        return levelOrderDFS(root);
-    }
-
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
-        System.out.println("Level Order (DFS): " + levelOrder(root));
+        System.out.println("Single Node: " + levelOrder(new TreeNode(1)));
     }
 }
