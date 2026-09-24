@@ -39,7 +39,12 @@ public class BalancedBinaryTree {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
-        System.out.println("Is Balanced? " + isBalanced(root));
+        System.out.println("=== BalancedBinaryTree Execution Suite ===");
+        TreeNode balancedTree = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        System.out.println("Balanced Tree [3, 9, 20, 15, 7]: " + isBalanced(balancedTree));
+
+        TreeNode unbalancedTree = new TreeNode(1, new TreeNode(2, new TreeNode(3, new TreeNode(4), null), null), null);
+        System.out.println("Unbalanced Tree [1, 2, 3, 4]:    " + isBalanced(unbalancedTree));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
