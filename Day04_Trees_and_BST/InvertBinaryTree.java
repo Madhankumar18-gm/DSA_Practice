@@ -16,8 +16,16 @@ public class InvertBinaryTree {
         }
     }
 
+    private static void swapChildren(TreeNode node) {
+        if (node == null) return;
+        TreeNode temp = node.left;
+        node.left = node.right;
+        node.right = temp;
+    }
+
     public static TreeNode invertTree(TreeNode root) {
-        // TODO: Implement inversion
+        if (root == null) return null;
+        swapChildren(root);
         return root;
     }
 }
