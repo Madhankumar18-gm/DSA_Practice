@@ -4,7 +4,7 @@ import java.util.List;
 /**
  * Problem 31: Kth Smallest Element in a BST
  * 
- * Given the root of a binary search tree, and an integer k, return the kth smallest value of all the values in the tree.
+ * Given the root of a binary search tree, and an integer k, return the kth smallest value.
  */
 public class KthSmallestElementInBST {
     public static class TreeNode {
@@ -26,13 +26,14 @@ public class KthSmallestElementInBST {
         inorder(root.right, list);
     }
 
-    public static int kthSmallestList(TreeNode root, int k) {
+    public static int kthSmallest(TreeNode root, int k) {
         List<Integer> list = new ArrayList<>();
         inorder(root, list);
         return list.get(k - 1);
     }
 
-    public static int kthSmallest(TreeNode root, int k) {
-        return kthSmallestList(root, k);
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(3, new TreeNode(1, null, new TreeNode(2)), new TreeNode(4));
+        System.out.println("1st Smallest: " + kthSmallest(root, 1));
     }
 }
