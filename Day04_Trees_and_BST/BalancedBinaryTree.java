@@ -16,6 +16,10 @@ public class BalancedBinaryTree {
         }
     }
 
+    public static boolean isBalanced(TreeNode root) {
+        return checkHeight(root) != -1;
+    }
+
     private static int checkHeight(TreeNode node) {
         if (node == null) return 0;
         int leftHeight = checkHeight(node.left);
@@ -26,12 +30,7 @@ public class BalancedBinaryTree {
         return 1 + Math.max(leftHeight, rightHeight);
     }
 
-    public static boolean isBalanced(TreeNode root) {
-        return checkHeight(root) != -1;
-    }
-
     public static void main(String[] args) {
-        TreeNode unbalanced = new TreeNode(1, new TreeNode(2, new TreeNode(3, new TreeNode(4), null), null), null);
-        System.out.println("Unbalanced Tree Checked: " + isBalanced(unbalanced)); // false
+        System.out.println("Single Node Balanced: " + isBalanced(new TreeNode(1)));
     }
 }
