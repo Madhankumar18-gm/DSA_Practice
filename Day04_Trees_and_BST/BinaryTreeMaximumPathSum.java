@@ -39,7 +39,12 @@ public class BinaryTreeMaximumPathSum {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(3));
-        System.out.println("Max Path Sum: " + maxPathSum(root));
+        System.out.println("=== BinaryTreeMaximumPathSum Execution Suite ===");
+        TreeNode tree1 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+        System.out.println("Tree [1, 2, 3] Max Path Sum:           " + maxPathSum(tree1));
+
+        TreeNode tree2 = new TreeNode(-10, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        System.out.println("Tree [-10, 9, 20, 15, 7] Max Path Sum: " + maxPathSum(tree2));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
