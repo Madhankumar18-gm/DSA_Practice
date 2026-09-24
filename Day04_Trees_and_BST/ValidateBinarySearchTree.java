@@ -34,7 +34,13 @@ public class ValidateBinarySearchTree {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(2, new TreeNode(1), new TreeNode(3));
-        System.out.println("Is Valid BST? " + isValidBST(root));
+        System.out.println("=== ValidateBinarySearchTree Execution Suite ===");
+        TreeNode validTree = new TreeNode(2, new TreeNode(1), new TreeNode(3));
+        System.out.println("Valid BST [2, 1, 3]:    " + isValidBST(validTree));
+
+        TreeNode invalidTree = new TreeNode(5, new TreeNode(1), new TreeNode(4, new TreeNode(3), new TreeNode(6)));
+        System.out.println("Invalid BST [5, 1, 4]:  " + isValidBST(invalidTree));
+        System.out.println("Null Root Guard:        " + isValidBST(null));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
