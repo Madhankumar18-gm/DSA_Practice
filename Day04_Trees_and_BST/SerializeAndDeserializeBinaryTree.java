@@ -6,6 +6,9 @@ import java.util.Queue;
  * Problem 33: Serialize and Deserialize Binary Tree
  * 
  * Design an algorithm to serialize and deserialize a binary tree.
+ * 
+ * Time Complexity: O(N) for both serialize and deserialize.
+ * Space Complexity: O(N) string storage and queue buffer.
  */
 public class SerializeAndDeserializeBinaryTree {
     public static class TreeNode {
@@ -20,6 +23,10 @@ public class SerializeAndDeserializeBinaryTree {
         }
     }
 
+    /**
+     * Codec helper class for tree string conversion.
+     * Time: O(N), Space: O(N)
+     */
     public static class Codec {
         public String serialize(TreeNode root) {
             if (root == null) return "";
@@ -57,7 +64,9 @@ public class SerializeAndDeserializeBinaryTree {
 
     public static void main(String[] args) {
         Codec codec = new Codec();
-        System.out.println("Null Serialize Guard: \"" + codec.serialize(null) + "\"");
-        System.out.println("Null Deserialize Guard: " + codec.deserialize(""));
+        TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+        String s = codec.serialize(root);
+        TreeNode d = codec.deserialize(s);
+        System.out.println("Reconstructed Root Val: " + d.val);
     }
 }
