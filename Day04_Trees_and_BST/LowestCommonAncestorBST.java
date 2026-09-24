@@ -1,0 +1,23 @@
+/**
+ * Problem 29: Lowest Common Ancestor of a Binary Search Tree
+ * 
+ * Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes in the BST.
+ */
+public class LowestCommonAncestorBST {
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int val) { this.val = val; }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
+    public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        // TODO: Implement LCA
+        return root;
+    }
+}
