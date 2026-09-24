@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Stack;
 
 /**
  * Problem 31: Kth Smallest Element in a BST
@@ -19,17 +18,25 @@ public class KthSmallestElementInBST {
         }
     }
 
-    private static void inorder(TreeNode root, List<Integer> list) {
-        if (root == null) return;
-        inorder(root.left, list);
-        list.add(root.val);
-        inorder(root.right, list);
+    // Optimal Iterative Stack Inorder Traversal stopping at K
+    public static int kthSmallestStack(TreeNode root, int k) {
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
+
+        while (curr != null || !stack.isEmpty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+            if (--k == 0) return curr.val;
+            curr = curr.right;
+        }
+        return -1;
     }
 
     public static int kthSmallest(TreeNode root, int k) {
-        List<Integer> list = new ArrayList<>();
-        inorder(root, list);
-        return list.get(k - 1);
+        return kthSmallestStack(root, k);
     }
 
     public static void main(String[] args) {
