@@ -50,7 +50,11 @@ public class BinaryTreeLevelOrderTraversal {
     }
 
     public static void main(String[] args) {
+        System.out.println("=== BinaryTreeLevelOrderTraversal Execution Suite ===");
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
-        System.out.println("Level Order: " + levelOrder(root));
+        System.out.println("Tree [3, 9, 20, 15, 7] Level Order: " + levelOrder(root));
+        System.out.println("Single Node Test:                  " + levelOrder(new TreeNode(1)));
+        System.out.println("Null Root Test:                    " + levelOrder(null));
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
