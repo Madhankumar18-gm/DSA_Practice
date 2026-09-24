@@ -16,16 +16,17 @@ public class InvertBinaryTree {
         }
     }
 
-    private static void swapChildren(TreeNode node) {
-        if (node == null) return;
-        TreeNode temp = node.left;
-        node.left = node.right;
-        node.right = temp;
-    }
-
     public static TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
-        swapChildren(root);
+        TreeNode temp = root.left;
+        root.left = invertTree(root.right);
+        root.right = invertTree(temp);
         return root;
+    }
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(4, new TreeNode(2), new TreeNode(7));
+        TreeNode inverted = invertTree(root);
+        System.out.println("Inverted Root Left: " + inverted.left.val); // 7
     }
 }
