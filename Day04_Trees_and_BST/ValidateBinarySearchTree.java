@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Problem 27: Validate Binary Search Tree
  * 
@@ -19,14 +16,15 @@ public class ValidateBinarySearchTree {
         }
     }
 
-    public static boolean isValidBST(TreeNode root) {
-        return validate(root, null, null);
+    // Optimal Range Validation using Long bounds O(N)
+    private static boolean validateRange(TreeNode node, long min, long max) {
+        if (node == null) return true;
+        if (node.val <= min || node.val >= max) return false;
+        return validateRange(node.left, min, node.val) && validateRange(node.right, node.val, max);
     }
 
-    private static boolean validate(TreeNode node, Integer min, Integer max) {
-        if (node == null) return true;
-        if ((min != null && node.val <= min) || (max != null && node.val >= max)) return false;
-        return validate(node.left, min, node.val) && validate(node.right, node.val, max);
+    public static boolean isValidBST(TreeNode root) {
+        return validateRange(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
     public static void main(String[] args) {
