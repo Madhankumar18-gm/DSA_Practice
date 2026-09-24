@@ -16,29 +16,26 @@ public class BinaryTreeMaximumPathSum {
         }
     }
 
-    private static int globalMaxSum = Integer.MIN_VALUE;
-
-    private static int maxGain(TreeNode node) {
-        if (node == null) return 0;
-
-        int leftGain = Math.max(maxGain(node.left), 0);
-        int rightGain = Math.max(maxGain(node.right), 0);
-
-        int priceNewPath = node.val + leftGain + rightGain;
-        globalMaxSum = Math.max(globalMaxSum, priceNewPath);
-
-        return node.val + Math.max(leftGain, rightGain);
+    public static int maxPathSum(TreeNode root) {
+        if (root == null) return 0;
+        return maxGainHelper(root);
     }
 
-    public static int maxPathSum(TreeNode root) {
-        globalMaxSum = Integer.MIN_VALUE;
-        if (root == null) return 0;
-        maxGain(root);
-        return globalMaxSum;
+    private static int maxGainHelper(TreeNode root) {
+        int[] max = new int[]{Integer.MIN_VALUE};
+        maxGain(root, max);
+        return max[0];
+    }
+
+    private static int maxGain(TreeNode node, int[] max) {
+        if (node == null) return 0;
+        int left = Math.max(0, maxGain(node.left, max));
+        int right = Math.max(0, maxGain(node.right, max));
+        max[0] = Math.max(max[0], left + right + node.val);
+        return Math.max(left, right) + node.val;
     }
 
     public static void main(String[] args) {
-        TreeNode singleNegative = new TreeNode(-3);
-        System.out.println("Single Negative Node Max Path Sum: " + maxPathSum(singleNegative)); // -3
+        System.out.println("Null root guard: " + maxPathSum(null));
     }
 }
