@@ -22,6 +22,7 @@ public class SerializeAndDeserializeBinaryTree {
 
     public static class Codec {
         public String serialize(TreeNode root) {
+            if (root == null) return "";
             StringBuilder sb = new StringBuilder();
             buildString(root, sb);
             return sb.toString();
@@ -44,6 +45,7 @@ public class SerializeAndDeserializeBinaryTree {
         }
 
         private TreeNode buildTree(Queue<String> nodes) {
+            if (nodes.isEmpty()) return null;
             String val = nodes.poll();
             if (val == null || val.equals("null")) return null;
             TreeNode node = new TreeNode(Integer.parseInt(val));
@@ -55,9 +57,7 @@ public class SerializeAndDeserializeBinaryTree {
 
     public static void main(String[] args) {
         Codec codec = new Codec();
-        TreeNode single = new TreeNode(42);
-        String s = codec.serialize(single);
-        TreeNode d = codec.deserialize(s);
-        System.out.println("Single Node Reconstructed: " + d.val);
+        System.out.println("Null Serialize Guard: \"" + codec.serialize(null) + "\"");
+        System.out.println("Null Deserialize Guard: " + codec.deserialize(""));
     }
 }
