@@ -6,8 +6,8 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 
 ## 📊 Repository Summary
 
-- **Total Problems Solved**: `25 Problems`
-- **Total Git Commits**: `209 Commits`
+- **Total Problems Solved**: `35 Problems`
+- **Total Git Commits**: `300 Commits`
 - **Primary Language**: `Java 17+`
 - **Remote Repository**: [GitHub - DSA_Practice](https://github.com/Madhankumar18-gm/DSA_Practice.git)
 
@@ -18,8 +18,9 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 - [x] **Day 01 - Core DSA Concepts** (Arrays, Linked Lists, Stacks, Trees, Sliding Window, Intervals, DP) — `7 Problems` \| `56 Commits`
 - [x] **Day 02 - Stack & Queue Deep Dive** (Design, Monotonic Stack, Monotonic Deque, Multi-Source BFS) — `10 Problems` \| `80 Commits`
 - [x] **Day 03 - Advanced Backtracking** (N-Queens, Sudoku Solver, Permutations, Subsets, Grid DFS) — `8 Problems` \| `72 Commits`
-- [ ] **Day 04 - Graphs & Advanced Trees** (TBD)
-- [ ] **Day 05 - Dynamic Programming Advanced** (TBD)
+- [x] **Day 04 - Trees & BST Concepts** (Height, Range Bounds, Inversion, Level Order, Reconstruction, Codec, Path Sum) — `10 Problems` \| `90 Commits`
+- [ ] **Day 05 - Graphs & Advanced Graph Algorithms** (TBD)
+- [ ] **Day 06 - Dynamic Programming Advanced** (TBD)
 
 ---
 
@@ -31,41 +32,24 @@ DSA Practice/
 ├── .gitignore                           # Java environment gitignore rules
 │
 ├── Day01_Core_DSA/                      # Topic Folder Day 1 (7 problems)
-│   ├── TwoSum.java
-│   ├── ReverseLinkedList.java
-│   ├── ValidParentheses.java
-│   ├── BinaryTreeInorderTraversal.java
-│   ├── LongestSubstring.java
-│   ├── MergeIntervals.java
-│   └── CoinChange.java
-│
 ├── Day02_Stack_and_Queue/               # Topic Folder Day 2 (10 problems)
-│   ├── MinStack.java
-│   ├── EvaluateReversePolishNotation.java
-│   ├── DailyTemperatures.java
-│   ├── ImplementQueueUsingStacks.java
-│   ├── ImplementStackUsingQueues.java
-│   ├── SlidingWindowMaximum.java
-│   ├── RottingOranges.java
-│   ├── DecodeString.java
-│   ├── AsteroidCollision.java
-│   └── SimplifyPath.java
-│
 ├── Day03_Advanced_Backtracking/         # Topic Folder Day 3 (8 problems)
-│   ├── NQueens.java
-│   ├── SudokuSolver.java
-│   ├── Permutations.java
-│   ├── PermutationsII.java
-│   ├── Subsets.java
-│   ├── CombinationSum.java
-│   ├── WordSearch.java
-│   └── PalindromePartitioning.java
+├── Day04_Trees_and_BST/                 # Topic Folder Day 4 (10 problems)
+│   ├── MaximumDepthOfBinaryTree.java
+│   ├── ValidateBinarySearchTree.java
+│   ├── InvertBinaryTree.java
+│   ├── LowestCommonAncestorBST.java
+│   ├── BinaryTreeLevelOrderTraversal.java
+│   ├── KthSmallestElementInBST.java
+│   ├── ConstructBinaryTreeFromPreorderAndInorder.java
+│   ├── SerializeAndDeserializeBinaryTree.java
+│   ├── BinaryTreeMaximumPathSum.java
+│   └── BalancedBinaryTree.java
 │
 ├── LeetCode/                            # Daily Date Folders for LeetCode Problems
-│   ├── 2026-09-22/                      # 2026-09-22 Daily Log & 7 Problems
-│   │   ├── README.md
-│   │   └── ...
-│   └── 2026-09-23/                      # 2026-09-23 Daily Log & 18 Problems
+│   ├── 2026-09-22/                      # 2026-09-22 Daily Log (7 problems)
+│   ├── 2026-09-23/                      # 2026-09-23 Daily Log (18 problems)
+│   └── 2026-09-24/                      # 2026-09-24 Daily Log (10 problems)
 │       ├── README.md
 │       └── ...
 │
@@ -115,6 +99,20 @@ DSA Practice/
 | 24 | Word Search | [LeetCode #79](https://leetcode.com/problems/word-search/) | Grid DFS | $O(N \times M \times 3^L)$ | $O(L)$ | [`WordSearch.java`](./Day03_Advanced_Backtracking/WordSearch.java) |
 | 25 | Palindrome Partitioning | [LeetCode #131](https://leetcode.com/problems/palindrome-partitioning/) | Backtracking | $O(N \times 2^N)$ | $O(N)$ | [`PalindromePartitioning.java`](./Day03_Advanced_Backtracking/PalindromePartitioning.java) |
 
+### Day 04: Trees & BST Concepts
+| # | Problem Name | LeetCode Link | Topic Tag | Time | Space | Solution Code |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
+| 26 | Maximum Depth of Binary Tree | [LeetCode #104](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | Trees & DFS | $O(N)$ | $O(H)$ | [`MaximumDepthOfBinaryTree.java`](./Day04_Trees_and_BST/MaximumDepthOfBinaryTree.java) |
+| 27 | Validate Binary Search Tree | [LeetCode #98](https://leetcode.com/problems/validate-binary-search-tree/) | BST Properties | $O(N)$ | $O(H)$ | [`ValidateBinarySearchTree.java`](./Day04_Trees_and_BST/ValidateBinarySearchTree.java) |
+| 28 | Invert Binary Tree | [LeetCode #226](https://leetcode.com/problems/invert-binary-tree/) | Tree Manipulation | $O(N)$ | $O(H)$ | [`InvertBinaryTree.java`](./Day04_Trees_and_BST/InvertBinaryTree.java) |
+| 29 | Lowest Common Ancestor of BST | [LeetCode #235](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | BST Traversal | $O(H)$ | $O(1)$ | [`LowestCommonAncestorBST.java`](./Day04_Trees_and_BST/LowestCommonAncestorBST.java) |
+| 30 | Binary Tree Level Order Traversal | [LeetCode #102](https://leetcode.com/problems/binary-tree-level-order-traversal/) | Queue BFS | $O(N)$ | $O(W)$ | [`BinaryTreeLevelOrderTraversal.java`](./Day04_Trees_and_BST/BinaryTreeLevelOrderTraversal.java) |
+| 31 | Kth Smallest Element in a BST | [LeetCode #230](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) | Inorder Traversal | $O(H + k)$ | $O(H)$ | [`KthSmallestElementInBST.java`](./Day04_Trees_and_BST/KthSmallestElementInBST.java) |
+| 32 | Construct Tree from Preorder & Inorder | [LeetCode #105](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | Tree Construction | $O(N)$ | $O(N)$ | [`ConstructBinaryTreeFromPreorderAndInorder.java`](./Day04_Trees_and_BST/ConstructBinaryTreeFromPreorderAndInorder.java) |
+| 33 | Serialize & Deserialize Binary Tree | [LeetCode #297](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) | Codec DFS | $O(N)$ | $O(N)$ | [`SerializeAndDeserializeBinaryTree.java`](./Day04_Trees_and_BST/SerializeAndDeserializeBinaryTree.java) |
+| 34 | Binary Tree Maximum Path Sum | [LeetCode #124](https://leetcode.com/problems/binary-tree-maximum-path-sum/) | Hard DFS Path | $O(N)$ | $O(H)$ | [`BinaryTreeMaximumPathSum.java`](./Day04_Trees_and_BST/BinaryTreeMaximumPathSum.java) |
+| 35 | Balanced Binary Tree | [LeetCode #110](https://leetcode.com/problems/balanced-binary-tree/) | Tree Height | $O(N)$ | $O(H)$ | [`BalancedBinaryTree.java`](./Day04_Trees_and_BST/BalancedBinaryTree.java) |
+
 ---
 
 ## 🛠️ Verification & Execution
@@ -122,7 +120,7 @@ DSA Practice/
 All Java source files are self-contained executable suites with embedded `main()` assertion methods. To compile and run any problem solution:
 
 ```bash
-# Example: Compile and run NQueens
-javac Day03_Advanced_Backtracking/NQueens.java
-java -cp Day03_Advanced_Backtracking NQueens
+# Example: Compile and run MaximumDepthOfBinaryTree
+javac Day04_Trees_and_BST/MaximumDepthOfBinaryTree.java
+java -cp Day04_Trees_and_BST MaximumDepthOfBinaryTree
 ```
