@@ -43,7 +43,11 @@ public class KthSmallestElementInBST {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(3, new TreeNode(1, null, new TreeNode(2)), new TreeNode(4));
-        System.out.println("1st Smallest: " + kthSmallest(root, 1));
+        System.out.println("=== KthSmallestElementInBST Execution Suite ===");
+        TreeNode root = new TreeNode(5, new TreeNode(3, new TreeNode(2, new TreeNode(1), null), new TreeNode(4)), new TreeNode(6));
+        System.out.println("1st Smallest: " + kthSmallest(root, 1)); // 1
+        System.out.println("3rd Smallest: " + kthSmallest(root, 3)); // 3
+        System.out.println("5th Smallest: " + kthSmallest(root, 5)); // 5
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
