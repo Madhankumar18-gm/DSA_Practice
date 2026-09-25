@@ -34,12 +34,26 @@ public class LinkedListCycleII {
     }
 
     /**
-     * Finds the start node of a cycle in a linked list.
+     * Finds the start node of a cycle in a linked list using Floyd's algorithm.
      * @param head Head of the linked list
      * @return Node where cycle begins, or null if acyclic
      */
     public static ListNode detectCycle(ListNode head) {
         if (head == null || head.next == null) return null;
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                ListNode entry = head;
+                while (entry != slow) {
+                    entry = entry.next;
+                    slow = slow.next;
+                }
+                return entry;
+            }
+        }
         return null;
     }
 }
