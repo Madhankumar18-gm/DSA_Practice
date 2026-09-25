@@ -39,7 +39,6 @@ public class MergeTwoSortedLists {
 
     /**
      * Merges two sorted linked lists using dummy head pointer manipulation.
-     * Optimized early return for empty input lists.
      * @param list1 First sorted list
      * @param list2 Second sorted list
      * @return Head of merged sorted list
@@ -64,5 +63,15 @@ public class MergeTwoSortedLists {
 
         curr.next = (list1 != null) ? list1 : list2;
         return dummy.next;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== MergeTwoSortedLists Execution Suite ===");
+
+        // Test 1: Merging [1, 2, 4] and [1, 3, 4] -> [1, 1, 2, 3, 4, 4]
+        ListNode l1 = buildList(new int[]{1, 2, 4});
+        ListNode l2 = buildList(new int[]{1, 3, 4});
+        ListNode merged1 = mergeTwoLists(l1, l2);
+        System.out.println("Test 1 Merged: " + toListString(merged1));
     }
 }
