@@ -67,5 +67,18 @@ public class LinkedListCycleII {
         ListNode list1 = createListWithCycle(new int[]{3, 2, 0, -4}, 1);
         ListNode entry1 = detectCycle(list1);
         System.out.println("Test 1 Entry Node Val: " + (entry1 != null ? entry1.val : "null"));
+        assert entry1 != null && entry1.val == 2 : "Test 1 Failed!";
+
+        // Test Case 2: [1, 2] cycle at index 0 -> entry node val = 1
+        ListNode list2 = createListWithCycle(new int[]{1, 2}, 0);
+        ListNode entry2 = detectCycle(list2);
+        System.out.println("Test 2 Entry Node Val: " + (entry2 != null ? entry2.val : "null"));
+        assert entry2 != null && entry2.val == 1 : "Test 2 Failed!";
+
+        // Test Case 3: Acyclic list [1] -> null
+        ListNode list3 = createListWithCycle(new int[]{1}, -1);
+        ListNode entry3 = detectCycle(list3);
+        System.out.println("Test 3 Entry Node Val: " + (entry3 != null ? entry3.val : "null"));
+        assert entry3 == null : "Test 3 Failed!";
     }
 }
