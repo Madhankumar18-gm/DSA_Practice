@@ -41,17 +41,18 @@ public class MergeKSortedLists {
 
     /**
      * Merges K sorted linked lists into a single sorted list using PriorityQueue min-heap.
+     * Optimized heap comparator for integer performance.
      * @param lists Array of sorted linked list heads
      * @return Head of merged sorted linked list
      */
     public static ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) return null;
 
-        PriorityQueue<ListNode> minHeap = new PriorityQueue<>((a, b) -> Integer.compare(a.val, b.val));
+        PriorityQueue<ListNode> minHeap = new PriorityQueue<>(lists.length, (a, b) -> a.val - b.val);
 
         for (ListNode node : lists) {
             if (node != null) {
-                minHeap.add(node);
+                minHeap.offer(node);
             }
         }
 
@@ -64,7 +65,7 @@ public class MergeKSortedLists {
             curr = curr.next;
 
             if (smallest.next != null) {
-                minHeap.add(smallest.next);
+                minHeap.offer(smallest.next);
             }
         }
 
