@@ -36,4 +36,16 @@ public class MergeTwoSortedLists {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Merges two sorted linked lists.
+     * @param list1 First sorted list
+     * @param list2 Second sorted list
+     * @return Head of merged sorted list
+     */
+    public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        if (list1 == null) return list2;
+        if (list2 == null) return list1;
+        return null;
+    }
 }
