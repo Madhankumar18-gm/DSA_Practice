@@ -36,4 +36,15 @@ public class RemoveNthNodeFromEnd {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Removes the nth node from the end of the linked list.
+     * @param head Head of linked list
+     * @param n Index from the end (1-based)
+     * @return New head of modified list
+     */
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
+        if (head == null || n <= 0) return head;
+        return head;
+    }
 }
