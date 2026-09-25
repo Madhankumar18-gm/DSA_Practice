@@ -74,5 +74,18 @@ public class RemoveNthNodeFromEnd {
         ListNode l1 = buildList(new int[]{1, 2, 3, 4, 5});
         ListNode res1 = removeNthFromEnd(l1, 2);
         System.out.println("Test 1 Result: " + toListString(res1));
+        assert toListString(res1).equals("[1, 2, 3, 5]") : "Test 1 Failed!";
+
+        // Test 2: [1], n = 1 -> []
+        ListNode l2 = buildList(new int[]{1});
+        ListNode res2 = removeNthFromEnd(l2, 1);
+        System.out.println("Test 2 Result: " + toListString(res2));
+        assert toListString(res2).equals("[]") : "Test 2 Failed!";
+
+        // Test 3: [1, 2], n = 2 -> [2]
+        ListNode l3 = buildList(new int[]{1, 2});
+        ListNode res3 = removeNthFromEnd(l3, 2);
+        System.out.println("Test 3 Result: " + toListString(res3));
+        assert toListString(res3).equals("[2]") : "Test 3 Failed!";
     }
 }
