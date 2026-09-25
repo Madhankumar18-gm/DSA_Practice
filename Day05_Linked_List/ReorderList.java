@@ -37,14 +37,25 @@ public class ReorderList {
         return sb.toString();
     }
 
+    private static ListNode reverse(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+
     /**
-     * Reorders the linked list in-place using mid-point split, reversal, and interleaving.
+     * Reorders the linked list in-place using clean modular helper method.
      * @param head Head of linked list
      */
     public static void reorderList(ListNode head) {
-        if (head == null || head.next == null) return;
+        if (head == null || head.next == null || head.next.next == null) return;
 
-        // Step 1: Find middle node
         ListNode slow = head;
         ListNode fast = head;
         while (fast != null && fast.next != null) {
@@ -52,22 +63,10 @@ public class ReorderList {
             fast = fast.next.next;
         }
 
-        // Step 2: Reverse second half
-        ListNode prev = null;
-        ListNode curr = slow.next;
-        slow.next = null; // Split list into two halves
+        ListNode second = reverse(slow.next);
+        slow.next = null;
 
-        while (curr != null) {
-            ListNode nextTemp = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = nextTemp;
-        }
-
-        // Step 3: Interleave two halves
         ListNode first = head;
-        ListNode second = prev;
-
         while (second != null) {
             ListNode tmp1 = first.next;
             ListNode tmp2 = second.next;
