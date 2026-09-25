@@ -39,11 +39,15 @@ public class MergeTwoSortedLists {
 
     /**
      * Merges two sorted linked lists using dummy head pointer manipulation.
+     * Optimized early return for empty input lists.
      * @param list1 First sorted list
      * @param list2 Second sorted list
      * @return Head of merged sorted list
      */
     public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        if (list1 == null) return list2;
+        if (list2 == null) return list1;
+
         ListNode dummy = new ListNode(-1);
         ListNode curr = dummy;
 
@@ -58,9 +62,7 @@ public class MergeTwoSortedLists {
             curr = curr.next;
         }
 
-        if (list1 != null) curr.next = list1;
-        if (list2 != null) curr.next = list2;
-
+        curr.next = (list1 != null) ? list1 : list2;
         return dummy.next;
     }
 }
