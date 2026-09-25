@@ -34,7 +34,6 @@ public class LinkedListCycle {
 
     /**
      * Determines if a linked list contains a cycle using Floyd's Cycle Detection.
-     * Optimized for minimal pointer dereferences.
      * @param head Head node of linked list
      * @return true if cycle exists, false otherwise
      */
@@ -50,5 +49,14 @@ public class LinkedListCycle {
             fast = fast.next.next;
         }
         return true;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== LinkedListCycle Execution Suite ===");
+
+        // Test 1: List with cycle at index 1 [3, 2, 0, -4] -> cycle back to 2
+        ListNode list1 = createListWithCycle(new int[]{3, 2, 0, -4}, 1);
+        boolean ans1 = hasCycle(list1);
+        System.out.println("Test 1 Cycle Detected: " + ans1);
     }
 }
