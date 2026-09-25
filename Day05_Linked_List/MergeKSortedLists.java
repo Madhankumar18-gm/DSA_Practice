@@ -40,8 +40,7 @@ public class MergeKSortedLists {
     }
 
     /**
-     * Merges K sorted linked lists into a single sorted list using PriorityQueue min-heap.
-     * Optimized heap comparator for integer performance.
+     * Merges K sorted linked lists.
      * @param lists Array of sorted linked list heads
      * @return Head of merged sorted linked list
      */
@@ -70,5 +69,18 @@ public class MergeKSortedLists {
         }
 
         return dummy.next;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== MergeKSortedLists Execution Suite ===");
+
+        // Test 1: [[1,4,5], [1,3,4], [2,6]] -> [1,1,2,3,4,4,5,6]
+        ListNode[] lists = new ListNode[]{
+            buildList(new int[]{1, 4, 5}),
+            buildList(new int[]{1, 3, 4}),
+            buildList(new int[]{2, 6})
+        };
+        ListNode merged1 = mergeKLists(lists);
+        System.out.println("Test 1 Merged K Lists: " + toListString(merged1));
     }
 }
