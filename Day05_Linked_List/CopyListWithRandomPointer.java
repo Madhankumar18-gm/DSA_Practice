@@ -88,5 +88,7 @@ public class CopyListWithRandomPointer {
         Node copied2 = copyRandomList(null);
         assert copied2 == null : "Null test failed!";
         System.out.println("Test 2 Null list copy: " + toListString(copied2));
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
