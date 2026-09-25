@@ -93,5 +93,7 @@ public class AddTwoNumbers {
         ListNode sum3 = addTwoNumbers(l5, l6);
         System.out.println("Test 3 Result: " + toListString(sum3));
         assert toListString(sum3).equals("[8, 9, 9, 9, 0, 0, 0, 1]") : "Test 3 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
