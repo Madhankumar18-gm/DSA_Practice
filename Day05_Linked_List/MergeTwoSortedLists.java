@@ -73,5 +73,18 @@ public class MergeTwoSortedLists {
         ListNode l2 = buildList(new int[]{1, 3, 4});
         ListNode merged1 = mergeTwoLists(l1, l2);
         System.out.println("Test 1 Merged: " + toListString(merged1));
+        assert toListString(merged1).equals("[1, 1, 2, 3, 4, 4]") : "Test 1 Failed!";
+
+        // Test 2: Merging [] and [0] -> [0]
+        ListNode l3 = buildList(new int[]{});
+        ListNode l4 = buildList(new int[]{0});
+        ListNode merged2 = mergeTwoLists(l3, l4);
+        System.out.println("Test 2 Merged: " + toListString(merged2));
+        assert toListString(merged2).equals("[0]") : "Test 2 Failed!";
+
+        // Test 3: Merging [] and [] -> []
+        ListNode merged3 = mergeTwoLists(null, null);
+        System.out.println("Test 3 Merged: " + toListString(merged3));
+        assert toListString(merged3).equals("[]") : "Test 3 Failed!";
     }
 }
