@@ -36,4 +36,12 @@ public class ReorderList {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Reorders the linked list in-place.
+     * @param head Head of linked list
+     */
+    public static void reorderList(ListNode head) {
+        if (head == null || head.next == null) return;
+    }
 }
