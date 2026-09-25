@@ -78,8 +78,15 @@ public class CopyListWithRandomPointer {
         n1.next = n2;
         n2.random = n1;
 
-        Node copied = copyRandomList(n1);
+        Node copied1 = copyRandomList(n1);
         System.out.println("Original: " + toListString(n1));
-        System.out.println("Copied:   " + toListString(copied));
+        System.out.println("Copied:   " + toListString(copied1));
+        assert copied1 != n1 : "Deep copy reference test failed!";
+        assert copied1.random == null && copied1.next.random == copied1 : "Random pointer structure test failed!";
+
+        // Test 2: Null head test
+        Node copied2 = copyRandomList(null);
+        assert copied2 == null : "Null test failed!";
+        System.out.println("Test 2 Null list copy: " + toListString(copied2));
     }
 }
