@@ -38,8 +38,7 @@ public class RemoveNthNodeFromEnd {
     }
 
     /**
-     * Removes the nth node from the end of the linked list using dummy node and fast/slow gap pointers.
-     * Handles head deletion case gracefully.
+     * Removes the nth node from the end of the linked list.
      * @param head Head of linked list
      * @param n Index from the end (1-based)
      * @return New head of modified list
@@ -66,5 +65,14 @@ public class RemoveNthNodeFromEnd {
         }
 
         return dummy.next;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== RemoveNthNodeFromEnd Execution Suite ===");
+
+        // Test 1: [1, 2, 3, 4, 5], n = 2 -> [1, 2, 3, 5]
+        ListNode l1 = buildList(new int[]{1, 2, 3, 4, 5});
+        ListNode res1 = removeNthFromEnd(l1, 2);
+        System.out.println("Test 1 Result: " + toListString(res1));
     }
 }
