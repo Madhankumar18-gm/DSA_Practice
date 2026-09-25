@@ -38,8 +38,7 @@ public class AddTwoNumbers {
     }
 
     /**
-     * Adds two numbers stored in reverse order using carry arithmetic loop.
-     * Optimized loop pointer dereferences.
+     * Adds two numbers stored in reverse order.
      * @param l1 First number list
      * @param l2 Second number list
      * @return Head of sum linked list
@@ -69,5 +68,15 @@ public class AddTwoNumbers {
         }
 
         return dummy.next;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== AddTwoNumbers Execution Suite ===");
+
+        // Test 1: [2, 4, 3] + [5, 6, 4] -> [7, 0, 8] (342 + 465 = 807)
+        ListNode l1 = buildList(new int[]{2, 4, 3});
+        ListNode l2 = buildList(new int[]{5, 6, 4});
+        ListNode sum1 = addTwoNumbers(l1, l2);
+        System.out.println("Test 1 Result: " + toListString(sum1));
     }
 }
