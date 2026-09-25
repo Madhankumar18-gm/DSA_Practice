@@ -50,7 +50,7 @@ public class ReorderList {
     }
 
     /**
-     * Reorders the linked list in-place using clean modular helper method.
+     * Reorders the linked list in-place.
      * @param head Head of linked list
      */
     public static void reorderList(ListNode head) {
@@ -77,5 +77,14 @@ public class ReorderList {
             first = tmp1;
             second = tmp2;
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== ReorderList Execution Suite ===");
+
+        // Test 1: [1, 2, 3, 4] -> [1, 4, 2, 3]
+        ListNode l1 = buildList(new int[]{1, 2, 3, 4});
+        reorderList(l1);
+        System.out.println("Test 1 Reordered: " + toListString(l1));
     }
 }
