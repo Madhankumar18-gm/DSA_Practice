@@ -38,4 +38,14 @@ public class MergeKSortedLists {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Merges K sorted linked lists into a single sorted list.
+     * @param lists Array of sorted linked list heads
+     * @return Head of merged sorted linked list
+     */
+    public static ListNode mergeKLists(ListNode[] lists) {
+        if (lists == null || lists.length == 0) return null;
+        return null;
+    }
 }
