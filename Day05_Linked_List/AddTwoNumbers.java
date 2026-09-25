@@ -39,26 +39,33 @@ public class AddTwoNumbers {
 
     /**
      * Adds two numbers stored in reverse order using carry arithmetic loop.
+     * Optimized loop pointer dereferences.
      * @param l1 First number list
      * @param l2 Second number list
      * @return Head of sum linked list
      */
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        if (l1 == null) return l2;
+        if (l2 == null) return l1;
+
         ListNode dummy = new ListNode(0);
         ListNode curr = dummy;
         int carry = 0;
 
         while (l1 != null || l2 != null || carry != 0) {
-            int x = (l1 != null) ? l1.val : 0;
-            int y = (l2 != null) ? l2.val : 0;
-            int sum = carry + x + y;
+            int sum = carry;
+            if (l1 != null) {
+                sum += l1.val;
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                sum += l2.val;
+                l2 = l2.next;
+            }
 
             carry = sum / 10;
             curr.next = new ListNode(sum % 10);
             curr = curr.next;
-
-            if (l1 != null) l1 = l1.next;
-            if (l2 != null) l2 = l2.next;
         }
 
         return dummy.next;
