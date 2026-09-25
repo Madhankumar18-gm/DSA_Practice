@@ -86,5 +86,7 @@ public class MergeTwoSortedLists {
         ListNode merged3 = mergeTwoLists(null, null);
         System.out.println("Test 3 Merged: " + toListString(merged3));
         assert toListString(merged3).equals("[]") : "Test 3 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
