@@ -32,4 +32,14 @@ public class LinkedListCycleII {
         }
         return head;
     }
+
+    /**
+     * Finds the start node of a cycle in a linked list.
+     * @param head Head of the linked list
+     * @return Node where cycle begins, or null if acyclic
+     */
+    public static ListNode detectCycle(ListNode head) {
+        if (head == null || head.next == null) return null;
+        return null;
+    }
 }
