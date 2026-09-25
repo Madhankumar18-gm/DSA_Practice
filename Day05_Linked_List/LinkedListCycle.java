@@ -58,5 +58,18 @@ public class LinkedListCycle {
         ListNode list1 = createListWithCycle(new int[]{3, 2, 0, -4}, 1);
         boolean ans1 = hasCycle(list1);
         System.out.println("Test 1 Cycle Detected: " + ans1);
+        assert ans1 == true : "Test 1 Failed!";
+
+        // Test 2: List with cycle at index 0 [1, 2] -> cycle back to 1
+        ListNode list2 = createListWithCycle(new int[]{1, 2}, 0);
+        boolean ans2 = hasCycle(list2);
+        System.out.println("Test 2 Cycle Detected: " + ans2);
+        assert ans2 == true : "Test 2 Failed!";
+
+        // Test 3: List with no cycle [1] -> pos = -1
+        ListNode list3 = createListWithCycle(new int[]{1}, -1);
+        boolean ans3 = hasCycle(list3);
+        System.out.println("Test 3 Cycle Detected: " + ans3);
+        assert ans3 == false : "Test 3 Failed!";
     }
 }
