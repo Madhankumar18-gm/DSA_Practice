@@ -71,5 +71,7 @@ public class LinkedListCycle {
         boolean ans3 = hasCycle(list3);
         System.out.println("Test 3 Cycle Detected: " + ans3);
         assert ans3 == false : "Test 3 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
