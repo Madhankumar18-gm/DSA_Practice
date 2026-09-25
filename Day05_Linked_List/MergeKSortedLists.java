@@ -93,5 +93,7 @@ public class MergeKSortedLists {
         ListNode merged3 = mergeKLists(new ListNode[]{null});
         System.out.println("Test 3 Array with null list: " + toListString(merged3));
         assert toListString(merged3).equals("[]") : "Test 3 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
