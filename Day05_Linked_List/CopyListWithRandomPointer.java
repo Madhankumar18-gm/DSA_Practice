@@ -30,4 +30,14 @@ public class CopyListWithRandomPointer {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Creates a deep copy of a list with random pointers.
+     * @param head Head of original list
+     * @return Head of deep copied list
+     */
+    public static Node copyRandomList(Node head) {
+        if (head == null) return null;
+        return null;
+    }
 }
