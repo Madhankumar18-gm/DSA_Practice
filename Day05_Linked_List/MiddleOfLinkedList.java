@@ -62,5 +62,20 @@ public class MiddleOfLinkedList {
         ListNode mid1 = middleNode(list1);
         System.out.println("Test 1 Input: " + toListString(list1));
         System.out.println("Test 1 Middle: " + toListString(mid1));
+        assert mid1 != null && mid1.val == 3 : "Test 1 Failed!";
+
+        // Test Case 2: Even length list [1, 2, 3, 4, 5, 6] -> second middle is 4
+        ListNode list2 = buildList(new int[]{1, 2, 3, 4, 5, 6});
+        ListNode mid2 = middleNode(list2);
+        System.out.println("Test 2 Input: " + toListString(list2));
+        System.out.println("Test 2 Middle: " + toListString(mid2));
+        assert mid2 != null && mid2.val == 4 : "Test 2 Failed!";
+
+        // Test Case 3: Single element list [1]
+        ListNode list3 = buildList(new int[]{1});
+        ListNode mid3 = middleNode(list3);
+        System.out.println("Test 3 Input: " + toListString(list3));
+        System.out.println("Test 3 Middle: " + toListString(mid3));
+        assert mid3 != null && mid3.val == 1 : "Test 3 Failed!";
     }
 }
