@@ -38,12 +38,15 @@ public class RemoveNthNodeFromEnd {
     }
 
     /**
-     * Removes the nth node from the end of the linked list using two pointers.
+     * Removes the nth node from the end of the linked list using dummy node and fast/slow gap pointers.
+     * Handles head deletion case gracefully.
      * @param head Head of linked list
      * @param n Index from the end (1-based)
      * @return New head of modified list
      */
     public static ListNode removeNthFromEnd(ListNode head, int n) {
+        if (head == null || n <= 0) return head;
+
         ListNode dummy = new ListNode(0, head);
         ListNode fast = dummy;
         ListNode slow = dummy;
@@ -58,7 +61,10 @@ public class RemoveNthNodeFromEnd {
             fast = fast.next;
         }
 
-        slow.next = slow.next.next;
+        if (slow.next != null) {
+            slow.next = slow.next.next;
+        }
+
         return dummy.next;
     }
 }
