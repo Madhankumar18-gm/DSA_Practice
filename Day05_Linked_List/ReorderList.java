@@ -99,5 +99,7 @@ public class ReorderList {
         reorderList(l3);
         System.out.println("Test 3 Reordered: " + toListString(l3));
         assert toListString(l3).equals("[1]") : "Test 3 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
