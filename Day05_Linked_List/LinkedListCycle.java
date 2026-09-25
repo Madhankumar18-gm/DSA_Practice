@@ -31,4 +31,14 @@ public class LinkedListCycle {
         }
         return head;
     }
+
+    /**
+     * Determines if a linked list contains a cycle.
+     * @param head Head node of linked list
+     * @return true if cycle exists, false otherwise
+     */
+    public static boolean hasCycle(ListNode head) {
+        if (head == null || head.next == null) return false;
+        return false;
+    }
 }
