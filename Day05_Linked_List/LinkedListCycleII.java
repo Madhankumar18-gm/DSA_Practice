@@ -80,5 +80,7 @@ public class LinkedListCycleII {
         ListNode entry3 = detectCycle(list3);
         System.out.println("Test 3 Entry Node Val: " + (entry3 != null ? entry3.val : "null"));
         assert entry3 == null : "Test 3 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
