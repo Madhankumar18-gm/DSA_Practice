@@ -33,6 +33,7 @@ public class CopyListWithRandomPointer {
 
     /**
      * Creates a deep copy of a list with random pointers using 3-Pass Interleaving.
+     * Refactored pass 3 for clean pointer restoration.
      * @param head Head of original list
      * @return Head of deep copied list
      */
@@ -59,20 +60,16 @@ public class CopyListWithRandomPointer {
 
         // Pass 3: Decouple original and copied lists
         curr = head;
-        Node dummy = new Node(0);
-        Node copyCurr = dummy;
+        Node copyHead = head.next;
+        Node copyCurr = copyHead;
 
         while (curr != null) {
-            Node copy = curr.next;
-            Node nextOriginal = copy.next;
-
-            copyCurr.next = copy;
-            copyCurr = copy;
-
-            curr.next = nextOriginal;
-            curr = nextOriginal;
+            curr.next = curr.next.next;
+            copyCurr.next = (copyCurr.next != null) ? copyCurr.next.next : null;
+            curr = curr.next;
+            copyCurr = copyCurr.next;
         }
 
-        return dummy.next;
+        return copyHead;
     }
 }
