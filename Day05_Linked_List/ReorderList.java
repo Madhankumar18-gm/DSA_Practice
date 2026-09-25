@@ -86,5 +86,18 @@ public class ReorderList {
         ListNode l1 = buildList(new int[]{1, 2, 3, 4});
         reorderList(l1);
         System.out.println("Test 1 Reordered: " + toListString(l1));
+        assert toListString(l1).equals("[1, 4, 2, 3]") : "Test 1 Failed!";
+
+        // Test 2: [1, 2, 3, 4, 5] -> [1, 5, 2, 4, 3]
+        ListNode l2 = buildList(new int[]{1, 2, 3, 4, 5});
+        reorderList(l2);
+        System.out.println("Test 2 Reordered: " + toListString(l2));
+        assert toListString(l2).equals("[1, 5, 2, 4, 3]") : "Test 2 Failed!";
+
+        // Test 3: [1] -> [1]
+        ListNode l3 = buildList(new int[]{1});
+        reorderList(l3);
+        System.out.println("Test 3 Reordered: " + toListString(l3));
+        assert toListString(l3).equals("[1]") : "Test 3 Failed!";
     }
 }
