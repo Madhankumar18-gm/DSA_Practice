@@ -82,5 +82,16 @@ public class MergeKSortedLists {
         };
         ListNode merged1 = mergeKLists(lists);
         System.out.println("Test 1 Merged K Lists: " + toListString(merged1));
+        assert toListString(merged1).equals("[1, 1, 2, 3, 4, 4, 5, 6]") : "Test 1 Failed!";
+
+        // Test 2: [] -> []
+        ListNode merged2 = mergeKLists(new ListNode[]{});
+        System.out.println("Test 2 Empty Array: " + toListString(merged2));
+        assert toListString(merged2).equals("[]") : "Test 2 Failed!";
+
+        // Test 3: [[]] -> []
+        ListNode merged3 = mergeKLists(new ListNode[]{null});
+        System.out.println("Test 3 Array with null list: " + toListString(merged3));
+        assert toListString(merged3).equals("[]") : "Test 3 Failed!";
     }
 }
