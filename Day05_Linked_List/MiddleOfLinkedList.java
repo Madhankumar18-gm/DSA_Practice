@@ -40,9 +40,8 @@ public class MiddleOfLinkedList {
 
     /**
      * Finds the middle node of a linked list using Fast & Slow pointers.
-     * Handles odd and even list lengths seamlessly.
      * @param head Head of the linked list
-     * @return Middle node (second middle node for even length)
+     * @return Middle node
      */
     public static ListNode middleNode(ListNode head) {
         if (head == null || head.next == null) return head;
@@ -53,5 +52,15 @@ public class MiddleOfLinkedList {
             fast = fast.next.next;
         }
         return slow;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== MiddleOfLinkedList Execution Suite ===");
+        
+        // Test Case 1: Odd length list [1, 2, 3, 4, 5]
+        ListNode list1 = buildList(new int[]{1, 2, 3, 4, 5});
+        ListNode mid1 = middleNode(list1);
+        System.out.println("Test 1 Input: " + toListString(list1));
+        System.out.println("Test 1 Middle: " + toListString(mid1));
     }
 }
