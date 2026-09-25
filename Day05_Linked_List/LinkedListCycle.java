@@ -12,4 +12,23 @@ public class LinkedListCycle {
         ListNode next;
         ListNode(int val) { this.val = val; }
     }
+
+    public static ListNode createListWithCycle(int[] values, int cyclePos) {
+        if (values == null || values.length == 0) return null;
+        ListNode head = new ListNode(values[0]);
+        ListNode curr = head;
+        ListNode cycleTarget = (cyclePos == 0) ? head : null;
+
+        for (int i = 1; i < values.length; i++) {
+            curr.next = new ListNode(values[i]);
+            curr = curr.next;
+            if (i == cyclePos) {
+                cycleTarget = curr;
+            }
+        }
+        if (cyclePos != -1) {
+            curr.next = cycleTarget;
+        }
+        return head;
+    }
 }
