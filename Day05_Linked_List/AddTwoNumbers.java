@@ -36,4 +36,16 @@ public class AddTwoNumbers {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Adds two numbers stored in reverse order as linked lists.
+     * @param l1 First number list
+     * @param l2 Second number list
+     * @return Head of sum linked list
+     */
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        if (l1 == null) return l2;
+        if (l2 == null) return l1;
+        return null;
+    }
 }
