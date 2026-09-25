@@ -34,8 +34,7 @@ public class LinkedListCycleII {
     }
 
     /**
-     * Finds the start node of a cycle in a linked list using Floyd's algorithm.
-     * Refactored for clean early exit when fast reaches tail.
+     * Finds the start node of a cycle in a linked list.
      * @param head Head of the linked list
      * @return Node where cycle begins, or null if acyclic
      */
@@ -59,5 +58,14 @@ public class LinkedListCycleII {
             slow = slow.next;
         }
         return entry;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== LinkedListCycleII Execution Suite ===");
+
+        // Test Case 1: [3, 2, 0, -4] cycle at index 1 -> entry node val = 2
+        ListNode list1 = createListWithCycle(new int[]{3, 2, 0, -4}, 1);
+        ListNode entry1 = detectCycle(list1);
+        System.out.println("Test 1 Entry Node Val: " + (entry1 != null ? entry1.val : "null"));
     }
 }
