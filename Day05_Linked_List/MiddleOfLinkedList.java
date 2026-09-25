@@ -40,11 +40,12 @@ public class MiddleOfLinkedList {
 
     /**
      * Finds the middle node of a linked list using Fast & Slow pointers.
+     * Handles odd and even list lengths seamlessly.
      * @param head Head of the linked list
-     * @return Middle node
+     * @return Middle node (second middle node for even length)
      */
     public static ListNode middleNode(ListNode head) {
-        if (head == null) return null;
+        if (head == null || head.next == null) return head;
         ListNode slow = head;
         ListNode fast = head;
         while (fast != null && fast.next != null) {
