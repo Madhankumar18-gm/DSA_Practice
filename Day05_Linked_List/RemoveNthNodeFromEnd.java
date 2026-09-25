@@ -87,5 +87,7 @@ public class RemoveNthNodeFromEnd {
         ListNode res3 = removeNthFromEnd(l3, 2);
         System.out.println("Test 3 Result: " + toListString(res3));
         assert toListString(res3).equals("[2]") : "Test 3 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
