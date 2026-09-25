@@ -77,5 +77,7 @@ public class MiddleOfLinkedList {
         System.out.println("Test 3 Input: " + toListString(list3));
         System.out.println("Test 3 Middle: " + toListString(mid3));
         assert mid3 != null && mid3.val == 1 : "Test 3 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
