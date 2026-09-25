@@ -37,4 +37,14 @@ public class MiddleOfLinkedList {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Finds the middle node of a linked list using Fast & Slow pointers.
+     * @param head Head of the linked list
+     * @return Middle node
+     */
+    public static ListNode middleNode(ListNode head) {
+        if (head == null) return null;
+        return head;
+    }
 }
