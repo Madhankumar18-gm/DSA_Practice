@@ -78,5 +78,20 @@ public class AddTwoNumbers {
         ListNode l2 = buildList(new int[]{5, 6, 4});
         ListNode sum1 = addTwoNumbers(l1, l2);
         System.out.println("Test 1 Result: " + toListString(sum1));
+        assert toListString(sum1).equals("[7, 0, 8]") : "Test 1 Failed!";
+
+        // Test 2: [0] + [0] -> [0]
+        ListNode l3 = buildList(new int[]{0});
+        ListNode l4 = buildList(new int[]{0});
+        ListNode sum2 = addTwoNumbers(l3, l4);
+        System.out.println("Test 2 Result: " + toListString(sum2));
+        assert toListString(sum2).equals("[0]") : "Test 2 Failed!";
+
+        // Test 3: [9, 9, 9, 9, 9, 9, 9] + [9, 9, 9, 9] -> [8, 9, 9, 9, 0, 0, 0, 1]
+        ListNode l5 = buildList(new int[]{9, 9, 9, 9, 9, 9, 9});
+        ListNode l6 = buildList(new int[]{9, 9, 9, 9});
+        ListNode sum3 = addTwoNumbers(l5, l6);
+        System.out.println("Test 3 Result: " + toListString(sum3));
+        assert toListString(sum3).equals("[8, 9, 9, 9, 0, 0, 0, 1]") : "Test 3 Failed!";
     }
 }
