@@ -37,15 +37,26 @@ public class PalindromeLinkedList {
         return sb.toString();
     }
 
+    private static ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+
     /**
-     * Checks whether a singly linked list is a palindrome using O(1) space.
+     * Checks whether a singly linked list is a palindrome and restores original list structure.
      * @param head Head of linked list
      * @return true if list is palindrome, false otherwise
      */
     public static boolean isPalindrome(ListNode head) {
         if (head == null || head.next == null) return true;
 
-        // Step 1: Find mid node
         ListNode slow = head;
         ListNode fast = head;
         while (fast.next != null && fast.next.next != null) {
@@ -53,29 +64,21 @@ public class PalindromeLinkedList {
             fast = fast.next.next;
         }
 
-        // Step 2: Reverse second half
-        ListNode prev = null;
-        ListNode curr = slow.next;
-        while (curr != null) {
-            ListNode nextTemp = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = nextTemp;
-        }
-
-        // Step 3: Compare values
+        ListNode secondHalf = reverseList(slow.next);
         ListNode p1 = head;
-        ListNode p2 = prev;
-        boolean result = true;
+        ListNode p2 = secondHalf;
+        boolean isPal = true;
+
         while (p2 != null) {
             if (p1.val != p2.val) {
-                result = false;
+                isPal = false;
                 break;
             }
             p1 = p1.next;
             p2 = p2.next;
         }
 
-        return result;
+        slow.next = reverseList(secondHalf); // Restore list
+        return isPal;
     }
 }
