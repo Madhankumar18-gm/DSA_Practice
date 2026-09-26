@@ -73,5 +73,18 @@ public class RemoveDuplicatesFromSortedListII {
         ListNode l1 = buildList(new int[]{1, 2, 3, 3, 4, 4, 5});
         ListNode res1 = deleteDuplicates(l1);
         System.out.println("Test 1 Result: " + toListString(res1));
+        assert toListString(res1).equals("[1, 2, 5]") : "Test 1 Failed!";
+
+        // Test 2: [1, 1, 1, 2, 3] -> [2, 3]
+        ListNode l2 = buildList(new int[]{1, 1, 1, 2, 3});
+        ListNode res2 = deleteDuplicates(l2);
+        System.out.println("Test 2 Result: " + toListString(res2));
+        assert toListString(res2).equals("[2, 3]") : "Test 2 Failed!";
+
+        // Test 3: [1, 1] -> []
+        ListNode l3 = buildList(new int[]{1, 1});
+        ListNode res3 = deleteDuplicates(l3);
+        System.out.println("Test 3 Result: " + toListString(res3));
+        assert toListString(res3).equals("[]") : "Test 3 Failed!";
     }
 }
