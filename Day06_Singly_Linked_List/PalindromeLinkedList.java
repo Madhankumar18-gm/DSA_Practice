@@ -89,5 +89,18 @@ public class PalindromeLinkedList {
         ListNode l1 = buildList(new int[]{1, 2, 2, 1});
         boolean ans1 = isPalindrome(l1);
         System.out.println("Test 1 [1, 2, 2, 1] Palindrome: " + ans1);
+        assert ans1 == true : "Test 1 Failed!";
+
+        // Test 2: Non-palindrome list [1, 2]
+        ListNode l2 = buildList(new int[]{1, 2});
+        boolean ans2 = isPalindrome(l2);
+        System.out.println("Test 2 [1, 2] Palindrome: " + ans2);
+        assert ans2 == false : "Test 2 Failed!";
+
+        // Test 3: Odd palindrome list [1, 2, 3, 2, 1]
+        ListNode l3 = buildList(new int[]{1, 2, 3, 2, 1});
+        boolean ans3 = isPalindrome(l3);
+        System.out.println("Test 3 [1, 2, 3, 2, 1] Palindrome: " + ans3);
+        assert ans3 == true : "Test 3 Failed!";
     }
 }
