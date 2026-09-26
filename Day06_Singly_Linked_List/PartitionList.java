@@ -76,5 +76,12 @@ public class PartitionList {
         ListNode l1 = buildList(new int[]{1, 4, 3, 2, 5, 2});
         ListNode res1 = partition(l1, 3);
         System.out.println("Test 1 Result: " + toListString(res1));
+        assert toListString(res1).equals("[1, 2, 2, 4, 3, 5]") : "Test 1 Failed!";
+
+        // Test 2: [2, 1], x = 2 -> [1, 2]
+        ListNode l2 = buildList(new int[]{2, 1});
+        ListNode res2 = partition(l2, 2);
+        System.out.println("Test 2 Result: " + toListString(res2));
+        assert toListString(res2).equals("[1, 2]") : "Test 2 Failed!";
     }
 }
