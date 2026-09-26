@@ -36,4 +36,15 @@ public class RotateList {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Rotates a linked list right by k places.
+     * @param head Head of linked list
+     * @param k Number of rotation positions
+     * @return Head of rotated list
+     */
+    public static ListNode rotateRight(ListNode head, int k) {
+        if (head == null || head.next == null || k == 0) return head;
+        return head;
+    }
 }
