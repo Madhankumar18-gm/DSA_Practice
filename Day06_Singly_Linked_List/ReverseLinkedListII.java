@@ -83,5 +83,7 @@ public class ReverseLinkedListII {
         ListNode res2 = reverseBetween(l2, 1, 1);
         System.out.println("Test 2 Result: " + toListString(res2));
         assert toListString(res2).equals("[5]") : "Test 2 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
