@@ -1,0 +1,108 @@
+/**
+ * Problem 45: Palindrome Linked List (LeetCode 234)
+ * 
+ * Given the head of a singly linked list, return true if it is a palindrome or false otherwise.
+ * 
+ * Time Complexity: O(N)
+ * Space Complexity: O(1) in-place modification.
+ */
+public class PalindromeLinkedList {
+    public static class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
+
+    public static ListNode buildList(int[] values) {
+        if (values == null || values.length == 0) return null;
+        ListNode dummy = new ListNode(-1);
+        ListNode curr = dummy;
+        for (int v : values) {
+            curr.next = new ListNode(v);
+            curr = curr.next;
+        }
+        return dummy.next;
+    }
+
+    public static String toListString(ListNode head) {
+        StringBuilder sb = new StringBuilder("[");
+        ListNode curr = head;
+        while (curr != null) {
+            sb.append(curr.val);
+            if (curr.next != null) sb.append(", ");
+            curr = curr.next;
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+
+    private static ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+
+    /**
+     * Checks whether a singly linked list is a palindrome.
+     * @param head Head of linked list
+     * @return true if list is palindrome, false otherwise
+     */
+    public static boolean isPalindrome(ListNode head) {
+        if (head == null || head.next == null) return true;
+
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        ListNode secondHalf = reverseList(slow.next);
+        ListNode p1 = head;
+        ListNode p2 = secondHalf;
+        boolean isPal = true;
+
+        while (p2 != null) {
+            if (p1.val != p2.val) {
+                isPal = false;
+                break;
+            }
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+
+        slow.next = reverseList(secondHalf);
+        return isPal;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== PalindromeLinkedList Execution Suite ===");
+
+        // Test 1: Palindrome list [1, 2, 2, 1]
+        ListNode l1 = buildList(new int[]{1, 2, 2, 1});
+        boolean ans1 = isPalindrome(l1);
+        System.out.println("Test 1 [1, 2, 2, 1] Palindrome: " + ans1);
+        assert ans1 == true : "Test 1 Failed!";
+
+        // Test 2: Non-palindrome list [1, 2]
+        ListNode l2 = buildList(new int[]{1, 2});
+        boolean ans2 = isPalindrome(l2);
+        System.out.println("Test 2 [1, 2] Palindrome: " + ans2);
+        assert ans2 == false : "Test 2 Failed!";
+
+        // Test 3: Odd palindrome list [1, 2, 3, 2, 1]
+        ListNode l3 = buildList(new int[]{1, 2, 3, 2, 1});
+        boolean ans3 = isPalindrome(l3);
+        System.out.println("Test 3 [1, 2, 3, 2, 1] Palindrome: " + ans3);
+        assert ans3 == true : "Test 3 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
+    }
+}

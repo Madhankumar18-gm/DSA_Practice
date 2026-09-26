@@ -6,8 +6,8 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 
 ## 📊 Repository Summary
 
-- **Total Problems Solved**: `44 Problems`
-- **Total Git Commits**: `390+ Commits`
+- **Total Problems Solved**: `53 Problems`
+- **Total Git Commits**: `470+ Commits`
 - **Primary Language**: `Java 17+`
 - **Remote Repository**: [GitHub - DSA_Practice](https://github.com/Madhankumar18-gm/DSA_Practice.git)
 
@@ -20,8 +20,9 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 - [x] **Day 03 - Advanced Backtracking** (N-Queens, Sudoku Solver, Permutations, Subsets, Grid DFS) — `8 Problems` \| `72 Commits`
 - [x] **Day 04 - Trees & BST Concepts** (Height, Range Bounds, Inversion, Level Order, Reconstruction, Codec, Path Sum) — `10 Problems` \| `90 Commits`
 - [x] **Day 05 - Linked List Concepts** (Fast & Slow Pointers, Floyd's Cycle, Dummy Nodes, 3-Pass Interleaving, PriorityQueue Heap) — `9 Problems` \| `81 Commits`
-- [ ] **Day 06 - Graphs & Advanced Graph Algorithms** (TBD)
-- [ ] **Day 07 - Dynamic Programming Advanced** (TBD)
+- [x] **Day 06 - Singly Linked List Concepts** (In-place Reversals, Dual Pointer Intersect, Bucket Partitioning, Ring Rotation, K-Group) — `9 Problems` \| `81 Commits`
+- [ ] **Day 07 - Graphs & Advanced Graph Algorithms** (TBD)
+- [ ] **Day 08 - Dynamic Programming Advanced** (TBD)
 
 ---
 
@@ -37,21 +38,23 @@ DSA Practice/
 ├── Day03_Advanced_Backtracking/         # Topic Folder Day 3 (8 problems)
 ├── Day04_Trees_and_BST/                 # Topic Folder Day 4 (10 problems)
 ├── Day05_Linked_List/                   # Topic Folder Day 5 (9 problems)
-│   ├── MiddleOfLinkedList.java
-│   ├── LinkedListCycle.java
-│   ├── LinkedListCycleII.java
-│   ├── MergeTwoSortedLists.java
-│   ├── RemoveNthNodeFromEnd.java
-│   ├── ReorderList.java
-│   ├── CopyListWithRandomPointer.java
-│   ├── AddTwoNumbers.java
-│   └── MergeKSortedLists.java
+├── Day06_Singly_Linked_List/            # Topic Folder Day 6 (9 problems)
+│   ├── PalindromeLinkedList.java
+│   ├── IntersectionOfTwoLinkedLists.java
+│   ├── RemoveDuplicatesFromSortedList.java
+│   ├── RemoveDuplicatesFromSortedListII.java
+│   ├── PartitionList.java
+│   ├── RotateList.java
+│   ├── ReverseLinkedListII.java
+│   ├── SwapNodesInPairs.java
+│   └── ReverseNodesInKGroup.java
 │
 ├── LeetCode/                            # Daily Date Folders for LeetCode Problems
 │   ├── 2026-09-22/                      # 2026-09-22 Daily Log (7 problems)
 │   ├── 2026-09-23/                      # 2026-09-23 Daily Log (18 problems)
 │   ├── 2026-09-24/                      # 2026-09-24 Daily Log (10 problems)
-│   └── 2026-09-25/                      # 2026-09-25 Daily Log (9 problems)
+│   ├── 2026-09-25/                      # 2026-09-25 Daily Log (9 problems)
+│   └── 2026-09-26/                      # 2026-09-26 Daily Log (9 problems)
 │       ├── README.md
 │       └── ...
 │
@@ -128,6 +131,19 @@ DSA Practice/
 | 43 | Add Two Numbers | [LeetCode #2](https://leetcode.com/problems/add-two-numbers/) | Carry Digit Arithmetic | $O(\max(N, M))$ | $O(\max(N, M))$ | [`AddTwoNumbers.java`](./Day05_Linked_List/AddTwoNumbers.java) |
 | 44 | Merge k Sorted Lists | [LeetCode #23](https://leetcode.com/problems/merge-k-sorted-lists/) | PriorityQueue Min-Heap | $O(N \log K)$ | $O(K)$ | [`MergeKSortedLists.java`](./Day05_Linked_List/MergeKSortedLists.java) |
 
+### Day 06: Singly Linked List Concepts
+| # | Problem Name | LeetCode Link | Topic Tag | Time | Space | Solution Code |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
+| 45 | Palindrome Linked List | [LeetCode #234](https://leetcode.com/problems/palindrome-linked-list/) | Mid-Find & Half Reversal | $O(N)$ | $O(1)$ | [`PalindromeLinkedList.java`](./Day06_Singly_Linked_List/PalindromeLinkedList.java) |
+| 46 | Intersection of Two Linked Lists | [LeetCode #160](https://leetcode.com/problems/intersection-of-two-linked-lists/) | Dual Pointer Traversal | $O(N + M)$ | $O(1)$ | [`IntersectionOfTwoLinkedLists.java`](./Day06_Singly_Linked_List/IntersectionOfTwoLinkedLists.java) |
+| 47 | Remove Duplicates from Sorted List | [LeetCode #83](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | Single-Pass Deduplication | $O(N)$ | $O(1)$ | [`RemoveDuplicatesFromSortedList.java`](./Day06_Singly_Linked_List/RemoveDuplicatesFromSortedList.java) |
+| 48 | Remove Duplicates from Sorted List II | [LeetCode #82](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) | Predecessor Pointer | $O(N)$ | $O(1)$ | [`RemoveDuplicatesFromSortedListII.java`](./Day06_Singly_Linked_List/RemoveDuplicatesFromSortedListII.java) |
+| 49 | Partition List | [LeetCode #86](https://leetcode.com/problems/partition-list/) | Dual Dummy Buckets | $O(N)$ | $O(1)$ | [`PartitionList.java`](./Day06_Singly_Linked_List/PartitionList.java) |
+| 50 | Rotate List | [LeetCode #61](https://leetcode.com/problems/rotate-list/) | Circular Ring & Break | $O(N)$ | $O(1)$ | [`RotateList.java`](./Day06_Singly_Linked_List/RotateList.java) |
+| 51 | Reverse Linked List II | [LeetCode #92](https://leetcode.com/problems/reverse-linked-list-ii/) | One-Pass Subsegment Reversal | $O(N)$ | $O(1)$ | [`ReverseLinkedListII.java`](./Day06_Singly_Linked_List/ReverseLinkedListII.java) |
+| 52 | Swap Nodes in Pairs | [LeetCode #24](https://leetcode.com/problems/swap-nodes-in-pairs/) | Iterative Pair Splicing | $O(N)$ | $O(1)$ | [`SwapNodesInPairs.java`](./Day06_Singly_Linked_List/SwapNodesInPairs.java) |
+| 53 | Reverse Nodes in k-Group | [LeetCode #25](https://leetcode.com/problems/reverse-nodes-in-k-group/) | K-Group Segment Reversal | $O(N)$ | $O(1)$ | [`ReverseNodesInKGroup.java`](./Day06_Singly_Linked_List/ReverseNodesInKGroup.java) |
+
 ---
 
 ## 🛠️ Verification & Execution
@@ -135,7 +151,7 @@ DSA Practice/
 All Java source files are self-contained executable suites with embedded `main()` assertion methods. To compile and run any problem solution:
 
 ```bash
-# Example: Compile and run MiddleOfLinkedList
-javac Day05_Linked_List/MiddleOfLinkedList.java
-java -cp Day05_Linked_List MiddleOfLinkedList
+# Example: Compile and run PalindromeLinkedList
+javac Day06_Singly_Linked_List/PalindromeLinkedList.java
+java -cp Day06_Singly_Linked_List PalindromeLinkedList
 ```
