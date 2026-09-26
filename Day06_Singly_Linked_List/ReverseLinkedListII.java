@@ -40,7 +40,6 @@ public class ReverseLinkedListII {
 
     /**
      * Reverses a subsegment of a linked list.
-     * Refactored dummy node pointer manipulation.
      * @param head Head of linked list
      * @param left Start position (1-based)
      * @param right End position (1-based)
@@ -68,5 +67,14 @@ public class ReverseLinkedListII {
         }
 
         return dummy.next;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== ReverseLinkedListII Execution Suite ===");
+
+        // Test 1: [1, 2, 3, 4, 5], left = 2, right = 4 -> [1, 4, 3, 2, 5]
+        ListNode l1 = buildList(new int[]{1, 2, 3, 4, 5});
+        ListNode res1 = reverseBetween(l1, 2, 4);
+        System.out.println("Test 1 Result: " + toListString(res1));
     }
 }
