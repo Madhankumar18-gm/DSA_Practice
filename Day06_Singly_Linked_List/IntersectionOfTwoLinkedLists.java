@@ -77,5 +77,7 @@ public class IntersectionOfTwoLinkedLists {
         ListNode intersect2 = getIntersectionNode(list1, list2);
         System.out.println("Test 2 Intersection Node Val: " + (intersect2 != null ? intersect2.val : "null"));
         assert intersect2 == null : "Test 2 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
