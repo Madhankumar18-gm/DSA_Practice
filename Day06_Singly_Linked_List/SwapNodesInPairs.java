@@ -38,25 +38,25 @@ public class SwapNodesInPairs {
     }
 
     /**
-     * Swaps adjacent nodes in pairs using dummy node pointer splicing.
+     * Swaps adjacent nodes in pairs.
+     * Refactored pointer step logic.
      * @param head Head of linked list
      * @return Head of pair-swapped list
      */
     public static ListNode swapPairs(ListNode head) {
-        if (head == null || head.next == null) return head;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode current = dummy;
 
-        ListNode dummy = new ListNode(0, head);
-        ListNode prev = dummy;
-
-        while (prev.next != null && prev.next.next != null) {
-            ListNode first = prev.next;
-            ListNode second = prev.next.next;
+        while (current.next != null && current.next.next != null) {
+            ListNode first = current.next;
+            ListNode second = current.next.next;
 
             first.next = second.next;
-            second.next = first;
-            prev.next = second;
+            current.next = second;
+            current.next.next = first;
 
-            prev = first;
+            current = current.next.next;
         }
 
         return dummy.next;
