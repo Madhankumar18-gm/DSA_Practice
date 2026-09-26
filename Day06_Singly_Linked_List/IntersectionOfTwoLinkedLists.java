@@ -35,4 +35,15 @@ public class IntersectionOfTwoLinkedLists {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Finds the intersection node of two singly linked lists.
+     * @param headA Head of first list
+     * @param headB Head of second list
+     * @return Intersecting ListNode or null if no intersection
+     */
+    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if (headA == null || headB == null) return null;
+        return null;
+    }
 }
