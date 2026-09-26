@@ -39,7 +39,6 @@ public class PartitionList {
 
     /**
      * Partitions a linked list around value x.
-     * Refactored pointer names for clarity.
      * @param head Head of linked list
      * @param x Partition pivot value
      * @return Head of partitioned list
@@ -68,5 +67,14 @@ public class PartitionList {
         before.next = afterHead.next;
 
         return beforeHead.next;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== PartitionList Execution Suite ===");
+
+        // Test 1: [1, 4, 3, 2, 5, 2], x = 3 -> [1, 2, 2, 4, 3, 5]
+        ListNode l1 = buildList(new int[]{1, 4, 3, 2, 5, 2});
+        ListNode res1 = partition(l1, 3);
+        System.out.println("Test 1 Result: " + toListString(res1));
     }
 }
