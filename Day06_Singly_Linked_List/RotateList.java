@@ -84,5 +84,7 @@ public class RotateList {
         ListNode res2 = rotateRight(l2, 4);
         System.out.println("Test 2 Result: " + toListString(res2));
         assert toListString(res2).equals("[2, 0, 1]") : "Test 2 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
