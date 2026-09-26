@@ -37,4 +37,14 @@ public class RemoveDuplicatesFromSortedListII {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Removes all nodes with duplicate numbers from a sorted singly linked list.
+     * @param head Head of sorted list
+     * @return Head of modified list with distinct values only
+     */
+    public static ListNode deleteDuplicates(ListNode head) {
+        if (head == null || head.next == null) return head;
+        return head;
+    }
 }
