@@ -38,7 +38,8 @@ public class RotateList {
     }
 
     /**
-     * Rotates a linked list right by k places using circular list connection.
+     * Rotates a linked list right by k places.
+     * Refactored modulo check for early exit when k is a multiple of length.
      * @param head Head of linked list
      * @param k Number of rotation positions
      * @return Head of rotated list
@@ -46,7 +47,6 @@ public class RotateList {
     public static ListNode rotateRight(ListNode head, int k) {
         if (head == null || head.next == null || k == 0) return head;
 
-        // Step 1: Compute length
         ListNode oldTail = head;
         int length = 1;
         while (oldTail.next != null) {
@@ -54,17 +54,17 @@ public class RotateList {
             length++;
         }
 
-        // Step 2: Connect into ring
+        int effectiveK = k % length;
+        if (effectiveK == 0) return head;
+
         oldTail.next = head;
 
-        // Step 3: Find new tail
-        int stepsToNewTail = length - (k % length) - 1;
+        int stepsToNewTail = length - effectiveK - 1;
         ListNode newTail = head;
         for (int i = 0; i < stepsToNewTail; i++) {
             newTail = newTail.next;
         }
 
-        // Step 4: Break ring
         ListNode newHead = newTail.next;
         newTail.next = null;
 
