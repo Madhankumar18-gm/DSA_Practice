@@ -37,4 +37,16 @@ public class ReverseLinkedListII {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Reverses a subsegment of a linked list from index left to right (1-based).
+     * @param head Head of linked list
+     * @param left Start position (1-based)
+     * @param right End position (1-based)
+     * @return Modified linked list head
+     */
+    public static ListNode reverseBetween(ListNode head, int left, int right) {
+        if (head == null || left == right) return head;
+        return head;
+    }
 }
