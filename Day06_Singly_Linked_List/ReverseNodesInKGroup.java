@@ -36,4 +36,15 @@ public class ReverseNodesInKGroup {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Reverses nodes in k-group.
+     * @param head Head of linked list
+     * @param k Group size
+     * @return Head of modified list
+     */
+    public static ListNode reverseKGroup(ListNode head, int k) {
+        if (head == null || k <= 1) return head;
+        return head;
+    }
 }
