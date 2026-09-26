@@ -77,5 +77,12 @@ public class RotateList {
         ListNode l1 = buildList(new int[]{1, 2, 3, 4, 5});
         ListNode res1 = rotateRight(l1, 2);
         System.out.println("Test 1 Result: " + toListString(res1));
+        assert toListString(res1).equals("[4, 5, 1, 2, 3]") : "Test 1 Failed!";
+
+        // Test 2: [0, 1, 2], k = 4 -> [2, 0, 1]
+        ListNode l2 = buildList(new int[]{0, 1, 2});
+        ListNode res2 = rotateRight(l2, 4);
+        System.out.println("Test 2 Result: " + toListString(res2));
+        assert toListString(res2).equals("[2, 0, 1]") : "Test 2 Failed!";
     }
 }
