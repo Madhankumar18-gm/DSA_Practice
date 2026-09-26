@@ -83,5 +83,7 @@ public class PartitionList {
         ListNode res2 = partition(l2, 2);
         System.out.println("Test 2 Result: " + toListString(res2));
         assert toListString(res2).equals("[1, 2]") : "Test 2 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
