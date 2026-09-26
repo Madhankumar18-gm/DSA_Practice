@@ -39,7 +39,6 @@ public class SwapNodesInPairs {
 
     /**
      * Swaps adjacent nodes in pairs.
-     * Refactored pointer step logic.
      * @param head Head of linked list
      * @return Head of pair-swapped list
      */
@@ -60,5 +59,14 @@ public class SwapNodesInPairs {
         }
 
         return dummy.next;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== SwapNodesInPairs Execution Suite ===");
+
+        // Test 1: [1, 2, 3, 4] -> [2, 1, 4, 3]
+        ListNode l1 = buildList(new int[]{1, 2, 3, 4});
+        ListNode res1 = swapPairs(l1);
+        System.out.println("Test 1 Result: " + toListString(res1));
     }
 }
