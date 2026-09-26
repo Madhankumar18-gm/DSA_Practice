@@ -38,12 +38,44 @@ public class PalindromeLinkedList {
     }
 
     /**
-     * Checks whether a singly linked list is a palindrome.
+     * Checks whether a singly linked list is a palindrome using O(1) space.
      * @param head Head of linked list
      * @return true if list is palindrome, false otherwise
      */
     public static boolean isPalindrome(ListNode head) {
         if (head == null || head.next == null) return true;
-        return true;
+
+        // Step 1: Find mid node
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        // Step 2: Reverse second half
+        ListNode prev = null;
+        ListNode curr = slow.next;
+        while (curr != null) {
+            ListNode nextTemp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextTemp;
+        }
+
+        // Step 3: Compare values
+        ListNode p1 = head;
+        ListNode p2 = prev;
+        boolean result = true;
+        while (p2 != null) {
+            if (p1.val != p2.val) {
+                result = false;
+                break;
+            }
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+
+        return result;
     }
 }
