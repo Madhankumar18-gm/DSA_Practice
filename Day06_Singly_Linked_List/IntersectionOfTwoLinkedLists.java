@@ -38,6 +38,7 @@ public class IntersectionOfTwoLinkedLists {
 
     /**
      * Finds the intersection node of two singly linked lists using dual pointer redirection.
+     * Refactored for clear loop termination on equal references.
      * @param headA Head of first list
      * @param headB Head of second list
      * @return Intersecting ListNode or null if no intersection
@@ -45,14 +46,14 @@ public class IntersectionOfTwoLinkedLists {
     public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) return null;
 
-        ListNode pA = headA;
-        ListNode pB = headB;
+        ListNode p1 = headA;
+        ListNode p2 = headB;
 
-        while (pA != pB) {
-            pA = (pA == null) ? headB : pA.next;
-            pB = (pB == null) ? headA : pB.next;
+        while (p1 != p2) {
+            p1 = (p1 != null) ? p1.next : headB;
+            p2 = (p2 != null) ? p2.next : headA;
         }
 
-        return pA;
+        return p1;
     }
 }
