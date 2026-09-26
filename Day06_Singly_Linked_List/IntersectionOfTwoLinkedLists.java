@@ -59,7 +59,7 @@ public class IntersectionOfTwoLinkedLists {
     public static void main(String[] args) {
         System.out.println("=== IntersectionOfTwoLinkedLists Execution Suite ===");
 
-        // Test 1: Intersecting lists [4, 1, 8, 4, 5] and [5, 6, 1, 8, 4, 5] at node val 8
+        // Test 1: Intersecting lists at node val 8
         ListNode common = buildList(new int[]{8, 4, 5});
         ListNode headA = buildList(new int[]{4, 1});
         ListNode headB = buildList(new int[]{5, 6, 1});
@@ -67,7 +67,15 @@ public class IntersectionOfTwoLinkedLists {
         headA.next.next = common;
         headB.next.next.next = common;
 
-        ListNode intersect = getIntersectionNode(headA, headB);
-        System.out.println("Test 1 Intersection Node Val: " + (intersect != null ? intersect.val : "null"));
+        ListNode intersect1 = getIntersectionNode(headA, headB);
+        System.out.println("Test 1 Intersection Node Val: " + (intersect1 != null ? intersect1.val : "null"));
+        assert intersect1 != null && intersect1.val == 8 : "Test 1 Failed!";
+
+        // Test 2: Non-intersecting lists [2, 6, 4] and [1, 5]
+        ListNode list1 = buildList(new int[]{2, 6, 4});
+        ListNode list2 = buildList(new int[]{1, 5});
+        ListNode intersect2 = getIntersectionNode(list1, list2);
+        System.out.println("Test 2 Intersection Node Val: " + (intersect2 != null ? intersect2.val : "null"));
+        assert intersect2 == null : "Test 2 Failed!";
     }
 }
