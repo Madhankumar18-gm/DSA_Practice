@@ -50,7 +50,7 @@ public class PalindromeLinkedList {
     }
 
     /**
-     * Checks whether a singly linked list is a palindrome and restores original list structure.
+     * Checks whether a singly linked list is a palindrome.
      * @param head Head of linked list
      * @return true if list is palindrome, false otherwise
      */
@@ -78,7 +78,16 @@ public class PalindromeLinkedList {
             p2 = p2.next;
         }
 
-        slow.next = reverseList(secondHalf); // Restore list
+        slow.next = reverseList(secondHalf);
         return isPal;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== PalindromeLinkedList Execution Suite ===");
+
+        // Test 1: Palindrome list [1, 2, 2, 1]
+        ListNode l1 = buildList(new int[]{1, 2, 2, 1});
+        boolean ans1 = isPalindrome(l1);
+        System.out.println("Test 1 [1, 2, 2, 1] Palindrome: " + ans1);
     }
 }
