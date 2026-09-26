@@ -37,8 +37,17 @@ public class ReverseNodesInKGroup {
         return sb.toString();
     }
 
+    private static ListNode getKth(ListNode curr, int k) {
+        while (curr != null && k > 0) {
+            curr = curr.next;
+            k--;
+        }
+        return curr;
+    }
+
     /**
-     * Reverses nodes in k-group using subsegment check and iterative reversal.
+     * Reverses nodes in k-group.
+     * Refactored helper method naming and groupPrev update.
      * @param head Head of linked list
      * @param k Group size
      * @return Head of modified list
@@ -50,13 +59,12 @@ public class ReverseNodesInKGroup {
         ListNode groupPrev = dummy;
 
         while (true) {
-            ListNode kth = getKthNode(groupPrev, k);
+            ListNode kth = getKth(groupPrev, k);
             if (kth == null) break;
 
             ListNode groupNext = kth.next;
 
-            // Reverse group
-            ListNode prev = kth.next;
+            ListNode prev = groupNext;
             ListNode curr = groupPrev.next;
 
             while (curr != groupNext) {
@@ -72,13 +80,5 @@ public class ReverseNodesInKGroup {
         }
 
         return dummy.next;
-    }
-
-    private static ListNode getKthNode(ListNode curr, int k) {
-        while (curr != null && k > 0) {
-            curr = curr.next;
-            k--;
-        }
-        return curr;
     }
 }
