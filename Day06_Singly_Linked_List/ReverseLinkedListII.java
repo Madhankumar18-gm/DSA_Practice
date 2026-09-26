@@ -39,7 +39,8 @@ public class ReverseLinkedListII {
     }
 
     /**
-     * Reverses a subsegment of a linked list from index left to right in a single pass.
+     * Reverses a subsegment of a linked list.
+     * Refactored dummy node pointer manipulation.
      * @param head Head of linked list
      * @param left Start position (1-based)
      * @param right End position (1-based)
@@ -48,19 +49,22 @@ public class ReverseLinkedListII {
     public static ListNode reverseBetween(ListNode head, int left, int right) {
         if (head == null || left == right) return head;
 
-        ListNode dummy = new ListNode(0, head);
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
         ListNode prev = dummy;
 
         for (int i = 0; i < left - 1; i++) {
             prev = prev.next;
         }
 
-        ListNode curr = prev.next;
+        ListNode start = prev.next;
+        ListNode then = start.next;
+
         for (int i = 0; i < right - left; i++) {
-            ListNode nextNode = curr.next;
-            curr.next = nextNode.next;
-            nextNode.next = prev.next;
-            prev.next = nextNode;
+            start.next = then.next;
+            then.next = prev.next;
+            prev.next = then;
+            then = start.next;
         }
 
         return dummy.next;
