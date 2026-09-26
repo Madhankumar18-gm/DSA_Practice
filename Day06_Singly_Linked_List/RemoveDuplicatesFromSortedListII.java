@@ -40,7 +40,6 @@ public class RemoveDuplicatesFromSortedListII {
 
     /**
      * Removes all nodes with duplicate numbers.
-     * Refactored loop with curr pointer variable for readability.
      * @param head Head of sorted list
      * @return Head of modified list with distinct values only
      */
@@ -65,5 +64,14 @@ public class RemoveDuplicatesFromSortedListII {
         }
 
         return dummy.next;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== RemoveDuplicatesFromSortedListII Execution Suite ===");
+
+        // Test 1: [1, 2, 3, 3, 4, 4, 5] -> [1, 2, 5]
+        ListNode l1 = buildList(new int[]{1, 2, 3, 3, 4, 4, 5});
+        ListNode res1 = deleteDuplicates(l1);
+        System.out.println("Test 1 Result: " + toListString(res1));
     }
 }
