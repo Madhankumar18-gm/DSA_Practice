@@ -95,5 +95,7 @@ public class ReverseNodesInKGroup {
         ListNode res2 = reverseKGroup(l2, 3);
         System.out.println("Test 2 Result: " + toListString(res2));
         assert toListString(res2).equals("[3, 2, 1, 4, 5]") : "Test 2 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
