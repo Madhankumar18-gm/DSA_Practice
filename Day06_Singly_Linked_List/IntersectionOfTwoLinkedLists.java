@@ -37,8 +37,7 @@ public class IntersectionOfTwoLinkedLists {
     }
 
     /**
-     * Finds the intersection node of two singly linked lists using dual pointer redirection.
-     * Refactored for clear loop termination on equal references.
+     * Finds the intersection node of two singly linked lists.
      * @param headA Head of first list
      * @param headB Head of second list
      * @return Intersecting ListNode or null if no intersection
@@ -55,5 +54,20 @@ public class IntersectionOfTwoLinkedLists {
         }
 
         return p1;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== IntersectionOfTwoLinkedLists Execution Suite ===");
+
+        // Test 1: Intersecting lists [4, 1, 8, 4, 5] and [5, 6, 1, 8, 4, 5] at node val 8
+        ListNode common = buildList(new int[]{8, 4, 5});
+        ListNode headA = buildList(new int[]{4, 1});
+        ListNode headB = buildList(new int[]{5, 6, 1});
+
+        headA.next.next = common;
+        headB.next.next.next = common;
+
+        ListNode intersect = getIntersectionNode(headA, headB);
+        System.out.println("Test 1 Intersection Node Val: " + (intersect != null ? intersect.val : "null"));
     }
 }
