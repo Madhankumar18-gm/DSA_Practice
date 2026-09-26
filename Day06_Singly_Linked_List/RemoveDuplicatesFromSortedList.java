@@ -39,7 +39,6 @@ public class RemoveDuplicatesFromSortedList {
 
     /**
      * Removes duplicate values from a sorted singly linked list.
-     * Refactored for clean pointer step logic.
      * @param head Head of sorted linked list
      * @return Head of deduplicated list
      */
@@ -53,5 +52,14 @@ public class RemoveDuplicatesFromSortedList {
             }
         }
         return head;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== RemoveDuplicatesFromSortedList Execution Suite ===");
+
+        // Test 1: [1, 1, 2] -> [1, 2]
+        ListNode l1 = buildList(new int[]{1, 1, 2});
+        ListNode res1 = deleteDuplicates(l1);
+        System.out.println("Test 1 Result: " + toListString(res1));
     }
 }
