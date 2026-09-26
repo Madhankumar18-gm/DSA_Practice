@@ -86,5 +86,7 @@ public class RemoveDuplicatesFromSortedListII {
         ListNode res3 = deleteDuplicates(l3);
         System.out.println("Test 3 Result: " + toListString(res3));
         assert toListString(res3).equals("[]") : "Test 3 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
