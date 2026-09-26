@@ -37,13 +37,22 @@ public class IntersectionOfTwoLinkedLists {
     }
 
     /**
-     * Finds the intersection node of two singly linked lists.
+     * Finds the intersection node of two singly linked lists using dual pointer redirection.
      * @param headA Head of first list
      * @param headB Head of second list
      * @return Intersecting ListNode or null if no intersection
      */
     public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) return null;
-        return null;
+
+        ListNode pA = headA;
+        ListNode pB = headB;
+
+        while (pA != pB) {
+            pA = (pA == null) ? headB : pA.next;
+            pB = (pB == null) ? headA : pB.next;
+        }
+
+        return pA;
     }
 }
