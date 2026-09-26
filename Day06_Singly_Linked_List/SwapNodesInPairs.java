@@ -68,5 +68,17 @@ public class SwapNodesInPairs {
         ListNode l1 = buildList(new int[]{1, 2, 3, 4});
         ListNode res1 = swapPairs(l1);
         System.out.println("Test 1 Result: " + toListString(res1));
+        assert toListString(res1).equals("[2, 1, 4, 3]") : "Test 1 Failed!";
+
+        // Test 2: [] -> []
+        ListNode res2 = swapPairs(null);
+        System.out.println("Test 2 Result: " + toListString(res2));
+        assert toListString(res2).equals("[]") : "Test 2 Failed!";
+
+        // Test 3: [1] -> [1]
+        ListNode l3 = buildList(new int[]{1});
+        ListNode res3 = swapPairs(l3);
+        System.out.println("Test 3 Result: " + toListString(res3));
+        assert toListString(res3).equals("[1]") : "Test 3 Failed!";
     }
 }
