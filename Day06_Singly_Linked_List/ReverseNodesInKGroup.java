@@ -38,13 +38,47 @@ public class ReverseNodesInKGroup {
     }
 
     /**
-     * Reverses nodes in k-group.
+     * Reverses nodes in k-group using subsegment check and iterative reversal.
      * @param head Head of linked list
      * @param k Group size
      * @return Head of modified list
      */
     public static ListNode reverseKGroup(ListNode head, int k) {
         if (head == null || k <= 1) return head;
-        return head;
+
+        ListNode dummy = new ListNode(0, head);
+        ListNode groupPrev = dummy;
+
+        while (true) {
+            ListNode kth = getKthNode(groupPrev, k);
+            if (kth == null) break;
+
+            ListNode groupNext = kth.next;
+
+            // Reverse group
+            ListNode prev = kth.next;
+            ListNode curr = groupPrev.next;
+
+            while (curr != groupNext) {
+                ListNode tmp = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = tmp;
+            }
+
+            ListNode tmp = groupPrev.next;
+            groupPrev.next = kth;
+            groupPrev = tmp;
+        }
+
+        return dummy.next;
+    }
+
+    private static ListNode getKthNode(ListNode curr, int k) {
+        while (curr != null && k > 0) {
+            curr = curr.next;
+            k--;
+        }
+        return curr;
     }
 }
