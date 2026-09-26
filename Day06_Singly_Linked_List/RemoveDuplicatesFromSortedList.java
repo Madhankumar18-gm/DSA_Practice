@@ -38,13 +38,12 @@ public class RemoveDuplicatesFromSortedList {
     }
 
     /**
-     * Removes duplicate values from a sorted singly linked list using single-pass pointer traversal.
+     * Removes duplicate values from a sorted singly linked list.
+     * Refactored for clean pointer step logic.
      * @param head Head of sorted linked list
      * @return Head of deduplicated list
      */
     public static ListNode deleteDuplicates(ListNode head) {
-        if (head == null || head.next == null) return head;
-
         ListNode curr = head;
         while (curr != null && curr.next != null) {
             if (curr.val == curr.next.val) {
@@ -53,7 +52,6 @@ public class RemoveDuplicatesFromSortedList {
                 curr = curr.next;
             }
         }
-
         return head;
     }
 }
