@@ -38,13 +38,31 @@ public class PartitionList {
     }
 
     /**
-     * Partitions a linked list around value x while preserving relative order.
+     * Partitions a linked list around value x using two dummy bucket pointers.
      * @param head Head of linked list
      * @param x Partition pivot value
      * @return Head of partitioned list
      */
     public static ListNode partition(ListNode head, int x) {
-        if (head == null || head.next == null) return head;
-        return head;
+        ListNode lessHead = new ListNode(0);
+        ListNode greaterHead = new ListNode(0);
+        ListNode less = lessHead;
+        ListNode greater = greaterHead;
+
+        while (head != null) {
+            if (head.val < x) {
+                less.next = head;
+                less = less.next;
+            } else {
+                greater.next = head;
+                greater = greater.next;
+            }
+            head = head.next;
+        }
+
+        greater.next = null;
+        less.next = greaterHead.next;
+
+        return lessHead.next;
     }
 }
