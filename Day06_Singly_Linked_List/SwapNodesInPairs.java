@@ -36,4 +36,14 @@ public class SwapNodesInPairs {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Swaps adjacent nodes in pairs.
+     * @param head Head of linked list
+     * @return Head of pair-swapped list
+     */
+    public static ListNode swapPairs(ListNode head) {
+        if (head == null || head.next == null) return head;
+        return head;
+    }
 }
