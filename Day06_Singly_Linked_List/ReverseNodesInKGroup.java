@@ -47,7 +47,6 @@ public class ReverseNodesInKGroup {
 
     /**
      * Reverses nodes in k-group.
-     * Refactored helper method naming and groupPrev update.
      * @param head Head of linked list
      * @param k Group size
      * @return Head of modified list
@@ -80,5 +79,14 @@ public class ReverseNodesInKGroup {
         }
 
         return dummy.next;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== ReverseNodesInKGroup Execution Suite ===");
+
+        // Test 1: [1, 2, 3, 4, 5], k = 2 -> [2, 1, 4, 3, 5]
+        ListNode l1 = buildList(new int[]{1, 2, 3, 4, 5});
+        ListNode res1 = reverseKGroup(l1, 2);
+        System.out.println("Test 1 Result: " + toListString(res1));
     }
 }
