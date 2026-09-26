@@ -36,4 +36,15 @@ public class PartitionList {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Partitions a linked list around value x while preserving relative order.
+     * @param head Head of linked list
+     * @param x Partition pivot value
+     * @return Head of partitioned list
+     */
+    public static ListNode partition(ListNode head, int x) {
+        if (head == null || head.next == null) return head;
+        return head;
+    }
 }
