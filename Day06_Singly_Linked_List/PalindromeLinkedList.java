@@ -102,5 +102,7 @@ public class PalindromeLinkedList {
         boolean ans3 = isPalindrome(l3);
         System.out.println("Test 3 [1, 2, 3, 2, 1] Palindrome: " + ans3);
         assert ans3 == true : "Test 3 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
