@@ -76,5 +76,12 @@ public class ReverseLinkedListII {
         ListNode l1 = buildList(new int[]{1, 2, 3, 4, 5});
         ListNode res1 = reverseBetween(l1, 2, 4);
         System.out.println("Test 1 Result: " + toListString(res1));
+        assert toListString(res1).equals("[1, 4, 3, 2, 5]") : "Test 1 Failed!";
+
+        // Test 2: Single node list [5], left = 1, right = 1 -> [5]
+        ListNode l2 = buildList(new int[]{5});
+        ListNode res2 = reverseBetween(l2, 1, 1);
+        System.out.println("Test 2 Result: " + toListString(res2));
+        assert toListString(res2).equals("[5]") : "Test 2 Failed!";
     }
 }
