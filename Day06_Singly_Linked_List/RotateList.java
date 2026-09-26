@@ -39,7 +39,6 @@ public class RotateList {
 
     /**
      * Rotates a linked list right by k places.
-     * Refactored modulo check for early exit when k is a multiple of length.
      * @param head Head of linked list
      * @param k Number of rotation positions
      * @return Head of rotated list
@@ -69,5 +68,14 @@ public class RotateList {
         newTail.next = null;
 
         return newHead;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== RotateList Execution Suite ===");
+
+        // Test 1: [1, 2, 3, 4, 5], k = 2 -> [4, 5, 1, 2, 3]
+        ListNode l1 = buildList(new int[]{1, 2, 3, 4, 5});
+        ListNode res1 = rotateRight(l1, 2);
+        System.out.println("Test 1 Result: " + toListString(res1));
     }
 }
