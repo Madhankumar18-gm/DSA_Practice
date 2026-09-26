@@ -3,13 +3,6 @@
  * 
  * Given the head of a linked list, rotate the list to the right by k places.
  * 
- * Algorithm:
- * 1. Calculate the length of the list N and find tail node.
- * 2. Connect tail.next to head to form a ring.
- * 3. Compute effective rotation k = k % N.
- * 4. Find new tail at position (N - k - 1) from head.
- * 5. Set new head = newTail.next and break the ring by setting newTail.next = null.
- * 
  * Time Complexity: O(N)
  * Space Complexity: O(1) auxiliary space.
  */
@@ -19,5 +12,28 @@ public class RotateList {
         ListNode next;
         ListNode(int val) { this.val = val; }
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
+
+    public static ListNode buildList(int[] values) {
+        if (values == null || values.length == 0) return null;
+        ListNode dummy = new ListNode(-1);
+        ListNode curr = dummy;
+        for (int v : values) {
+            curr.next = new ListNode(v);
+            curr = curr.next;
+        }
+        return dummy.next;
+    }
+
+    public static String toListString(ListNode head) {
+        StringBuilder sb = new StringBuilder("[");
+        ListNode curr = head;
+        while (curr != null) {
+            sb.append(curr.val);
+            if (curr.next != null) sb.append(", ");
+            curr = curr.next;
+        }
+        sb.append("]");
+        return sb.toString();
     }
 }
