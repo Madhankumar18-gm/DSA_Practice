@@ -39,26 +39,29 @@ public class RemoveDuplicatesFromSortedListII {
     }
 
     /**
-     * Removes all nodes with duplicate numbers using dummy head & predecessor pointer.
+     * Removes all nodes with duplicate numbers.
+     * Refactored loop with curr pointer variable for readability.
      * @param head Head of sorted list
      * @return Head of modified list with distinct values only
      */
     public static ListNode deleteDuplicates(ListNode head) {
-        if (head == null || head.next == null) return head;
-
         ListNode dummy = new ListNode(0, head);
         ListNode prev = dummy;
+        ListNode curr = head;
 
-        while (head != null) {
-            if (head.next != null && head.val == head.next.val) {
-                while (head.next != null && head.val == head.next.val) {
-                    head = head.next;
-                }
-                prev.next = head.next;
+        while (curr != null) {
+            boolean hasDuplicate = false;
+            while (curr.next != null && curr.val == curr.next.val) {
+                curr = curr.next;
+                hasDuplicate = true;
+            }
+
+            if (hasDuplicate) {
+                prev.next = curr.next;
             } else {
                 prev = prev.next;
             }
-            head = head.next;
+            curr = curr.next;
         }
 
         return dummy.next;
