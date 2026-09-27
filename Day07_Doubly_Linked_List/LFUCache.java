@@ -113,6 +113,17 @@ public class LFUCache {
         LFUCache lfu = new LFUCache(2);
         lfu.put(1, 1);
         lfu.put(2, 2);
-        System.out.println("get(1): " + lfu.get(1)); // returns 1
+        int g1 = lfu.get(1); // freq of 1 becomes 2
+        System.out.println("get(1): " + g1);
+        assert g1 == 1 : "Test 1 Failed!";
+
+        lfu.put(3, 3); // evicts key 2 (freq 1 vs freq 2 of key 1)
+        int g2 = lfu.get(2);
+        System.out.println("get(2) [evicted]: " + g2);
+        assert g2 == -1 : "Test 2 Failed!";
+
+        int g3 = lfu.get(3); // returns 3
+        System.out.println("get(3): " + g3);
+        assert g3 == 3 : "Test 3 Failed!";
     }
 }
