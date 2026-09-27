@@ -70,5 +70,7 @@ public class DesignBrowserHistory {
         String f2 = browser.forward(2); // stays at linkedin.com
         System.out.println("forward(2): " + f2);
         assert f2.equals("linkedin.com") : "Test 4 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
