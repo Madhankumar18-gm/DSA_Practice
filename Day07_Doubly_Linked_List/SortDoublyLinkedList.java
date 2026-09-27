@@ -89,7 +89,7 @@ public class SortDoublyLinkedList {
     }
 
     /**
-     * Sorts a doubly linked list using Merge Sort with iterative merge helper.
+     * Sorts a doubly linked list using Merge Sort.
      * @param head Head of unsorted doubly linked list
      * @return Head of sorted doubly linked list
      */
@@ -102,5 +102,14 @@ public class SortDoublyLinkedList {
         second = mergeSort(second);
 
         return mergeIterative(head, second);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== SortDoublyLinkedList Execution Suite ===");
+
+        // Test 1: [4, 2, 1, 3] -> [1, 2, 3, 4]
+        Node dll1 = buildDLL(new int[]{4, 2, 1, 3});
+        Node sorted1 = mergeSort(dll1);
+        System.out.println("Test 1 Result: " + toListString(sorted1));
     }
 }
