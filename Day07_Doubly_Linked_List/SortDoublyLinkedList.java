@@ -54,35 +54,53 @@ public class SortDoublyLinkedList {
         return temp;
     }
 
-    private static Node merge(Node first, Node second) {
+    private static Node mergeIterative(Node first, Node second) {
         if (first == null) return second;
         if (second == null) return first;
 
-        if (first.val < second.val) {
-            first.next = merge(first.next, second);
-            if (first.next != null) first.next.prev = first;
-            first.prev = null;
-            return first;
-        } else {
-            second.next = merge(first, second.next);
-            if (second.next != null) second.next.prev = second;
-            second.prev = null;
-            return second;
+        Node dummy = new Node(0);
+        Node curr = dummy;
+
+        while (first != null && second != null) {
+            if (first.val <= second.val) {
+                curr.next = first;
+                first.prev = curr;
+                first = first.next;
+            } else {
+                curr.next = second;
+                second.prev = curr;
+                second = second.next;
+            }
+            curr = curr.next;
         }
+
+        if (first != null) {
+            curr.next = first;
+            first.prev = curr;
+        }
+        if (second != null) {
+            curr.next = second;
+            second.prev = curr;
+        }
+
+        Node result = dummy.next;
+        if (result != null) result.prev = null;
+        return result;
     }
 
     /**
-     * Sorts a doubly linked list using Merge Sort.
+     * Sorts a doubly linked list using Merge Sort with iterative merge helper.
      * @param head Head of unsorted doubly linked list
      * @return Head of sorted doubly linked list
      */
     public static Node mergeSort(Node head) {
         if (head == null || head.next == null) return head;
+
         Node second = split(head);
 
         head = mergeSort(head);
         second = mergeSort(second);
 
-        return merge(head, second);
+        return mergeIterative(head, second);
     }
 }
