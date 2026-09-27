@@ -111,5 +111,12 @@ public class SortDoublyLinkedList {
         Node dll1 = buildDLL(new int[]{4, 2, 1, 3});
         Node sorted1 = mergeSort(dll1);
         System.out.println("Test 1 Result: " + toListString(sorted1));
+        assert toListString(sorted1).equals("[1, 2, 3, 4]") : "Test 1 Failed!";
+
+        // Test 2: [-1, 5, 3, 4, 0] -> [-1, 0, 3, 4, 5]
+        Node dll2 = buildDLL(new int[]{-1, 5, 3, 4, 0});
+        Node sorted2 = mergeSort(dll2);
+        System.out.println("Test 2 Result: " + toListString(sorted2));
+        assert toListString(sorted2).equals("[-1, 0, 3, 4, 5]") : "Test 2 Failed!";
     }
 }
