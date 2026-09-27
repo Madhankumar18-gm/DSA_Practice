@@ -6,8 +6,8 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 
 ## 📊 Repository Summary
 
-- **Total Problems Solved**: `53 Problems`
-- **Total Git Commits**: `470+ Commits`
+- **Total Problems Solved**: `62 Problems`
+- **Total Git Commits**: `550+ Commits`
 - **Primary Language**: `Java 17+`
 - **Remote Repository**: [GitHub - DSA_Practice](https://github.com/Madhankumar18-gm/DSA_Practice.git)
 
@@ -21,8 +21,8 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 - [x] **Day 04 - Trees & BST Concepts** (Height, Range Bounds, Inversion, Level Order, Reconstruction, Codec, Path Sum) — `10 Problems` \| `90 Commits`
 - [x] **Day 05 - Linked List Concepts** (Fast & Slow Pointers, Floyd's Cycle, Dummy Nodes, 3-Pass Interleaving, PriorityQueue Heap) — `9 Problems` \| `81 Commits`
 - [x] **Day 06 - Singly Linked List Concepts** (In-place Reversals, Dual Pointer Intersect, Bucket Partitioning, Ring Rotation, K-Group) — `9 Problems` \| `81 Commits`
-- [ ] **Day 07 - Graphs & Advanced Graph Algorithms** (TBD)
-- [ ] **Day 08 - Dynamic Programming Advanced** (TBD)
+- [x] **Day 07 - Doubly Linked List Concepts** (LRU/LFU Caches, Browser History, Circular Deque, Multi-level Flattening, Merge Sort, Two-Pointer Pair Sum) — `9 Problems` \| `81 Commits`
+- [ ] **Day 08 - Graph Concepts & Algorithms** (TBD)
 
 ---
 
@@ -39,22 +39,24 @@ DSA Practice/
 ├── Day04_Trees_and_BST/                 # Topic Folder Day 4 (10 problems)
 ├── Day05_Linked_List/                   # Topic Folder Day 5 (9 problems)
 ├── Day06_Singly_Linked_List/            # Topic Folder Day 6 (9 problems)
-│   ├── PalindromeLinkedList.java
-│   ├── IntersectionOfTwoLinkedLists.java
-│   ├── RemoveDuplicatesFromSortedList.java
-│   ├── RemoveDuplicatesFromSortedListII.java
-│   ├── PartitionList.java
-│   ├── RotateList.java
-│   ├── ReverseLinkedListII.java
-│   ├── SwapNodesInPairs.java
-│   └── ReverseNodesInKGroup.java
+├── Day07_Doubly_Linked_List/            # Topic Folder Day 7 (9 problems)
+│   ├── LRUCache.java
+│   ├── LFUCache.java
+│   ├── FlattenMultilevelDoublyLinkedList.java
+│   ├── ReverseDoublyLinkedList.java
+│   ├── DesignBrowserHistory.java
+│   ├── DesignDequeUsingDoublyLinkedList.java
+│   ├── RemoveNodeInDoublyLinkedList.java
+│   ├── SortDoublyLinkedList.java
+│   └── PairSumInSortedDoublyLinkedList.java
 │
 ├── LeetCode/                            # Daily Date Folders for LeetCode Problems
 │   ├── 2026-09-22/                      # 2026-09-22 Daily Log (7 problems)
 │   ├── 2026-09-23/                      # 2026-09-23 Daily Log (18 problems)
 │   ├── 2026-09-24/                      # 2026-09-24 Daily Log (10 problems)
 │   ├── 2026-09-25/                      # 2026-09-25 Daily Log (9 problems)
-│   └── 2026-09-26/                      # 2026-09-26 Daily Log (9 problems)
+│   ├── 2026-09-26/                      # 2026-09-26 Daily Log (9 problems)
+│   └── 2026-09-27/                      # 2026-09-27 Daily Log (9 problems)
 │       ├── README.md
 │       └── ...
 │
@@ -144,6 +146,19 @@ DSA Practice/
 | 52 | Swap Nodes in Pairs | [LeetCode #24](https://leetcode.com/problems/swap-nodes-in-pairs/) | Iterative Pair Splicing | $O(N)$ | $O(1)$ | [`SwapNodesInPairs.java`](./Day06_Singly_Linked_List/SwapNodesInPairs.java) |
 | 53 | Reverse Nodes in k-Group | [LeetCode #25](https://leetcode.com/problems/reverse-nodes-in-k-group/) | K-Group Segment Reversal | $O(N)$ | $O(1)$ | [`ReverseNodesInKGroup.java`](./Day06_Singly_Linked_List/ReverseNodesInKGroup.java) |
 
+### Day 07: Doubly Linked List Concepts
+| # | Problem Name | LeetCode Link | Topic Tag | Time | Space | Solution Code |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
+| 54 | LRU Cache | [LeetCode #146](https://leetcode.com/problems/lru-cache/) | DS Design & Hash | $O(1)$ | $O(C)$ | [`LRUCache.java`](./Day07_Doubly_Linked_List/LRUCache.java) |
+| 55 | LFU Cache | [LeetCode #460](https://leetcode.com/problems/lfu-cache/) | DS Design & Hash | $O(1)$ | $O(C)$ | [`LFUCache.java`](./Day07_Doubly_Linked_List/LFUCache.java) |
+| 56 | Flatten Multilevel Doubly Linked List | [LeetCode #430](https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/) | DLL Manipulation | $O(N)$ | $O(D)$ | [`FlattenMultilevelDoublyLinkedList.java`](./Day07_Doubly_Linked_List/FlattenMultilevelDoublyLinkedList.java) |
+| 57 | Reverse Doubly Linked List | [GFG / LeetCode #206](https://leetcode.com/problems/reverse-linked-list/) | In-Place Pointer Swap | $O(N)$ | $O(1)$ | [`ReverseDoublyLinkedList.java`](./Day07_Doubly_Linked_List/ReverseDoublyLinkedList.java) |
+| 58 | Design Browser History | [LeetCode #1472](https://leetcode.com/problems/design-browser-history/) | System Design & DLL | $O(1)$ amortized | $O(N)$ | [`DesignBrowserHistory.java`](./Day07_Doubly_Linked_List/DesignBrowserHistory.java) |
+| 59 | Design Circular Deque using DLL | [LeetCode #641](https://leetcode.com/problems/design-circular-deque/) | Sentinel Nodes & Deque | $O(1)$ | $O(K)$ | [`DesignDequeUsingDoublyLinkedList.java`](./Day07_Doubly_Linked_List/DesignDequeUsingDoublyLinkedList.java) |
+| 60 | Remove Given Node in Doubly Linked List | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/delete-node-in-doubly-linked-list/1) | Node Unlinking | $O(1)$ | $O(1)$ | [`RemoveNodeInDoublyLinkedList.java`](./Day07_Doubly_Linked_List/RemoveNodeInDoublyLinkedList.java) |
+| 61 | Merge Sort for Doubly Linked List | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/sort-a-k-sorted-doubly-linked-list/1) | Merge Sort & Pointers | $O(N \log N)$ | $O(\log N)$ | [`SortDoublyLinkedList.java`](./Day07_Doubly_Linked_List/SortDoublyLinkedList.java) |
+| 62 | Pair Sum in Sorted Doubly Linked List | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/find-pairs-with-given-sum-in-doubly-linked-list/1) | Bi-directional Two Pointers | $O(N)$ | $O(1)$ | [`PairSumInSortedDoublyLinkedList.java`](./Day07_Doubly_Linked_List/PairSumInSortedDoublyLinkedList.java) |
+
 ---
 
 ## 🛠️ Verification & Execution
@@ -151,7 +166,7 @@ DSA Practice/
 All Java source files are self-contained executable suites with embedded `main()` assertion methods. To compile and run any problem solution:
 
 ```bash
-# Example: Compile and run PalindromeLinkedList
-javac Day06_Singly_Linked_List/PalindromeLinkedList.java
-java -cp Day06_Singly_Linked_List PalindromeLinkedList
+# Example: Compile and run LRUCache
+javac Day07_Doubly_Linked_List/LRUCache.java
+java -ea -cp Day07_Doubly_Linked_List LRUCache
 ```
