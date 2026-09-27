@@ -27,4 +27,13 @@ public class DesignDequeUsingDoublyLinkedList {
         head.next = tail;
         tail.prev = head;
     }
+
+    public boolean insertFront(int value) { return false; }
+    public boolean insertLast(int value) { return false; }
+    public boolean deleteFront() { return false; }
+    public boolean deleteLast() { return false; }
+    public int getFront() { return -1; }
+    public int getRear() { return -1; }
+    public boolean isEmpty() { return size == 0; }
+    public boolean isFull() { return size == capacity; }
 }
