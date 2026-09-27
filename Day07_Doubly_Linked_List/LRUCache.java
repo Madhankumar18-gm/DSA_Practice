@@ -75,4 +75,13 @@ public class LRUCache {
             addNodeToHead(newNode);
         }
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== LRUCache Execution Suite ===");
+
+        LRUCache cache = new LRUCache(2);
+        cache.put(1, 1);
+        cache.put(2, 2);
+        System.out.println("get(1): " + cache.get(1)); // returns 1
+    }
 }
