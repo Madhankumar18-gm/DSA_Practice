@@ -28,12 +28,54 @@ public class DesignDequeUsingDoublyLinkedList {
         tail.prev = head;
     }
 
-    public boolean insertFront(int value) { return false; }
-    public boolean insertLast(int value) { return false; }
-    public boolean deleteFront() { return false; }
-    public boolean deleteLast() { return false; }
-    public int getFront() { return -1; }
-    public int getRear() { return -1; }
+    public boolean insertFront(int value) {
+        if (isFull()) return false;
+        Node node = new Node(value);
+        node.next = head.next;
+        node.prev = head;
+        head.next.prev = node;
+        head.next = node;
+        size++;
+        return true;
+    }
+
+    public boolean insertLast(int value) {
+        if (isFull()) return false;
+        Node node = new Node(value);
+        node.prev = tail.prev;
+        node.next = tail;
+        tail.prev.next = node;
+        tail.prev = node;
+        size++;
+        return true;
+    }
+
+    public boolean deleteFront() {
+        if (isEmpty()) return false;
+        Node toDelete = head.next;
+        head.next = toDelete.next;
+        toDelete.next.prev = head;
+        size--;
+        return true;
+    }
+
+    public boolean deleteLast() {
+        if (isEmpty()) return false;
+        Node toDelete = tail.prev;
+        tail.prev = toDelete.prev;
+        toDelete.prev.next = tail;
+        size--;
+        return true;
+    }
+
+    public int getFront() {
+        return isEmpty() ? -1 : head.next.val;
+    }
+
+    public int getRear() {
+        return isEmpty() ? -1 : tail.prev.val;
+    }
+
     public boolean isEmpty() { return size == 0; }
     public boolean isFull() { return size == capacity; }
 }
