@@ -86,7 +86,7 @@ public class LFUCache {
     }
 
     public void put(int key, int value) {
-        if (capacity == 0) return;
+        if (capacity <= 0) return;
 
         if (keyMap.containsKey(key)) {
             Node node = keyMap.get(key);
@@ -96,7 +96,9 @@ public class LFUCache {
             if (keyMap.size() == capacity) {
                 DoublyLinkedList minFreqList = freqMap.get(minFreq);
                 Node evictNode = minFreqList.removeTail();
-                keyMap.remove(evictNode.key);
+                if (evictNode != null) {
+                    keyMap.remove(evictNode.key);
+                }
             }
             Node newNode = new Node(key, value);
             keyMap.put(key, newNode);
