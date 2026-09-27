@@ -17,4 +17,16 @@ public class FlattenMultilevelDoublyLinkedList {
             this.val = val;
         }
     }
+
+    public static String toListString(Node head) {
+        StringBuilder sb = new StringBuilder("[");
+        Node curr = head;
+        while (curr != null) {
+            sb.append(curr.val);
+            if (curr.next != null) sb.append(", ");
+            curr = curr.next;
+        }
+        sb.append("]");
+        return sb.toString();
+    }
 }
