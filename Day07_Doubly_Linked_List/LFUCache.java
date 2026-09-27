@@ -106,4 +106,13 @@ public class LFUCache {
             freqMap.computeIfAbsent(1, k -> new DoublyLinkedList()).addNode(newNode);
         }
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== LFUCache Execution Suite ===");
+
+        LFUCache lfu = new LFUCache(2);
+        lfu.put(1, 1);
+        lfu.put(2, 2);
+        System.out.println("get(1): " + lfu.get(1)); // returns 1
+    }
 }
