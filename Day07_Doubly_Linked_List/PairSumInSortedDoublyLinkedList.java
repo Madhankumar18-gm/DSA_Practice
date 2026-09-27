@@ -45,7 +45,8 @@ public class PairSumInSortedDoublyLinkedList {
     }
 
     /**
-     * Finds pairs in a sorted doubly linked list using head & tail two pointers.
+     * Finds pairs in a sorted doubly linked list.
+     * Refactored loop condition for clear termination when pointers cross.
      * @param head Head of sorted doubly linked list
      * @param target Desired sum
      * @return List of integer pairs [a, b]
@@ -60,7 +61,7 @@ public class PairSumInSortedDoublyLinkedList {
             second = second.next;
         }
 
-        while (first != second && second.next != first) {
+        while (first != null && second != null && first != second && first.prev != second) {
             int sum = first.val + second.val;
             if (sum == target) {
                 result.add(new int[]{first.val, second.val});
