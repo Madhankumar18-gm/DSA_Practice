@@ -125,5 +125,7 @@ public class LFUCache {
         int g3 = lfu.get(3); // returns 3
         System.out.println("get(3): " + g3);
         assert g3 == 3 : "Test 3 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
