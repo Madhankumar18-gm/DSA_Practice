@@ -97,5 +97,7 @@ public class LRUCache {
         int g4 = cache.get(4);
         System.out.println("get(1): " + g1_new + ", get(3): " + g3 + ", get(4): " + g4);
         assert g1_new == -1 && g3 == 3 && g4 == 4 : "Test 3 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
