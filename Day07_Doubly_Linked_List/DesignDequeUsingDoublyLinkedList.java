@@ -93,5 +93,7 @@ public class DesignDequeUsingDoublyLinkedList {
 
         assert deque.deleteLast() == true : "Test 6 Failed!";
         assert deque.getRear() == 1 : "Test 7 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
