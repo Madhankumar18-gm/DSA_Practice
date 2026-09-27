@@ -69,5 +69,12 @@ public class ReverseDoublyLinkedList {
         Node dll1 = buildDLL(new int[]{1, 2, 3, 4});
         Node rev1 = reverse(dll1);
         System.out.println("Test 1 Result: " + toListString(rev1));
+        assert toListString(rev1).equals("[4, 3, 2, 1]") : "Test 1 Failed!";
+
+        // Test 2: [1] -> [1]
+        Node dll2 = buildDLL(new int[]{1});
+        Node rev2 = reverse(dll2);
+        System.out.println("Test 2 Result: " + toListString(rev2));
+        assert toListString(rev2).equals("[1]") : "Test 2 Failed!";
     }
 }
