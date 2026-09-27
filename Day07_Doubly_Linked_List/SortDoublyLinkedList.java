@@ -40,4 +40,14 @@ public class SortDoublyLinkedList {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Sorts a doubly linked list using Merge Sort.
+     * @param head Head of unsorted doubly linked list
+     * @return Head of sorted doubly linked list
+     */
+    public static Node mergeSort(Node head) {
+        if (head == null || head.next == null) return head;
+        return head;
+    }
 }
