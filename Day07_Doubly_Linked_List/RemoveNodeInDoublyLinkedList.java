@@ -49,6 +49,26 @@ public class RemoveNodeInDoublyLinkedList {
      */
     public static Node deleteNode(Node head, int key) {
         if (head == null) return null;
+
+        Node curr = head;
+        while (curr != null && curr.val != key) {
+            curr = curr.next;
+        }
+
+        if (curr == null) return head; // Key not found
+
+        if (curr == head) {
+            head = head.next;
+            if (head != null) {
+                head.prev = null;
+            }
+        } else {
+            curr.prev.next = curr.next;
+            if (curr.next != null) {
+                curr.next.prev = curr.prev;
+            }
+        }
+
         return head;
     }
 }
