@@ -91,5 +91,7 @@ public class RemoveNodeInDoublyLinkedList {
         Node res3 = deleteNode(res2, 40);
         System.out.println("Test 3 Result: " + toListString(res3));
         assert toListString(res3).equals("[20]") : "Test 3 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
