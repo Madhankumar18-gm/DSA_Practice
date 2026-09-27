@@ -83,9 +83,15 @@ public class DesignDequeUsingDoublyLinkedList {
         System.out.println("=== DesignDequeUsingDoublyLinkedList Execution Suite ===");
 
         DesignDequeUsingDoublyLinkedList deque = new DesignDequeUsingDoublyLinkedList(3);
-        deque.insertLast(1);
-        deque.insertLast(2);
-        deque.insertFront(3);
+        assert deque.insertLast(1) == true : "Test 1 Failed!";
+        assert deque.insertLast(2) == true : "Test 2 Failed!";
+        assert deque.insertFront(3) == true : "Test 3 Failed!";
+        assert deque.insertFront(4) == false : "Test 4 Failed (isFull)!";
+
         System.out.println("Front: " + deque.getFront() + ", Rear: " + deque.getRear());
+        assert deque.getFront() == 3 && deque.getRear() == 2 : "Test 5 Failed!";
+
+        assert deque.deleteLast() == true : "Test 6 Failed!";
+        assert deque.getRear() == 1 : "Test 7 Failed!";
     }
 }
