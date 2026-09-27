@@ -80,5 +80,7 @@ public class FlattenMultilevelDoublyLinkedList {
         // Test 2: Null list
         Node res2 = flatten(null);
         assert res2 == null : "Test 2 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
