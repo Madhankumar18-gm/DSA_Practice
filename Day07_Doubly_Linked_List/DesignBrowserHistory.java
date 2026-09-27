@@ -22,4 +22,15 @@ public class DesignBrowserHistory {
     public DesignBrowserHistory(String homepage) {
         curr = new Node(homepage);
     }
+
+    public void visit(String url) {
+    }
+
+    public String back(int steps) {
+        return "";
+    }
+
+    public String forward(int steps) {
+        return "";
+    }
 }
