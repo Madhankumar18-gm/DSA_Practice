@@ -82,6 +82,20 @@ public class LRUCache {
         LRUCache cache = new LRUCache(2);
         cache.put(1, 1);
         cache.put(2, 2);
-        System.out.println("get(1): " + cache.get(1)); // returns 1
+        int g1 = cache.get(1);
+        System.out.println("get(1): " + g1);
+        assert g1 == 1 : "Test 1 Failed!";
+
+        cache.put(3, 3); // evicts key 2
+        int g2 = cache.get(2);
+        System.out.println("get(2) [evicted]: " + g2);
+        assert g2 == -1 : "Test 2 Failed!";
+
+        cache.put(4, 4); // evicts key 1
+        int g1_new = cache.get(1);
+        int g3 = cache.get(3);
+        int g4 = cache.get(4);
+        System.out.println("get(1): " + g1_new + ", get(3): " + g3 + ", get(4): " + g4);
+        assert g1_new == -1 && g3 == 3 && g4 == 4 : "Test 3 Failed!";
     }
 }
