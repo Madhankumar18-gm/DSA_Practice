@@ -41,8 +41,14 @@ public class RemoveNodeInDoublyLinkedList {
         return sb.toString();
     }
 
+    private static void unlinkNode(Node node) {
+        if (node.prev != null) node.prev.next = node.next;
+        if (node.next != null) node.next.prev = node.prev;
+    }
+
     /**
-     * Deletes the first node with the specified key value from a doubly linked list.
+     * Deletes the first node with the specified key value.
+     * Refactored using private unlinkNode helper.
      * @param head Head of doubly linked list
      * @param key Target value to delete
      * @return Head of modified doubly linked list
@@ -50,23 +56,19 @@ public class RemoveNodeInDoublyLinkedList {
     public static Node deleteNode(Node head, int key) {
         if (head == null) return null;
 
+        if (head.val == key) {
+            Node newHead = head.next;
+            if (newHead != null) newHead.prev = null;
+            return newHead;
+        }
+
         Node curr = head;
         while (curr != null && curr.val != key) {
             curr = curr.next;
         }
 
-        if (curr == null) return head; // Key not found
-
-        if (curr == head) {
-            head = head.next;
-            if (head != null) {
-                head.prev = null;
-            }
-        } else {
-            curr.prev.next = curr.next;
-            if (curr.next != null) {
-                curr.next.prev = curr.prev;
-            }
+        if (curr != null) {
+            unlinkNode(curr);
         }
 
         return head;
