@@ -41,6 +41,36 @@ public class SortDoublyLinkedList {
         return sb.toString();
     }
 
+    private static Node split(Node head) {
+        Node fast = head;
+        Node slow = head;
+        while (fast.next != null && fast.next.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        Node temp = slow.next;
+        slow.next = null;
+        if (temp != null) temp.prev = null;
+        return temp;
+    }
+
+    private static Node merge(Node first, Node second) {
+        if (first == null) return second;
+        if (second == null) return first;
+
+        if (first.val < second.val) {
+            first.next = merge(first.next, second);
+            if (first.next != null) first.next.prev = first;
+            first.prev = null;
+            return first;
+        } else {
+            second.next = merge(first, second.next);
+            if (second.next != null) second.next.prev = second;
+            second.prev = null;
+            return second;
+        }
+    }
+
     /**
      * Sorts a doubly linked list using Merge Sort.
      * @param head Head of unsorted doubly linked list
@@ -48,6 +78,11 @@ public class SortDoublyLinkedList {
      */
     public static Node mergeSort(Node head) {
         if (head == null || head.next == null) return head;
-        return head;
+        Node second = split(head);
+
+        head = mergeSort(head);
+        second = mergeSort(second);
+
+        return merge(head, second);
     }
 }
