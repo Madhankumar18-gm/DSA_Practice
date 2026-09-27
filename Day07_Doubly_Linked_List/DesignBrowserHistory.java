@@ -4,11 +4,6 @@
  * You have a browser of one tab where you start on the homepage and you can visit another url,
  * move back in history number of steps, or move forward in history number of steps.
  * 
- * Operations:
- * - visit(url): Clear forward history, append url after current page, advance current.
- * - back(steps): Move back up to steps times. Return current url.
- * - forward(steps): Move forward up to steps times. Return current url.
- * 
  * Time Complexity: O(1) visit, O(min(steps, N)) back & forward.
  * Space Complexity: O(N) where N is number of visited pages.
  */
@@ -20,5 +15,11 @@ public class DesignBrowserHistory {
         Node(String url) {
             this.url = url;
         }
+    }
+
+    private Node curr;
+
+    public DesignBrowserHistory(String homepage) {
+        curr = new Node(homepage);
     }
 }
