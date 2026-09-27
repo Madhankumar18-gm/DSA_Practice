@@ -52,4 +52,23 @@ public class LFUCache {
             return lru;
         }
     }
+
+    private final int capacity;
+    private int minFreq;
+    private final Map<Integer, Node> keyMap;
+    private final Map<Integer, DoublyLinkedList> freqMap;
+
+    public LFUCache(int capacity) {
+        this.capacity = capacity;
+        this.minFreq = 0;
+        this.keyMap = new HashMap<>();
+        this.freqMap = new HashMap<>();
+    }
+
+    public int get(int key) {
+        return -1;
+    }
+
+    public void put(int key, int value) {
+    }
 }
