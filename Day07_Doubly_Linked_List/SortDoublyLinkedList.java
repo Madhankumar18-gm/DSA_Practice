@@ -118,5 +118,7 @@ public class SortDoublyLinkedList {
         Node sorted2 = mergeSort(dll2);
         System.out.println("Test 2 Result: " + toListString(sorted2));
         assert toListString(sorted2).equals("[-1, 0, 3, 4, 5]") : "Test 2 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
