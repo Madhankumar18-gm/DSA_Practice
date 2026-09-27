@@ -37,6 +37,28 @@ public class FlattenMultilevelDoublyLinkedList {
      */
     public static Node flatten(Node head) {
         if (head == null) return null;
+        Node curr = head;
+        while (curr != null) {
+            if (curr.child != null) {
+                Node nextTemp = curr.next;
+                Node childHead = flatten(curr.child);
+
+                curr.next = childHead;
+                childHead.prev = curr;
+                curr.child = null;
+
+                Node tail = childHead;
+                while (tail.next != null) {
+                    tail = tail.next;
+                }
+
+                tail.next = nextTemp;
+                if (nextTemp != null) {
+                    nextTemp.prev = tail;
+                }
+            }
+            curr = curr.next;
+        }
         return head;
     }
 }
