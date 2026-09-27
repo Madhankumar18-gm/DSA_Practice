@@ -54,6 +54,21 @@ public class DesignBrowserHistory {
         browser.visit("facebook.com");
         browser.visit("youtube.com");
 
-        System.out.println("back(1): " + browser.back(1)); // facebook.com
+        String b1 = browser.back(1);
+        System.out.println("back(1): " + b1);
+        assert b1.equals("facebook.com") : "Test 1 Failed!";
+
+        String b2 = browser.back(1);
+        System.out.println("back(1): " + b2);
+        assert b2.equals("google.com") : "Test 2 Failed!";
+
+        String f1 = browser.forward(1);
+        System.out.println("forward(1): " + f1);
+        assert f1.equals("facebook.com") : "Test 3 Failed!";
+
+        browser.visit("linkedin.com"); // clears forward history (youtube.com)
+        String f2 = browser.forward(2); // stays at linkedin.com
+        System.out.println("forward(2): " + f2);
+        assert f2.equals("linkedin.com") : "Test 4 Failed!";
     }
 }
