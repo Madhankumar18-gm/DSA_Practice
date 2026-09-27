@@ -76,5 +76,7 @@ public class ReverseDoublyLinkedList {
         Node rev2 = reverse(dll2);
         System.out.println("Test 2 Result: " + toListString(rev2));
         assert toListString(rev2).equals("[1]") : "Test 2 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
