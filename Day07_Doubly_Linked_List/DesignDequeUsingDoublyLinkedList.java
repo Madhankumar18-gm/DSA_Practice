@@ -78,4 +78,14 @@ public class DesignDequeUsingDoublyLinkedList {
 
     public boolean isEmpty() { return size == 0; }
     public boolean isFull() { return size == capacity; }
+
+    public static void main(String[] args) {
+        System.out.println("=== DesignDequeUsingDoublyLinkedList Execution Suite ===");
+
+        DesignDequeUsingDoublyLinkedList deque = new DesignDequeUsingDoublyLinkedList(3);
+        deque.insertLast(1);
+        deque.insertLast(2);
+        deque.insertFront(3);
+        System.out.println("Front: " + deque.getFront() + ", Rear: " + deque.getRear());
+    }
 }
