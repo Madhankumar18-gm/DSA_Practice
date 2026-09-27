@@ -27,7 +27,7 @@ public class DesignBrowserHistory {
         Node newNode = new Node(url);
         curr.next = newNode;
         newNode.prev = curr;
-        curr = curr.next; // Clear forward history automatically
+        curr = curr.next;
     }
 
     public String back(int steps) {
@@ -44,5 +44,16 @@ public class DesignBrowserHistory {
             steps--;
         }
         return curr.url;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== DesignBrowserHistory Execution Suite ===");
+
+        DesignBrowserHistory browser = new DesignBrowserHistory("leetcode.com");
+        browser.visit("google.com");
+        browser.visit("facebook.com");
+        browser.visit("youtube.com");
+
+        System.out.println("back(1): " + browser.back(1)); // facebook.com
     }
 }
