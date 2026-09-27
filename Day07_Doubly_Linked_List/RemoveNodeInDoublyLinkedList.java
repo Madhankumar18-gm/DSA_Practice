@@ -80,5 +80,16 @@ public class RemoveNodeInDoublyLinkedList {
         Node dll1 = buildDLL(new int[]{10, 20, 30, 40});
         Node res1 = deleteNode(dll1, 30);
         System.out.println("Test 1 Result: " + toListString(res1));
+        assert toListString(res1).equals("[10, 20, 40]") : "Test 1 Failed!";
+
+        // Test 2: Delete head [10, 20, 40], delete 10 -> [20, 40]
+        Node res2 = deleteNode(res1, 10);
+        System.out.println("Test 2 Result: " + toListString(res2));
+        assert toListString(res2).equals("[20, 40]") : "Test 2 Failed!";
+
+        // Test 3: Delete tail [20, 40], delete 40 -> [20]
+        Node res3 = deleteNode(res2, 40);
+        System.out.println("Test 3 Result: " + toListString(res3));
+        assert toListString(res3).equals("[20]") : "Test 3 Failed!";
     }
 }
