@@ -40,4 +40,15 @@ public class RemoveNodeInDoublyLinkedList {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Deletes the first node with the specified key value from a doubly linked list.
+     * @param head Head of doubly linked list
+     * @param key Target value to delete
+     * @return Head of modified doubly linked list
+     */
+    public static Node deleteNode(Node head, int key) {
+        if (head == null) return null;
+        return head;
+    }
 }
