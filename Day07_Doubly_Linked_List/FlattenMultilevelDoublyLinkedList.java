@@ -32,6 +32,7 @@ public class FlattenMultilevelDoublyLinkedList {
 
     /**
      * Flattens a multilevel doubly linked list into a single-level doubly linked list.
+     * Refactored iterative stack approach for O(1) recursion depth.
      * @param head Head of multilevel doubly linked list
      * @return Head of flattened doubly linked list
      */
@@ -41,21 +42,17 @@ public class FlattenMultilevelDoublyLinkedList {
         while (curr != null) {
             if (curr.child != null) {
                 Node nextTemp = curr.next;
-                Node childHead = flatten(curr.child);
-
-                curr.next = childHead;
-                childHead.prev = curr;
-                curr.child = null;
-
-                Node tail = childHead;
-                while (tail.next != null) {
-                    tail = tail.next;
+                Node childTail = curr.child;
+                while (childTail.next != null) {
+                    childTail = childTail.next;
                 }
-
-                tail.next = nextTemp;
+                childTail.next = nextTemp;
                 if (nextTemp != null) {
-                    nextTemp.prev = tail;
+                    nextTemp.prev = childTail;
                 }
+                curr.next = curr.child;
+                curr.child.prev = curr;
+                curr.child = null;
             }
             curr = curr.next;
         }
