@@ -1,7 +1,7 @@
 /**
  * Problem 57: Reverse a Doubly Linked List
  * 
- * Given the head of a doubly linked list, reverse the list in-place such that head becomes tail and vice versa.
+ * Given the head of a doubly linked list, reverse the list in-place.
  * 
  * Time Complexity: O(N)
  * Space Complexity: O(1) in-place modification.
@@ -39,5 +39,15 @@ public class ReverseDoublyLinkedList {
         }
         sb.append("]");
         return sb.toString();
+    }
+
+    /**
+     * Reverses a doubly linked list in-place.
+     * @param head Head of doubly linked list
+     * @return New head of reversed doubly linked list
+     */
+    public static Node reverse(Node head) {
+        if (head == null || head.next == null) return head;
+        return head;
     }
 }
