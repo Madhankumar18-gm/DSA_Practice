@@ -28,42 +28,42 @@ public class DesignDequeUsingDoublyLinkedList {
         tail.prev = head;
     }
 
+    private void addNode(Node prevNode, Node newNode, Node nextNode) {
+        newNode.prev = prevNode;
+        newNode.next = nextNode;
+        prevNode.next = newNode;
+        nextNode.prev = newNode;
+    }
+
+    private void removeNode(Node target) {
+        target.prev.next = target.next;
+        target.next.prev = target.prev;
+    }
+
     public boolean insertFront(int value) {
         if (isFull()) return false;
-        Node node = new Node(value);
-        node.next = head.next;
-        node.prev = head;
-        head.next.prev = node;
-        head.next = node;
+        addNode(head, new Node(value), head.next);
         size++;
         return true;
     }
 
     public boolean insertLast(int value) {
         if (isFull()) return false;
-        Node node = new Node(value);
-        node.prev = tail.prev;
-        node.next = tail;
-        tail.prev.next = node;
-        tail.prev = node;
+        addNode(tail.prev, new Node(value), tail);
         size++;
         return true;
     }
 
     public boolean deleteFront() {
         if (isEmpty()) return false;
-        Node toDelete = head.next;
-        head.next = toDelete.next;
-        toDelete.next.prev = head;
+        removeNode(head.next);
         size--;
         return true;
     }
 
     public boolean deleteLast() {
         if (isEmpty()) return false;
-        Node toDelete = tail.prev;
-        tail.prev = toDelete.prev;
-        toDelete.prev.next = tail;
+        removeNode(tail.prev);
         size--;
         return true;
     }
