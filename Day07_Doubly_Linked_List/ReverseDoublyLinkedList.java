@@ -42,7 +42,8 @@ public class ReverseDoublyLinkedList {
     }
 
     /**
-     * Reverses a doubly linked list in-place by swapping prev and next pointers.
+     * Reverses a doubly linked list in-place.
+     * Refactored return logic using temp pointer.
      * @param head Head of doubly linked list
      * @return New head of reversed doubly linked list
      */
@@ -59,10 +60,6 @@ public class ReverseDoublyLinkedList {
             curr = curr.prev;
         }
 
-        if (temp != null) {
-            head = temp.prev;
-        }
-
-        return head;
+        return temp.prev;
     }
 }
