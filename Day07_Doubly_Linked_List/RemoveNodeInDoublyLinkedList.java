@@ -48,7 +48,6 @@ public class RemoveNodeInDoublyLinkedList {
 
     /**
      * Deletes the first node with the specified key value.
-     * Refactored using private unlinkNode helper.
      * @param head Head of doubly linked list
      * @param key Target value to delete
      * @return Head of modified doubly linked list
@@ -72,5 +71,14 @@ public class RemoveNodeInDoublyLinkedList {
         }
 
         return head;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== RemoveNodeInDoublyLinkedList Execution Suite ===");
+
+        // Test 1: [10, 20, 30, 40], delete 30 -> [10, 20, 40]
+        Node dll1 = buildDLL(new int[]{10, 20, 30, 40});
+        Node res1 = deleteNode(dll1, 30);
+        System.out.println("Test 1 Result: " + toListString(res1));
     }
 }
