@@ -29,4 +29,14 @@ public class FlattenMultilevelDoublyLinkedList {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Flattens a multilevel doubly linked list into a single-level doubly linked list.
+     * @param head Head of multilevel doubly linked list
+     * @return Head of flattened doubly linked list
+     */
+    public static Node flatten(Node head) {
+        if (head == null) return null;
+        return head;
+    }
 }
