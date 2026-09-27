@@ -87,5 +87,12 @@ public class PairSumInSortedDoublyLinkedList {
             System.out.print("(" + p[0] + "," + p[1] + ") ");
         }
         System.out.println();
+        assert pairs1.size() == 2 : "Test 1 Size Failed!";
+        assert pairs1.get(0)[0] == 1 && pairs1.get(0)[1] == 6 : "Test 1 Pair 1 Failed!";
+        assert pairs1.get(1)[0] == 2 && pairs1.get(1)[1] == 5 : "Test 1 Pair 2 Failed!";
+
+        // Test 2: Target not found
+        List<int[]> pairs2 = findPairsWithGivenSum(dll1, 100);
+        assert pairs2.isEmpty() : "Test 2 Failed!";
     }
 }
