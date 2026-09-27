@@ -43,7 +43,6 @@ public class ReverseDoublyLinkedList {
 
     /**
      * Reverses a doubly linked list in-place.
-     * Refactored return logic using temp pointer.
      * @param head Head of doubly linked list
      * @return New head of reversed doubly linked list
      */
@@ -61,5 +60,14 @@ public class ReverseDoublyLinkedList {
         }
 
         return temp.prev;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== ReverseDoublyLinkedList Execution Suite ===");
+
+        // Test 1: [1, 2, 3, 4] -> [4, 3, 2, 1]
+        Node dll1 = buildDLL(new int[]{1, 2, 3, 4});
+        Node rev1 = reverse(dll1);
+        System.out.println("Test 1 Result: " + toListString(rev1));
     }
 }
