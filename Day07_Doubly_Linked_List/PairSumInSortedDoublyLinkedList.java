@@ -46,7 +46,6 @@ public class PairSumInSortedDoublyLinkedList {
 
     /**
      * Finds pairs in a sorted doubly linked list.
-     * Refactored loop condition for clear termination when pointers cross.
      * @param head Head of sorted doubly linked list
      * @param target Desired sum
      * @return List of integer pairs [a, b]
@@ -75,5 +74,18 @@ public class PairSumInSortedDoublyLinkedList {
         }
 
         return result;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("=== PairSumInSortedDoublyLinkedList Execution Suite ===");
+
+        // Test 1: [1, 2, 4, 5, 6, 8, 9], target = 7 -> (1, 6), (2, 5)
+        Node dll1 = buildDLL(new int[]{1, 2, 4, 5, 6, 8, 9});
+        List<int[]> pairs1 = findPairsWithGivenSum(dll1, 7);
+        System.out.print("Test 1 Result Pairs: ");
+        for (int[] p : pairs1) {
+            System.out.print("(" + p[0] + "," + p[1] + ") ");
+        }
+        System.out.println();
     }
 }
