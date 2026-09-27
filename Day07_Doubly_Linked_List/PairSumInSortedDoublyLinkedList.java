@@ -94,5 +94,7 @@ public class PairSumInSortedDoublyLinkedList {
         // Test 2: Target not found
         List<int[]> pairs2 = findPairsWithGivenSum(dll1, 100);
         assert pairs2.isEmpty() : "Test 2 Failed!";
+
+        System.out.println("=== All Tests Completed Successfully ===");
     }
 }
