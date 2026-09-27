@@ -61,7 +61,7 @@ public class FlattenMultilevelDoublyLinkedList {
     public static void main(String[] args) {
         System.out.println("=== FlattenMultilevelDoublyLinkedList Execution Suite ===");
 
-        // Test 1: 1 <-> 2 <-> 3 with child at 2 pointing to 7 <-> 8
+        // Test 1: 1 <-> 2 <-> 3 with child at 2 pointing to 7 <-> 8 -> [1, 2, 7, 8, 3]
         Node n1 = new Node(1);
         Node n2 = new Node(2);
         Node n3 = new Node(3);
@@ -75,5 +75,10 @@ public class FlattenMultilevelDoublyLinkedList {
 
         Node res1 = flatten(n1);
         System.out.println("Test 1 Result: " + toListString(res1));
+        assert toListString(res1).equals("[1, 2, 7, 8, 3]") : "Test 1 Failed!";
+
+        // Test 2: Null list
+        Node res2 = flatten(null);
+        assert res2 == null : "Test 2 Failed!";
     }
 }
