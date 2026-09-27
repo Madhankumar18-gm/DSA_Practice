@@ -27,7 +27,7 @@ public class DesignBrowserHistory {
         Node newNode = new Node(url);
         curr.next = newNode;
         newNode.prev = curr;
-        curr = newNode;
+        curr = curr.next; // Clear forward history automatically
     }
 
     public String back(int steps) {
