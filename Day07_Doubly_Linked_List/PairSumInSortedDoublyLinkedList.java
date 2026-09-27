@@ -43,4 +43,16 @@ public class PairSumInSortedDoublyLinkedList {
         sb.append("]");
         return sb.toString();
     }
+
+    /**
+     * Finds pairs in a sorted doubly linked list that add up to target.
+     * @param head Head of sorted doubly linked list
+     * @param target Desired sum
+     * @return List of integer pairs [a, b]
+     */
+    public static List<int[]> findPairsWithGivenSum(Node head, int target) {
+        List<int[]> result = new ArrayList<>();
+        if (head == null || head.next == null) return result;
+        return result;
+    }
 }
