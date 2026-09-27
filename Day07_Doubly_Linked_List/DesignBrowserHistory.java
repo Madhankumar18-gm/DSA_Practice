@@ -24,13 +24,25 @@ public class DesignBrowserHistory {
     }
 
     public void visit(String url) {
+        Node newNode = new Node(url);
+        curr.next = newNode;
+        newNode.prev = curr;
+        curr = newNode;
     }
 
     public String back(int steps) {
-        return "";
+        while (steps > 0 && curr.prev != null) {
+            curr = curr.prev;
+            steps--;
+        }
+        return curr.url;
     }
 
     public String forward(int steps) {
-        return "";
+        while (steps > 0 && curr.next != null) {
+            curr = curr.next;
+            steps--;
+        }
+        return curr.url;
     }
 }
