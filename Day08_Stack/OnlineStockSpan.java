@@ -31,10 +31,13 @@ public class OnlineStockSpan {
     public static void main(String[] args) {
         System.out.println("=== Testing LeetCode 901: Online Stock Span ===");
         OnlineStockSpan stockSpanner = new OnlineStockSpan();
-        int[] prices = {100, 80, 60, 70, 60, 75, 85};
-        for (int p : prices) {
-            int span = stockSpanner.next(p);
-            System.out.println("Price: " + p + " -> Span: " + span);
-        }
+        
+        assert stockSpanner.next(100) == 1;
+        assert stockSpanner.next(80) == 1;
+        assert stockSpanner.next(60) == 1;
+        assert stockSpanner.next(70) == 2;
+        assert stockSpanner.next(60) == 1;
+        assert stockSpanner.next(75) == 4;
+        assert stockSpanner.next(85) == 6;
     }
 }
