@@ -55,5 +55,9 @@ public class RemoveKDigits {
         int k1 = 3;
         String res1 = removeKdigits(n1, k1);
         printKDigitsResult(n1, k1, res1);
+        assert res1.equals("1219") : "Test 1 Failed! Expected '1219'";
+
+        assert removeKdigits("10200", 1).equals("200") : "Test 2 Failed! Expected '200'";
+        assert removeKdigits("10", 2).equals("0") : "Test 3 Failed! Expected '0'";
     }
 }
