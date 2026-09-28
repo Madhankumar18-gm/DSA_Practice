@@ -43,4 +43,8 @@ public class RemoveKDigits {
         
         return sb.length() == 0 ? "0" : sb.toString();
     }
+
+    public static void printKDigitsResult(String num, int k, String res) {
+        System.out.println("Num: \"" + num + "\", K: " + k + " -> Smallest Num: \"" + res + "\"");
+    }
 }
