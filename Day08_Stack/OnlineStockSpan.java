@@ -39,5 +39,10 @@ public class OnlineStockSpan {
         assert stockSpanner.next(60) == 1;
         assert stockSpanner.next(75) == 4;
         assert stockSpanner.next(85) == 6;
+
+        OnlineStockSpan spanner2 = new OnlineStockSpan();
+        assert spanner2.next(30) == 1;
+        assert spanner2.next(30) == 2;
+        assert spanner2.next(30) == 3;
     }
 }
