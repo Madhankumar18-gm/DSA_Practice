@@ -63,5 +63,6 @@ public class MaximalRectangle {
         assert maximalRectangle(new char[][]{{'0'}}) == 0 : "Single '0' failed";
         assert maximalRectangle(new char[][]{{'1'}}) == 1 : "Single '1' failed";
         assert maximalRectangle(new char[][]{{'0', '0'}, {'0', '0'}}) == 0 : "All 0s failed";
+        System.out.println("Execution completed successfully for Maximal Rectangle.");
     }
 }
