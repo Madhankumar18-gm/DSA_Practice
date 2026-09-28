@@ -23,11 +23,7 @@ public class MaximalRectangle {
         
         for (char[] row : matrix) {
             for (int j = 0; j < cols; j++) {
-                if (row[j] == '1') {
-                    heights[j]++;
-                } else {
-                    heights[j] = 0;
-                }
+                heights[j] = (row[j] == '1') ? heights[j] + 1 : 0;
             }
             maxArea = Math.max(maxArea, largestInRow(heights));
         }
