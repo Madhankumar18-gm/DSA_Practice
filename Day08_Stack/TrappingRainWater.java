@@ -22,17 +22,22 @@ public class TrappingRainWater {
         
         for (int i = 0; i < height.length; i++) {
             while (!stack.isEmpty() && height[i] > height[stack.peek()]) {
-                int top = stack.pop();
+                int topIndex = stack.pop();
                 if (stack.isEmpty()) {
                     break;
                 }
-                int distance = i - stack.peek() - 1;
-                int boundedHeight = Math.min(height[i], height[stack.peek()]) - height[top];
+                int leftIndex = stack.peek();
+                int distance = i - leftIndex - 1;
+                int boundedHeight = Math.min(height[i], height[leftIndex]) - height[topIndex];
                 totalWater += distance * boundedHeight;
             }
             stack.push(i);
         }
         
         return totalWater;
+    }
+
+    public static void printTrapResult(int[] height, int result) {
+        System.out.println("Elevation Map: " + java.util.Arrays.toString(height) + " -> Trapped Water: " + result);
     }
 }
