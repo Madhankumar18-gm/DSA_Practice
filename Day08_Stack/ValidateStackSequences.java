@@ -16,6 +16,18 @@ public class ValidateStackSequences {
         if (pushed == null || popped == null || pushed.length != popped.length) {
             return false;
         }
-        return false;
+        
+        Deque<Integer> stack = new ArrayDeque<>();
+        int popIdx = 0;
+        
+        for (int val : pushed) {
+            stack.push(val);
+            while (!stack.isEmpty() && popIdx < popped.length && stack.peek() == popped[popIdx]) {
+                stack.pop();
+                popIdx++;
+            }
+        }
+        
+        return popIdx == popped.length;
     }
 }
