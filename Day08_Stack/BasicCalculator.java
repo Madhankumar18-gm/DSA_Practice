@@ -60,5 +60,9 @@ public class BasicCalculator {
         String e1 = "1 + 1";
         int ans1 = calculate(e1);
         printExpr(e1, ans1);
+        assert ans1 == 2 : "Test 1 Failed!";
+
+        assert calculate(" 2-1 + 2 ") == 3 : "Test 2 Failed!";
+        assert calculate("(1+(4+5+2)-3)+(6+8)") == 23 : "Test 3 Failed!";
     }
 }
