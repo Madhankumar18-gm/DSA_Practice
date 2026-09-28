@@ -6,8 +6,8 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 
 ## 📊 Repository Summary
 
-- **Total Problems Solved**: `62 Problems`
-- **Total Git Commits**: `550+ Commits`
+- **Total Problems Solved**: `71 Problems`
+- **Total Git Commits**: `630+ Commits`
 - **Primary Language**: `Java 17+`
 - **Remote Repository**: [GitHub - DSA_Practice](https://github.com/Madhankumar18-gm/DSA_Practice.git)
 
@@ -22,7 +22,8 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 - [x] **Day 05 - Linked List Concepts** (Fast & Slow Pointers, Floyd's Cycle, Dummy Nodes, 3-Pass Interleaving, PriorityQueue Heap) — `9 Problems` \| `81 Commits`
 - [x] **Day 06 - Singly Linked List Concepts** (In-place Reversals, Dual Pointer Intersect, Bucket Partitioning, Ring Rotation, K-Group) — `9 Problems` \| `81 Commits`
 - [x] **Day 07 - Doubly Linked List Concepts** (LRU/LFU Caches, Browser History, Circular Deque, Multi-level Flattening, Merge Sort, Two-Pointer Pair Sum) — `9 Problems` \| `81 Commits`
-- [ ] **Day 08 - Graph Concepts & Algorithms** (TBD)
+- [x] **Day 08 - Stack Deep Dive & Monotonic Stack** (Histogram Area, Maximal Rectangle, Trapping Rain Water, Next Greater II, Stock Span, Basic Calculator, Lexicographical Deduplication, Stack Sequences, Remove K Digits) — `9 Problems` \| `81 Commits`
+- [ ] **Day 09 - Graph Concepts & Algorithms** (TBD)
 
 ---
 
@@ -40,15 +41,16 @@ DSA Practice/
 ├── Day05_Linked_List/                   # Topic Folder Day 5 (9 problems)
 ├── Day06_Singly_Linked_List/            # Topic Folder Day 6 (9 problems)
 ├── Day07_Doubly_Linked_List/            # Topic Folder Day 7 (9 problems)
-│   ├── LRUCache.java
-│   ├── LFUCache.java
-│   ├── FlattenMultilevelDoublyLinkedList.java
-│   ├── ReverseDoublyLinkedList.java
-│   ├── DesignBrowserHistory.java
-│   ├── DesignDequeUsingDoublyLinkedList.java
-│   ├── RemoveNodeInDoublyLinkedList.java
-│   ├── SortDoublyLinkedList.java
-│   └── PairSumInSortedDoublyLinkedList.java
+├── Day08_Stack/                         # Topic Folder Day 8 (9 problems)
+│   ├── LargestRectangleInHistogram.java
+│   ├── MaximalRectangle.java
+│   ├── TrappingRainWater.java
+│   ├── NextGreaterElementII.java
+│   ├── OnlineStockSpan.java
+│   ├── BasicCalculator.java
+│   ├── RemoveDuplicateLetters.java
+│   ├── ValidateStackSequences.java
+│   └── RemoveKDigits.java
 │
 ├── LeetCode/                            # Daily Date Folders for LeetCode Problems
 │   ├── 2026-09-22/                      # 2026-09-22 Daily Log (7 problems)
@@ -56,7 +58,8 @@ DSA Practice/
 │   ├── 2026-09-24/                      # 2026-09-24 Daily Log (10 problems)
 │   ├── 2026-09-25/                      # 2026-09-25 Daily Log (9 problems)
 │   ├── 2026-09-26/                      # 2026-09-26 Daily Log (9 problems)
-│   └── 2026-09-27/                      # 2026-09-27 Daily Log (9 problems)
+│   ├── 2026-09-27/                      # 2026-09-27 Daily Log (9 problems)
+│   └── 2026-09-28/                      # 2026-09-28 Daily Log (9 problems)
 │       ├── README.md
 │       └── ...
 │
@@ -159,6 +162,19 @@ DSA Practice/
 | 61 | Merge Sort for Doubly Linked List | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/sort-a-k-sorted-doubly-linked-list/1) | Merge Sort & Pointers | $O(N \log N)$ | $O(\log N)$ | [`SortDoublyLinkedList.java`](./Day07_Doubly_Linked_List/SortDoublyLinkedList.java) |
 | 62 | Pair Sum in Sorted Doubly Linked List | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/find-pairs-with-given-sum-in-doubly-linked-list/1) | Bi-directional Two Pointers | $O(N)$ | $O(1)$ | [`PairSumInSortedDoublyLinkedList.java`](./Day07_Doubly_Linked_List/PairSumInSortedDoublyLinkedList.java) |
 
+### Day 08: Stack Deep Dive & Monotonic Stack
+| # | Problem Name | LeetCode Link | Topic Tag | Time | Space | Solution Code |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
+| 63 | Largest Rectangle in Histogram | [LeetCode #84](https://leetcode.com/problems/largest-rectangle-in-histogram/) | Monotonic Increasing Stack | $O(N)$ | $O(N)$ | [`LargestRectangleInHistogram.java`](./Day08_Stack/LargestRectangleInHistogram.java) |
+| 64 | Maximal Rectangle | [LeetCode #85](https://leetcode.com/problems/maximal-rectangle/) | 2D Monotonic Histogram | $O(R \times C)$ | $O(C)$ | [`MaximalRectangle.java`](./Day08_Stack/MaximalRectangle.java) |
+| 65 | Trapping Rain Water | [LeetCode #42](https://leetcode.com/problems/trapping-rain-water/) | Monotonic Decreasing Stack | $O(N)$ | $O(N)$ | [`TrappingRainWater.java`](./Day08_Stack/TrappingRainWater.java) |
+| 66 | Next Greater Element II | [LeetCode #503](https://leetcode.com/problems/next-greater-element-ii/) | Monotonic Circular Stack | $O(N)$ | $O(N)$ | [`NextGreaterElementII.java`](./Day08_Stack/NextGreaterElementII.java) |
+| 67 | Online Stock Span | [LeetCode #901](https://leetcode.com/problems/online-stock-span/) | Dynamic Monotonic Stack | Amortized $O(1)$ | $O(N)$ | [`OnlineStockSpan.java`](./Day08_Stack/OnlineStockSpan.java) |
+| 68 | Basic Calculator | [LeetCode #224](https://leetcode.com/problems/basic-calculator/) | Expression Parsing & Stack | $O(N)$ | $O(N)$ | [`BasicCalculator.java`](./Day08_Stack/BasicCalculator.java) |
+| 69 | Remove Duplicate Letters | [LeetCode #316](https://leetcode.com/problems/remove-duplicate-letters/) | Monotonic Lexicographical Stack | $O(N)$ | $O(1)$ | [`RemoveDuplicateLetters.java`](./Day08_Stack/RemoveDuplicateLetters.java) |
+| 70 | Validate Stack Sequences | [LeetCode #946](https://leetcode.com/problems/validate-stack-sequences/) | Stack Pointer Simulation | $O(N)$ | $O(N)$ | [`ValidateStackSequences.java`](./Day08_Stack/ValidateStackSequences.java) |
+| 71 | Remove K Digits | [LeetCode #402](https://leetcode.com/problems/remove-k-digits/) | Monotonic Greedy Stack | $O(N)$ | $O(N)$ | [`RemoveKDigits.java`](./Day08_Stack/RemoveKDigits.java) |
+
 ---
 
 ## 🛠️ Verification & Execution
@@ -166,7 +182,7 @@ DSA Practice/
 All Java source files are self-contained executable suites with embedded `main()` assertion methods. To compile and run any problem solution:
 
 ```bash
-# Example: Compile and run LRUCache
-javac Day07_Doubly_Linked_List/LRUCache.java
-java -ea -cp Day07_Doubly_Linked_List LRUCache
+# Example: Compile and run LargestRectangleInHistogram
+javac Day08_Stack/LargestRectangleInHistogram.java
+java -ea -cp Day08_Stack LargestRectangleInHistogram
 ```
