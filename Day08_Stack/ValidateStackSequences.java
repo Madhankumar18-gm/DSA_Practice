@@ -49,5 +49,6 @@ public class ValidateStackSequences {
         assert !validateStackSequences(pu2, po2) : "Test 2 Failed! Expected false";
 
         assert validateStackSequences(new int[]{}, new int[]{}) : "Empty arrays failed!";
+        System.out.println("Execution completed successfully for Validate Stack Sequences.");
     }
 }
