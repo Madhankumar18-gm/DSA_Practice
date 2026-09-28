@@ -53,5 +53,8 @@ public class LargestRectangleInHistogram {
         int[] heights3 = {6, 6, 6, 6};
         int area3 = largestRectangleArea(heights3);
         assert area3 == 24 : "Test 3 Failed! Expected 24";
+
+        assert largestRectangleArea(new int[]{1}) == 1 : "Test Single Failed!";
+        assert largestRectangleArea(new int[]{}) == 0 : "Test Empty Failed!";
     }
 }
