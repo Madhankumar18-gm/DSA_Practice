@@ -53,4 +53,11 @@ public class RemoveDuplicateLetters {
     public static void printResult(String s, String res) {
         System.out.println("Input: \"" + s + "\" -> Result: \"" + res + "\"");
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== Testing LeetCode 316: Remove Duplicate Letters ===");
+        String s1 = "bcabc";
+        String res1 = removeDuplicateLetters(s1);
+        printResult(s1, res1);
+    }
 }
