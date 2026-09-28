@@ -50,4 +50,8 @@ public class BasicCalculator {
         
         return result;
     }
+
+    public static void printExpr(String expr, int ans) {
+        System.out.println("Expr: \"" + expr + "\" = " + ans);
+    }
 }
