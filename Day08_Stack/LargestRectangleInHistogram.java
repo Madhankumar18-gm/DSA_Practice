@@ -37,4 +37,11 @@ public class LargestRectangleInHistogram {
     public static void printHistogramArea(int[] heights, int maxArea) {
         System.out.println("Histogram: " + java.util.Arrays.toString(heights) + " -> Max Area: " + maxArea);
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== Testing LeetCode 84: Largest Rectangle in Histogram ===");
+        int[] heights1 = {2, 1, 5, 6, 2, 3};
+        int area1 = largestRectangleArea(heights1);
+        printHistogramArea(heights1, area1);
+    }
 }
