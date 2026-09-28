@@ -55,5 +55,6 @@ public class TrappingRainWater {
 
         assert trap(new int[]{1, 2, 3, 4}) == 0 : "Increasing terrain failed";
         assert trap(new int[]{4, 3, 2, 1}) == 0 : "Decreasing terrain failed";
+        System.out.println("Execution completed successfully for Trapping Rain Water.");
     }
 }
