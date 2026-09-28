@@ -52,5 +52,8 @@ public class NextGreaterElementII {
         int[] nums2 = {1, 2, 3, 4, 3};
         int[] res2 = nextGreaterElements(nums2);
         assert Arrays.equals(res2, new int[]{2, 3, 4, -1, 4}) : "Test 2 Failed!";
+
+        int[] nums3 = {5, 5, 5};
+        assert Arrays.equals(nextGreaterElements(nums3), new int[]{-1, -1, -1}) : "Equal elements test failed!";
     }
 }
