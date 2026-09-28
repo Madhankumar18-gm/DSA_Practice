@@ -58,5 +58,6 @@ public class MaximalRectangle {
         };
         int area = maximalRectangle(matrix);
         System.out.println("Maximal Rectangle Area: " + area);
+        assert area == 6 : "Test 1 Failed! Expected 6";
     }
 }
