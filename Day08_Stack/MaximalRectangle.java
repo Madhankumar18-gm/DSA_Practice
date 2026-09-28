@@ -47,4 +47,16 @@ public class MaximalRectangle {
         }
         return maxArea;
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== Testing LeetCode 85: Maximal Rectangle ===");
+        char[][] matrix = {
+            {'1', '0', '1', '0', '0'},
+            {'1', '0', '1', '1', '1'},
+            {'1', '1', '1', '1', '1'},
+            {'1', '0', '0', '1', '0'}
+        };
+        int area = maximalRectangle(matrix);
+        System.out.println("Maximal Rectangle Area: " + area);
+    }
 }
