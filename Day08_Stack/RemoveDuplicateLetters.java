@@ -22,24 +22,24 @@ public class RemoveDuplicateLetters {
             lastIndex[s.charAt(i) - 'a'] = i;
         }
         
-        boolean[] inStack = new boolean[26];
+        boolean[] visited = new boolean[26];
         Deque<Character> stack = new ArrayDeque<>();
         
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
             int idx = ch - 'a';
             
-            if (inStack[idx]) {
+            if (visited[idx]) {
                 continue;
             }
             
             while (!stack.isEmpty() && stack.peek() > ch && lastIndex[stack.peek() - 'a'] > i) {
                 char removed = stack.pop();
-                inStack[removed - 'a'] = false;
+                visited[removed - 'a'] = false;
             }
             
             stack.push(ch);
-            inStack[idx] = true;
+            visited[idx] = true;
         }
         
         StringBuilder sb = new StringBuilder();
@@ -47,5 +47,9 @@ public class RemoveDuplicateLetters {
             sb.append(stack.pop());
         }
         return sb.reverse().toString();
+    }
+
+    public static void printResult(String s, String res) {
+        System.out.println("Input: \"" + s + "\" -> Result: \"" + res + "\"");
     }
 }
