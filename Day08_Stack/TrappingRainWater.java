@@ -47,5 +47,10 @@ public class TrappingRainWater {
         int[] h1 = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
         int w1 = trap(h1);
         printTrapResult(h1, w1);
+        assert w1 == 6 : "Test 1 Failed! Expected 6";
+
+        int[] h2 = {4, 2, 0, 3, 2, 5};
+        int w2 = trap(h2);
+        assert w2 == 9 : "Test 2 Failed! Expected 9";
     }
 }
