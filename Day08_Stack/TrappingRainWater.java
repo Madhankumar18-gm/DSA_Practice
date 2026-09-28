@@ -28,7 +28,8 @@ public class TrappingRainWater {
                 }
                 int leftIndex = stack.peek();
                 int distance = i - leftIndex - 1;
-                int boundedHeight = Math.min(height[i], height[leftIndex]) - height[topIndex];
+                int minHeight = Math.min(height[i], height[leftIndex]);
+                int boundedHeight = minHeight - height[topIndex];
                 totalWater += distance * boundedHeight;
             }
             stack.push(i);
