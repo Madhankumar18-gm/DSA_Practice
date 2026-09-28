@@ -52,5 +52,8 @@ public class TrappingRainWater {
         int[] h2 = {4, 2, 0, 3, 2, 5};
         int w2 = trap(h2);
         assert w2 == 9 : "Test 2 Failed! Expected 9";
+
+        assert trap(new int[]{1, 2, 3, 4}) == 0 : "Increasing terrain failed";
+        assert trap(new int[]{4, 3, 2, 1}) == 0 : "Decreasing terrain failed";
     }
 }
