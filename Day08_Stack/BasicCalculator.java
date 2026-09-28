@@ -65,5 +65,6 @@ public class BasicCalculator {
         assert calculate(" 2-1 + 2 ") == 3 : "Test 2 Failed!";
         assert calculate("(1+(4+5+2)-3)+(6+8)") == 23 : "Test 3 Failed!";
         assert calculate("- (3 + (4 + 5))") == -12 : "Negative parenthetical test failed!";
+        System.out.println("Execution completed successfully for Basic Calculator.");
     }
 }
