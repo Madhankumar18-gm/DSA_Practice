@@ -59,5 +59,8 @@ public class RemoveKDigits {
 
         assert removeKdigits("10200", 1).equals("200") : "Test 2 Failed! Expected '200'";
         assert removeKdigits("10", 2).equals("0") : "Test 3 Failed! Expected '0'";
+
+        assert removeKdigits("9", 1).equals("0") : "Single digit k=1 failed!";
+        assert removeKdigits("112", 1).equals("11") : "Repeated digits failed!";
     }
 }
