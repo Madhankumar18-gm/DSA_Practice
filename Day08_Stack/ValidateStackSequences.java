@@ -17,6 +17,7 @@ public class ValidateStackSequences {
             return false;
         }
         
+        // Stack to simulate push and pop operations
         Deque<Integer> stack = new ArrayDeque<>();
         int popIdx = 0;
         
