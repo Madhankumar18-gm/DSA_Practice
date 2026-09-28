@@ -35,4 +35,12 @@ public class ValidateStackSequences {
     public static void printValidation(int[] pushed, int[] popped, boolean valid) {
         System.out.println("Pushed: " + java.util.Arrays.toString(pushed) + ", Popped: " + java.util.Arrays.toString(popped) + " -> Valid: " + valid);
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== Testing LeetCode 946: Validate Stack Sequences ===");
+        int[] pu1 = {1, 2, 3, 4, 5};
+        int[] po1 = {4, 5, 3, 2, 1};
+        boolean v1 = validateStackSequences(pu1, po1);
+        printValidation(pu1, po1, v1);
+    }
 }
