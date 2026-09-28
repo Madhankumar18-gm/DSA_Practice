@@ -42,8 +42,9 @@ public class BasicCalculator {
                 result = 0;
                 sign = 1;
             } else if (ch == ')') {
-                result *= stack.pop(); // sign before '('
-                result += stack.pop(); // result before '('
+                int prevSign = stack.pop();
+                int prevResult = stack.pop();
+                result = prevResult + prevSign * result;
             }
         }
         
