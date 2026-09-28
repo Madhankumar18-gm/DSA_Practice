@@ -54,4 +54,11 @@ public class BasicCalculator {
     public static void printExpr(String expr, int ans) {
         System.out.println("Expr: \"" + expr + "\" = " + ans);
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== Testing LeetCode 224: Basic Calculator ===");
+        String e1 = "1 + 1";
+        int ans1 = calculate(e1);
+        printExpr(e1, ans1);
+    }
 }
