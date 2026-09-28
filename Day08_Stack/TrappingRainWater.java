@@ -41,4 +41,11 @@ public class TrappingRainWater {
     public static void printTrapResult(int[] height, int result) {
         System.out.println("Elevation Map: " + java.util.Arrays.toString(height) + " -> Trapped Water: " + result);
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== Testing LeetCode 42: Trapping Rain Water ===");
+        int[] h1 = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+        int w1 = trap(h1);
+        printTrapResult(h1, w1);
+    }
 }
