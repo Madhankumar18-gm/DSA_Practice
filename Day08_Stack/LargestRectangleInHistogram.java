@@ -56,5 +56,6 @@ public class LargestRectangleInHistogram {
 
         assert largestRectangleArea(new int[]{1}) == 1 : "Test Single Failed!";
         assert largestRectangleArea(new int[]{}) == 0 : "Test Empty Failed!";
+        System.out.println("Execution completed successfully for Largest Rectangle in Histogram.");
     }
 }
