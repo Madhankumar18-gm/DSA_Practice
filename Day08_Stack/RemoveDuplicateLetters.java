@@ -64,5 +64,8 @@ public class RemoveDuplicateLetters {
         String s2 = "cbacdcbc";
         String res2 = removeDuplicateLetters(s2);
         assert res2.equals("acdb") : "Test 2 Failed! Expected 'acdb'";
+
+        assert removeDuplicateLetters("a").equals("a") : "Single char failed!";
+        assert removeDuplicateLetters("").equals("") : "Empty string failed!";
     }
 }
