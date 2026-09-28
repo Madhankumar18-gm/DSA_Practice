@@ -47,5 +47,7 @@ public class ValidateStackSequences {
         int[] pu2 = {1, 2, 3, 4, 5};
         int[] po2 = {4, 3, 5, 1, 2};
         assert !validateStackSequences(pu2, po2) : "Test 2 Failed! Expected false";
+
+        assert validateStackSequences(new int[]{}, new int[]{}) : "Empty arrays failed!";
     }
 }
