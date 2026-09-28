@@ -67,5 +67,6 @@ public class RemoveDuplicateLetters {
 
         assert removeDuplicateLetters("a").equals("a") : "Single char failed!";
         assert removeDuplicateLetters("").equals("") : "Empty string failed!";
+        System.out.println("Execution completed successfully for Remove Duplicate Letters.");
     }
 }
