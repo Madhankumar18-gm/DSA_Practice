@@ -27,4 +27,14 @@ public class OnlineStockSpan {
         stack.push(new int[]{price, currentSpan});
         return currentSpan;
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== Testing LeetCode 901: Online Stock Span ===");
+        OnlineStockSpan stockSpanner = new OnlineStockSpan();
+        int[] prices = {100, 80, 60, 70, 60, 75, 85};
+        for (int p : prices) {
+            int span = stockSpanner.next(p);
+            System.out.println("Price: " + p + " -> Span: " + span);
+        }
+    }
 }
