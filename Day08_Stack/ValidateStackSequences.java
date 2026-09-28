@@ -42,5 +42,10 @@ public class ValidateStackSequences {
         int[] po1 = {4, 5, 3, 2, 1};
         boolean v1 = validateStackSequences(pu1, po1);
         printValidation(pu1, po1, v1);
+        assert v1 : "Test 1 Failed! Expected true";
+
+        int[] pu2 = {1, 2, 3, 4, 5};
+        int[] po2 = {4, 3, 5, 1, 2};
+        assert !validateStackSequences(pu2, po2) : "Test 2 Failed! Expected false";
     }
 }
