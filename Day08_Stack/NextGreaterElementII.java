@@ -24,16 +24,20 @@ public class NextGreaterElementII {
         Deque<Integer> stack = new ArrayDeque<>();
         
         for (int i = 2 * n - 1; i >= 0; i--) {
-            int num = nums[i % n];
-            while (!stack.isEmpty() && stack.peek() <= num) {
+            int currentNum = nums[i % n];
+            while (!stack.isEmpty() && stack.peek() <= currentNum) {
                 stack.pop();
             }
             if (i < n) {
                 res[i] = stack.isEmpty() ? -1 : stack.peek();
             }
-            stack.push(num);
+            stack.push(currentNum);
         }
         
         return res;
+    }
+
+    public static void printNextGreater(int[] nums, int[] res) {
+        System.out.println("Nums: " + Arrays.toString(nums) + " -> Next Greater: " + Arrays.toString(res));
     }
 }
