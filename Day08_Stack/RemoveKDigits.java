@@ -17,6 +17,7 @@ public class RemoveKDigits {
             return "0";
         }
         
+        // Monotonic increasing stack to keep smaller digits upfront
         Deque<Character> stack = new ArrayDeque<>();
         for (char digit : num.toCharArray()) {
             while (!stack.isEmpty() && k > 0 && stack.peek() > digit) {
