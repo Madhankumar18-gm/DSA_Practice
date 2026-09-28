@@ -28,6 +28,10 @@ public class ValidateStackSequences {
             }
         }
         
-        return popIdx == popped.length;
+        return stack.isEmpty();
+    }
+
+    public static void printValidation(int[] pushed, int[] popped, boolean valid) {
+        System.out.println("Pushed: " + java.util.Arrays.toString(pushed) + ", Popped: " + java.util.Arrays.toString(popped) + " -> Valid: " + valid);
     }
 }
