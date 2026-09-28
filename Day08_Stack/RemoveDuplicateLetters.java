@@ -23,6 +23,7 @@ public class RemoveDuplicateLetters {
         }
         
         boolean[] visited = new boolean[26];
+        // Monotonic character stack maintains lexicographical order
         Deque<Character> stack = new ArrayDeque<>();
         
         for (int i = 0; i < s.length(); i++) {
