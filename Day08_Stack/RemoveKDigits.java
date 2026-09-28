@@ -62,5 +62,6 @@ public class RemoveKDigits {
 
         assert removeKdigits("9", 1).equals("0") : "Single digit k=1 failed!";
         assert removeKdigits("112", 1).equals("11") : "Repeated digits failed!";
+        System.out.println("Execution completed successfully for Remove K Digits.");
     }
 }
