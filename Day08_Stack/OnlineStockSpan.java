@@ -44,5 +44,6 @@ public class OnlineStockSpan {
         assert spanner2.next(30) == 1;
         assert spanner2.next(30) == 2;
         assert spanner2.next(30) == 3;
+        System.out.println("Execution completed successfully for Online Stock Span.");
     }
 }
