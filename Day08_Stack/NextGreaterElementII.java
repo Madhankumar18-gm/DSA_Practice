@@ -41,4 +41,11 @@ public class NextGreaterElementII {
     public static void printNextGreater(int[] nums, int[] res) {
         System.out.println("Nums: " + Arrays.toString(nums) + " -> Next Greater: " + Arrays.toString(res));
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== Testing LeetCode 503: Next Greater Element II ===");
+        int[] nums1 = {1, 2, 1};
+        int[] res1 = nextGreaterElements(nums1);
+        printNextGreater(nums1, res1);
+    }
 }
