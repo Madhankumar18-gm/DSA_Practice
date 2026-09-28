@@ -59,5 +59,9 @@ public class MaximalRectangle {
         int area = maximalRectangle(matrix);
         System.out.println("Maximal Rectangle Area: " + area);
         assert area == 6 : "Test 1 Failed! Expected 6";
+
+        assert maximalRectangle(new char[][]{{'0'}}) == 0 : "Single '0' failed";
+        assert maximalRectangle(new char[][]{{'1'}}) == 1 : "Single '1' failed";
+        assert maximalRectangle(new char[][]{{'0', '0'}, {'0', '0'}}) == 0 : "All 0s failed";
     }
 }
