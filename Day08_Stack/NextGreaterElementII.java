@@ -47,5 +47,10 @@ public class NextGreaterElementII {
         int[] nums1 = {1, 2, 1};
         int[] res1 = nextGreaterElements(nums1);
         printNextGreater(nums1, res1);
+        assert Arrays.equals(res1, new int[]{2, -1, 2}) : "Test 1 Failed!";
+
+        int[] nums2 = {1, 2, 3, 4, 3};
+        int[] res2 = nextGreaterElements(nums2);
+        assert Arrays.equals(res2, new int[]{2, 3, 4, -1, 4}) : "Test 2 Failed!";
     }
 }
