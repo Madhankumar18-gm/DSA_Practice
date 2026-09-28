@@ -48,4 +48,12 @@ public class RemoveKDigits {
     public static void printKDigitsResult(String num, int k, String res) {
         System.out.println("Num: \"" + num + "\", K: " + k + " -> Smallest Num: \"" + res + "\"");
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== Testing LeetCode 402: Remove K Digits ===");
+        String n1 = "1432219";
+        int k1 = 3;
+        String res1 = removeKdigits(n1, k1);
+        printKDigitsResult(n1, k1, res1);
+    }
 }
