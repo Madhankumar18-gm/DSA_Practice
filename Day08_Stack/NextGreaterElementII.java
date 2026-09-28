@@ -21,6 +21,7 @@ public class NextGreaterElementII {
         int n = nums.length;
         int[] res = new int[n];
         Arrays.fill(res, -1);
+        // Monotonic decreasing stack storing elements
         Deque<Integer> stack = new ArrayDeque<>();
         
         for (int i = 2 * n - 1; i >= 0; i--) {
