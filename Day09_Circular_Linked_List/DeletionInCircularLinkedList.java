@@ -54,4 +54,15 @@ public class DeletionInCircularLinkedList {
 
         return head;
     }
+
+    public static List<Integer> toList(Node head) {
+        List<Integer> res = new ArrayList<>();
+        if (head == null) return res;
+        Node curr = head;
+        do {
+            res.add(curr.data);
+            curr = curr.next;
+        } while (curr != head);
+        return res;
+    }
 }
