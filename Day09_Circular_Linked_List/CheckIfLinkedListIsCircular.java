@@ -22,6 +22,7 @@ public class CheckIfLinkedListIsCircular {
             return true;
         }
 
+        // Traverse pointer forward until reaching null or returning to head
         Node curr = head.next;
         while (curr != null && curr != head) {
             curr = curr.next;
