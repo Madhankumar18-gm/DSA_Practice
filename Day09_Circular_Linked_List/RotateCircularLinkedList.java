@@ -18,6 +18,24 @@ public class RotateCircularLinkedList {
         return curr;
     }
 
+    public static Node rotateOptimal(Node head, int k) {
+        if (head == null || head.next == head || k == 0) return head;
+        int len = 0;
+        Node curr = head;
+        do {
+            len++;
+            curr = curr.next;
+        } while (curr != head);
+
+        k = k % len;
+        if (k == 0) return head;
+
+        for (int i = 0; i < k; i++) {
+            head = head.next;
+        }
+        return head;
+    }
+
     public static void main(String[] args) {
         Node n1 = new Node(1);
         Node n2 = new Node(2);
