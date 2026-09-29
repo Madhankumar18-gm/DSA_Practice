@@ -39,5 +39,6 @@ public class CountNodesInCircularLinkedList {
         Node n2 = new Node(20);
         n1.next = n2; n2.next = n1;
         assert countNodesNaive(n1) == 2;
+        assert countNodesOptimal(n1) == 2;
     }
 }
