@@ -55,6 +55,11 @@ public class DesignCircularLinkedListQueue {
             return val;
         }
 
+        public int peek() {
+            if (isEmpty()) return -1;
+            return tail.next.val;
+        }
+
         public boolean isEmpty() {
             return tail == null;
         }
