@@ -31,6 +31,22 @@ public class ReverseCircularLinkedList {
         return newHead;
     }
 
+    public static Node reverseOptimal(Node head) {
+        if (head == null || head.next == head) return head;
+        Node prev = null;
+        Node curr = head;
+        Node next = null;
+        do {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        } while (curr != head);
+
+        head.next = prev;
+        return prev;
+    }
+
     public static void main(String[] args) {
         Node n1 = new Node(1);
         Node n2 = new Node(2);
