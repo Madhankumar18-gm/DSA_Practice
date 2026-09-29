@@ -3,6 +3,10 @@ package Day09_Circular_Linked_List;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Problem 79: Design Circular Singly Linked List Queue
+ * Implements a FIFO Queue using a single tail pointer in a Circular Linked List (O(1) Enqueue & Dequeue).
+ */
 public class DesignCircularLinkedListQueue {
     public static class Node {
         public int val;
