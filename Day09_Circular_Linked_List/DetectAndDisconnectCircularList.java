@@ -55,4 +55,14 @@ public class DetectAndDisconnectCircularList {
         fast.next = null; // Disconnect cycle
         return head;
     }
+
+    public static List<Integer> toList(Node head) {
+        List<Integer> list = new ArrayList<>();
+        Node curr = head;
+        while (curr != null) {
+            list.add(curr.val);
+            curr = curr.next;
+        }
+        return list;
+    }
 }
