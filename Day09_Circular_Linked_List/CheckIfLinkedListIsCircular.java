@@ -44,5 +44,10 @@ public class CheckIfLinkedListIsCircular {
 
         boolean c1 = isCircular(n1);
         printResult(c1);
+        assert c1 : "Circular list test failed!";
+
+        Node l1 = new Node(1); Node l2 = new Node(2);
+        l1.next = l2; // linear list
+        assert !isCircular(l1) : "Linear list test failed!";
     }
 }
