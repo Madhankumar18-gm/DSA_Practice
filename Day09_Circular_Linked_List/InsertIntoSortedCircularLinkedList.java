@@ -84,5 +84,9 @@ public class InsertIntoSortedCircularLinkedList {
 
         Node head = insert(n3, 2);
         System.out.println("Inserted 2: " + toList(head));
+        assert toList(head).toString().equals("[3, 4, 1, 2]") : "Test 1 Failed!";
+
+        Node headMax = insert(n3, 5);
+        assert toList(headMax).toString().equals("[3, 4, 5, 1, 2]") : "Max insert failed!";
     }
 }
