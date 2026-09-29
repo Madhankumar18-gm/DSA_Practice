@@ -26,7 +26,7 @@ public class DeletionInCircularLinkedList {
         Node curr = head;
         Node prev = null;
 
-        // If head node is to be deleted
+        // Special handling if head node is to be deleted
         if (head.data == key) {
             if (head.next == head) {
                 return null; // Single node list
