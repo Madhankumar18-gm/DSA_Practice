@@ -53,5 +53,6 @@ public class CountNodesInCircularLinkedList {
         Node a = new Node(1), b = new Node(2), c = new Node(3), d = new Node(4);
         a.next = b; b.next = c; c.next = d; d.next = a;
         assert countNodesOptimal(a) == 4;
+        System.out.println("Execution completed successfully for CountNodesInCircularLinkedList.");
     }
 }
