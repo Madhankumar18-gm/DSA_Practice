@@ -25,4 +25,12 @@ public class DesignCircularLinkedListQueue {
             return list.isEmpty();
         }
     }
+
+    public static void main(String[] args) {
+        NaiveQueue nq = new NaiveQueue();
+        nq.enqueue(10);
+        nq.enqueue(20);
+        assert nq.dequeue() == 10;
+        assert nq.dequeue() == 20;
+    }
 }
