@@ -72,5 +72,6 @@ public class ReverseCircularLinkedList {
         Node single = new Node(42);
         single.next = single;
         assert reverseOptimal(single) == single;
+        System.out.println("Execution completed successfully for ReverseCircularLinkedList.");
     }
 }
