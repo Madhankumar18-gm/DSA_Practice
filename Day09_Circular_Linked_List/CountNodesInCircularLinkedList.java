@@ -3,6 +3,10 @@ package Day09_Circular_Linked_List;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Problem 80: Count Nodes in a Circular Linked List
+ * Counts total nodes in a circular linked list using O(N) do-while pointer traversal and O(1) auxiliary space.
+ */
 public class CountNodesInCircularLinkedList {
     public static class Node {
         public int val;
