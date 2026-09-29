@@ -25,6 +25,7 @@ public class SplitCircularLinkedListIntoTwoHalves {
             return new Node[]{null, null};
         }
 
+        // Fast and slow pointers to locate mid-point
         Node slow = head;
         Node fast = head;
 
