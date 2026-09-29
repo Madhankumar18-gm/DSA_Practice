@@ -72,4 +72,17 @@ public class InsertIntoSortedCircularLinkedList {
         } while (curr != head);
         return list;
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== Testing LeetCode 708: Insert into Sorted Circular Linked List ===");
+        Node n3 = new Node(3);
+        Node n4 = new Node(4);
+        Node n1 = new Node(1);
+        n3.next = n4;
+        n4.next = n1;
+        n1.next = n3;
+
+        Node head = insert(n3, 2);
+        System.out.println("Inserted 2: " + toList(head));
+    }
 }
