@@ -79,5 +79,8 @@ public class DeletionInCircularLinkedList {
 
         head = deleteNode(head, 10);
         assert toList(head).toString().equals("[30]") : "Head delete failed!";
+
+        head = deleteNode(head, 30);
+        assert head == null : "Single node delete failed!";
     }
 }
