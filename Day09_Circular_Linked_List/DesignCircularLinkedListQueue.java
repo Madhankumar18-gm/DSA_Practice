@@ -75,5 +75,19 @@ public class DesignCircularLinkedListQueue {
         nq.enqueue(20);
         assert nq.dequeue() == 10;
         assert nq.dequeue() == 20;
+
+        CircularQueue cq = new CircularQueue();
+        assert cq.isEmpty();
+        cq.enqueue(100);
+        cq.enqueue(200);
+        cq.enqueue(300);
+        assert cq.size() == 3;
+        assert cq.peek() == 100;
+        assert cq.dequeue() == 100;
+        assert cq.dequeue() == 200;
+        assert cq.size() == 1;
+        assert cq.dequeue() == 300;
+        assert cq.isEmpty();
+        assert cq.dequeue() == -1;
     }
 }
