@@ -26,6 +26,44 @@ public class DesignCircularLinkedListQueue {
         }
     }
 
+    public static class CircularQueue {
+        private Node tail = null;
+        private int size = 0;
+
+        public void enqueue(int val) {
+            Node newNode = new Node(val);
+            if (tail == null) {
+                tail = newNode;
+                tail.next = tail;
+            } else {
+                newNode.next = tail.next;
+                tail.next = newNode;
+                tail = newNode;
+            }
+            size++;
+        }
+
+        public int dequeue() {
+            if (isEmpty()) return -1;
+            int val = tail.next.val;
+            if (tail.next == tail) {
+                tail = null;
+            } else {
+                tail.next = tail.next.next;
+            }
+            size--;
+            return val;
+        }
+
+        public boolean isEmpty() {
+            return tail == null;
+        }
+
+        public int size() {
+            return size;
+        }
+    }
+
     public static void main(String[] args) {
         NaiveQueue nq = new NaiveQueue();
         nq.enqueue(10);
