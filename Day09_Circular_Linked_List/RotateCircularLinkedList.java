@@ -54,5 +54,6 @@ public class RotateCircularLinkedList {
         assert rotateOptimal(n1, 0).val == 1;
         assert rotateOptimal(n1, 3).val == 1;
         assert rotateOptimal(n1, 4).val == 2;
+        System.out.println("Execution completed successfully for RotateCircularLinkedList.");
     }
 }
