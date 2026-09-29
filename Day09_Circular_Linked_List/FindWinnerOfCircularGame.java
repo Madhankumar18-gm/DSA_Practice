@@ -46,4 +46,10 @@ public class FindWinnerOfCircularGame {
     public static void printGameWinner(int n, int k, int winner) {
         System.out.println("N=" + n + ", K=" + k + " -> Winner: " + winner);
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== Testing LeetCode 1823: Find Winner of Circular Game ===");
+        int w1 = findTheWinner(5, 2);
+        printGameWinner(5, 2, w1);
+    }
 }
