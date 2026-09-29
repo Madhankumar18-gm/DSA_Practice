@@ -39,6 +39,7 @@ public class InsertIntoSortedCircularLinkedList {
         Node curr = head.next;
         boolean toInsert = false;
 
+        // Traverse the circular linked list to find appropriate insert location
         do {
             if (prev.val <= insertVal && insertVal <= curr.val) {
                 toInsert = true;
