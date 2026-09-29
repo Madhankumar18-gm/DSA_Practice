@@ -93,5 +93,6 @@ public class DesignCircularLinkedListQueue {
         assert cq.dequeue() == 300;
         assert cq.isEmpty();
         assert cq.dequeue() == -1;
+        System.out.println("Execution completed successfully for DesignCircularLinkedListQueue.");
     }
 }
