@@ -19,7 +19,7 @@ public class RotateCircularLinkedList {
     }
 
     public static Node rotateOptimal(Node head, int k) {
-        if (head == null || head.next == head || k == 0) return head;
+        if (head == null || head.next == head || k <= 0) return head;
         int len = 0;
         Node curr = head;
         do {
@@ -43,5 +43,7 @@ public class RotateCircularLinkedList {
         n1.next = n2; n2.next = n3; n3.next = n1;
         Node rotated = rotateNaive(n1, 1);
         assert rotated.val == 2;
+        Node rOpt = rotateOptimal(n1, 1);
+        assert rOpt.val == 2;
     }
 }
