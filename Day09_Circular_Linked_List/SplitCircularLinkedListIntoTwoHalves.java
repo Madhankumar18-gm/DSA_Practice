@@ -21,6 +21,25 @@ public class SplitCircularLinkedListIntoTwoHalves {
         if (head == null) {
             return new Node[]{null, null};
         }
-        return new Node[]{head, null};
+
+        Node slow = head;
+        Node fast = head;
+
+        while (fast.next != head && fast.next.next != head) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        if (fast.next.next == head) {
+            fast = fast.next;
+        }
+
+        Node head1 = head;
+        Node head2 = slow.next;
+
+        fast.next = slow.next;
+        slow.next = head1;
+
+        return new Node[]{head1, head2};
     }
 }
