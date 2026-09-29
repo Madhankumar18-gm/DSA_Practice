@@ -82,5 +82,6 @@ public class DetectAndDisconnectCircularList {
         Node l1 = new Node(10); Node l2 = new Node(20);
         l1.next = l2; // linear list
         assert toList(removeCycle(l1)).toString().equals("[10, 20]") : "Linear list no-op test failed!";
+        System.out.println("Execution completed successfully for Detect and Disconnect Circular List.");
     }
 }
