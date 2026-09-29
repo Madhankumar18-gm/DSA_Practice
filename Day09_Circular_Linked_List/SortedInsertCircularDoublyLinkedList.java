@@ -38,4 +38,11 @@ public class SortedInsertCircularDoublyLinkedList {
         newHead.prev = prev;
         return newHead;
     }
+
+    public static void main(String[] args) {
+        Node head = sortedInsertNaive(null, 5);
+        assert head.val == 5;
+        assert head.next == head;
+        assert head.prev == head;
+    }
 }
