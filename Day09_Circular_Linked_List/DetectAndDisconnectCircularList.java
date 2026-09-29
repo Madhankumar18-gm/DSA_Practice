@@ -78,5 +78,9 @@ public class DetectAndDisconnectCircularList {
         Node linearHead = removeCycle(n1);
         System.out.println("Disconnected Linear List: " + toList(linearHead));
         assert toList(linearHead).toString().equals("[1, 2, 3]") : "CLL disconnect test failed!";
+
+        Node l1 = new Node(10); Node l2 = new Node(20);
+        l1.next = l2; // linear list
+        assert toList(removeCycle(l1)).toString().equals("[10, 20]") : "Linear list no-op test failed!";
     }
 }
