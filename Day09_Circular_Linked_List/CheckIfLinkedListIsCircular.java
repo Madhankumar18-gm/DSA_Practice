@@ -49,5 +49,7 @@ public class CheckIfLinkedListIsCircular {
         Node l1 = new Node(1); Node l2 = new Node(2);
         l1.next = l2; // linear list
         assert !isCircular(l1) : "Linear list test failed!";
+
+        assert isCircular(null) : "Null head test failed!";
     }
 }
