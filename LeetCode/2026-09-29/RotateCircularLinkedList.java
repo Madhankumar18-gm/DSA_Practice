@@ -1,0 +1,59 @@
+package Day09_Circular_Linked_List;
+
+/**
+ * Problem 81: Rotate a Circular Linked List
+ * Advances head of circular linked list by k positions using k % N offset in O(N) time and O(1) space.
+ */
+public class RotateCircularLinkedList {
+    public static class Node {
+        public int val;
+        public Node next;
+        public Node(int val) {
+            this.val = val;
+        }
+    }
+
+    public static Node rotateNaive(Node head, int k) {
+        if (head == null || head.next == head || k == 0) return head;
+        Node curr = head;
+        for (int i = 0; i < k; i++) {
+            curr = curr.next;
+        }
+        return curr;
+    }
+
+    public static Node rotateOptimal(Node head, int k) {
+        if (head == null || head.next == head || k <= 0) return head;
+        int len = 0;
+        Node curr = head;
+        do {
+            len++;
+            curr = curr.next;
+        } while (curr != head);
+
+        k = k % len;
+        if (k == 0) return head;
+
+        for (int i = 0; i < k; i++) {
+            head = head.next;
+        }
+        return head;
+    }
+
+    public static void main(String[] args) {
+        Node n1 = new Node(1);
+        Node n2 = new Node(2);
+        Node n3 = new Node(3);
+        n1.next = n2; n2.next = n3; n3.next = n1;
+        Node rotated = rotateNaive(n1, 1);
+        assert rotated.val == 2;
+        Node rOpt = rotateOptimal(n1, 1);
+        assert rOpt.val == 2;
+
+        assert rotateOptimal(null, 5) == null;
+        assert rotateOptimal(n1, 0).val == 1;
+        assert rotateOptimal(n1, 3).val == 1;
+        assert rotateOptimal(n1, 4).val == 2;
+        System.out.println("Execution completed successfully for RotateCircularLinkedList.");
+    }
+}

@@ -6,8 +6,8 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 
 ## 📊 Repository Summary
 
-- **Total Problems Solved**: `71 Problems`
-- **Total Git Commits**: `630+ Commits`
+- **Total Problems Solved**: `83 Problems`
+- **Total Git Commits**: `740+ Commits`
 - **Primary Language**: `Java 17+`
 - **Remote Repository**: [GitHub - DSA_Practice](https://github.com/Madhankumar18-gm/DSA_Practice.git)
 
@@ -23,7 +23,7 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 - [x] **Day 06 - Singly Linked List Concepts** (In-place Reversals, Dual Pointer Intersect, Bucket Partitioning, Ring Rotation, K-Group) — `9 Problems` \| `81 Commits`
 - [x] **Day 07 - Doubly Linked List Concepts** (LRU/LFU Caches, Browser History, Circular Deque, Multi-level Flattening, Merge Sort, Two-Pointer Pair Sum) — `9 Problems` \| `81 Commits`
 - [x] **Day 08 - Stack Deep Dive & Monotonic Stack** (Histogram Area, Maximal Rectangle, Trapping Rain Water, Next Greater II, Stock Span, Basic Calculator, Lexicographical Deduplication, Stack Sequences, Remove K Digits) — `9 Problems` \| `81 Commits`
-- [ ] **Day 09 - Graph Concepts & Algorithms** (TBD)
+- [x] **Day 09 - Circular Linked List Concepts** (Ring Insertion, Josephus Game, Fast & Slow Split, Origin Traversal, Node Deletion, Cycle Disconnection, 3-Pointer Reversal, Single-Tail Queue, Ring Count, Modulo Rotation, Ring Interleaving, Doubly Circular Insert) — `12 Problems` \| `108 Commits`
 
 ---
 
@@ -42,15 +42,19 @@ DSA Practice/
 ├── Day06_Singly_Linked_List/            # Topic Folder Day 6 (9 problems)
 ├── Day07_Doubly_Linked_List/            # Topic Folder Day 7 (9 problems)
 ├── Day08_Stack/                         # Topic Folder Day 8 (9 problems)
-│   ├── LargestRectangleInHistogram.java
-│   ├── MaximalRectangle.java
-│   ├── TrappingRainWater.java
-│   ├── NextGreaterElementII.java
-│   ├── OnlineStockSpan.java
-│   ├── BasicCalculator.java
-│   ├── RemoveDuplicateLetters.java
-│   ├── ValidateStackSequences.java
-│   └── RemoveKDigits.java
+├── Day09_Circular_Linked_List/          # Topic Folder Day 9 (12 problems)
+│   ├── InsertIntoSortedCircularLinkedList.java
+│   ├── FindWinnerOfCircularGame.java
+│   ├── SplitCircularLinkedListIntoTwoHalves.java
+│   ├── CheckIfLinkedListIsCircular.java
+│   ├── DeletionInCircularLinkedList.java
+│   ├── DetectAndDisconnectCircularList.java
+│   ├── ReverseCircularLinkedList.java
+│   ├── DesignCircularLinkedListQueue.java
+│   ├── CountNodesInCircularLinkedList.java
+│   ├── RotateCircularLinkedList.java
+│   ├── MergeSortedCircularLinkedLists.java
+│   └── SortedInsertCircularDoublyLinkedList.java
 │
 ├── LeetCode/                            # Daily Date Folders for LeetCode Problems
 │   ├── 2026-09-22/                      # 2026-09-22 Daily Log (7 problems)
@@ -59,7 +63,8 @@ DSA Practice/
 │   ├── 2026-09-25/                      # 2026-09-25 Daily Log (9 problems)
 │   ├── 2026-09-26/                      # 2026-09-26 Daily Log (9 problems)
 │   ├── 2026-09-27/                      # 2026-09-27 Daily Log (9 problems)
-│   └── 2026-09-28/                      # 2026-09-28 Daily Log (9 problems)
+│   ├── 2026-09-28/                      # 2026-09-28 Daily Log (9 problems)
+│   └── 2026-09-29/                      # 2026-09-29 Daily Log (12 problems)
 │       ├── README.md
 │       └── ...
 │
@@ -174,6 +179,22 @@ DSA Practice/
 | 69 | Remove Duplicate Letters | [LeetCode #316](https://leetcode.com/problems/remove-duplicate-letters/) | Monotonic Lexicographical Stack | $O(N)$ | $O(1)$ | [`RemoveDuplicateLetters.java`](./Day08_Stack/RemoveDuplicateLetters.java) |
 | 70 | Validate Stack Sequences | [LeetCode #946](https://leetcode.com/problems/validate-stack-sequences/) | Stack Pointer Simulation | $O(N)$ | $O(N)$ | [`ValidateStackSequences.java`](./Day08_Stack/ValidateStackSequences.java) |
 | 71 | Remove K Digits | [LeetCode #402](https://leetcode.com/problems/remove-k-digits/) | Monotonic Greedy Stack | $O(N)$ | $O(N)$ | [`RemoveKDigits.java`](./Day08_Stack/RemoveKDigits.java) |
+
+### Day 09: Circular Linked List Concepts
+| # | Problem Name | LeetCode Link | Topic Tag | Time | Space | Solution Code |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
+| 72 | Insert into a Sorted Circular Linked List | [LeetCode #708](https://leetcode.com/problems/insert-into-a-sorted-circular-linked-list/) | Ring Traversal & Min/Max Bounds | $O(N)$ | $O(1)$ | [`InsertIntoSortedCircularLinkedList.java`](./Day09_Circular_Linked_List/InsertIntoSortedCircularLinkedList.java) |
+| 73 | Find Winner of Circular Game (Josephus) | [LeetCode #1823](https://leetcode.com/problems/find-the-winner-of-the-circular-game/) | Ring Node Elimination Simulation | $O(N \times K)$ | $O(N)$ | [`FindWinnerOfCircularGame.java`](./Day09_Circular_Linked_List/FindWinnerOfCircularGame.java) |
+| 74 | Split Circular Linked List Into Two Halves | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/split-a-circular-linked-list-into-two-halves/1) | Fast & Slow Mid-Split & Ring Rewiring | $O(N)$ | $O(1)$ | [`SplitCircularLinkedListIntoTwoHalves.java`](./Day09_Circular_Linked_List/SplitCircularLinkedListIntoTwoHalves.java) |
+| 75 | Check if a Linked List is Circular | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/circular-linked-list/1) | Head Loop Traversal & Origin Check | $O(N)$ | $O(1)$ | [`CheckIfLinkedListIsCircular.java`](./Day09_Circular_Linked_List/CheckIfLinkedListIsCircular.java) |
+| 76 | Deletion in a Circular Linked List | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/deletion-and-reverse-in-linked-list/1) | Pointer Unlinking & Tail Boundary | $O(N)$ | $O(1)$ | [`DeletionInCircularLinkedList.java`](./Day09_Circular_Linked_List/DeletionInCircularLinkedList.java) |
+| 77 | Detect and Disconnect Circular List | [LeetCode #141 Var](https://leetcode.com/problems/linked-list-cycle/) | Floyd's Tortoise & Hare Cycle Break | $O(N)$ | $O(1)$ | [`DetectAndDisconnectCircularList.java`](./Day09_Circular_Linked_List/DetectAndDisconnectCircularList.java) |
+| 78 | Reverse a Circular Linked List | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/deletion-and-reverse-in-linked-list/1) | In-place 3-Pointer Reversal | $O(N)$ | $O(1)$ | [`ReverseCircularLinkedList.java`](./Day09_Circular_Linked_List/ReverseCircularLinkedList.java) |
+| 79 | Design Circular Singly Linked List Queue | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/queue-using-linked-list/1) | Single Tail Pointer $O(1)$ Queue | $O(1)$ | $O(N)$ | [`DesignCircularLinkedListQueue.java`](./Day09_Circular_Linked_List/DesignCircularLinkedListQueue.java) |
+| 80 | Count Nodes in a Circular Linked List | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/count-nodes-in-circular-linked-list/1) | Do-While Ring Pointer Traversal | $O(N)$ | $O(1)$ | [`CountNodesInCircularLinkedList.java`](./Day09_Circular_Linked_List/CountNodesInCircularLinkedList.java) |
+| 81 | Rotate a Circular Linked List | [LeetCode #61 Var](https://leetcode.com/problems/rotate-list/) | Head Advancement & Ring Split | $O(N)$ | $O(1)$ | [`RotateCircularLinkedList.java`](./Day09_Circular_Linked_List/RotateCircularLinkedList.java) |
+| 82 | Merge Two Sorted Circular Linked Lists | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/merge-two-sorted-linked-lists/1) | Dual Pointer Ring Interleaving | $O(N + M)$ | $O(1)$ | [`MergeSortedCircularLinkedLists.java`](./Day09_Circular_Linked_List/MergeSortedCircularLinkedLists.java) |
+| 83 | Sorted Insert in Circular Doubly Linked List | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/sorted-insert-for-circular-linked-list/1) | Bidirectional Ring Pointer Rewiring | $O(N)$ | $O(1)$ | [`SortedInsertCircularDoublyLinkedList.java`](./Day09_Circular_Linked_List/SortedInsertCircularDoublyLinkedList.java) |
 
 ---
 
