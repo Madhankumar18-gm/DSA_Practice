@@ -67,4 +67,15 @@ public class DetectAndDisconnectCircularList {
         }
         return list;
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== Testing Detect and Disconnect Circular List ===");
+        Node n1 = new Node(1);
+        Node n2 = new Node(2);
+        Node n3 = new Node(3);
+        n1.next = n2; n2.next = n3; n3.next = n1;
+
+        Node linearHead = removeCycle(n1);
+        System.out.println("Disconnected Linear List: " + toList(linearHead));
+    }
 }
