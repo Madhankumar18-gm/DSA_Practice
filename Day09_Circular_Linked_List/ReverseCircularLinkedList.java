@@ -3,6 +3,10 @@ package Day09_Circular_Linked_List;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Problem 78: Reverse a Circular Linked List
+ * Reverses a circular singly linked list in-place in O(N) time and O(1) space.
+ */
 public class ReverseCircularLinkedList {
     public static class Node {
         public int val;
