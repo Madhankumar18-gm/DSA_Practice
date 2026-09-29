@@ -8,4 +8,13 @@ public class RotateCircularLinkedList {
             this.val = val;
         }
     }
+
+    public static Node rotateNaive(Node head, int k) {
+        if (head == null || head.next == head || k == 0) return head;
+        Node curr = head;
+        for (int i = 0; i < k; i++) {
+            curr = curr.next;
+        }
+        return curr;
+    }
 }
