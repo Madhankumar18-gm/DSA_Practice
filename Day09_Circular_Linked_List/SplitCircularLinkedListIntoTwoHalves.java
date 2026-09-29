@@ -77,5 +77,6 @@ public class SplitCircularLinkedListIntoTwoHalves {
         Node[] oddHalves = splitList(o1);
         assert toList(oddHalves[0]).toString().equals("[1, 2]") : "Odd half 1 failed!";
         assert toList(oddHalves[1]).toString().equals("[3]") : "Odd half 2 failed!";
+        System.out.println("Execution completed successfully for Split Circular Linked List into Two Halves.");
     }
 }
