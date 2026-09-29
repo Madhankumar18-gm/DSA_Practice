@@ -20,6 +20,7 @@ public class FindWinnerOfCircularGame {
     public static int findTheWinner(int n, int k) {
         if (n <= 0) return 0;
 
+        // Build circular linked list ring of players 1 to n
         Node head = new Node(1);
         Node prev = head;
         for (int i = 2; i <= n; i++) {
@@ -35,7 +36,7 @@ public class FindWinnerOfCircularGame {
                 prev = curr;
                 curr = curr.next;
             }
-            prev.next = curr.next; // Eliminate current node
+            prev.next = curr.next; // Eliminate current node from ring
             curr = prev.next;
         }
 
