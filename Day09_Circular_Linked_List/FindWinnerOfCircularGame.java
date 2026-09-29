@@ -51,5 +51,9 @@ public class FindWinnerOfCircularGame {
         System.out.println("=== Testing LeetCode 1823: Find Winner of Circular Game ===");
         int w1 = findTheWinner(5, 2);
         printGameWinner(5, 2, w1);
+        assert w1 == 3 : "Test 1 Failed! Expected 3";
+
+        int w2 = findTheWinner(6, 5);
+        assert w2 == 1 : "Test 2 Failed! Expected 1";
     }
 }
