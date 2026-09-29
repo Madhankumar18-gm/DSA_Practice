@@ -23,6 +23,7 @@ public class DetectAndDisconnectCircularList {
     public static Node removeCycle(Node head) {
         if (head == null || head.next == null) return head;
 
+        // Phase 1: Detect cycle with fast and slow pointers
         Node slow = head;
         Node fast = head;
         boolean hasCycle = false;
@@ -38,6 +39,7 @@ public class DetectAndDisconnectCircularList {
 
         if (!hasCycle) return head;
 
+        // Phase 2: Locate cycle start and set trailing pointer to null
         slow = head;
         if (slow == fast) {
             while (fast.next != slow) {
