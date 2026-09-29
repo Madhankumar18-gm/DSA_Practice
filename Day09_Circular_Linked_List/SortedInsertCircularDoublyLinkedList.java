@@ -39,6 +39,36 @@ public class SortedInsertCircularDoublyLinkedList {
         return newHead;
     }
 
+    public static Node sortedInsertOptimal(Node head, int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            newNode.next = newNode;
+            newNode.prev = newNode;
+            return newNode;
+        }
+
+        if (data < head.val) {
+            Node tail = head.prev;
+            newNode.next = head;
+            newNode.prev = tail;
+            tail.next = newNode;
+            head.prev = newNode;
+            return newNode;
+        }
+
+        Node curr = head;
+        while (curr.next != head && curr.next.val < data) {
+            curr = curr.next;
+        }
+
+        newNode.next = curr.next;
+        newNode.prev = curr;
+        curr.next.prev = newNode;
+        curr.next = newNode;
+
+        return head;
+    }
+
     public static void main(String[] args) {
         Node head = sortedInsertNaive(null, 5);
         assert head.val == 5;
