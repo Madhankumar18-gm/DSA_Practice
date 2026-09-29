@@ -34,4 +34,15 @@ public class CheckIfLinkedListIsCircular {
     public static void printResult(boolean res) {
         System.out.println("Is Linked List Circular: " + res);
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== Testing Check if Linked List is Circular ===");
+        Node n1 = new Node(1);
+        Node n2 = new Node(2);
+        Node n3 = new Node(3);
+        n1.next = n2; n2.next = n3; n3.next = n1;
+
+        boolean c1 = isCircular(n1);
+        printResult(c1);
+    }
 }
