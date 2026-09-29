@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * GFG / LeetCode - Split a Circular Linked List into Two Halves
  * Topic: Fast and Slow Pointer Mid-Split
@@ -41,5 +44,16 @@ public class SplitCircularLinkedListIntoTwoHalves {
         slow.next = head1;
 
         return new Node[]{head1, head2};
+    }
+
+    public static List<Integer> toList(Node head) {
+        List<Integer> res = new ArrayList<>();
+        if (head == null) return res;
+        Node curr = head;
+        do {
+            res.add(curr.data);
+            curr = curr.next;
+        } while (curr != head);
+        return res;
     }
 }
