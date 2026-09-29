@@ -104,5 +104,6 @@ public class MergeSortedCircularLinkedLists {
 
         assert mergeOptimal(null, c1) == c1;
         assert mergeOptimal(c1, null) == c1;
+        System.out.println("Execution completed successfully for MergeSortedCircularLinkedLists.");
     }
 }
