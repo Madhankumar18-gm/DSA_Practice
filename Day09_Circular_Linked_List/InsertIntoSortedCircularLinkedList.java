@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * LeetCode 708 - Insert into a Sorted Circular Linked List
  * Topic: Circular Linked List Traversal & Insertion
@@ -56,5 +59,16 @@ public class InsertIntoSortedCircularLinkedList {
 
         prev.next = new Node(insertVal, curr);
         return head;
+    }
+
+    public static List<Integer> toList(Node head) {
+        List<Integer> list = new ArrayList<>();
+        if (head == null) return list;
+        Node curr = head;
+        do {
+            list.add(curr.val);
+            curr = curr.next;
+        } while (curr != head);
+        return list;
     }
 }
