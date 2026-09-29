@@ -69,5 +69,7 @@ public class SplitCircularLinkedListIntoTwoHalves {
         Node[] halves = splitList(n1);
         System.out.println("Half 1: " + toList(halves[0]));
         System.out.println("Half 2: " + toList(halves[1]));
+        assert toList(halves[0]).toString().equals("[1, 2]") : "Even half 1 failed!";
+        assert toList(halves[1]).toString().equals("[3, 4]") : "Even half 2 failed!";
     }
 }
