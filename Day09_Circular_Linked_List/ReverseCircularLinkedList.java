@@ -57,5 +57,11 @@ public class ReverseCircularLinkedList {
         assert rev.next.val == 2;
         assert rev.next.next.val == 1;
         assert rev.next.next.next == rev;
+
+        Node opt = reverseOptimal(rev);
+        assert opt.val == 1;
+        assert opt.next.val == 2;
+        assert opt.next.next.val == 3;
+        assert opt.next.next.next == opt;
     }
 }
