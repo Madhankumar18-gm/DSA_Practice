@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Problem 83: Sorted Insert in Circular Doubly Linked List
+ * Inserts a node into a sorted Circular Doubly Linked List keeping order and prev/next links intact in O(N) time and O(1) space.
+ */
 public class SortedInsertCircularDoublyLinkedList {
     public static class Node {
         public int val;
