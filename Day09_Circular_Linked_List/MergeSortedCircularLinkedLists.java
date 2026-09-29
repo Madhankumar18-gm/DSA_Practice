@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Problem 82: Merge Two Sorted Circular Linked Lists
+ * Merges two sorted circular linked lists into a single sorted circular linked list in O(N + M) time and O(1) space.
+ */
 public class MergeSortedCircularLinkedLists {
     public static class Node {
         public int val;
