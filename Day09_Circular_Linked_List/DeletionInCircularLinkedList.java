@@ -82,5 +82,6 @@ public class DeletionInCircularLinkedList {
 
         head = deleteNode(head, 30);
         assert head == null : "Single node delete failed!";
+        System.out.println("Execution completed successfully for Deletion in Circular Linked List.");
     }
 }
