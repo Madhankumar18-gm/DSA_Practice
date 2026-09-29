@@ -57,5 +57,6 @@ public class FindWinnerOfCircularGame {
         assert w2 == 1 : "Test 2 Failed! Expected 1";
 
         assert findTheWinner(1, 1) == 1 : "Single player test failed!";
+        System.out.println("Execution completed successfully for Find Winner of Circular Game.");
     }
 }
