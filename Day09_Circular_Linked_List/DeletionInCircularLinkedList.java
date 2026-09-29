@@ -22,6 +22,36 @@ public class DeletionInCircularLinkedList {
      */
     public static Node deleteNode(Node head, int key) {
         if (head == null) return null;
+
+        Node curr = head;
+        Node prev = null;
+
+        // If head node is to be deleted
+        if (head.data == key) {
+            if (head.next == head) {
+                return null; // Single node list
+            }
+            Node last = head;
+            while (last.next != head) {
+                last = last.next;
+            }
+            last.next = head.next;
+            head = head.next;
+            return head;
+        }
+
+        prev = head;
+        curr = head.next;
+
+        while (curr != head) {
+            if (curr.data == key) {
+                prev.next = curr.next;
+                return head;
+            }
+            prev = curr;
+            curr = curr.next;
+        }
+
         return head;
     }
 }
