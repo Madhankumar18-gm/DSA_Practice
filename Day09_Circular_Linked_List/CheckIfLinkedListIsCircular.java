@@ -29,4 +29,8 @@ public class CheckIfLinkedListIsCircular {
 
         return curr == head;
     }
+
+    public static void printResult(boolean res) {
+        System.out.println("Is Linked List Circular: " + res);
+    }
 }
