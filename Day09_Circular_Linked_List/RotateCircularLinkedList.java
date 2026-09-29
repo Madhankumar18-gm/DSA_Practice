@@ -17,4 +17,13 @@ public class RotateCircularLinkedList {
         }
         return curr;
     }
+
+    public static void main(String[] args) {
+        Node n1 = new Node(1);
+        Node n2 = new Node(2);
+        Node n3 = new Node(3);
+        n1.next = n2; n2.next = n3; n3.next = n1;
+        Node rotated = rotateNaive(n1, 1);
+        assert rotated.val == 2;
+    }
 }
