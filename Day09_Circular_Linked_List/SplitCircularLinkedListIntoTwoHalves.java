@@ -57,4 +57,17 @@ public class SplitCircularLinkedListIntoTwoHalves {
         } while (curr != head);
         return res;
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== Testing Split Circular Linked List into Two Halves ===");
+        Node n1 = new Node(1);
+        Node n2 = new Node(2);
+        Node n3 = new Node(3);
+        Node n4 = new Node(4);
+        n1.next = n2; n2.next = n3; n3.next = n4; n4.next = n1;
+
+        Node[] halves = splitList(n1);
+        System.out.println("Half 1: " + toList(halves[0]));
+        System.out.println("Half 2: " + toList(halves[1]));
+    }
 }
