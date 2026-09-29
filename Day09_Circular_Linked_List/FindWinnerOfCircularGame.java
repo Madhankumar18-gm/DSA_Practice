@@ -41,4 +41,8 @@ public class FindWinnerOfCircularGame {
 
         return curr.val;
     }
+
+    public static void printGameWinner(int n, int k, int winner) {
+        System.out.println("N=" + n + ", K=" + k + " -> Winner: " + winner);
+    }
 }
