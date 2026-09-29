@@ -23,6 +23,17 @@ public class CountNodesInCircularLinkedList {
         return visited.size();
     }
 
+    public static int countNodesOptimal(Node head) {
+        if (head == null) return 0;
+        int count = 0;
+        Node curr = head;
+        do {
+            count++;
+            curr = curr.next;
+        } while (curr != head);
+        return count;
+    }
+
     public static void main(String[] args) {
         Node n1 = new Node(10);
         Node n2 = new Node(20);
