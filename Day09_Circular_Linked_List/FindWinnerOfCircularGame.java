@@ -55,5 +55,7 @@ public class FindWinnerOfCircularGame {
 
         int w2 = findTheWinner(6, 5);
         assert w2 == 1 : "Test 2 Failed! Expected 1";
+
+        assert findTheWinner(1, 1) == 1 : "Single player test failed!";
     }
 }
