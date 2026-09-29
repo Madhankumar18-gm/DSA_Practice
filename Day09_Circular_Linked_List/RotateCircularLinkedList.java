@@ -1,5 +1,9 @@
 package Day09_Circular_Linked_List;
 
+/**
+ * Problem 81: Rotate a Circular Linked List
+ * Advances head of circular linked list by k positions using k % N offset in O(N) time and O(1) space.
+ */
 public class RotateCircularLinkedList {
     public static class Node {
         public int val;
