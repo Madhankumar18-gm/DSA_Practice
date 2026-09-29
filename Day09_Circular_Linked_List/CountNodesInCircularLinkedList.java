@@ -40,5 +40,14 @@ public class CountNodesInCircularLinkedList {
         n1.next = n2; n2.next = n1;
         assert countNodesNaive(n1) == 2;
         assert countNodesOptimal(n1) == 2;
+
+        assert countNodesOptimal(null) == 0;
+        Node s = new Node(1);
+        s.next = s;
+        assert countNodesOptimal(s) == 1;
+
+        Node a = new Node(1), b = new Node(2), c = new Node(3), d = new Node(4);
+        a.next = b; b.next = c; c.next = d; d.next = a;
+        assert countNodesOptimal(a) == 4;
     }
 }
