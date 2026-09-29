@@ -86,5 +86,12 @@ public class SortedInsertCircularDoublyLinkedList {
         assert opt.next.next.next.val == 20;
         assert opt.next.next.next.next == opt;
         assert opt.prev.val == 20;
+
+        Node curr = opt;
+        do {
+            assert curr.next.prev == curr;
+            assert curr.prev.next == curr;
+            curr = curr.next;
+        } while (curr != opt);
     }
 }
