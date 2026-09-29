@@ -74,5 +74,17 @@ public class SortedInsertCircularDoublyLinkedList {
         assert head.val == 5;
         assert head.next == head;
         assert head.prev == head;
+
+        Node opt = sortedInsertOptimal(null, 10);
+        opt = sortedInsertOptimal(opt, 20);
+        opt = sortedInsertOptimal(opt, 15);
+        opt = sortedInsertOptimal(opt, 5);
+
+        assert opt.val == 5;
+        assert opt.next.val == 10;
+        assert opt.next.next.val == 15;
+        assert opt.next.next.next.val == 20;
+        assert opt.next.next.next.next == opt;
+        assert opt.prev.val == 20;
     }
 }
