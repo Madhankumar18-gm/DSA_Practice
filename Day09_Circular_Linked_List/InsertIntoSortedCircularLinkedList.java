@@ -91,5 +91,6 @@ public class InsertIntoSortedCircularLinkedList {
 
         Node nullHead = insert(null, 1);
         assert toList(nullHead).toString().equals("[1]") : "Null head insert failed!";
+        System.out.println("Execution completed successfully for Insert into Sorted Circular Linked List.");
     }
 }
