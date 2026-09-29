@@ -65,4 +65,15 @@ public class DeletionInCircularLinkedList {
         } while (curr != head);
         return res;
     }
+
+    public static void main(String[] args) {
+        System.out.println("=== Testing Deletion in Circular Linked List ===");
+        Node n1 = new Node(10);
+        Node n2 = new Node(20);
+        Node n3 = new Node(30);
+        n1.next = n2; n2.next = n3; n3.next = n1;
+
+        Node head = deleteNode(n1, 20);
+        System.out.println("After deleting 20: " + toList(head));
+    }
 }
