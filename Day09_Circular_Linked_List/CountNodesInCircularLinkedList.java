@@ -22,4 +22,11 @@ public class CountNodesInCircularLinkedList {
         }
         return visited.size();
     }
+
+    public static void main(String[] args) {
+        Node n1 = new Node(10);
+        Node n2 = new Node(20);
+        n1.next = n2; n2.next = n1;
+        assert countNodesNaive(n1) == 2;
+    }
 }
