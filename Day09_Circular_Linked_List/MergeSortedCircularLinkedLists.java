@@ -97,5 +97,8 @@ public class MergeSortedCircularLinkedLists {
         assert opt.val == 5;
         assert opt.next.val == 10;
         assert opt.next.next == opt;
+
+        assert mergeOptimal(null, c1) == c1;
+        assert mergeOptimal(c1, null) == c1;
     }
 }
