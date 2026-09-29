@@ -51,5 +51,6 @@ public class CheckIfLinkedListIsCircular {
         assert !isCircular(l1) : "Linear list test failed!";
 
         assert isCircular(null) : "Null head test failed!";
+        System.out.println("Execution completed successfully for Check if Linked List is Circular.");
     }
 }
