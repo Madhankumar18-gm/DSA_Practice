@@ -75,5 +75,9 @@ public class DeletionInCircularLinkedList {
 
         Node head = deleteNode(n1, 20);
         System.out.println("After deleting 20: " + toList(head));
+        assert toList(head).toString().equals("[10, 30]") : "Middle delete failed!";
+
+        head = deleteNode(head, 10);
+        assert toList(head).toString().equals("[30]") : "Head delete failed!";
     }
 }
