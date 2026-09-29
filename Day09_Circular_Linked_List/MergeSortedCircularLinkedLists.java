@@ -40,4 +40,18 @@ public class MergeSortedCircularLinkedLists {
         curr.next = newHead;
         return newHead;
     }
+
+    public static void main(String[] args) {
+        Node a1 = new Node(1), a2 = new Node(3);
+        a1.next = a2; a2.next = a1;
+        Node b1 = new Node(2), b2 = new Node(4);
+        b1.next = b2; b2.next = b1;
+
+        Node m = mergeNaive(a1, b1);
+        assert m.val == 1;
+        assert m.next.val == 2;
+        assert m.next.next.val == 3;
+        assert m.next.next.next.val == 4;
+        assert m.next.next.next.next == m;
+    }
 }
