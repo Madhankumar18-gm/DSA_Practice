@@ -88,5 +88,8 @@ public class InsertIntoSortedCircularLinkedList {
 
         Node headMax = insert(n3, 5);
         assert toList(headMax).toString().equals("[3, 4, 5, 1, 2]") : "Max insert failed!";
+
+        Node nullHead = insert(null, 1);
+        assert toList(nullHead).toString().equals("[1]") : "Null head insert failed!";
     }
 }
