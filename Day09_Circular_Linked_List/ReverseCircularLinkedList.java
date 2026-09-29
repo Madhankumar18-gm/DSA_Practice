@@ -30,4 +30,16 @@ public class ReverseCircularLinkedList {
         tail.next = newHead;
         return newHead;
     }
+
+    public static void main(String[] args) {
+        Node n1 = new Node(1);
+        Node n2 = new Node(2);
+        Node n3 = new Node(3);
+        n1.next = n2; n2.next = n3; n3.next = n1;
+        Node rev = reverseNaive(n1);
+        assert rev.val == 3;
+        assert rev.next.val == 2;
+        assert rev.next.next.val == 1;
+        assert rev.next.next.next == rev;
+    }
 }
