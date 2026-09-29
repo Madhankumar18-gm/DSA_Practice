@@ -45,5 +45,10 @@ public class RotateCircularLinkedList {
         assert rotated.val == 2;
         Node rOpt = rotateOptimal(n1, 1);
         assert rOpt.val == 2;
+
+        assert rotateOptimal(null, 5) == null;
+        assert rotateOptimal(n1, 0).val == 1;
+        assert rotateOptimal(n1, 3).val == 1;
+        assert rotateOptimal(n1, 4).val == 2;
     }
 }
