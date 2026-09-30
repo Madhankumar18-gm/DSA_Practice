@@ -75,5 +75,12 @@ public class DesignCircularDeque {
         assert !dq.insertFront(4);
         assert dq.getRear() == 2;
         assert dq.isFull();
+        assert dq.deleteLast();
+        assert dq.insertFront(4);
+        assert dq.getFront() == 4;
+        assert dq.deleteFront();
+        assert dq.deleteFront();
+        assert dq.deleteFront();
+        assert dq.isEmpty();
     }
 }
