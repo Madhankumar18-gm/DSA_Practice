@@ -42,5 +42,6 @@ public class NumberOfStudentsUnableToEatLunch {
         int[] stud = {1, 1, 0, 0};
         int[] sand = {0, 1, 0, 1};
         assert countStudentsNaive(stud, sand) == 0;
+        assert countStudentsOptimal(stud, sand) == 0;
     }
 }
