@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Problem 92: Generate Binary Numbers from 1 to N using Queue
+ * Generates binary representations of numbers 1 to N using Queue BFS.
+ */
 public class GenerateBinaryNumbersUsingQueue {
     public static String[] generateBinaryNaive(int n) {
         if (n <= 0) return new String[0];
