@@ -46,5 +46,10 @@ public class InterleaveQueueHalves {
         Queue<Integer> res = interleaveNaive(q);
         assert res.poll() == 1;
         assert res.poll() == 4;
+        Queue<Integer> q2 = new LinkedList<>();
+        for (int i = 1; i <= 6; i++) q2.offer(i);
+        Queue<Integer> resOpt = interleaveOptimal(q2);
+        assert resOpt.poll() == 1;
+        assert resOpt.poll() == 4;
     }
 }
