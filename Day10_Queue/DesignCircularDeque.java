@@ -1,18 +1,22 @@
 package Day10_Queue;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DesignCircularDeque {
-    public static class MyCircularDeque {
-        private int[] buffer;
-        private int front;
-        private int rear;
-        private int size;
-        private int capacity;
-        public MyCircularDeque(int k) {
-            this.capacity = k;
-            this.buffer = new int[k];
-            this.front = 0;
-            this.rear = 0;
-            this.size = 0;
+    public static class NaiveDeque {
+        private List<Integer> list = new ArrayList<>();
+        private int k;
+        public NaiveDeque(int k) { this.k = k; }
+        public boolean insertFront(int value) {
+            if (list.size() == k) return false;
+            list.add(0, value);
+            return true;
+        }
+        public boolean insertLast(int value) {
+            if (list.size() == k) return false;
+            list.add(value);
+            return true;
         }
     }
 }
