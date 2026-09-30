@@ -22,6 +22,7 @@ public class FirstNonRepeatingCharacterInStream {
         return sb.toString();
     }
     public static String firstNonRepeatingOptimal(String str) {
+        if (str == null || str.isEmpty()) return "";
         StringBuilder sb = new StringBuilder();
         int[] freq = new int[26];
         Queue<Character> queue = new LinkedList<>();
