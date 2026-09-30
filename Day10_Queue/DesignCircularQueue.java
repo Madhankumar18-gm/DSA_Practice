@@ -17,4 +17,9 @@ public class DesignCircularQueue {
         public boolean isEmpty() { return size == 0; }
         public boolean isFull() { return size == capacity; }
     }
+    public static void main(String[] args) {
+        MyCircularQueue q = new MyCircularQueue(3);
+        assert q.isEmpty();
+        assert !q.isFull();
+    }
 }
