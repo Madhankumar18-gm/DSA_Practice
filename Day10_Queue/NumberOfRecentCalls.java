@@ -46,5 +46,6 @@ public class NumberOfRecentCalls {
         assert rc.ping(3001) == 3;
         assert rc.ping(3002) == 3;
         assert rc.ping(7000) == 1;
+        System.out.println("Execution completed successfully for NumberOfRecentCalls.");
     }
 }
