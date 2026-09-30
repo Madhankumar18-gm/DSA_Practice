@@ -22,6 +22,7 @@ public class NumberOfStudentsUnableToEatLunch {
         return q.size();
     }
     public static int countStudentsOptimal(int[] students, int[] sandwiches) {
+        if (students == null || sandwiches == null || students.length == 0) return 0;
         int count0 = 0, count1 = 0;
         for (int s : students) {
             if (s == 0) count0++;
