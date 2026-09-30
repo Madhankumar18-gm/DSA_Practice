@@ -7,6 +7,10 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
+/**
+ * Problem 88: Reverse First K Elements of Queue
+ * Reverses first K elements of a Queue using an auxiliary Stack.
+ */
 public class ReverseFirstKElementsOfQueue {
     public static Queue<Integer> reverseKNaive(Queue<Integer> queue, int k) {
         if (queue == null || k <= 0 || k > queue.size()) return queue;
