@@ -3,6 +3,10 @@ package Day10_Queue;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Problem 87: First Non-Repeating Character in a Stream
+ * Stream processing using Queue and Frequency Map in O(N) time.
+ */
 public class FirstNonRepeatingCharacterInStream {
     public static String firstNonRepeatingNaive(String str) {
         StringBuilder sb = new StringBuilder();
