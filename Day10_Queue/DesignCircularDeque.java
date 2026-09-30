@@ -68,5 +68,12 @@ public class DesignCircularDeque {
         assert nd.insertFront(1);
         assert nd.insertLast(2);
         assert !nd.insertFront(3);
+        MyCircularDeque dq = new MyCircularDeque(3);
+        assert dq.insertLast(1);
+        assert dq.insertLast(2);
+        assert dq.insertFront(3);
+        assert !dq.insertFront(4);
+        assert dq.getRear() == 2;
+        assert dq.isFull();
     }
 }
