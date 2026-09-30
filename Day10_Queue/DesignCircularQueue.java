@@ -14,5 +14,7 @@ public class DesignCircularQueue {
             this.tail = -1;
             this.size = 0;
         }
+        public boolean isEmpty() { return size == 0; }
+        public boolean isFull() { return size == capacity; }
     }
 }
