@@ -39,5 +39,8 @@ public class NumberOfRecentCalls {
         RecentCounter rc = new RecentCounter();
         assert rc.ping(1) == 1;
         assert rc.ping(100) == 2;
+        assert rc.ping(3001) == 3;
+        assert rc.ping(3002) == 3;
+        assert rc.ping(7000) == 1;
     }
 }
