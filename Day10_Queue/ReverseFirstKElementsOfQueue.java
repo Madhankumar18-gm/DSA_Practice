@@ -46,5 +46,9 @@ public class ReverseFirstKElementsOfQueue {
         assert revOpt.poll() == 1;
         assert revOpt.poll() == 4;
         assert revOpt.poll() == 5;
+        Queue<Integer> q3 = new LinkedList<>();
+        q3.offer(10);
+        assert reverseKOptimal(q3, 1).poll() == 10;
+        assert reverseKOptimal(null, 5) == null;
     }
 }
