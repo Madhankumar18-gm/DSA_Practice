@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 
 public class InterleaveQueueHalves {
     public static Queue<Integer> interleaveNaive(Queue<Integer> q) {
@@ -16,6 +17,28 @@ public class InterleaveQueueHalves {
             res.offer(list.get(i + half));
         }
         return res;
+    }
+    public static Queue<Integer> interleaveOptimal(Queue<Integer> q) {
+        if (q == null || q.size() % 2 != 0) return q;
+        int half = q.size() / 2;
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < half; i++) {
+            stack.push(q.poll());
+        }
+        while (!stack.isEmpty()) {
+            q.offer(stack.pop());
+        }
+        for (int i = 0; i < half; i++) {
+            q.offer(q.poll());
+        }
+        for (int i = 0; i < half; i++) {
+            stack.push(q.poll());
+        }
+        while (!stack.isEmpty()) {
+            q.offer(stack.pop());
+            q.offer(q.poll());
+        }
+        return q;
     }
     public static void main(String[] args) {
         Queue<Integer> q = new LinkedList<>();
