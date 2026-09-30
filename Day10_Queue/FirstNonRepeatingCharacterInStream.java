@@ -18,4 +18,7 @@ public class FirstNonRepeatingCharacterInStream {
         }
         return sb.toString();
     }
+    public static void main(String[] args) {
+        assert firstNonRepeatingNaive("aabc").equals("a#bb");
+    }
 }
