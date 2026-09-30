@@ -86,5 +86,6 @@ public class DesignCircularDeque {
         assert dq.deleteFront();
         assert dq.deleteFront();
         assert dq.isEmpty();
+        System.out.println("Execution completed successfully for DesignCircularDeque.");
     }
 }
