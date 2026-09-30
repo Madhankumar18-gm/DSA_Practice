@@ -23,4 +23,9 @@ public class RevealCardsInIncreasingOrder {
         }
         return res;
     }
+    public static void main(String[] args) {
+        int[] deck = {17, 13, 11, 2, 3, 5, 7};
+        int[] res = deckRevealedIncreasingNaive(deck);
+        assert Arrays.equals(res, new int[]{2, 13, 3, 11, 5, 17, 7});
+    }
 }
