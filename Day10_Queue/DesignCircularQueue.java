@@ -1,5 +1,9 @@
 package Day10_Queue;
 
+/**
+ * Problem 84: [LeetCode 622] Design Circular Queue
+ * Array-based Circular Queue using modulo arithmetic in O(1) time.
+ */
 public class DesignCircularQueue {
     public static class MyCircularQueue {
         private int[] buffer;
