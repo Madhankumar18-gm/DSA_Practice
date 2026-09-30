@@ -1,4 +1,12 @@
 package Day10_Queue;
 
 public class GenerateBinaryNumbersUsingQueue {
+    public static String[] generateBinaryNaive(int n) {
+        if (n <= 0) return new String[0];
+        String[] res = new String[n];
+        for (int i = 1; i <= n; i++) {
+            res[i - 1] = Integer.toBinaryString(i);
+        }
+        return res;
+    }
 }
