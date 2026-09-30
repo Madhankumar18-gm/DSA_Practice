@@ -54,5 +54,6 @@ public class ReverseFirstKElementsOfQueue {
         q3.offer(10);
         assert reverseKOptimal(q3, 1).poll() == 10;
         assert reverseKOptimal(null, 5) == null;
+        System.out.println("Execution completed successfully for ReverseFirstKElementsOfQueue.");
     }
 }
