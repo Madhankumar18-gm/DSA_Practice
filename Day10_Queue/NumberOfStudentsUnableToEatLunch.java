@@ -21,4 +21,9 @@ public class NumberOfStudentsUnableToEatLunch {
         }
         return q.size();
     }
+    public static void main(String[] args) {
+        int[] stud = {1, 1, 0, 0};
+        int[] sand = {0, 1, 0, 1};
+        assert countStudentsNaive(stud, sand) == 0;
+    }
 }
