@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 
 public class ReverseFirstKElementsOfQueue {
     public static Queue<Integer> reverseKNaive(Queue<Integer> queue, int k) {
@@ -14,6 +15,21 @@ public class ReverseFirstKElementsOfQueue {
         Queue<Integer> res = new LinkedList<>();
         for (int val : list) res.offer(val);
         return res;
+    }
+    public static Queue<Integer> reverseKOptimal(Queue<Integer> queue, int k) {
+        if (queue == null || k <= 0 || k > queue.size()) return queue;
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < k; i++) {
+            stack.push(queue.poll());
+        }
+        while (!stack.isEmpty()) {
+            queue.offer(stack.pop());
+        }
+        int remaining = queue.size() - k;
+        for (int i = 0; i < remaining; i++) {
+            queue.offer(queue.poll());
+        }
+        return queue;
     }
     public static void main(String[] args) {
         Queue<Integer> q = new LinkedList<>();
