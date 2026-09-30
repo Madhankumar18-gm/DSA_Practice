@@ -55,5 +55,6 @@ public class RevealCardsInIncreasingOrder {
         int[] single = {1, 100};
         assert Arrays.equals(deckRevealedIncreasingOptimal(single), new int[]{1, 100});
         assert deckRevealedIncreasingOptimal(new int[0]).length == 0;
+        System.out.println("Execution completed successfully for RevealCardsInIncreasingOrder.");
     }
 }
