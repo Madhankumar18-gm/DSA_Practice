@@ -22,6 +22,13 @@ public class NumberOfRecentCalls {
         public RecentCounter() {
             this.queue = new LinkedList<>();
         }
+        public int ping(int t) {
+            queue.offer(t);
+            while (!queue.isEmpty() && queue.peek() < t - 3000) {
+                queue.poll();
+            }
+            return queue.size();
+        }
     }
     public static void main(String[] args) {
         NaiveCounter nc = new NaiveCounter();
