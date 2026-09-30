@@ -37,5 +37,6 @@ public class FirstNonRepeatingCharacterInStream {
     }
     public static void main(String[] args) {
         assert firstNonRepeatingNaive("aabc").equals("a#bb");
+        assert firstNonRepeatingOptimal("aabc").equals("a#bb");
     }
 }
