@@ -23,4 +23,11 @@ public class NumberOfRecentCalls {
             this.queue = new LinkedList<>();
         }
     }
+    public static void main(String[] args) {
+        NaiveCounter nc = new NaiveCounter();
+        assert nc.ping(1) == 1;
+        assert nc.ping(100) == 2;
+        assert nc.ping(3001) == 3;
+        assert nc.ping(3002) == 3;
+    }
 }
