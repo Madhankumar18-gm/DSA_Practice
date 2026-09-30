@@ -51,5 +51,9 @@ public class InterleaveQueueHalves {
         Queue<Integer> resOpt = interleaveOptimal(q2);
         assert resOpt.poll() == 1;
         assert resOpt.poll() == 4;
+        assert resOpt.poll() == 2;
+        assert resOpt.poll() == 5;
+        assert resOpt.poll() == 3;
+        assert resOpt.poll() == 6;
     }
 }
