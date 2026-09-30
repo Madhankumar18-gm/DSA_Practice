@@ -17,4 +17,11 @@ public class InterleaveQueueHalves {
         }
         return res;
     }
+    public static void main(String[] args) {
+        Queue<Integer> q = new LinkedList<>();
+        for (int i = 1; i <= 6; i++) q.offer(i);
+        Queue<Integer> res = interleaveNaive(q);
+        assert res.poll() == 1;
+        assert res.poll() == 4;
+    }
 }
