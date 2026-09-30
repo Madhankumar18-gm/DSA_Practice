@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Problem 89: [LeetCode 950] Reveal Cards In Increasing Order
+ * Simulates card deck ordering using a Queue of index positions.
+ */
 public class RevealCardsInIncreasingOrder {
     public static int[] deckRevealedIncreasingNaive(int[] deck) {
         if (deck == null || deck.length == 0) return new int[0];
