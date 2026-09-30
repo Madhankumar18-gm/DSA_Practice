@@ -24,7 +24,7 @@ public class NumberOfRecentCalls {
         }
         public int ping(int t) {
             queue.offer(t);
-            while (!queue.isEmpty() && queue.peek() < t - 3000) {
+            while (queue.peek() < t - 3000) {
                 queue.poll();
             }
             return queue.size();
@@ -36,5 +36,8 @@ public class NumberOfRecentCalls {
         assert nc.ping(100) == 2;
         assert nc.ping(3001) == 3;
         assert nc.ping(3002) == 3;
+        RecentCounter rc = new RecentCounter();
+        assert rc.ping(1) == 1;
+        assert rc.ping(100) == 2;
     }
 }
