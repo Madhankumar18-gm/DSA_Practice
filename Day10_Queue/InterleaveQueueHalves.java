@@ -6,6 +6,10 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
+/**
+ * Problem 91: Interleave First Half of Queue with Second Half
+ * Interleaves first half of even-sized queue with second half.
+ */
 public class InterleaveQueueHalves {
     public static Queue<Integer> interleaveNaive(Queue<Integer> q) {
         if (q == null || q.size() % 2 != 0) return q;
