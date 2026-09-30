@@ -41,5 +41,10 @@ public class DesignCircularQueue {
         assert q.enQueue(30);
         assert !q.enQueue(40);
         assert q.isFull();
+        assert q.Front() == 10;
+        assert q.Rear() == 30;
+        assert q.deQueue();
+        assert q.enQueue(40);
+        assert q.Rear() == 40;
     }
 }
