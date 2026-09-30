@@ -46,5 +46,7 @@ public class RevealCardsInIncreasingOrder {
         int[] deck = {17, 13, 11, 2, 3, 5, 7};
         int[] res = deckRevealedIncreasingNaive(deck);
         assert Arrays.equals(res, new int[]{2, 13, 3, 11, 5, 17, 7});
+        int[] resOpt = deckRevealedIncreasingOptimal(deck);
+        assert Arrays.equals(resOpt, new int[]{2, 13, 3, 11, 5, 17, 7});
     }
 }
