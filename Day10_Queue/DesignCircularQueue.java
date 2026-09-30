@@ -36,5 +36,10 @@ public class DesignCircularQueue {
         MyCircularQueue q = new MyCircularQueue(3);
         assert q.isEmpty();
         assert !q.isFull();
+        assert q.enQueue(10);
+        assert q.enQueue(20);
+        assert q.enQueue(30);
+        assert !q.enQueue(40);
+        assert q.isFull();
     }
 }
