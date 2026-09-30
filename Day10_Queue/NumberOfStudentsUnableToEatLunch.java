@@ -51,5 +51,6 @@ public class NumberOfStudentsUnableToEatLunch {
         int[] stud2 = {1, 1, 1, 0, 0, 1};
         int[] sand2 = {1, 0, 0, 0, 1, 1};
         assert countStudentsOptimal(stud2, sand2) == 3;
+        System.out.println("Execution completed successfully for NumberOfStudentsUnableToEatLunch.");
     }
 }
