@@ -3,6 +3,10 @@ package Day10_Queue;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Problem 90: [LeetCode 1700] Number of Students Unable to Eat Lunch
+ * Calculates hungry students remaining after circular preference queue matching.
+ */
 public class NumberOfStudentsUnableToEatLunch {
     public static int countStudentsNaive(int[] students, int[] sandwiches) {
         Queue<Integer> q = new LinkedList<>();
