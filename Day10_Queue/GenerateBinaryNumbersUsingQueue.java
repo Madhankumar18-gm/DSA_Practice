@@ -37,5 +37,6 @@ public class GenerateBinaryNumbersUsingQueue {
         assert Arrays.equals(resOpt, new String[]{"1", "10", "11", "100", "101"});
         assert generateBinaryOptimal(0).length == 0;
         assert Arrays.equals(generateBinaryOptimal(1), new String[]{"1"});
+        System.out.println("Execution completed successfully for GenerateBinaryNumbersUsingQueue.");
     }
 }
