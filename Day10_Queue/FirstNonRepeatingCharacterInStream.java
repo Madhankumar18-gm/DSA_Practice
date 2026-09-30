@@ -1,5 +1,8 @@
 package Day10_Queue;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class FirstNonRepeatingCharacterInStream {
     public static String firstNonRepeatingNaive(String str) {
         StringBuilder sb = new StringBuilder();
@@ -15,6 +18,20 @@ public class FirstNonRepeatingCharacterInStream {
                 }
             }
             sb.append(first);
+        }
+        return sb.toString();
+    }
+    public static String firstNonRepeatingOptimal(String str) {
+        StringBuilder sb = new StringBuilder();
+        int[] freq = new int[26];
+        Queue<Character> queue = new LinkedList<>();
+        for (char ch : str.toCharArray()) {
+            freq[ch - 'a']++;
+            queue.offer(ch);
+            while (!queue.isEmpty() && freq[queue.peek() - 'a'] > 1) {
+                queue.poll();
+            }
+            sb.append(queue.isEmpty() ? '#' : queue.peek());
         }
         return sb.toString();
     }
