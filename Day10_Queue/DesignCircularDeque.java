@@ -3,6 +3,10 @@ package Day10_Queue;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Problem 85: [LeetCode 641] Design Circular Deque
+ * Array-based Double-Ended Circular Ring Buffer.
+ */
 public class DesignCircularDeque {
     public static class NaiveDeque {
         private List<Integer> list = new ArrayList<>();
