@@ -19,4 +19,10 @@ public class DesignCircularDeque {
             return true;
         }
     }
+    public static void main(String[] args) {
+        NaiveDeque nd = new NaiveDeque(2);
+        assert nd.insertFront(1);
+        assert nd.insertLast(2);
+        assert !nd.insertFront(3);
+    }
 }
