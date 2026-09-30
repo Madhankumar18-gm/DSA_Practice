@@ -6,8 +6,8 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 
 ## 📊 Repository Summary
 
-- **Total Problems Solved**: `83 Problems`
-- **Total Git Commits**: `740+ Commits`
+- **Total Problems Solved**: `92 Problems`
+- **Total Git Commits**: `828+ Commits`
 - **Primary Language**: `Java 17+`
 - **Remote Repository**: [GitHub - DSA_Practice](https://github.com/Madhankumar18-gm/DSA_Practice.git)
 
@@ -24,6 +24,7 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 - [x] **Day 07 - Doubly Linked List Concepts** (LRU/LFU Caches, Browser History, Circular Deque, Multi-level Flattening, Merge Sort, Two-Pointer Pair Sum) — `9 Problems` \| `81 Commits`
 - [x] **Day 08 - Stack Deep Dive & Monotonic Stack** (Histogram Area, Maximal Rectangle, Trapping Rain Water, Next Greater II, Stock Span, Basic Calculator, Lexicographical Deduplication, Stack Sequences, Remove K Digits) — `9 Problems` \| `81 Commits`
 - [x] **Day 09 - Circular Linked List Concepts** (Ring Insertion, Josephus Game, Fast & Slow Split, Origin Traversal, Node Deletion, Cycle Disconnection, 3-Pointer Reversal, Single-Tail Queue, Ring Count, Modulo Rotation, Ring Interleaving, Doubly Circular Insert) — `12 Problems` \| `108 Commits`
+- [x] **Day 10 - Queue & Deque Concepts** (Circular Queue, Circular Deque, Recent Calls Window, Stream Deduplication, K-Segment Reversal, Deck Simulation, Student Lunch Rotation, Queue Interleaving, Binary String BFS) — `9 Problems` \| `81 Commits`
 
 ---
 
@@ -43,18 +44,16 @@ DSA Practice/
 ├── Day07_Doubly_Linked_List/            # Topic Folder Day 7 (9 problems)
 ├── Day08_Stack/                         # Topic Folder Day 8 (9 problems)
 ├── Day09_Circular_Linked_List/          # Topic Folder Day 9 (12 problems)
-│   ├── InsertIntoSortedCircularLinkedList.java
-│   ├── FindWinnerOfCircularGame.java
-│   ├── SplitCircularLinkedListIntoTwoHalves.java
-│   ├── CheckIfLinkedListIsCircular.java
-│   ├── DeletionInCircularLinkedList.java
-│   ├── DetectAndDisconnectCircularList.java
-│   ├── ReverseCircularLinkedList.java
-│   ├── DesignCircularLinkedListQueue.java
-│   ├── CountNodesInCircularLinkedList.java
-│   ├── RotateCircularLinkedList.java
-│   ├── MergeSortedCircularLinkedLists.java
-│   └── SortedInsertCircularDoublyLinkedList.java
+├── Day10_Queue/                         # Topic Folder Day 10 (9 problems)
+│   ├── DesignCircularQueue.java
+│   ├── DesignCircularDeque.java
+│   ├── NumberOfRecentCalls.java
+│   ├── FirstNonRepeatingCharacterInStream.java
+│   ├── ReverseFirstKElementsOfQueue.java
+│   ├── RevealCardsInIncreasingOrder.java
+│   ├── NumberOfStudentsUnableToEatLunch.java
+│   ├── InterleaveQueueHalves.java
+│   └── GenerateBinaryNumbersUsingQueue.java
 │
 ├── LeetCode/                            # Daily Date Folders for LeetCode Problems
 │   ├── 2026-09-22/                      # 2026-09-22 Daily Log (7 problems)
@@ -64,7 +63,8 @@ DSA Practice/
 │   ├── 2026-09-26/                      # 2026-09-26 Daily Log (9 problems)
 │   ├── 2026-09-27/                      # 2026-09-27 Daily Log (9 problems)
 │   ├── 2026-09-28/                      # 2026-09-28 Daily Log (9 problems)
-│   └── 2026-09-29/                      # 2026-09-29 Daily Log (12 problems)
+│   ├── 2026-09-29/                      # 2026-09-29 Daily Log (12 problems)
+│   └── 2026-09-30/                      # 2026-09-30 Daily Log (9 problems)
 │       ├── README.md
 │       └── ...
 │
@@ -195,6 +195,19 @@ DSA Practice/
 | 81 | Rotate a Circular Linked List | [LeetCode #61 Var](https://leetcode.com/problems/rotate-list/) | Head Advancement & Ring Split | $O(N)$ | $O(1)$ | [`RotateCircularLinkedList.java`](./Day09_Circular_Linked_List/RotateCircularLinkedList.java) |
 | 82 | Merge Two Sorted Circular Linked Lists | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/merge-two-sorted-linked-lists/1) | Dual Pointer Ring Interleaving | $O(N + M)$ | $O(1)$ | [`MergeSortedCircularLinkedLists.java`](./Day09_Circular_Linked_List/MergeSortedCircularLinkedLists.java) |
 | 83 | Sorted Insert in Circular Doubly Linked List | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/sorted-insert-for-circular-linked-list/1) | Bidirectional Ring Pointer Rewiring | $O(N)$ | $O(1)$ | [`SortedInsertCircularDoublyLinkedList.java`](./Day09_Circular_Linked_List/SortedInsertCircularDoublyLinkedList.java) |
+
+### Day 10: Queue & Deque Concepts
+| # | Problem Name | LeetCode Link | Topic Tag | Time | Space | Solution Code |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
+| 84 | Design Circular Queue | [LeetCode #622](https://leetcode.com/problems/design-circular-queue/) | Array Ring Buffer & Modulo | $O(1)$ | $O(K)$ | [`DesignCircularQueue.java`](./Day10_Queue/DesignCircularQueue.java) |
+| 85 | Design Circular Deque | [LeetCode #641](https://leetcode.com/problems/design-circular-deque/) | Double-Ended Ring Buffer | $O(1)$ | $O(K)$ | [`DesignCircularDeque.java`](./Day10_Queue/DesignCircularDeque.java) |
+| 86 | Number of Recent Calls | [LeetCode #933](https://leetcode.com/problems/number-of-recent-calls/) | Sliding Window Queue | Amortized $O(1)$ | $O(W)$ | [`NumberOfRecentCalls.java`](./Day10_Queue/NumberOfRecentCalls.java) |
+| 87 | First Non-Repeating Character in a Stream | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/first-non-repeating-character-in-a-stream1216/1) | Real-Time Queue & Freq Map | $O(N)$ | $O(1)$ | [`FirstNonRepeatingCharacterInStream.java`](./Day10_Queue/FirstNonRepeatingCharacterInStream.java) |
+| 88 | Reverse First K Elements of Queue | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/reverse-first-k-elements-of-queue/1) | Queue + Stack K-Segment Reversal | $O(N)$ | $O(K)$ | [`ReverseFirstKElementsOfQueue.java`](./Day10_Queue/ReverseFirstKElementsOfQueue.java) |
+| 89 | Reveal Cards In Increasing Order | [LeetCode #950](https://leetcode.com/problems/reveal-cards-in-increasing-order/) | Queue Index Deck Simulation | $O(N \log N)$ | $O(N)$ | [`RevealCardsInIncreasingOrder.java`](./Day10_Queue/RevealCardsInIncreasingOrder.java) |
+| 90 | Number of Students Unable to Eat Lunch | [LeetCode #1700](https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/) | Preference Queue Rotation | $O(N)$ | $O(1)$ | [`NumberOfStudentsUnableToEatLunch.java`](./Day10_Queue/NumberOfStudentsUnableToEatLunch.java) |
+| 91 | Interleave First Half of Queue with Second Half | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/interleave-the-first-half-of-the-queue-with-second-half/1) | Half-Queue Stack Interleaving | $O(N)$ | $O(N)$ | [`InterleaveQueueHalves.java`](./Day10_Queue/InterleaveQueueHalves.java) |
+| 92 | Generate Binary Numbers from 1 to N using Queue | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/generate-binary-numbers-1587115620/1) | Level-by-Level Queue BFS | $O(N)$ | $O(N)$ | [`GenerateBinaryNumbersUsingQueue.java`](./Day10_Queue/GenerateBinaryNumbersUsingQueue.java) |
 
 ---
 
