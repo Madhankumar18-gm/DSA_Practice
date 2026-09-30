@@ -50,5 +50,6 @@ public class DesignCircularQueue {
         assert q.deQueue();
         assert q.enQueue(40);
         assert q.Rear() == 40;
+        System.out.println("Execution completed successfully for DesignCircularQueue.");
     }
 }
