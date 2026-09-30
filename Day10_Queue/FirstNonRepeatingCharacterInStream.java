@@ -46,5 +46,6 @@ public class FirstNonRepeatingCharacterInStream {
         assert firstNonRepeatingOptimal("aac").equals("a#c");
         assert firstNonRepeatingOptimal("zz").equals("z#");
         assert firstNonRepeatingOptimal("").equals("");
+        System.out.println("Execution completed successfully for FirstNonRepeatingCharacterInStream.");
     }
 }
