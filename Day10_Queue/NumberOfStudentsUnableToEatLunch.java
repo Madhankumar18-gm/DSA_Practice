@@ -21,6 +21,23 @@ public class NumberOfStudentsUnableToEatLunch {
         }
         return q.size();
     }
+    public static int countStudentsOptimal(int[] students, int[] sandwiches) {
+        int count0 = 0, count1 = 0;
+        for (int s : students) {
+            if (s == 0) count0++;
+            else count1++;
+        }
+        for (int s : sandwiches) {
+            if (s == 0) {
+                if (count0 == 0) return count1;
+                count0--;
+            } else {
+                if (count1 == 0) return count0;
+                count1--;
+            }
+        }
+        return 0;
+    }
     public static void main(String[] args) {
         int[] stud = {1, 1, 0, 0};
         int[] sand = {0, 1, 0, 1};
