@@ -14,6 +14,21 @@ public class DesignCircularQueue {
             this.tail = -1;
             this.size = 0;
         }
+        public boolean enQueue(int value) {
+            if (isFull()) return false;
+            tail = (tail + 1) % capacity;
+            buffer[tail] = value;
+            size++;
+            return true;
+        }
+        public boolean deQueue() {
+            if (isEmpty()) return false;
+            head = (head + 1) % capacity;
+            size--;
+            return true;
+        }
+        public int Front() { return isEmpty() ? -1 : buffer[head]; }
+        public int Rear() { return isEmpty() ? -1 : buffer[tail]; }
         public boolean isEmpty() { return size == 0; }
         public boolean isFull() { return size == capacity; }
     }
