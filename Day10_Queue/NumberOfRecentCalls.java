@@ -5,6 +5,10 @@ import java.util.List;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Problem 86: [LeetCode 933] Number of Recent Calls
+ * Sliding window time frame counter using Queue in O(1) amortized time.
+ */
 public class NumberOfRecentCalls {
     public static class NaiveCounter {
         private List<Integer> list = new ArrayList<>();
