@@ -3,6 +3,10 @@ package Day11_Hashing;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Problem 97: [LeetCode 205] Isomorphic Strings
+ * Bi-directional Character Index Mapping algorithm in O(N) time and O(1) space.
+ */
 public class IsomorphicStrings {
     public static boolean isIsomorphicNaive(String s, String t) {
         if (s == null || t == null || s.length() != t.length()) return false;
