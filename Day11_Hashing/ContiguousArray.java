@@ -41,5 +41,6 @@ public class ContiguousArray {
         assert findMaxLengthOptimal(new int[]{0, 1}) == 2;
         assert findMaxLengthOptimal(new int[]{0, 1, 0, 0, 1, 1, 0}) == 6;
         assert findMaxLengthOptimal(null) == 0;
+        System.out.println("Execution completed successfully for ContiguousArray.");
     }
 }
