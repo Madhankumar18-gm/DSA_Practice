@@ -12,4 +12,7 @@ public class SubarraySumEqualsK {
         }
         return count;
     }
+    public static void main(String[] args) {
+        assert subarraySumNaive(new int[]{1, 1, 1}, 2) == 2;
+    }
 }
