@@ -43,5 +43,6 @@ public class GroupAnagrams {
         assert groupAnagramsOptimal(strs).size() == 3;
         assert groupAnagramsOptimal(new String[]{"a"}).size() == 1;
         assert groupAnagramsOptimal(null).isEmpty();
+        System.out.println("Execution completed successfully for GroupAnagrams.");
     }
 }
