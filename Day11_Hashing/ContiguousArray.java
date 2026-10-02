@@ -3,6 +3,10 @@ package Day11_Hashing;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Problem 99: [LeetCode 525] Contiguous Array
+ * 0/1 Transformed Prefix Balance Map algorithm in O(N) time and O(N) space.
+ */
 public class ContiguousArray {
     public static int findMaxLengthNaive(int[] nums) {
         if (nums == null || nums.length == 0) return 0;
