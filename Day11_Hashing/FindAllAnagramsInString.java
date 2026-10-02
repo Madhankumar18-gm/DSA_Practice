@@ -36,5 +36,7 @@ public class FindAllAnagramsInString {
     public static void main(String[] args) {
         List<Integer> res = findAnagramsNaive("cbaebabacd", "abc");
         assert res.equals(Arrays.asList(0, 6));
+        List<Integer> opt = findAnagramsOptimal("cbaebabacd", "abc");
+        assert opt.equals(Arrays.asList(0, 6));
     }
 }
