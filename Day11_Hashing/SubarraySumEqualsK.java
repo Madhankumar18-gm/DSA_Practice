@@ -3,6 +3,10 @@ package Day11_Hashing;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Problem 95: [LeetCode 560] Subarray Sum Equals K
+ * O(N) Prefix Sum + Frequency HashMap algorithm.
+ */
 public class SubarraySumEqualsK {
     public static int subarraySumNaive(int[] nums, int k) {
         int count = 0;
