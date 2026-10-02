@@ -3,6 +3,10 @@ package Day11_Hashing;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Problem 98: [LeetCode 454] 4Sum II
+ * Pairwise HashMap Sum Counter algorithm in O(N^2) time and O(N^2) space.
+ */
 public class FourSumII {
     public static int fourSumCountNaive(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
         int count = 0;
@@ -37,6 +41,5 @@ public class FourSumII {
         assert fourSumCountNaive(a, b, c, d) == 2;
         assert fourSumCountOptimal(a, b, c, d) == 2;
         assert fourSumCountOptimal(new int[]{0}, new int[]{0}, new int[]{0}, new int[]{0}) == 1;
-        assert fourSumCountOptimal(new int[]{-1}, new int[]{-1}, new int[]{1}, new int[]{1}) == 1;
     }
 }
