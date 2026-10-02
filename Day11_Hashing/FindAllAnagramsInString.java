@@ -19,6 +19,20 @@ public class FindAllAnagramsInString {
         }
         return res;
     }
+    public static List<Integer> findAnagramsOptimal(String s, String p) {
+        List<Integer> res = new ArrayList<>();
+        if (s == null || p == null || s.length() < p.length()) return res;
+        int[] pCount = new int[26];
+        int[] sCount = new int[26];
+        for (char c : p.toCharArray()) pCount[c - 'a']++;
+        int m = p.length();
+        for (int i = 0; i < s.length(); i++) {
+            sCount[s.charAt(i) - 'a']++;
+            if (i >= m) sCount[s.charAt(i - m) - 'a']--;
+            if (Arrays.equals(pCount, sCount)) res.add(i - m + 1);
+        }
+        return res;
+    }
     public static void main(String[] args) {
         List<Integer> res = findAnagramsNaive("cbaebabacd", "abc");
         assert res.equals(Arrays.asList(0, 6));
