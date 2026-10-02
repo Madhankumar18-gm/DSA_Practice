@@ -31,5 +31,7 @@ public class IsomorphicStrings {
     public static void main(String[] args) {
         assert isIsomorphicNaive("egg", "add");
         assert !isIsomorphicNaive("foo", "bar");
+        assert isIsomorphicOptimal("egg", "add");
+        assert !isIsomorphicOptimal("foo", "bar");
     }
 }
