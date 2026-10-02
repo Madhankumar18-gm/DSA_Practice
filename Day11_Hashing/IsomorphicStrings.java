@@ -39,5 +39,6 @@ public class IsomorphicStrings {
         assert !isIsomorphicOptimal("foo", "bar");
         assert isIsomorphicOptimal("paper", "title");
         assert !isIsomorphicOptimal(null, "a");
+        System.out.println("Execution completed successfully for IsomorphicStrings.");
     }
 }
