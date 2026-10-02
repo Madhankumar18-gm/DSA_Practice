@@ -36,5 +36,6 @@ public class FourSumII {
         int[] a = {1, 2}, b = {-2, -1}, c = {-1, 2}, d = {0, 2};
         assert fourSumCountNaive(a, b, c, d) == 2;
         assert fourSumCountOptimal(a, b, c, d) == 2;
+        assert fourSumCountOptimal(new int[]{0}, new int[]{0}, new int[]{0}, new int[]{0}) == 1;
     }
 }
