@@ -41,5 +41,6 @@ public class FourSumII {
         assert fourSumCountNaive(a, b, c, d) == 2;
         assert fourSumCountOptimal(a, b, c, d) == 2;
         assert fourSumCountOptimal(new int[]{0}, new int[]{0}, new int[]{0}, new int[]{0}) == 1;
+        System.out.println("Execution completed successfully for FourSumII.");
     }
 }
