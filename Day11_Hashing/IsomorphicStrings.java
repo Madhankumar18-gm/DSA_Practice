@@ -17,4 +17,8 @@ public class IsomorphicStrings {
         }
         return true;
     }
+    public static void main(String[] args) {
+        assert isIsomorphicNaive("egg", "add");
+        assert !isIsomorphicNaive("foo", "bar");
+    }
 }
