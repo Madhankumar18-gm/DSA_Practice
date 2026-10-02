@@ -35,5 +35,6 @@ public class FourSumII {
     public static void main(String[] args) {
         int[] a = {1, 2}, b = {-2, -1}, c = {-1, 2}, d = {0, 2};
         assert fourSumCountNaive(a, b, c, d) == 2;
+        assert fourSumCountOptimal(a, b, c, d) == 2;
     }
 }
