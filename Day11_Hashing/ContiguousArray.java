@@ -17,6 +17,21 @@ public class ContiguousArray {
         }
         return maxLen;
     }
+    public static int findMaxLengthOptimal(int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0, -1);
+        int maxLen = 0, count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            count += (nums[i] == 1) ? 1 : -1;
+            if (map.containsKey(count)) {
+                maxLen = Math.max(maxLen, i - map.get(count));
+            } else {
+                map.put(count, i);
+            }
+        }
+        return maxLen;
+    }
     public static void main(String[] args) {
         assert findMaxLengthNaive(new int[]{0, 1}) == 2;
     }
