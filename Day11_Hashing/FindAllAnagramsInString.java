@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Problem 101: [LeetCode 438] Find All Anagrams in a String
+ * Fixed Sliding Window + Frequency Array Comparison algorithm in O(N) time and O(1) space.
+ */
 public class FindAllAnagramsInString {
     public static List<Integer> findAnagramsNaive(String s, String p) {
         List<Integer> res = new ArrayList<>();
