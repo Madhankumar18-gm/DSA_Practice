@@ -41,5 +41,6 @@ public class LongestConsecutiveSequence {
     }
     public static void main(String[] args) {
         assert longestConsecutiveNaive(new int[]{100, 4, 200, 1, 3, 2}) == 4;
+        assert longestConsecutiveOptimal(new int[]{100, 4, 200, 1, 3, 2}) == 4;
     }
 }
