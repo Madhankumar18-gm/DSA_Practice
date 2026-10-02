@@ -19,4 +19,8 @@ public class FindAllAnagramsInString {
         }
         return res;
     }
+    public static void main(String[] args) {
+        List<Integer> res = findAnagramsNaive("cbaebabacd", "abc");
+        assert res.equals(Arrays.asList(0, 6));
+    }
 }
