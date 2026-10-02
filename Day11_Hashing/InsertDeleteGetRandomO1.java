@@ -8,6 +8,10 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
+/**
+ * Problem 100: [LeetCode 380] Insert Delete GetRandom O(1)
+ * ArrayList + HashMap Index Swap Map supporting O(1) average time operations.
+ */
 public class InsertDeleteGetRandomO1 {
     public static class RandomizedSetNaive {
         private Set<Integer> set = new HashSet<>();
