@@ -66,5 +66,6 @@ public class InsertDeleteGetRandomO1 {
         assert rs.getRandom() == 2;
         assert !rs.insert(2);
         assert rs.remove(2);
+        System.out.println("Execution completed successfully for InsertDeleteGetRandomO1.");
     }
 }
