@@ -54,5 +54,11 @@ public class InsertDeleteGetRandomO1 {
         assert !r.remove(2);
         assert r.insert(2);
         assert r.remove(1);
+        RandomizedSet rs = new RandomizedSet();
+        assert rs.insert(1);
+        assert !rs.remove(2);
+        assert rs.insert(2);
+        assert rs.remove(1);
+        assert rs.getRandom() == 2;
     }
 }
