@@ -17,4 +17,11 @@ public class InsertDeleteGetRandomO1 {
             return list.get(rand.nextInt(list.size()));
         }
     }
+    public static void main(String[] args) {
+        RandomizedSetNaive r = new RandomizedSetNaive();
+        assert r.insert(1);
+        assert !r.remove(2);
+        assert r.insert(2);
+        assert r.remove(1);
+    }
 }
