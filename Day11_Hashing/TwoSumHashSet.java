@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Problem 93: [LeetCode 1] Two Sum using Hash Map
+ * O(N) Hash Map complement lookup algorithm.
+ */
 public class TwoSumHashSet {
     public static int[] twoSumNaive(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
