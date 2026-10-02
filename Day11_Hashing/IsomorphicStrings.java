@@ -33,5 +33,6 @@ public class IsomorphicStrings {
         assert !isIsomorphicNaive("foo", "bar");
         assert isIsomorphicOptimal("egg", "add");
         assert !isIsomorphicOptimal("foo", "bar");
+        assert isIsomorphicOptimal("paper", "title");
     }
 }
