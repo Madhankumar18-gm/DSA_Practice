@@ -38,5 +38,6 @@ public class FindAllAnagramsInString {
         assert res.equals(Arrays.asList(0, 6));
         List<Integer> opt = findAnagramsOptimal("cbaebabacd", "abc");
         assert opt.equals(Arrays.asList(0, 6));
+        assert findAnagramsOptimal("abab", "ab").equals(Arrays.asList(0, 1, 2));
     }
 }
