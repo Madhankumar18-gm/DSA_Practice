@@ -19,4 +19,7 @@ public class LongestConsecutiveSequence {
         }
         return Math.max(maxLen, currentLen);
     }
+    public static void main(String[] args) {
+        assert longestConsecutiveNaive(new int[]{100, 4, 200, 1, 3, 2}) == 4;
+    }
 }
