@@ -36,5 +36,6 @@ public class TwoSumHashSet {
         assert Arrays.equals(opt, new int[]{0, 1});
         assert Arrays.equals(twoSumOptimal(new int[]{3, 3}, 6), new int[]{0, 1});
         assert twoSumOptimal(null, 5).length == 0;
+        System.out.println("Execution completed successfully for TwoSumHashSet.");
     }
 }
