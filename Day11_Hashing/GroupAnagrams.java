@@ -6,6 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Problem 96: [LeetCode 49] Group Anagrams
+ * Groups anagrams using Frequency Array tuple key hashing in O(N * K) time.
+ */
 public class GroupAnagrams {
     public static List<List<String>> groupAnagramsNaive(String[] strs) {
         if (strs == null || strs.length == 0) return new ArrayList<>();
