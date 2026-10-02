@@ -27,5 +27,7 @@ public class TwoSumHashSet {
     public static void main(String[] args) {
         int[] res = twoSumNaive(new int[]{2, 7, 11, 15}, 9);
         assert Arrays.equals(res, new int[]{0, 1});
+        int[] opt = twoSumOptimal(new int[]{2, 7, 11, 15}, 9);
+        assert Arrays.equals(opt, new int[]{0, 1});
     }
 }
