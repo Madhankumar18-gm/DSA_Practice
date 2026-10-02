@@ -17,4 +17,7 @@ public class ContiguousArray {
         }
         return maxLen;
     }
+    public static void main(String[] args) {
+        assert findMaxLengthNaive(new int[]{0, 1}) == 2;
+    }
 }
