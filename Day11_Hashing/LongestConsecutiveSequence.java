@@ -1,6 +1,8 @@
 package Day11_Hashing;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class LongestConsecutiveSequence {
     public static int longestConsecutiveNaive(int[] nums) {
@@ -18,6 +20,24 @@ public class LongestConsecutiveSequence {
             }
         }
         return Math.max(maxLen, currentLen);
+    }
+    public static int longestConsecutiveOptimal(int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums) set.add(num);
+        int maxLen = 0;
+        for (int num : set) {
+            if (!set.contains(num - 1)) {
+                int currentNum = num;
+                int currentLen = 1;
+                while (set.contains(currentNum + 1)) {
+                    currentNum++;
+                    currentLen++;
+                }
+                maxLen = Math.max(maxLen, currentLen);
+            }
+        }
+        return maxLen;
     }
     public static void main(String[] args) {
         assert longestConsecutiveNaive(new int[]{100, 4, 200, 1, 3, 2}) == 4;
