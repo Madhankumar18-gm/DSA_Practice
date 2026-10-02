@@ -37,5 +37,6 @@ public class GroupAnagrams {
         String[] strs = {"eat","tea","tan","ate","nat","bat"};
         assert groupAnagramsNaive(strs).size() == 3;
         assert groupAnagramsOptimal(strs).size() == 3;
+        assert groupAnagramsOptimal(new String[]{"a"}).size() == 1;
     }
 }
