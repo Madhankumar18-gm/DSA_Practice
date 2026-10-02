@@ -31,5 +31,6 @@ public class SubarraySumEqualsK {
     }
     public static void main(String[] args) {
         assert subarraySumNaive(new int[]{1, 1, 1}, 2) == 2;
+        assert subarraySumOptimal(new int[]{1, 1, 1}, 2) == 2;
     }
 }
