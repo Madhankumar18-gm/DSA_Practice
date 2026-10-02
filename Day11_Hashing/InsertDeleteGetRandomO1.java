@@ -1,8 +1,10 @@
 package Day11_Hashing;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
@@ -14,6 +16,35 @@ public class InsertDeleteGetRandomO1 {
         public boolean remove(int val) { return set.remove(val); }
         public int getRandom() {
             List<Integer> list = new ArrayList<>(set);
+            return list.get(rand.nextInt(list.size()));
+        }
+    }
+    public static class RandomizedSet {
+        private List<Integer> list;
+        private Map<Integer, Integer> map;
+        private Random rand;
+        public RandomizedSet() {
+            list = new ArrayList<>();
+            map = new HashMap<>();
+            rand = new Random();
+        }
+        public boolean insert(int val) {
+            if (map.containsKey(val)) return false;
+            map.put(val, list.size());
+            list.add(val);
+            return true;
+        }
+        public boolean remove(int val) {
+            if (!map.containsKey(val)) return false;
+            int idx = map.get(val);
+            int lastVal = list.get(list.size() - 1);
+            list.set(idx, lastVal);
+            map.put(lastVal, idx);
+            list.remove(list.size() - 1);
+            map.remove(val);
+            return true;
+        }
+        public int getRandom() {
             return list.get(rand.nextInt(list.size()));
         }
     }
