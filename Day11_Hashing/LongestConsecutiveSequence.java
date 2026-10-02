@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Problem 94: [LeetCode 128] Longest Consecutive Sequence
+ * O(N) HashSet sequence boundary expansion algorithm.
+ */
 public class LongestConsecutiveSequence {
     public static int longestConsecutiveNaive(int[] nums) {
         if (nums == null || nums.length == 0) return 0;
