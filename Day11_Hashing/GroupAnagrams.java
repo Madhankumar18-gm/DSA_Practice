@@ -18,4 +18,8 @@ public class GroupAnagrams {
         }
         return new ArrayList<>(map.values());
     }
+    public static void main(String[] args) {
+        String[] strs = {"eat","tea","tan","ate","nat","bat"};
+        assert groupAnagramsNaive(strs).size() == 3;
+    }
 }
