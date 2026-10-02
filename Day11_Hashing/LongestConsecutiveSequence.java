@@ -49,5 +49,6 @@ public class LongestConsecutiveSequence {
         assert longestConsecutiveOptimal(new int[]{0, 3, 7, 2, 5, 8, 4, 6, 0, 1}) == 9;
         assert longestConsecutiveOptimal(null) == 0;
         assert longestConsecutiveOptimal(new int[0]) == 0;
+        System.out.println("Execution completed successfully for LongestConsecutiveSequence.");
     }
 }
