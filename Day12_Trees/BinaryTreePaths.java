@@ -28,6 +28,23 @@ public class BinaryTreePaths {
         if (node.left != null) dfsNaive(node.left, path + node.val + "->", result);
         if (node.right != null) dfsNaive(node.right, path + node.val + "->", result);
     }
+    public static List<String> binaryTreePathsOptimal(TreeNode root) {
+        List<String> result = new ArrayList<>();
+        if (root != null) dfsOptimal(root, new StringBuilder(), result);
+        return result;
+    }
+    private static void dfsOptimal(TreeNode node, StringBuilder sb, List<String> result) {
+        int len = sb.length();
+        sb.append(node.val);
+        if (node.left == null && node.right == null) {
+            result.add(sb.toString());
+        } else {
+            sb.append("->");
+            if (node.left != null) dfsOptimal(node.left, sb, result);
+            if (node.right != null) dfsOptimal(node.right, sb, result);
+        }
+        sb.setLength(len);
+    }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1, new TreeNode(2, null, new TreeNode(5)), new TreeNode(3));
         List<String> res = binaryTreePathsNaive(root);
