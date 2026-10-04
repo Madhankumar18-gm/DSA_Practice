@@ -47,5 +47,6 @@ public class InvertBinaryTree {
         assert inv2.left.val == 3 && inv2.right.val == 1;
         TreeNode single = new TreeNode(1);
         assert invertTreeDFS(single).val == 1;
+        assert invertTreeDFS(null) == null;
     }
 }
