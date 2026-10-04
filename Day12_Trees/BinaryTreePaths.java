@@ -3,6 +3,10 @@ package Day12_Trees;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Problem 110: [LeetCode 257] Binary Tree Paths
+ * O(N) Backtracking DFS using StringBuilder for path representation.
+ */
 public class BinaryTreePaths {
     public static class TreeNode {
         int val;
