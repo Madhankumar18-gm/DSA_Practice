@@ -49,5 +49,7 @@ public class BinaryTreePaths {
         TreeNode root = new TreeNode(1, new TreeNode(2, null, new TreeNode(5)), new TreeNode(3));
         List<String> res = binaryTreePathsNaive(root);
         assert res.contains("1->2->5") && res.contains("1->3");
+        List<String> opt = binaryTreePathsOptimal(root);
+        assert opt.contains("1->2->5") && opt.contains("1->3");
     }
 }
