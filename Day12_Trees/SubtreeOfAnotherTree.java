@@ -28,4 +28,9 @@ public class SubtreeOfAnotherTree {
         serialize(node.left, sb);
         serialize(node.right, sb);
     }
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(3, new TreeNode(4, new TreeNode(1), new TreeNode(2)), new TreeNode(5));
+        TreeNode sub = new TreeNode(4, new TreeNode(1), new TreeNode(2));
+        assert isSubtreeString(root, sub);
+    }
 }
