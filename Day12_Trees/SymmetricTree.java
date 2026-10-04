@@ -46,5 +46,6 @@ public class SymmetricTree {
             new TreeNode(2, new TreeNode(3), new TreeNode(4)), 
             new TreeNode(2, new TreeNode(4), new TreeNode(3)));
         assert isSymmetricBFS(root);
+        assert isSymmetricDFS(root);
     }
 }
