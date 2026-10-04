@@ -31,4 +31,9 @@ public class SameTree {
         }
         return true;
     }
+    public static void main(String[] args) {
+        TreeNode t1 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+        TreeNode t2 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+        assert isSameTreeBFS(t1, t2);
+    }
 }
