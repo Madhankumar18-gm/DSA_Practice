@@ -12,4 +12,8 @@ public class CountCompleteTreeNodes {
             this.right = right;
         }
     }
+    public static int countNodesLinear(TreeNode root) {
+        if (root == null) return 0;
+        return 1 + countNodesLinear(root.left) + countNodesLinear(root.right);
+    }
 }
