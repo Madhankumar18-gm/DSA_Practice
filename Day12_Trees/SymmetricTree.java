@@ -47,5 +47,9 @@ public class SymmetricTree {
             new TreeNode(2, new TreeNode(4), new TreeNode(3)));
         assert isSymmetricBFS(root);
         assert isSymmetricDFS(root);
+        TreeNode asymmetric = new TreeNode(1, 
+            new TreeNode(2, null, new TreeNode(3)), 
+            new TreeNode(2, null, new TreeNode(3)));
+        assert !isSymmetricDFS(asymmetric);
     }
 }
