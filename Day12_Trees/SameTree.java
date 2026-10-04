@@ -31,6 +31,11 @@ public class SameTree {
         }
         return true;
     }
+    public static boolean isSameTreeDFS(TreeNode p, TreeNode q) {
+        if (p == null && q == null) return true;
+        if (p == null || q == null || p.val != q.val) return false;
+        return isSameTreeDFS(p.left, q.left) && isSameTreeDFS(p.right, q.right);
+    }
     public static void main(String[] args) {
         TreeNode t1 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
         TreeNode t2 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
