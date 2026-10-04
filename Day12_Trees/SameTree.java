@@ -50,5 +50,6 @@ public class SameTree {
         assert !isSameTreeDFS(t3, t4);
         assert isSameTreeDFS(null, null);
         assert !isSameTreeDFS(t1, null);
+        System.out.println("Execution completed successfully for SameTree.");
     }
 }
