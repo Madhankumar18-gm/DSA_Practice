@@ -28,6 +28,16 @@ public class SubtreeOfAnotherTree {
         serialize(node.left, sb);
         serialize(node.right, sb);
     }
+    public static boolean isSubtreeDFS(TreeNode root, TreeNode subRoot) {
+        if (root == null) return false;
+        if (isSame(root, subRoot)) return true;
+        return isSubtreeDFS(root.left, subRoot) || isSubtreeDFS(root.right, subRoot);
+    }
+    private static boolean isSame(TreeNode p, TreeNode q) {
+        if (p == null && q == null) return true;
+        if (p == null || q == null || p.val != q.val) return false;
+        return isSame(p.left, q.left) && isSame(p.right, q.right);
+    }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3, new TreeNode(4, new TreeNode(1), new TreeNode(2)), new TreeNode(5));
         TreeNode sub = new TreeNode(4, new TreeNode(1), new TreeNode(2));
