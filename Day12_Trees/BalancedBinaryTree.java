@@ -39,5 +39,7 @@ public class BalancedBinaryTree {
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
         assert isBalancedNaive(root);
         assert isBalancedOptimal(root);
+        TreeNode unbal = new TreeNode(1, new TreeNode(2, new TreeNode(3, new TreeNode(4), null), null), null);
+        assert !isBalancedOptimal(unbal);
     }
 }
