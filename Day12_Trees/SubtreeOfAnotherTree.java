@@ -29,6 +29,7 @@ public class SubtreeOfAnotherTree {
         serialize(node.right, sb);
     }
     public static boolean isSubtreeDFS(TreeNode root, TreeNode subRoot) {
+        if (subRoot == null) return true;
         if (root == null) return false;
         if (isSame(root, subRoot)) return true;
         return isSubtreeDFS(root.left, subRoot) || isSubtreeDFS(root.right, subRoot);
@@ -45,5 +46,7 @@ public class SubtreeOfAnotherTree {
         assert isSubtreeDFS(root, sub);
         TreeNode notSub = new TreeNode(4, new TreeNode(1), new TreeNode(3));
         assert !isSubtreeDFS(root, notSub);
+        assert isSubtreeDFS(root, null);
+        assert !isSubtreeDFS(null, sub);
     }
 }
