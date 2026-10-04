@@ -59,5 +59,6 @@ public class BinaryTreePaths {
         List<String> sRes = binaryTreePathsOptimal(single);
         assert sRes.size() == 1 && sRes.get(0).equals("1");
         assert binaryTreePathsOptimal(null).isEmpty();
+        System.out.println("Execution completed successfully for BinaryTreePaths.");
     }
 }
