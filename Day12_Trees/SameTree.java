@@ -44,5 +44,7 @@ public class SameTree {
         TreeNode t3 = new TreeNode(1, new TreeNode(2), null);
         TreeNode t4 = new TreeNode(1, null, new TreeNode(2));
         assert !isSameTreeDFS(t3, t4);
+        assert isSameTreeDFS(null, null);
+        assert !isSameTreeDFS(t1, null);
     }
 }
