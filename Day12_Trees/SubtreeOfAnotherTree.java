@@ -42,5 +42,6 @@ public class SubtreeOfAnotherTree {
         TreeNode root = new TreeNode(3, new TreeNode(4, new TreeNode(1), new TreeNode(2)), new TreeNode(5));
         TreeNode sub = new TreeNode(4, new TreeNode(1), new TreeNode(2));
         assert isSubtreeString(root, sub);
+        assert isSubtreeDFS(root, sub);
     }
 }
