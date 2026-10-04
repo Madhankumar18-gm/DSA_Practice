@@ -43,5 +43,7 @@ public class SubtreeOfAnotherTree {
         TreeNode sub = new TreeNode(4, new TreeNode(1), new TreeNode(2));
         assert isSubtreeString(root, sub);
         assert isSubtreeDFS(root, sub);
+        TreeNode notSub = new TreeNode(4, new TreeNode(1), new TreeNode(3));
+        assert !isSubtreeDFS(root, notSub);
     }
 }
