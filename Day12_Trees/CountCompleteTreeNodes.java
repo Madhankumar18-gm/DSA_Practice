@@ -1,5 +1,9 @@
 package Day12_Trees;
 
+/**
+ * Problem 109: [LeetCode 222] Count Complete Tree Nodes
+ * O(log^2 N) Subtree depth comparison for complete binary tree node counting.
+ */
 public class CountCompleteTreeNodes {
     public static class TreeNode {
         int val;
