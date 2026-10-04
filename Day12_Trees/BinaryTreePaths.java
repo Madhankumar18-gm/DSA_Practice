@@ -51,5 +51,8 @@ public class BinaryTreePaths {
         assert res.contains("1->2->5") && res.contains("1->3");
         List<String> opt = binaryTreePathsOptimal(root);
         assert opt.contains("1->2->5") && opt.contains("1->3");
+        TreeNode single = new TreeNode(1);
+        List<String> sRes = binaryTreePathsOptimal(single);
+        assert sRes.size() == 1 && sRes.get(0).equals("1");
     }
 }
