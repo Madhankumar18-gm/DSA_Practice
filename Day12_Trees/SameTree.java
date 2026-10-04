@@ -3,6 +3,10 @@ package Day12_Trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Problem 103: [LeetCode 100] Same Tree
+ * O(N) Recursive & Iterative structural equality check for binary trees.
+ */
 public class SameTree {
     public static class TreeNode {
         int val;
