@@ -3,6 +3,10 @@ package Day12_Trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Problem 105: [LeetCode 101] Symmetric Tree
+ * O(N) Mirror recursive and BFS queue mirror evaluation.
+ */
 public class SymmetricTree {
     public static class TreeNode {
         int val;
