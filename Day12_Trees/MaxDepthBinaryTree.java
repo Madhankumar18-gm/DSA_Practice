@@ -31,6 +31,10 @@ public class MaxDepthBinaryTree {
         }
         return depth;
     }
+    public static int maxDepthDFS(TreeNode root) {
+        if (root == null) return 0;
+        return 1 + Math.max(maxDepthDFS(root.left), maxDepthDFS(root.right));
+    }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
         assert maxDepthBFS(root) == 3;
