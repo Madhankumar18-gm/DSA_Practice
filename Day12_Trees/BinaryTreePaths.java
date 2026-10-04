@@ -28,4 +28,9 @@ public class BinaryTreePaths {
         if (node.left != null) dfsNaive(node.left, path + node.val + "->", result);
         if (node.right != null) dfsNaive(node.right, path + node.val + "->", result);
     }
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1, new TreeNode(2, null, new TreeNode(5)), new TreeNode(3));
+        List<String> res = binaryTreePathsNaive(root);
+        assert res.contains("1->2->5") && res.contains("1->3");
+    }
 }
