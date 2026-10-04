@@ -48,5 +48,6 @@ public class PathSum {
         assert hasPathSumBFS(root, 22);
         assert hasPathSumDFS(root, 22);
         assert !hasPathSumDFS(root, 50);
+        assert !hasPathSumDFS(null, 0);
     }
 }
