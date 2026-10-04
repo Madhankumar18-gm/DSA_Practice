@@ -41,5 +41,6 @@ public class BalancedBinaryTree {
         assert isBalancedOptimal(root);
         TreeNode unbal = new TreeNode(1, new TreeNode(2, new TreeNode(3, new TreeNode(4), null), null), null);
         assert !isBalancedOptimal(unbal);
+        assert isBalancedOptimal(null);
     }
 }
