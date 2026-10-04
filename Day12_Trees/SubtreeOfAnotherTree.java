@@ -52,5 +52,6 @@ public class SubtreeOfAnotherTree {
         assert !isSubtreeDFS(root, notSub);
         assert isSubtreeDFS(root, null);
         assert !isSubtreeDFS(null, sub);
+        System.out.println("Execution completed successfully for SubtreeOfAnotherTree.");
     }
 }
