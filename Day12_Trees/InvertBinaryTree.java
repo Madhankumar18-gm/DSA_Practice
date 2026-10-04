@@ -52,5 +52,6 @@ public class InvertBinaryTree {
         TreeNode single = new TreeNode(1);
         assert invertTreeDFS(single).val == 1;
         assert invertTreeDFS(null) == null;
+        System.out.println("Execution completed successfully for InvertBinaryTree.");
     }
 }
