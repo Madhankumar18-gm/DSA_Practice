@@ -41,5 +41,7 @@ public class MaxDepthBinaryTree {
         assert maxDepthDFS(root) == 3;
         TreeNode single = new TreeNode(1);
         assert maxDepthDFS(single) == 1;
+        assert maxDepthDFS(null) == 0;
+        assert maxDepthBFS(null) == 0;
     }
 }
