@@ -3,6 +3,10 @@ package Day12_Trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Problem 108: [LeetCode 112] Path Sum
+ * O(N) Recursive & BFS path sum calculation to leaf nodes.
+ */
 public class PathSum {
     public static class TreeNode {
         int val;
