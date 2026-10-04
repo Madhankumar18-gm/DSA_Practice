@@ -29,4 +29,10 @@ public class InvertBinaryTree {
         }
         return root;
     }
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(7, new TreeNode(6), new TreeNode(9)));
+        TreeNode inverted = invertTreeBFS(root);
+        assert inverted.left.val == 7;
+        assert inverted.right.val == 2;
+    }
 }
