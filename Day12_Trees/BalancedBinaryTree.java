@@ -1,5 +1,9 @@
 package Day12_Trees;
 
+/**
+ * Problem 107: [LeetCode 110] Balanced Binary Tree
+ * O(N) Bottom-up post-order height balance check.
+ */
 public class BalancedBinaryTree {
     public static class TreeNode {
         int val;
