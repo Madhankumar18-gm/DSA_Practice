@@ -3,6 +3,10 @@ package Day12_Trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Problem 104: [LeetCode 226] Invert Binary Tree
+ * O(N) Recursive & Iterative child pointer swap algorithm.
+ */
 public class InvertBinaryTree {
     public static class TreeNode {
         int val;
