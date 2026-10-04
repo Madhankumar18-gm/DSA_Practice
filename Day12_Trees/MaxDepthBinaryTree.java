@@ -3,6 +3,10 @@ package Day12_Trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Problem 102: [LeetCode 104] Maximum Depth of Binary Tree
+ * O(N) Depth-First Search (DFS) & Breadth-First Search (BFS) height computation.
+ */
 public class MaxDepthBinaryTree {
     public static class TreeNode {
         int val;
