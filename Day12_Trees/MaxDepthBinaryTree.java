@@ -47,5 +47,6 @@ public class MaxDepthBinaryTree {
         assert maxDepthDFS(single) == 1;
         assert maxDepthDFS(null) == 0;
         assert maxDepthBFS(null) == 0;
+        System.out.println("Execution completed successfully for MaxDepthBinaryTree.");
     }
 }
