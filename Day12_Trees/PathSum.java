@@ -36,6 +36,11 @@ public class PathSum {
         }
         return false;
     }
+    public static boolean hasPathSumDFS(TreeNode root, int targetSum) {
+        if (root == null) return false;
+        if (root.left == null && root.right == null) return targetSum == root.val;
+        return hasPathSumDFS(root.left, targetSum - root.val) || hasPathSumDFS(root.right, targetSum - root.val);
+    }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(5, 
             new TreeNode(4, new TreeNode(11, new TreeNode(7), new TreeNode(2)), null),
