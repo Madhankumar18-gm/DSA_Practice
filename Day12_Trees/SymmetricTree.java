@@ -51,5 +51,6 @@ public class SymmetricTree {
             new TreeNode(2, null, new TreeNode(3)), 
             new TreeNode(2, null, new TreeNode(3)));
         assert !isSymmetricDFS(asymmetric);
+        assert isSymmetricDFS(null);
     }
 }
