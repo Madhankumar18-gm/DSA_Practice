@@ -56,5 +56,6 @@ public class SymmetricTree {
             new TreeNode(2, null, new TreeNode(3)));
         assert !isSymmetricDFS(asymmetric);
         assert isSymmetricDFS(null);
+        System.out.println("Execution completed successfully for SymmetricTree.");
     }
 }
