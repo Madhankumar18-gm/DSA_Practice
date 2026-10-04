@@ -49,5 +49,6 @@ public class CountCompleteTreeNodes {
         assert countNodesOptimal(root) == 6;
         TreeNode perfect = new TreeNode(1, new TreeNode(2), new TreeNode(3));
         assert countNodesOptimal(perfect) == 3;
+        assert countNodesOptimal(null) == 0;
     }
 }
