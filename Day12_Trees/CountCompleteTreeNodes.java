@@ -54,5 +54,6 @@ public class CountCompleteTreeNodes {
         TreeNode perfect = new TreeNode(1, new TreeNode(2), new TreeNode(3));
         assert countNodesOptimal(perfect) == 3;
         assert countNodesOptimal(null) == 0;
+        System.out.println("Execution completed successfully for CountCompleteTreeNodes.");
     }
 }
