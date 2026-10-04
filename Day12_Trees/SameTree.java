@@ -40,5 +40,6 @@ public class SameTree {
         TreeNode t1 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
         TreeNode t2 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
         assert isSameTreeBFS(t1, t2);
+        assert isSameTreeDFS(t1, t2);
     }
 }
