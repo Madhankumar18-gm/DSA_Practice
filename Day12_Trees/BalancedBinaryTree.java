@@ -23,6 +23,18 @@ public class BalancedBinaryTree {
         if (node == null) return 0;
         return 1 + Math.max(getHeight(node.left), getHeight(node.right));
     }
+    public static boolean isBalancedOptimal(TreeNode root) {
+        return checkHeight(root) != -1;
+    }
+    private static int checkHeight(TreeNode node) {
+        if (node == null) return 0;
+        int left = checkHeight(node.left);
+        if (left == -1) return -1;
+        int right = checkHeight(node.right);
+        if (right == -1) return -1;
+        if (Math.abs(left - right) > 1) return -1;
+        return 1 + Math.max(left, right);
+    }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
         assert isBalancedNaive(root);
