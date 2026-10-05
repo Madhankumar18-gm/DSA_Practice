@@ -3,6 +3,7 @@ package Day13_TreeTraversals;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 public class BinaryTreeInorderTraversal {
     public static class TreeNode {
@@ -26,6 +27,21 @@ public class BinaryTreeInorderTraversal {
         helper(node.left, result);
         result.add(node.val);
         helper(node.right, result);
+    }
+    public static List<Integer> inorderTraversalIterative(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
+        while (curr != null || !stack.isEmpty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+            result.add(curr.val);
+            curr = curr.right;
+        }
+        return result;
     }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
