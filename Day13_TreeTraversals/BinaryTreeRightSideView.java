@@ -1,6 +1,7 @@
 package Day13_TreeTraversals;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -32,5 +33,11 @@ public class BinaryTreeRightSideView {
             }
         }
         return result;
+    }
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1, 
+            new TreeNode(2, null, new TreeNode(5)), 
+            new TreeNode(3, null, new TreeNode(4)));
+        assert rightSideViewBFS(root).equals(Arrays.asList(1, 3, 4));
     }
 }
