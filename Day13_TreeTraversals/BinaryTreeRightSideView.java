@@ -6,6 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * Problem 116: [LeetCode 199] Binary Tree Right Side View
+ * O(N) BFS last level element & DFS Root->Right->Left depth matching algorithm.
+ */
 public class BinaryTreeRightSideView {
     public static class TreeNode {
         int val;
