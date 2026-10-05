@@ -1,6 +1,7 @@
 package Day13_TreeTraversals;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BinaryTreeInorderTraversal {
@@ -25,5 +26,9 @@ public class BinaryTreeInorderTraversal {
         helper(node.left, result);
         result.add(node.val);
         helper(node.right, result);
+    }
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
+        assert inorderTraversalDFS(root).equals(Arrays.asList(1, 3, 2));
     }
 }
