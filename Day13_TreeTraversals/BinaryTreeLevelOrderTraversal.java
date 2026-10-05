@@ -36,6 +36,18 @@ public class BinaryTreeLevelOrderTraversal {
         }
         return result;
     }
+    public static List<List<Integer>> levelOrderDFS(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        dfsHelper(root, 0, result);
+        return result;
+    }
+    private static void dfsHelper(TreeNode node, int level, List<List<Integer>> result) {
+        if (node == null) return;
+        if (result.size() == level) result.add(new ArrayList<>());
+        result.get(level).add(node.val);
+        dfsHelper(node.left, level + 1, result);
+        dfsHelper(node.right, level + 1, result);
+    }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
         List<List<Integer>> expected = Arrays.asList(Arrays.asList(3), Arrays.asList(9, 20), Arrays.asList(15, 7));
