@@ -65,5 +65,6 @@ public class BinaryTreeZigzagLevelOrder {
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
         List<List<Integer>> expected = Arrays.asList(Arrays.asList(3), Arrays.asList(20, 9), Arrays.asList(15, 7));
         assert zigzagLevelOrderNaive(root).equals(expected);
+        assert zigzagLevelOrderOptimal(root).equals(expected);
     }
 }
