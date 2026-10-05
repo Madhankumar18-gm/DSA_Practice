@@ -53,5 +53,6 @@ public class BinaryTreeRightSideView {
         assert rightSideViewDFS(root).equals(Arrays.asList(1, 3, 4));
         TreeNode leftDeep = new TreeNode(1, new TreeNode(2, new TreeNode(4), null), new TreeNode(3));
         assert rightSideViewDFS(leftDeep).equals(Arrays.asList(1, 3, 4));
+        assert rightSideViewDFS(null).isEmpty();
     }
 }
