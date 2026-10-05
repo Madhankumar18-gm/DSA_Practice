@@ -1,6 +1,7 @@
 package Day13_TreeTraversals;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -40,5 +41,10 @@ public class VerticalOrderTraversal {
         map.get(col).get(row).add(node.val);
         dfs(node.left, row + 1, col - 1, map);
         dfs(node.right, row + 1, col + 1, map);
+    }
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        List<List<Integer>> expected = Arrays.asList(Arrays.asList(9), Arrays.asList(3, 15), Arrays.asList(20), Arrays.asList(7));
+        assert verticalTraversalDFS(root).equals(expected);
     }
 }
