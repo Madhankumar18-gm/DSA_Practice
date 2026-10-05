@@ -76,5 +76,6 @@ public class BottomViewBinaryTree {
         TreeNode single = new TreeNode(99);
         assert bottomViewBFS(single).equals(Arrays.asList(99));
         assert bottomViewBFS(null).isEmpty();
+        System.out.println("Execution completed successfully for BottomViewBinaryTree.");
     }
 }
