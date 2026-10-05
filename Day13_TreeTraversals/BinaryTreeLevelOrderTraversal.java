@@ -53,5 +53,7 @@ public class BinaryTreeLevelOrderTraversal {
         List<List<Integer>> expected = Arrays.asList(Arrays.asList(3), Arrays.asList(9, 20), Arrays.asList(15, 7));
         assert levelOrderBFS(root).equals(expected);
         assert levelOrderDFS(root).equals(expected);
+        TreeNode single = new TreeNode(1);
+        assert levelOrderDFS(single).equals(Arrays.asList(Arrays.asList(1)));
     }
 }
