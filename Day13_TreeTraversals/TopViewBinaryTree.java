@@ -47,6 +47,24 @@ public class TopViewBinaryTree {
         }
         return result;
     }
+    public static List<Integer> topViewDFS(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) return result;
+        Map<Integer, int[]> map = new TreeMap<>();
+        dfs(root, 0, 0, map);
+        for (int[] pair : map.values()) {
+            result.add(pair[0]);
+        }
+        return result;
+    }
+    private static void dfs(TreeNode node, int hd, int depth, Map<Integer, int[]> map) {
+        if (node == null) return;
+        if (!map.containsKey(hd) || depth < map.get(hd)[1]) {
+            map.put(hd, new int[]{node.val, depth});
+        }
+        dfs(node.left, hd - 1, depth + 1, map);
+        dfs(node.right, hd + 1, depth + 1, map);
+    }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1, 
             new TreeNode(2, null, new TreeNode(4, null, new TreeNode(5, null, new TreeNode(6)))), 
