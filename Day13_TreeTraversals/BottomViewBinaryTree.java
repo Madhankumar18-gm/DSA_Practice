@@ -1,6 +1,7 @@
 package Day13_TreeTraversals;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -43,5 +44,11 @@ public class BottomViewBinaryTree {
             result.add(val);
         }
         return result;
+    }
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(20, 
+            new TreeNode(8, new TreeNode(5), new TreeNode(3, new TreeNode(10), new TreeNode(14))), 
+            new TreeNode(22, null, new TreeNode(25)));
+        assert bottomViewBFS(root).equals(Arrays.asList(5, 10, 3, 14, 25));
     }
 }
