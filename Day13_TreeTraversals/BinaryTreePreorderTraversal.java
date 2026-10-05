@@ -5,6 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
+/**
+ * Problem 112: [LeetCode 144] Binary Tree Preorder Traversal
+ * O(N) Recursive & Stack-based Iterative Preorder (Root -> Left -> Right) Traversal.
+ */
 public class BinaryTreePreorderTraversal {
     public static class TreeNode {
         int val;
