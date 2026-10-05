@@ -34,6 +34,17 @@ public class BinaryTreeRightSideView {
         }
         return result;
     }
+    public static List<Integer> rightSideViewDFS(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        dfs(root, 0, result);
+        return result;
+    }
+    private static void dfs(TreeNode node, int depth, List<Integer> result) {
+        if (node == null) return;
+        if (depth == result.size()) result.add(node.val);
+        dfs(node.right, depth + 1, result);
+        dfs(node.left, depth + 1, result);
+    }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1, 
             new TreeNode(2, null, new TreeNode(5)), 
