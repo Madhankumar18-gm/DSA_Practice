@@ -55,5 +55,6 @@ public class BinaryTreeLevelOrderTraversal {
         assert levelOrderDFS(root).equals(expected);
         TreeNode single = new TreeNode(1);
         assert levelOrderDFS(single).equals(Arrays.asList(Arrays.asList(1)));
+        assert levelOrderDFS(null).isEmpty();
     }
 }
