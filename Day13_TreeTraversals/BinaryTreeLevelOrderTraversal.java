@@ -1,6 +1,7 @@
 package Day13_TreeTraversals;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -34,5 +35,10 @@ public class BinaryTreeLevelOrderTraversal {
             result.add(currentLevel);
         }
         return result;
+    }
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        List<List<Integer>> expected = Arrays.asList(Arrays.asList(3), Arrays.asList(9, 20), Arrays.asList(15, 7));
+        assert levelOrderBFS(root).equals(expected);
     }
 }
