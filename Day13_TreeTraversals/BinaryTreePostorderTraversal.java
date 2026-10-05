@@ -45,5 +45,6 @@ public class BinaryTreePostorderTraversal {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
         assert postorderTraversalDFS(root).equals(Arrays.asList(3, 2, 1));
+        assert postorderTraversalIterative(root).equals(Arrays.asList(3, 2, 1));
     }
 }
