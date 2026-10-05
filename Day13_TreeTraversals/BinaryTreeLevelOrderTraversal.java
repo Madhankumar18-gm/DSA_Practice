@@ -6,6 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * Problem 114: [LeetCode 102] Binary Tree Level Order Traversal
+ * O(N) Queue-based BFS & Depth-tracked DFS level order partitioning.
+ */
 public class BinaryTreeLevelOrderTraversal {
     public static class TreeNode {
         int val;
