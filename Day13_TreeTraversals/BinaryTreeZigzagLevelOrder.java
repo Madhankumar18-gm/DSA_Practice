@@ -7,6 +7,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * Problem 115: [LeetCode 103] Binary Tree Zigzag Level Order Traversal
+ * O(N) Deque level direction flipping algorithm.
+ */
 public class BinaryTreeZigzagLevelOrder {
     public static class TreeNode {
         int val;
