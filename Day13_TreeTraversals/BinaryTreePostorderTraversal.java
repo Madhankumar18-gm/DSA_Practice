@@ -48,5 +48,6 @@ public class BinaryTreePostorderTraversal {
         assert postorderTraversalIterative(root).equals(Arrays.asList(3, 2, 1));
         TreeNode single = new TreeNode(7);
         assert postorderTraversalIterative(single).equals(Arrays.asList(7));
+        assert postorderTraversalIterative(null).isEmpty();
     }
 }
