@@ -6,6 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
+/**
+ * Problem 113: [LeetCode 145] Binary Tree Postorder Traversal
+ * O(N) Recursive & Double-ended Iterative Postorder (Left -> Right -> Root) Traversal.
+ */
 public class BinaryTreePostorderTraversal {
     public static class TreeNode {
         int val;
