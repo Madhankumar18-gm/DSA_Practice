@@ -46,5 +46,7 @@ public class VerticalOrderTraversal {
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
         List<List<Integer>> expected = Arrays.asList(Arrays.asList(9), Arrays.asList(3, 15), Arrays.asList(20), Arrays.asList(7));
         assert verticalTraversalDFS(root).equals(expected);
+        TreeNode single = new TreeNode(1);
+        assert verticalTraversalDFS(single).equals(Arrays.asList(Arrays.asList(1)));
     }
 }
