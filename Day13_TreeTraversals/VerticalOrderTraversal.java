@@ -7,6 +7,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * Problem 117: [LeetCode 987] Vertical Order Traversal of a Binary Tree
+ * O(N log N) Coordinate mapping (row, col) with TreeMap horizontal column sorting.
+ */
 public class VerticalOrderTraversal {
     public static class TreeNode {
         int val;
