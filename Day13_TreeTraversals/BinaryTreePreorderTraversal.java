@@ -47,5 +47,6 @@ public class BinaryTreePreorderTraversal {
         assert preorderTraversalIterative(root).equals(Arrays.asList(1, 2, 3));
         TreeNode single = new TreeNode(10);
         assert preorderTraversalIterative(single).equals(Arrays.asList(10));
+        assert preorderTraversalIterative(null).isEmpty();
     }
 }
