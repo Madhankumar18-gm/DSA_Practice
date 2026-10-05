@@ -49,5 +49,6 @@ public class BinaryTreeInorderTraversal {
         assert inorderTraversalIterative(root).equals(Arrays.asList(1, 3, 2));
         TreeNode single = new TreeNode(42);
         assert inorderTraversalIterative(single).equals(Arrays.asList(42));
+        assert inorderTraversalIterative(null).isEmpty();
     }
 }
