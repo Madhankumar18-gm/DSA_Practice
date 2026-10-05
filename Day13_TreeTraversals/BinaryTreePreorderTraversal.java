@@ -44,5 +44,6 @@ public class BinaryTreePreorderTraversal {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
         assert preorderTraversalDFS(root).equals(Arrays.asList(1, 2, 3));
+        assert preorderTraversalIterative(root).equals(Arrays.asList(1, 2, 3));
     }
 }
