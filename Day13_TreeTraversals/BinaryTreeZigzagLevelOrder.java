@@ -73,5 +73,6 @@ public class BinaryTreeZigzagLevelOrder {
         TreeNode single = new TreeNode(1);
         assert zigzagLevelOrderOptimal(single).equals(Arrays.asList(Arrays.asList(1)));
         assert zigzagLevelOrderOptimal(null).isEmpty();
+        System.out.println("Execution completed successfully for BinaryTreeZigzagLevelOrder.");
     }
 }
