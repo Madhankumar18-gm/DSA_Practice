@@ -69,5 +69,7 @@ public class BottomViewBinaryTree {
             new TreeNode(22, null, new TreeNode(25)));
         assert bottomViewBFS(root).equals(Arrays.asList(5, 10, 3, 14, 25));
         assert bottomViewDFS(root).equals(Arrays.asList(5, 10, 3, 14, 25));
+        TreeNode single = new TreeNode(99);
+        assert bottomViewBFS(single).equals(Arrays.asList(99));
     }
 }
