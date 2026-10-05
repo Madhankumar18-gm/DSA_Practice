@@ -8,6 +8,10 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.TreeMap;
 
+/**
+ * Problem 118: Top View of Binary Tree
+ * O(N) Horizontal Distance (hd) queue BFS tracking first visible node per column.
+ */
 public class TopViewBinaryTree {
     public static class TreeNode {
         int val;
