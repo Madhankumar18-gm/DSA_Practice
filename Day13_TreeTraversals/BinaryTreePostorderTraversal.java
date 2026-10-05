@@ -2,7 +2,9 @@ package Day13_TreeTraversals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 public class BinaryTreePostorderTraversal {
     public static class TreeNode {
@@ -26,6 +28,19 @@ public class BinaryTreePostorderTraversal {
         helper(node.left, result);
         helper(node.right, result);
         result.add(node.val);
+    }
+    public static List<Integer> postorderTraversalIterative(TreeNode root) {
+        LinkedList<Integer> result = new LinkedList<>();
+        if (root == null) return result;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode current = stack.pop();
+            result.addFirst(current.val);
+            if (current.left != null) stack.push(current.left);
+            if (current.right != null) stack.push(current.right);
+        }
+        return result;
     }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
