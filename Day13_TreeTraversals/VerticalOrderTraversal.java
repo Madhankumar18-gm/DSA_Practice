@@ -53,5 +53,6 @@ public class VerticalOrderTraversal {
         TreeNode single = new TreeNode(1);
         assert verticalTraversalDFS(single).equals(Arrays.asList(Arrays.asList(1)));
         assert verticalTraversalDFS(null).isEmpty();
+        System.out.println("Execution completed successfully for VerticalOrderTraversal.");
     }
 }
