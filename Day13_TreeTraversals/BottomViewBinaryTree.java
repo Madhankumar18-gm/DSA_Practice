@@ -8,6 +8,10 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.TreeMap;
 
+/**
+ * Problem 119: Bottom View of Binary Tree
+ * O(N) Horizontal Distance (hd) queue BFS overwriting bottom-most visible node per column.
+ */
 public class BottomViewBinaryTree {
     public static class TreeNode {
         int val;
