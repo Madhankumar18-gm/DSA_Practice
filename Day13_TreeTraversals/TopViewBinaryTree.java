@@ -73,5 +73,6 @@ public class TopViewBinaryTree {
         assert topViewDFS(root).equals(Arrays.asList(2, 1, 3, 6));
         TreeNode single = new TreeNode(5);
         assert topViewBFS(single).equals(Arrays.asList(5));
+        assert topViewBFS(null).isEmpty();
     }
 }
