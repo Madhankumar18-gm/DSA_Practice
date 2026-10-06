@@ -57,5 +57,6 @@ public class LemonadeChange {
         assert !lemonadeChangeGreedy(new int[]{5, 5, 10, 10, 20});
         assert lemonadeChangeGreedy(new int[0]);
         assert !lemonadeChangeGreedy(null);
+        System.out.println("Execution completed successfully for LemonadeChange.");
     }
 }
