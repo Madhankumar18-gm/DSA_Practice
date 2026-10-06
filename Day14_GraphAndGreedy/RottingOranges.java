@@ -51,5 +51,6 @@ public class RottingOranges {
         assert orangesRottingBFS(g2) == -1;
         assert orangesRottingBFS(new int[][]{{0,2}}) == 0;
         assert orangesRottingBFS(null) == 0;
+        System.out.println("Execution completed successfully for RottingOranges.");
     }
 }
