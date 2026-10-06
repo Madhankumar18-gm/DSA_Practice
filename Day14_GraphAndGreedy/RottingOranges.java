@@ -45,5 +45,7 @@ public class RottingOranges {
         assert orangesRottingOptimal(g1_opt) == 4;
         int[][] g2 = {{2,1,1},{0,1,1},{1,0,1}};
         assert orangesRottingBFS(g2) == -1;
+        assert orangesRottingBFS(new int[][]{{0,2}}) == 0;
+        assert orangesRottingBFS(null) == 0;
     }
 }
