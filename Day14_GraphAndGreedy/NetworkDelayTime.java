@@ -66,5 +66,6 @@ public class NetworkDelayTime {
         int[][] times = {{2,1,1}, {2,3,1}, {3,4,1}};
         assert networkDelayTimeBellmanFord(times, 4, 2) == 2;
         assert networkDelayTimeDijkstra(times, 4, 2) == 2;
+        assert networkDelayTimeDijkstra(new int[][]{{1,2,1}}, 2, 2) == -1;
     }
 }
