@@ -41,5 +41,7 @@ public class RottingOranges {
     public static void main(String[] args) {
         int[][] g1 = {{2,1,1},{1,1,0},{0,1,1}};
         assert orangesRottingBFS(g1) == 4;
+        int[][] g1_opt = {{2,1,1},{1,1,0},{0,1,1}};
+        assert orangesRottingOptimal(g1_opt) == 4;
     }
 }
