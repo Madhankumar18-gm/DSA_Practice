@@ -3,6 +3,10 @@ package Day14_GraphAndGreedy;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Problem 120: [LeetCode 200] Number of Islands
+ * O(M * N) Grid Graph BFS & DFS Connected Component Traversal.
+ */
 public class NumberOfIslands {
     public static int numIslandsBFS(char[][] grid) {
         if (grid == null || grid.length == 0) return 0;
