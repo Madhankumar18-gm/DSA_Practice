@@ -53,5 +53,6 @@ public class CourseSchedule {
         assert canFinishBFS(2, new int[][]{{1, 0}});
         assert canFinishDFS(2, new int[][]{{1, 0}});
         assert !canFinishDFS(2, new int[][]{{1, 0}, {0, 1}});
+        assert canFinishDFS(3, new int[][]{});
     }
 }
