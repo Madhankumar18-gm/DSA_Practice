@@ -5,6 +5,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * Problem 122: [LeetCode 207] Course Schedule
+ * O(V + E) Topological Sort (Kahn's BFS) & Cycle Detection DFS algorithm.
+ */
 public class CourseSchedule {
     public static boolean canFinishBFS(int numCourses, int[][] prerequisites) {
         List<List<Integer>> adj = new ArrayList<>();
