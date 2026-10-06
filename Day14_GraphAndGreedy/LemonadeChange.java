@@ -1,5 +1,9 @@
 package Day14_GraphAndGreedy;
 
+/**
+ * Problem 128: [LeetCode 860] Lemonade Change
+ * O(N) Greedy Bill Change Allocation prioritizing $10 + $5 over three $5s.
+ */
 public class LemonadeChange {
     public static boolean lemonadeChangeSimulation(int[] bills) {
         if (bills == null) return false;
