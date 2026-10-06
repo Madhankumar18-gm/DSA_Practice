@@ -37,5 +37,6 @@ public class GasStation {
         int[] gas = {1, 2, 3, 4, 5};
         int[] cost = {3, 4, 5, 1, 2};
         assert canCompleteCircuitNaive(gas, cost) == 3;
+        assert canCompleteCircuitGreedy(gas, cost) == 3;
     }
 }
