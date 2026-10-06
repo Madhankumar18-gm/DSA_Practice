@@ -33,5 +33,6 @@ public class JumpGame {
         assert !canJumpGreedy(new int[]{3, 2, 1, 0, 4});
         assert canJumpGreedy(new int[]{0});
         assert !canJumpGreedy(null);
+        System.out.println("Execution completed successfully for JumpGame.");
     }
 }
