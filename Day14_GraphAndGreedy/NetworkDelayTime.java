@@ -6,6 +6,10 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
+/**
+ * Problem 123: [LeetCode 743] Network Delay Time
+ * O(E log V) Dijkstra Shortest Path PriorityQueue & O(V * E) Bellman-Ford algorithm.
+ */
 public class NetworkDelayTime {
     public static class Edge {
         int to, weight;
