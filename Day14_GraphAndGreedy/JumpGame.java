@@ -27,5 +27,7 @@ public class JumpGame {
         assert canJumpNaive(new int[]{2, 3, 1, 1, 4});
         assert canJumpGreedy(new int[]{2, 3, 1, 1, 4});
         assert !canJumpGreedy(new int[]{3, 2, 1, 0, 4});
+        assert canJumpGreedy(new int[]{0});
+        assert !canJumpGreedy(null);
     }
 }
