@@ -74,5 +74,7 @@ public class NumberOfIslands {
             {'0','0','0','1','1'}
         };
         assert numIslandsDFS(g2) == 3;
+        assert numIslandsDFS(null) == 0;
+        assert numIslandsBFS(new char[0][0]) == 0;
     }
 }
