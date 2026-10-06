@@ -80,5 +80,6 @@ public class NumberOfIslands {
         assert numIslandsDFS(g2) == 3;
         assert numIslandsDFS(null) == 0;
         assert numIslandsBFS(new char[0][0]) == 0;
+        System.out.println("Execution completed successfully for NumberOfIslands.");
     }
 }
