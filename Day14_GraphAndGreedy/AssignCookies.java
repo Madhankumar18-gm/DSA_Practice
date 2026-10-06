@@ -2,6 +2,10 @@ package Day14_GraphAndGreedy;
 
 import java.util.Arrays;
 
+/**
+ * Problem 127: [LeetCode 455] Assign Cookies
+ * O(N log N + M log M) Two-Pointer Greedy Matching after Sorting.
+ */
 public class AssignCookies {
     public static int findContentChildrenSorting(int[] g, int[] s) {
         if (g == null || s == null) return 0;
