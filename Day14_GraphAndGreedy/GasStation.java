@@ -1,5 +1,9 @@
 package Day14_GraphAndGreedy;
 
+/**
+ * Problem 126: [LeetCode 134] Gas Station
+ * O(N) Greedy Single Pass Tank Accumulation algorithm.
+ */
 public class GasStation {
     public static int canCompleteCircuitNaive(int[] gas, int[] cost) {
         if (gas == null || cost == null || gas.length != cost.length) return -1;
