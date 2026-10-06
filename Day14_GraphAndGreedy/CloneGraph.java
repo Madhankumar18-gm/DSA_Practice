@@ -42,4 +42,13 @@ public class CloneGraph {
         }
         return visited.get(node);
     }
+    public static void main(String[] args) {
+        Node n1 = new Node(1);
+        Node n2 = new Node(2);
+        n1.neighbors.add(n2);
+        n2.neighbors.add(n1);
+        Node cloned = cloneGraphBFS(n1);
+        assert cloned != n1 && cloned.val == 1;
+        assert cloned.neighbors.get(0).val == 2;
+    }
 }
