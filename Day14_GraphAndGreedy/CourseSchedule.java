@@ -29,4 +29,7 @@ public class CourseSchedule {
         }
         return count == numCourses;
     }
+    public static void main(String[] args) {
+        assert canFinishBFS(2, new int[][]{{1, 0}});
+    }
 }
