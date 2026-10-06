@@ -24,4 +24,7 @@ public class LemonadeChange {
         }
         return true;
     }
+    public static void main(String[] args) {
+        assert lemonadeChangeSimulation(new int[]{5, 5, 5, 10, 20});
+    }
 }
