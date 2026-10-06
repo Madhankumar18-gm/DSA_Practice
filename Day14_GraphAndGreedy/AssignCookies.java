@@ -40,5 +40,6 @@ public class AssignCookies {
         assert findContentChildrenOptimal(new int[]{3, 4}, new int[]{1, 2}) == 0;
         assert findContentChildrenOptimal(null, new int[]{1}) == 0;
         assert findContentChildrenOptimal(new int[0], new int[0]) == 0;
+        System.out.println("Execution completed successfully for AssignCookies.");
     }
 }
