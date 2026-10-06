@@ -60,5 +60,12 @@ public class NumberOfIslands {
             {'0','0','0','0','0'}
         };
         assert numIslandsBFS(g1) == 1;
+        char[][] g1_dfs = {
+            {'1','1','1','1','0'},
+            {'1','1','0','1','0'},
+            {'1','1','0','0','0'},
+            {'0','0','0','0','0'}
+        };
+        assert numIslandsDFS(g1_dfs) == 1;
     }
 }
