@@ -69,5 +69,7 @@ public class CloneGraph {
         assert clonedDFS.neighbors.get(0).val == 2;
         Node single = new Node(100);
         assert cloneGraphDFS(single).val == 100;
+        assert cloneGraphDFS(null) == null;
+        assert cloneGraphBFS(null) == null;
     }
 }
