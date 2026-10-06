@@ -1,7 +1,11 @@
 package Day14_GraphAndGreedy;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 
 public class CloneGraph {
     public static class Node {
@@ -19,5 +23,23 @@ public class CloneGraph {
             val = _val;
             neighbors = _neighbors;
         }
+    }
+    public static Node cloneGraphBFS(Node node) {
+        if (node == null) return null;
+        Map<Node, Node> visited = new HashMap<>();
+        Queue<Node> queue = new LinkedList<>();
+        visited.put(node, new Node(node.val));
+        queue.add(node);
+        while (!queue.isEmpty()) {
+            Node curr = queue.poll();
+            for (Node neighbor : curr.neighbors) {
+                if (!visited.containsKey(neighbor)) {
+                    visited.put(neighbor, new Node(neighbor.val));
+                    queue.add(neighbor);
+                }
+                visited.get(curr).neighbors.add(visited.get(neighbor));
+            }
+        }
+        return visited.get(node);
     }
 }
