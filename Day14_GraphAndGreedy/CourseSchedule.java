@@ -33,7 +33,7 @@ public class CourseSchedule {
         List<List<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < numCourses; i++) adj.add(new ArrayList<>());
         for (int[] p : prerequisites) adj.get(p[1]).add(p[0]);
-        int[] state = new int[numCourses]; // 0=unvisited, 1=visiting, 2=visited
+        int[] state = new int[numCourses];
         for (int i = 0; i < numCourses; i++) {
             if (hasCycle(i, adj, state)) return false;
         }
@@ -51,5 +51,6 @@ public class CourseSchedule {
     }
     public static void main(String[] args) {
         assert canFinishBFS(2, new int[][]{{1, 0}});
+        assert canFinishDFS(2, new int[][]{{1, 0}});
     }
 }
