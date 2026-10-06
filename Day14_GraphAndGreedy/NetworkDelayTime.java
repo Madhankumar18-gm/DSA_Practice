@@ -65,5 +65,6 @@ public class NetworkDelayTime {
     public static void main(String[] args) {
         int[][] times = {{2,1,1}, {2,3,1}, {3,4,1}};
         assert networkDelayTimeBellmanFord(times, 4, 2) == 2;
+        assert networkDelayTimeDijkstra(times, 4, 2) == 2;
     }
 }
