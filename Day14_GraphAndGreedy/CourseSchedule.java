@@ -58,5 +58,6 @@ public class CourseSchedule {
         assert canFinishDFS(2, new int[][]{{1, 0}});
         assert !canFinishDFS(2, new int[][]{{1, 0}, {0, 1}});
         assert canFinishDFS(3, new int[][]{});
+        System.out.println("Execution completed successfully for CourseSchedule.");
     }
 }
