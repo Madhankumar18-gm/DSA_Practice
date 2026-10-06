@@ -13,4 +13,7 @@ public class JumpGame {
         }
         return false;
     }
+    public static void main(String[] args) {
+        assert canJumpNaive(new int[]{2, 3, 1, 1, 4});
+    }
 }
