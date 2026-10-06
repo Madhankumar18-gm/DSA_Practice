@@ -1,5 +1,9 @@
 package Day14_GraphAndGreedy;
 
+/**
+ * Problem 125: [LeetCode 55] Jump Game
+ * O(N) Greedy Maximum Reachable Index Calculation.
+ */
 public class JumpGame {
     public static boolean canJumpNaive(int[] nums) {
         if (nums == null || nums.length == 0) return false;
