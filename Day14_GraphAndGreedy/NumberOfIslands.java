@@ -67,5 +67,12 @@ public class NumberOfIslands {
             {'0','0','0','0','0'}
         };
         assert numIslandsDFS(g1_dfs) == 1;
+        char[][] g2 = {
+            {'1','1','0','0','0'},
+            {'1','1','0','0','0'},
+            {'0','0','1','0','0'},
+            {'0','0','0','1','1'}
+        };
+        assert numIslandsDFS(g2) == 3;
     }
 }
