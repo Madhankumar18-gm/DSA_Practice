@@ -42,6 +42,20 @@ public class CloneGraph {
         }
         return visited.get(node);
     }
+    public static Node cloneGraphDFS(Node node) {
+        if (node == null) return null;
+        Map<Node, Node> visited = new HashMap<>();
+        return dfsClone(node, visited);
+    }
+    private static Node dfsClone(Node node, Map<Node, Node> visited) {
+        if (visited.containsKey(node)) return visited.get(node);
+        Node copy = new Node(node.val);
+        visited.put(node, copy);
+        for (Node neighbor : node.neighbors) {
+            copy.neighbors.add(dfsClone(neighbor, visited));
+        }
+        return copy;
+    }
     public static void main(String[] args) {
         Node n1 = new Node(1);
         Node n2 = new Node(2);
