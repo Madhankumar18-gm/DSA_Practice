@@ -35,4 +35,8 @@ public class RottingOranges {
         }
         return freshCount == 0 ? minutes : -1;
     }
+    public static void main(String[] args) {
+        int[][] g1 = {{2,1,1},{1,1,0},{0,1,1}};
+        assert orangesRottingBFS(g1) == 4;
+    }
 }
