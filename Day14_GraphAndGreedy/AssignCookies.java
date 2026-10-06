@@ -16,4 +16,7 @@ public class AssignCookies {
         }
         return i;
     }
+    public static void main(String[] args) {
+        assert findContentChildrenSorting(new int[]{1, 2, 3}, new int[]{1, 1}) == 1;
+    }
 }
