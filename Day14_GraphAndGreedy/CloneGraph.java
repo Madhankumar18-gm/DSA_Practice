@@ -75,5 +75,6 @@ public class CloneGraph {
         assert cloneGraphDFS(single).val == 100;
         assert cloneGraphDFS(null) == null;
         assert cloneGraphBFS(null) == null;
+        System.out.println("Execution completed successfully for CloneGraph.");
     }
 }
