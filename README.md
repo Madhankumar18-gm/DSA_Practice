@@ -6,8 +6,8 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 
 ## 📊 Repository Summary
 
-- **Total Problems Solved**: `92 Problems`
-- **Total Git Commits**: `828+ Commits`
+- **Total Problems Solved**: `128 Problems`
+- **Total Git Commits**: `1,157+ Commits`
 - **Primary Language**: `Java 17+`
 - **Remote Repository**: [GitHub - DSA_Practice](https://github.com/Madhankumar18-gm/DSA_Practice.git)
 
@@ -25,6 +25,10 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 - [x] **Day 08 - Stack Deep Dive & Monotonic Stack** (Histogram Area, Maximal Rectangle, Trapping Rain Water, Next Greater II, Stock Span, Basic Calculator, Lexicographical Deduplication, Stack Sequences, Remove K Digits) — `9 Problems` \| `81 Commits`
 - [x] **Day 09 - Circular Linked List Concepts** (Ring Insertion, Josephus Game, Fast & Slow Split, Origin Traversal, Node Deletion, Cycle Disconnection, 3-Pointer Reversal, Single-Tail Queue, Ring Count, Modulo Rotation, Ring Interleaving, Doubly Circular Insert) — `12 Problems` \| `108 Commits`
 - [x] **Day 10 - Queue & Deque Concepts** (Circular Queue, Circular Deque, Recent Calls Window, Stream Deduplication, K-Segment Reversal, Deck Simulation, Student Lunch Rotation, Queue Interleaving, Binary String BFS) — `9 Problems` \| `81 Commits`
+- [x] **Day 11 - Queue & Deque Deep Dive** (Sliding Window Maximum, Circular Queue, Circular Deque, Recent Calls, Stream Non-Repeating, Reverse K, Card Simulation, Lunch Rotation, Interleave Halves) — `9 Problems` \| `81 Commits`
+- [x] **Day 12 - Hashing Concepts** (Two Sum, Group Anagrams, Longest Consecutive Sequence, Subarray Sum K, Top K Frequent, Valid Anagram, Contains Duplicate, Isomorphic Strings, Happy Number) — `9 Problems` \| `81 Commits`
+- [x] **Day 13 - Tree Traversals Concepts** (Inorder Traversal, Preorder Traversal, Postorder Traversal, Level Order Traversal, Zigzag Level Order, Right Side View, Vertical Order Traversal, Top View, Bottom View) — `9 Problems` \| `81 Commits`
+- [x] **Day 14 - Graph Algorithms & Greedy Concepts** (Number of Islands, Clone Graph, Course Schedule, Network Delay Time, Rotting Oranges, Jump Game, Gas Station, Assign Cookies, Lemonade Change) — `9 Problems` \| `81 Commits`
 
 ---
 
@@ -208,6 +212,19 @@ DSA Practice/
 | 90 | Number of Students Unable to Eat Lunch | [LeetCode #1700](https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/) | Preference Queue Rotation | $O(N)$ | $O(1)$ | [`NumberOfStudentsUnableToEatLunch.java`](./Day10_Queue/NumberOfStudentsUnableToEatLunch.java) |
 | 91 | Interleave First Half of Queue with Second Half | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/interleave-the-first-half-of-the-queue-with-second-half/1) | Half-Queue Stack Interleaving | $O(N)$ | $O(N)$ | [`InterleaveQueueHalves.java`](./Day10_Queue/InterleaveQueueHalves.java) |
 | 92 | Generate Binary Numbers from 1 to N using Queue | [GFG / LeetCode](https://practice.geeksforgeeks.org/problems/generate-binary-numbers-1587115620/1) | Level-by-Level Queue BFS | $O(N)$ | $O(N)$ | [`GenerateBinaryNumbersUsingQueue.java`](./Day10_Queue/GenerateBinaryNumbersUsingQueue.java) |
+
+### Day 14: Graph Algorithms & Greedy Concepts
+| # | Problem Name | LeetCode Link | Topic Tag | Time | Space | Solution Code |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
+| 120 | Number of Islands | [LeetCode #200](https://leetcode.com/problems/number-of-islands/) | Grid BFS / DFS | $O(M \times N)$ | $O(M \times N)$ | [`NumberOfIslands.java`](./Day14_GraphAndGreedy/NumberOfIslands.java) |
+| 121 | Clone Graph | [LeetCode #133](https://leetcode.com/problems/clone-graph/) | Graph BFS / DFS | $O(V + E)$ | $O(V)$ | [`CloneGraph.java`](./Day14_GraphAndGreedy/CloneGraph.java) |
+| 122 | Course Schedule | [LeetCode #207](https://leetcode.com/problems/course-schedule/) | Topological Sort & Cycle | $O(V + E)$ | $O(V + E)$ | [`CourseSchedule.java`](./Day14_GraphAndGreedy/CourseSchedule.java) |
+| 123 | Network Delay Time | [LeetCode #743](https://leetcode.com/problems/network-delay-time/) | Shortest Path (Dijkstra) | $O(E \log V)$ | $O(V + E)$ | [`NetworkDelayTime.java`](./Day14_GraphAndGreedy/NetworkDelayTime.java) |
+| 124 | Rotting Oranges | [LeetCode #994](https://leetcode.com/problems/rotting-oranges/) | Multi-Source BFS | $O(M \times N)$ | $O(M \times N)$ | [`RottingOranges.java`](./Day14_GraphAndGreedy/RottingOranges.java) |
+| 125 | Jump Game | [LeetCode #55](https://leetcode.com/problems/jump-game/) | Greedy Optimization | $O(N)$ | $O(1)$ | [`JumpGame.java`](./Day14_GraphAndGreedy/JumpGame.java) |
+| 126 | Gas Station | [LeetCode #134](https://leetcode.com/problems/gas-station/) | Greedy Circuit Simulation | $O(N)$ | $O(1)$ | [`GasStation.java`](./Day14_GraphAndGreedy/GasStation.java) |
+| 127 | Assign Cookies | [LeetCode #455](https://leetcode.com/problems/assign-cookies/) | Greedy Two Pointers | $O(N \log N + M \log M)$ | $O(1)$ | [`AssignCookies.java`](./Day14_GraphAndGreedy/AssignCookies.java) |
+| 128 | Lemonade Change | [LeetCode #860](https://leetcode.com/problems/lemonade-change/) | Greedy Bill Dispensing | $O(N)$ | $O(1)$ | [`LemonadeChange.java`](./Day14_GraphAndGreedy/LemonadeChange.java) |
 
 ---
 
