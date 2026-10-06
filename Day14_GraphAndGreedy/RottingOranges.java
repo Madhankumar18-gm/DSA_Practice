@@ -3,6 +3,10 @@ package Day14_GraphAndGreedy;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Problem 124: [LeetCode 994] Rotting Oranges
+ * O(M * N) Multi-Source BFS Grid Rotting Propagation.
+ */
 public class RottingOranges {
     public static int orangesRottingBFS(int[][] grid) {
         if (grid == null || grid.length == 0) return 0;
