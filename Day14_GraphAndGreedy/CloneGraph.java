@@ -64,5 +64,8 @@ public class CloneGraph {
         Node cloned = cloneGraphBFS(n1);
         assert cloned != n1 && cloned.val == 1;
         assert cloned.neighbors.get(0).val == 2;
+        Node clonedDFS = cloneGraphDFS(n1);
+        assert clonedDFS != n1 && clonedDFS.val == 1;
+        assert clonedDFS.neighbors.get(0).val == 2;
     }
 }
