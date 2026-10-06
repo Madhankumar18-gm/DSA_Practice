@@ -72,5 +72,6 @@ public class NetworkDelayTime {
         assert networkDelayTimeDijkstra(times, 4, 2) == 2;
         assert networkDelayTimeDijkstra(new int[][]{{1,2,1}}, 2, 2) == -1;
         assert networkDelayTimeDijkstra(new int[][]{}, 1, 1) == 0;
+        System.out.println("Execution completed successfully for NetworkDelayTime.");
     }
 }
