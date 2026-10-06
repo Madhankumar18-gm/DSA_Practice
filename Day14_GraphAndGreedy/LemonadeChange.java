@@ -24,6 +24,29 @@ public class LemonadeChange {
         }
         return true;
     }
+    public static boolean lemonadeChangeGreedy(int[] bills) {
+        if (bills == null) return false;
+        int fiveCount = 0, tenCount = 0;
+        for (int bill : bills) {
+            if (bill == 5) {
+                fiveCount++;
+            } else if (bill == 10) {
+                if (fiveCount == 0) return false;
+                fiveCount--;
+                tenCount++;
+            } else {
+                if (tenCount > 0 && fiveCount > 0) {
+                    tenCount--;
+                    fiveCount--;
+                } else if (fiveCount >= 3) {
+                    fiveCount -= 3;
+                } else {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
     public static void main(String[] args) {
         assert lemonadeChangeSimulation(new int[]{5, 5, 5, 10, 20});
     }
