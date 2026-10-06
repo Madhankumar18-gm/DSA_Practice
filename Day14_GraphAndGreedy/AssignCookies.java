@@ -34,5 +34,7 @@ public class AssignCookies {
         assert findContentChildrenSorting(new int[]{1, 2, 3}, new int[]{1, 1}) == 1;
         assert findContentChildrenOptimal(new int[]{1, 2}, new int[]{1, 2, 3}) == 2;
         assert findContentChildrenOptimal(new int[]{3, 4}, new int[]{1, 2}) == 0;
+        assert findContentChildrenOptimal(null, new int[]{1}) == 0;
+        assert findContentChildrenOptimal(new int[0], new int[0]) == 0;
     }
 }
