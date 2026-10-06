@@ -44,5 +44,6 @@ public class GasStation {
         assert canCompleteCircuitGreedy(gas, cost) == 3;
         assert canCompleteCircuitGreedy(new int[]{2,3,4}, new int[]{3,4,3}) == -1;
         assert canCompleteCircuitGreedy(null, cost) == -1;
+        System.out.println("Execution completed successfully for GasStation.");
     }
 }
