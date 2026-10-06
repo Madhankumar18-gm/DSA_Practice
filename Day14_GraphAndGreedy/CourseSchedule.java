@@ -52,5 +52,6 @@ public class CourseSchedule {
     public static void main(String[] args) {
         assert canFinishBFS(2, new int[][]{{1, 0}});
         assert canFinishDFS(2, new int[][]{{1, 0}});
+        assert !canFinishDFS(2, new int[][]{{1, 0}, {0, 1}});
     }
 }
