@@ -53,5 +53,7 @@ public class UniquePaths {
         assert uniquePathsOptimal(7, 3) == 28 : "Refactor Test: Symmetric 7x3";
         assert uniquePathsOptimal(1, 1) == 1 : "Edge Test: 1x1 Grid";
         assert uniquePathsOptimal(0, 5) == 0 : "Edge Test: 0 rows";
+
+        System.out.println("Execution completed successfully for UniquePaths.");
     }
 }
