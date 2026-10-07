@@ -38,5 +38,8 @@ public class HouseRobber {
     public static void main(String[] args) {
         assert robMemo(new int[]{1, 2, 3, 1}) == 4 : "Test 1 Failed: Memo [1,2,3,1]";
         assert robMemo(new int[]{2, 7, 9, 3, 1}) == 12 : "Test 2 Failed: Memo [2,7,9,3,1]";
+
+        assert robOptimal(new int[]{1, 2, 3, 1}) == 4 : "Test 3 Failed: Optimal [1,2,3,1]";
+        assert robOptimal(new int[]{2, 7, 9, 3, 1}) == 12 : "Test 4 Failed: Optimal [2,7,9,3,1]";
     }
 }
