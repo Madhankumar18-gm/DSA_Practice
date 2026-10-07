@@ -64,5 +64,7 @@ public class TargetSum {
         assert findTargetSumWaysOptimal(new int[]{1}, 2) == 0 : "Refactor Test: Target impossible";
         assert findTargetSumWaysOptimal(new int[]{0, 0, 0, 0, 0, 0, 0, 0, 1}, 1) == 256 : "Edge Test: Zeros in input";
         assert findTargetSumWaysOptimal(null, 5) == 0 : "Edge Test: Null input";
+
+        System.out.println("Execution completed successfully for TargetSum.");
     }
 }
