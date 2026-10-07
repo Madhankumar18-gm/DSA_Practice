@@ -26,4 +26,9 @@ public class TargetSum {
         memo.put(key, add + subtract);
         return add + subtract;
     }
+
+    public static void main(String[] args) {
+        assert findTargetSumWaysMemo(new int[]{1, 1, 1, 1, 1}, 3) == 5 : "Test 1 Failed: Memo [1,1,1,1,1] t=3";
+        assert findTargetSumWaysMemo(new int[]{1}, 1) == 1 : "Test 2 Failed: Memo [1] t=1";
+    }
 }
