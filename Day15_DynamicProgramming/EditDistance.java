@@ -70,5 +70,7 @@ public class EditDistance {
         assert minDistanceOptimal("", "a") == 1 : "Edge Test: Empty source";
         assert minDistanceOptimal("a", "") == 1 : "Edge Test: Empty target";
         assert minDistanceOptimal(null, "abc") == 0 : "Edge Test: Null input";
+
+        System.out.println("Execution completed successfully for EditDistance.");
     }
 }
