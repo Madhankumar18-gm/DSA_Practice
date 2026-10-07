@@ -22,6 +22,26 @@ public class LongestCommonSubsequence {
         return dp[m][n];
     }
 
+    public static int longestCommonSubsequenceOptimal(String text1, String text2) {
+        if (text1 == null || text2 == null) return 0;
+        int m = text1.length(), n = text2.length();
+        int[] prev = new int[n + 1];
+        int[] curr = new int[n + 1];
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (text1.charAt(i - 1) == text2.charAt(j - 1)) {
+                    curr[j] = 1 + prev[j - 1];
+                } else {
+                    curr[j] = Math.max(prev[j], curr[j - 1]);
+                }
+            }
+            int[] temp = prev;
+            prev = curr;
+            curr = temp;
+        }
+        return prev[n];
+    }
+
     public static void main(String[] args) {
         assert longestCommonSubsequence2D("abcde", "ace") == 3 : "Test 1 Failed: 2D abcde/ace";
         assert longestCommonSubsequence2D("abc", "abc") == 3 : "Test 2 Failed: 2D abc/abc";
