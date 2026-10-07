@@ -54,5 +54,7 @@ public class ClimbingStairs {
         assert climbStairsOptimal(1) == 1 : "Refactor Test: Single Step";
         assert climbStairsOptimal(0) == 0 : "Edge Test: 0 steps";
         assert climbStairsOptimal(-5) == 0 : "Edge Test: Negative steps";
+
+        System.out.println("Execution completed successfully for ClimbingStairs.");
     }
 }
