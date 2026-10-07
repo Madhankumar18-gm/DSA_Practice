@@ -5,6 +5,14 @@ import java.util.Arrays;
 /**
  * LeetCode 70: Climbing Stairs
  * Day 15 - Dynamic Programming (1D & 2D)
+ *
+ * Problem Description:
+ * You are climbing a staircase. It takes n steps to reach the top.
+ * Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+ *
+ * Complexities:
+ * Top-Down Memoization: Time O(N), Space O(N)
+ * Bottom-Up Space-Optimized DP: Time O(N), Space O(1)
  */
 public class ClimbingStairs {
 
