@@ -18,4 +18,9 @@ public class UniquePaths {
         }
         return dp[m - 1][n - 1];
     }
+
+    public static void main(String[] args) {
+        assert uniquePaths2D(3, 7) == 28 : "Test 1 Failed: 2D 3x7";
+        assert uniquePaths2D(3, 2) == 3 : "Test 2 Failed: 2D 3x2";
+    }
 }
