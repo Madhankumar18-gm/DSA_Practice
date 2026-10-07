@@ -21,4 +21,10 @@ public class LongestCommonSubsequence {
         }
         return dp[m][n];
     }
+
+    public static void main(String[] args) {
+        assert longestCommonSubsequence2D("abcde", "ace") == 3 : "Test 1 Failed: 2D abcde/ace";
+        assert longestCommonSubsequence2D("abc", "abc") == 3 : "Test 2 Failed: 2D abc/abc";
+        assert longestCommonSubsequence2D("abc", "def") == 0 : "Test 3 Failed: 2D abc/def";
+    }
 }
