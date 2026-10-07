@@ -56,5 +56,8 @@ public class EditDistance {
         assert minDistanceOptimal("intention", "execution") == 5 : "Test 4 Failed: Optimal intention/execution";
 
         assert minDistanceOptimal("zoologicoarchaeologist", "zoogeologist") == 10 : "Refactor Test: Complex Edit";
+        assert minDistanceOptimal("", "a") == 1 : "Edge Test: Empty source";
+        assert minDistanceOptimal("a", "") == 1 : "Edge Test: Empty target";
+        assert minDistanceOptimal(null, "abc") == 0 : "Edge Test: Null input";
     }
 }
