@@ -37,5 +37,10 @@ public class ClimbingStairs {
         assert climbStairsMemo(2) == 2 : "Test 1 Failed: Memo n=2";
         assert climbStairsMemo(3) == 3 : "Test 2 Failed: Memo n=3";
         assert climbStairsMemo(5) == 8 : "Test 3 Failed: Memo n=5";
+
+        assert climbStairsOptimal(2) == 2 : "Test 4 Failed: Optimal n=2";
+        assert climbStairsOptimal(3) == 3 : "Test 5 Failed: Optimal n=3";
+        assert climbStairsOptimal(5) == 8 : "Test 6 Failed: Optimal n=5";
+        assert climbStairsOptimal(10) == climbStairsMemo(10) : "Test 7 Failed: Equivalence n=10";
     }
 }
