@@ -1,0 +1,66 @@
+package Day15_DynamicProgramming;
+
+/**
+ * LeetCode 416: Partition Equal Subset Sum
+ * Day 15 - Dynamic Programming (1D & 2D)
+ *
+ * Problem Description:
+ * Given a non-empty array nums containing only positive integers,
+ * find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.
+ *
+ * Complexities:
+ * Top-Down 2D Memoization: Time O(N * Target), Space O(N * Target)
+ * Bottom-Up 1D DP (0/1 Knapsack): Time O(N * Target), Space O(Target)
+ */
+public class PartitionEqualSubsetSum {
+
+    public static boolean canPartitionMemo(int[] nums) {
+        if (nums == null || nums.length == 0) return false;
+        int sum = 0;
+        for (int num : nums) sum += num;
+        if (sum % 2 != 0) return false;
+        int target = sum / 2;
+        Boolean[][] memo = new Boolean[nums.length][target + 1];
+        return partitionHelper(nums, 0, target, memo);
+    }
+
+    private static boolean partitionHelper(int[] nums, int index, int target, Boolean[][] memo) {
+        if (target == 0) return true;
+        if (index >= nums.length || target < 0) return false;
+        if (memo[index][target] != null) return memo[index][target];
+        boolean include = partitionHelper(nums, index + 1, target - nums[index], memo);
+        boolean exclude = partitionHelper(nums, index + 1, target, memo);
+        memo[index][target] = include || exclude;
+        return memo[index][target];
+    }
+
+    public static boolean canPartitionOptimal(int[] nums) {
+        if (nums == null || nums.length == 0) return false;
+        int sum = 0;
+        for (int num : nums) sum += num;
+        if (sum % 2 != 0) return false;
+        int target = sum / 2;
+        boolean[] dp = new boolean[target + 1];
+        dp[0] = true;
+        for (int num : nums) {
+            for (int i = target; i >= num; i--) {
+                dp[i] = dp[i] || dp[i - num];
+            }
+        }
+        return dp[target];
+    }
+
+    public static void main(String[] args) {
+        assert canPartitionMemo(new int[]{1, 5, 11, 5}) == true : "Test 1 Failed: Memo [1,5,11,5]";
+        assert canPartitionMemo(new int[]{1, 2, 3, 5}) == false : "Test 2 Failed: Memo [1,2,3,5]";
+
+        assert canPartitionOptimal(new int[]{1, 5, 11, 5}) == true : "Test 3 Failed: Optimal [1,5,11,5]";
+        assert canPartitionOptimal(new int[]{1, 2, 3, 5}) == false : "Test 4 Failed: Optimal [1,2,3,5]";
+
+        assert canPartitionOptimal(new int[]{2, 2}) == true : "Refactor Test: Equal pair";
+        assert canPartitionOptimal(new int[]{100}) == false : "Edge Test: Single element";
+        assert canPartitionOptimal(null) == false : "Edge Test: Null array";
+
+        System.out.println("Execution completed successfully for PartitionEqualSubsetSum.");
+    }
+}

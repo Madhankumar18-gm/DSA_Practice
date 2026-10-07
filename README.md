@@ -6,8 +6,8 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 
 ## 📊 Repository Summary
 
-- **Total Problems Solved**: `128 Problems`
-- **Total Git Commits**: `1,157+ Commits`
+- **Total Problems Solved**: `137 Problems`
+- **Total Git Commits**: `1,239+ Commits`
 - **Primary Language**: `Java 17+`
 - **Remote Repository**: [GitHub - DSA_Practice](https://github.com/Madhankumar18-gm/DSA_Practice.git)
 
@@ -29,6 +29,7 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 - [x] **Day 12 - Hashing Concepts** (Two Sum, Group Anagrams, Longest Consecutive Sequence, Subarray Sum K, Top K Frequent, Valid Anagram, Contains Duplicate, Isomorphic Strings, Happy Number) — `9 Problems` \| `81 Commits`
 - [x] **Day 13 - Tree Traversals Concepts** (Inorder Traversal, Preorder Traversal, Postorder Traversal, Level Order Traversal, Zigzag Level Order, Right Side View, Vertical Order Traversal, Top View, Bottom View) — `9 Problems` \| `81 Commits`
 - [x] **Day 14 - Graph Algorithms & Greedy Concepts** (Number of Islands, Clone Graph, Course Schedule, Network Delay Time, Rotting Oranges, Jump Game, Gas Station, Assign Cookies, Lemonade Change) — `9 Problems` \| `81 Commits`
+- [x] **Day 15 - Dynamic Programming (1D & 2D)** (Climbing Stairs, House Robber, Coin Change, Longest Increasing Subsequence, Partition Equal Subset Sum, Unique Paths, Longest Common Subsequence, Edit Distance, Target Sum) — `9 Problems` \| `81 Commits`
 
 ---
 
@@ -225,6 +226,19 @@ DSA Practice/
 | 126 | Gas Station | [LeetCode #134](https://leetcode.com/problems/gas-station/) | Greedy Circuit Simulation | $O(N)$ | $O(1)$ | [`GasStation.java`](./Day14_GraphAndGreedy/GasStation.java) |
 | 127 | Assign Cookies | [LeetCode #455](https://leetcode.com/problems/assign-cookies/) | Greedy Two Pointers | $O(N \log N + M \log M)$ | $O(1)$ | [`AssignCookies.java`](./Day14_GraphAndGreedy/AssignCookies.java) |
 | 128 | Lemonade Change | [LeetCode #860](https://leetcode.com/problems/lemonade-change/) | Greedy Bill Dispensing | $O(N)$ | $O(1)$ | [`LemonadeChange.java`](./Day14_GraphAndGreedy/LemonadeChange.java) |
+
+### Day 15: Dynamic Programming (1D & 2D) Concepts
+| # | Problem Name | LeetCode Link | Topic Tag | Time | Space | Solution Code |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
+| 129 | Climbing Stairs | [LeetCode #70](https://leetcode.com/problems/climbing-stairs/) | 1D Linear Recurrence | $O(N)$ | $O(1)$ | [`ClimbingStairs.java`](./Day15_DynamicProgramming/ClimbingStairs.java) |
+| 130 | House Robber | [LeetCode #198](https://leetcode.com/problems/house-robber/) | 1D Non-Adjacent Selection | $O(N)$ | $O(1)$ | [`HouseRobber.java`](./Day15_DynamicProgramming/HouseRobber.java) |
+| 131 | Coin Change | [LeetCode #322](https://leetcode.com/problems/coin-change/) | Unbounded Knapsack 1D | $O(\text{Amount} \times N)$ | $O(\text{Amount})$ | [`CoinChange.java`](./Day15_DynamicProgramming/CoinChange.java) |
+| 132 | Longest Increasing Subsequence | [LeetCode #300](https://leetcode.com/problems/longest-increasing-subsequence/) | Patience Sorting / 1D DP | $O(N \log N)$ | $O(N)$ | [`LongestIncreasingSubsequence.java`](./Day15_DynamicProgramming/LongestIncreasingSubsequence.java) |
+| 133 | Partition Equal Subset Sum | [LeetCode #416](https://leetcode.com/problems/partition-equal-subset-sum/) | 0/1 Knapsack 1D Boolean | $O(N \times \text{Target})$ | $O(\text{Target})$ | [`PartitionEqualSubsetSum.java`](./Day15_DynamicProgramming/PartitionEqualSubsetSum.java) |
+| 134 | Unique Paths | [LeetCode #62](https://leetcode.com/problems/unique-paths/) | 2D Grid / 1D Row DP | $O(M \times N)$ | $O(N)$ | [`UniquePaths.java`](./Day15_DynamicProgramming/UniquePaths.java) |
+| 135 | Longest Common Subsequence | [LeetCode #1143](https://leetcode.com/problems/longest-common-subsequence/) | 2D Sequence Alignment | $O(M \times N)$ | $O(N)$ | [`LongestCommonSubsequence.java`](./Day15_DynamicProgramming/LongestCommonSubsequence.java) |
+| 136 | Edit Distance | [LeetCode #72](https://leetcode.com/problems/edit-distance/) | 2D String Levenshtein DP | $O(M \times N)$ | $O(N)$ | [`EditDistance.java`](./Day15_DynamicProgramming/EditDistance.java) |
+| 137 | Target Sum | [LeetCode #494](https://leetcode.com/problems/target-sum/) | Subset Sum 1D DP Transformation | $O(N \times S_1)$ | $O(S_1)$ | [`TargetSum.java`](./Day15_DynamicProgramming/TargetSum.java) |
 
 ---
 
