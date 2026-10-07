@@ -22,6 +22,17 @@ public class ClimbingStairs {
         return memo[n];
     }
 
+    public static int climbStairsOptimal(int n) {
+        if (n <= 2) return Math.max(0, n);
+        int prev2 = 1, prev1 = 2;
+        for (int i = 3; i <= n; i++) {
+            int curr = prev1 + prev2;
+            prev2 = prev1;
+            prev1 = curr;
+        }
+        return prev1;
+    }
+
     public static void main(String[] args) {
         assert climbStairsMemo(2) == 2 : "Test 1 Failed: Memo n=2";
         assert climbStairsMemo(3) == 3 : "Test 2 Failed: Memo n=3";
