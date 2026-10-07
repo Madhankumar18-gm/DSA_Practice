@@ -51,5 +51,8 @@ public class EditDistance {
     public static void main(String[] args) {
         assert minDistance2D("horse", "ros") == 3 : "Test 1 Failed: 2D horse/ros";
         assert minDistance2D("intention", "execution") == 5 : "Test 2 Failed: 2D intention/execution";
+
+        assert minDistanceOptimal("horse", "ros") == 3 : "Test 3 Failed: Optimal horse/ros";
+        assert minDistanceOptimal("intention", "execution") == 5 : "Test 4 Failed: Optimal intention/execution";
     }
 }
