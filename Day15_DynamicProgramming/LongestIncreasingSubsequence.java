@@ -25,6 +25,23 @@ public class LongestIncreasingSubsequence {
         return maxLen;
     }
 
+    public static int lengthOfLISOptimal(int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
+        int[] tails = new int[nums.length];
+        int size = 0;
+        for (int x : nums) {
+            int i = 0, j = size;
+            while (i < j) {
+                int m = (i + j) / 2;
+                if (tails[m] < x) i = m + 1;
+                else j = m;
+            }
+            tails[i] = x;
+            if (i == size) size++;
+        }
+        return size;
+    }
+
     public static void main(String[] args) {
         assert lengthOfLISDP(new int[]{10, 9, 2, 5, 3, 7, 101, 18}) == 4 : "Test 1 Failed: DP [10,9,2,5,3,7,101,18]";
         assert lengthOfLISDP(new int[]{0, 1, 0, 3, 2, 3}) == 4 : "Test 2 Failed: DP [0,1,0,3,2,3]";
