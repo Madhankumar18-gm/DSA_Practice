@@ -5,6 +5,16 @@ import java.util.Arrays;
 /**
  * LeetCode 198: House Robber
  * Day 15 - Dynamic Programming (1D & 2D)
+ *
+ * Problem Description:
+ * You are a professional robber planning to rob houses along a street.
+ * Adjacent houses have security systems connected that will automatically contact police
+ * if two adjacent houses were broken into on the same night.
+ * Determine the maximum amount of money you can rob tonight without alerting the police.
+ *
+ * Complexities:
+ * Top-Down Memoization: Time O(N), Space O(N)
+ * Bottom-Up Space-Optimized DP: Time O(N), Space O(1)
  */
 public class HouseRobber {
 
