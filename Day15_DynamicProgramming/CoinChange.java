@@ -54,5 +54,7 @@ public class CoinChange {
         assert coinChangeOptimal(new int[]{1, 2, 5}, 11) == 3 : "Test 4 Failed: Optimal 11";
         assert coinChangeOptimal(new int[]{2}, 3) == -1 : "Test 5 Failed: Optimal 3";
         assert coinChangeOptimal(new int[]{1}, 0) == 0 : "Test 6 Failed: Optimal 0";
+
+        assert coinChangeOptimal(new int[]{186, 419, 83, 408}, 6249) == 20 : "Refactor Test: Large Amount";
     }
 }
