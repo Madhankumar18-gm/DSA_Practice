@@ -29,4 +29,10 @@ public class CoinChange {
         memo[rem] = (minCoins == Integer.MAX_VALUE) ? -1 : minCoins;
         return memo[rem];
     }
+
+    public static void main(String[] args) {
+        assert coinChangeMemo(new int[]{1, 2, 5}, 11) == 3 : "Test 1 Failed: Memo 11";
+        assert coinChangeMemo(new int[]{2}, 3) == -1 : "Test 2 Failed: Memo 3";
+        assert coinChangeMemo(new int[]{1}, 0) == 0 : "Test 3 Failed: Memo 0";
+    }
 }
