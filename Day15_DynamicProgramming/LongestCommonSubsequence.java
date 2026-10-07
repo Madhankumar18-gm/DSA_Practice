@@ -50,5 +50,7 @@ public class LongestCommonSubsequence {
         assert longestCommonSubsequenceOptimal("abcde", "ace") == 3 : "Test 4 Failed: Optimal abcde/ace";
         assert longestCommonSubsequenceOptimal("abc", "abc") == 3 : "Test 5 Failed: Optimal abc/abc";
         assert longestCommonSubsequenceOptimal("abc", "def") == 0 : "Test 6 Failed: Optimal abc/def";
+
+        assert longestCommonSubsequenceOptimal("ezupkr", "ubmrapg") == 2 : "Refactor Test: Complex LCS";
     }
 }
