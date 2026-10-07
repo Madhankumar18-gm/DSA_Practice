@@ -50,5 +50,9 @@ public class CoinChange {
         assert coinChangeMemo(new int[]{1, 2, 5}, 11) == 3 : "Test 1 Failed: Memo 11";
         assert coinChangeMemo(new int[]{2}, 3) == -1 : "Test 2 Failed: Memo 3";
         assert coinChangeMemo(new int[]{1}, 0) == 0 : "Test 3 Failed: Memo 0";
+
+        assert coinChangeOptimal(new int[]{1, 2, 5}, 11) == 3 : "Test 4 Failed: Optimal 11";
+        assert coinChangeOptimal(new int[]{2}, 3) == -1 : "Test 5 Failed: Optimal 3";
+        assert coinChangeOptimal(new int[]{1}, 0) == 0 : "Test 6 Failed: Optimal 0";
     }
 }
