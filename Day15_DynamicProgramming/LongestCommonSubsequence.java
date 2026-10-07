@@ -46,5 +46,9 @@ public class LongestCommonSubsequence {
         assert longestCommonSubsequence2D("abcde", "ace") == 3 : "Test 1 Failed: 2D abcde/ace";
         assert longestCommonSubsequence2D("abc", "abc") == 3 : "Test 2 Failed: 2D abc/abc";
         assert longestCommonSubsequence2D("abc", "def") == 0 : "Test 3 Failed: 2D abc/def";
+
+        assert longestCommonSubsequenceOptimal("abcde", "ace") == 3 : "Test 4 Failed: Optimal abcde/ace";
+        assert longestCommonSubsequenceOptimal("abc", "abc") == 3 : "Test 5 Failed: Optimal abc/abc";
+        assert longestCommonSubsequenceOptimal("abc", "def") == 0 : "Test 6 Failed: Optimal abc/def";
     }
 }
