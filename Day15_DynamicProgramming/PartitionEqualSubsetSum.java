@@ -48,5 +48,7 @@ public class PartitionEqualSubsetSum {
 
         assert canPartitionOptimal(new int[]{1, 5, 11, 5}) == true : "Test 3 Failed: Optimal [1,5,11,5]";
         assert canPartitionOptimal(new int[]{1, 2, 3, 5}) == false : "Test 4 Failed: Optimal [1,2,3,5]";
+
+        assert canPartitionOptimal(new int[]{2, 2}) == true : "Refactor Test: Equal pair";
     }
 }
