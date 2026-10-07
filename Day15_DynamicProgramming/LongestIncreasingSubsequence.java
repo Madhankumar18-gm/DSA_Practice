@@ -24,4 +24,10 @@ public class LongestIncreasingSubsequence {
         }
         return maxLen;
     }
+
+    public static void main(String[] args) {
+        assert lengthOfLISDP(new int[]{10, 9, 2, 5, 3, 7, 101, 18}) == 4 : "Test 1 Failed: DP [10,9,2,5,3,7,101,18]";
+        assert lengthOfLISDP(new int[]{0, 1, 0, 3, 2, 3}) == 4 : "Test 2 Failed: DP [0,1,0,3,2,3]";
+        assert lengthOfLISDP(new int[]{7, 7, 7, 7}) == 1 : "Test 3 Failed: DP [7,7,7,7]";
+    }
 }
