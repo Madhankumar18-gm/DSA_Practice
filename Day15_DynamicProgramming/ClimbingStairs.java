@@ -21,4 +21,10 @@ public class ClimbingStairs {
         memo[n] = climbHelper(n - 1, memo) + climbHelper(n - 2, memo);
         return memo[n];
     }
+
+    public static void main(String[] args) {
+        assert climbStairsMemo(2) == 2 : "Test 1 Failed: Memo n=2";
+        assert climbStairsMemo(3) == 3 : "Test 2 Failed: Memo n=3";
+        assert climbStairsMemo(5) == 8 : "Test 3 Failed: Memo n=5";
+    }
 }
