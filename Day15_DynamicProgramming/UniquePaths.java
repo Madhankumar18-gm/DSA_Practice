@@ -5,6 +5,16 @@ import java.util.Arrays;
 /**
  * LeetCode 62: Unique Paths
  * Day 15 - Dynamic Programming (1D & 2D)
+ *
+ * Problem Description:
+ * There is a robot on an m x n grid. The robot is initially located at the top-left corner (grid[0][0]).
+ * The robot tries to move to the bottom-right corner (grid[m - 1][n - 1]).
+ * The robot can only move either down or right at any point in time.
+ * Given the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner.
+ *
+ * Complexities:
+ * 2D Grid DP: Time O(M * N), Space O(M * N)
+ * 1D Row Space-Optimized DP: Time O(M * N), Space O(N)
  */
 public class UniquePaths {
 
