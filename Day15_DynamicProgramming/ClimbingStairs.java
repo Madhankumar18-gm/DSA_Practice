@@ -44,5 +44,7 @@ public class ClimbingStairs {
         assert climbStairsOptimal(10) == climbStairsMemo(10) : "Test 7 Failed: Equivalence n=10";
 
         assert climbStairsOptimal(1) == 1 : "Refactor Test: Single Step";
+        assert climbStairsOptimal(0) == 0 : "Edge Test: 0 steps";
+        assert climbStairsOptimal(-5) == 0 : "Edge Test: Negative steps";
     }
 }
