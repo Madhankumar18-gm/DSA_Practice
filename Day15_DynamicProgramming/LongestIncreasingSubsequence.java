@@ -46,5 +46,9 @@ public class LongestIncreasingSubsequence {
         assert lengthOfLISDP(new int[]{10, 9, 2, 5, 3, 7, 101, 18}) == 4 : "Test 1 Failed: DP [10,9,2,5,3,7,101,18]";
         assert lengthOfLISDP(new int[]{0, 1, 0, 3, 2, 3}) == 4 : "Test 2 Failed: DP [0,1,0,3,2,3]";
         assert lengthOfLISDP(new int[]{7, 7, 7, 7}) == 1 : "Test 3 Failed: DP [7,7,7,7]";
+
+        assert lengthOfLISOptimal(new int[]{10, 9, 2, 5, 3, 7, 101, 18}) == 4 : "Test 4 Failed: Binary Search";
+        assert lengthOfLISOptimal(new int[]{0, 1, 0, 3, 2, 3}) == 4 : "Test 5 Failed: Binary Search";
+        assert lengthOfLISOptimal(new int[]{7, 7, 7, 7}) == 1 : "Test 6 Failed: Binary Search";
     }
 }
