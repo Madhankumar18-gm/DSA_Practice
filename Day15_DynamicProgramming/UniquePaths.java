@@ -41,5 +41,7 @@ public class UniquePaths {
         assert uniquePathsOptimal(3, 2) == 3 : "Test 4 Failed: Optimal 3x2";
 
         assert uniquePathsOptimal(7, 3) == 28 : "Refactor Test: Symmetric 7x3";
+        assert uniquePathsOptimal(1, 1) == 1 : "Edge Test: 1x1 Grid";
+        assert uniquePathsOptimal(0, 5) == 0 : "Edge Test: 0 rows";
     }
 }
