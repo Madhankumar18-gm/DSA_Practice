@@ -26,4 +26,9 @@ public class EditDistance {
         }
         return dp[m][n];
     }
+
+    public static void main(String[] args) {
+        assert minDistance2D("horse", "ros") == 3 : "Test 1 Failed: 2D horse/ros";
+        assert minDistance2D("intention", "execution") == 5 : "Test 2 Failed: 2D intention/execution";
+    }
 }
