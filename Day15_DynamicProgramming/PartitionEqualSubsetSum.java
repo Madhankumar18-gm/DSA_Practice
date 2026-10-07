@@ -5,4 +5,24 @@ package Day15_DynamicProgramming;
  * Day 15 - Dynamic Programming (1D & 2D)
  */
 public class PartitionEqualSubsetSum {
+
+    public static boolean canPartitionMemo(int[] nums) {
+        if (nums == null || nums.length == 0) return false;
+        int sum = 0;
+        for (int num : nums) sum += num;
+        if (sum % 2 != 0) return false;
+        int target = sum / 2;
+        Boolean[][] memo = new Boolean[nums.length][target + 1];
+        return partitionHelper(nums, 0, target, memo);
+    }
+
+    private static boolean partitionHelper(int[] nums, int index, int target, Boolean[][] memo) {
+        if (target == 0) return true;
+        if (index >= nums.length || target < 0) return false;
+        if (memo[index][target] != null) return memo[index][target];
+        boolean include = partitionHelper(nums, index + 1, target - nums[index], memo);
+        boolean exclude = partitionHelper(nums, index + 1, target, memo);
+        memo[index][target] = include || exclude;
+        return memo[index][target];
+    }
 }
