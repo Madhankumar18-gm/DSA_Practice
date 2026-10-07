@@ -41,5 +41,7 @@ public class HouseRobber {
 
         assert robOptimal(new int[]{1, 2, 3, 1}) == 4 : "Test 3 Failed: Optimal [1,2,3,1]";
         assert robOptimal(new int[]{2, 7, 9, 3, 1}) == 12 : "Test 4 Failed: Optimal [2,7,9,3,1]";
+
+        assert robOptimal(new int[]{5}) == 5 : "Refactor Test: Single house";
     }
 }
