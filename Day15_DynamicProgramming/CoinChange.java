@@ -5,6 +5,15 @@ import java.util.Arrays;
 /**
  * LeetCode 322: Coin Change
  * Day 15 - Dynamic Programming (1D & 2D)
+ *
+ * Problem Description:
+ * You are given an integer array coins representing coins of different denominations and an integer amount.
+ * Return the fewest number of coins that you need to make up that amount.
+ * If that amount of money cannot be made up by any combination of the coins, return -1.
+ *
+ * Complexities:
+ * Top-Down Memoization: Time O(Amount * N), Space O(Amount)
+ * Bottom-Up 1D DP: Time O(Amount * N), Space O(Amount)
  */
 public class CoinChange {
 
