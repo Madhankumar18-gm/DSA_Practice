@@ -5,6 +5,13 @@ import java.util.Arrays;
 /**
  * LeetCode 300: Longest Increasing Subsequence
  * Day 15 - Dynamic Programming (1D & 2D)
+ *
+ * Problem Description:
+ * Given an integer array nums, return the length of the longest strictly increasing subsequence.
+ *
+ * Complexities:
+ * 1D DP Approach: Time O(N^2), Space O(N)
+ * Binary Search Patience Sorting: Time O(N log N), Space O(N)
  */
 public class LongestIncreasingSubsequence {
 
