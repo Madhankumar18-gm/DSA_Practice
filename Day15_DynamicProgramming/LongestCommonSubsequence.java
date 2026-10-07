@@ -62,5 +62,7 @@ public class LongestCommonSubsequence {
         assert longestCommonSubsequenceOptimal("ezupkr", "ubmrapg") == 2 : "Refactor Test: Complex LCS";
         assert longestCommonSubsequenceOptimal("", "abc") == 0 : "Edge Test: Empty string 1";
         assert longestCommonSubsequenceOptimal(null, "abc") == 0 : "Edge Test: Null input";
+
+        System.out.println("Execution completed successfully for LongestCommonSubsequence.");
     }
 }
