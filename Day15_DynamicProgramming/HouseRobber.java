@@ -55,5 +55,7 @@ public class HouseRobber {
         assert robOptimal(new int[]{5}) == 5 : "Refactor Test: Single house";
         assert robOptimal(new int[]{}) == 0 : "Edge Test: Empty array";
         assert robOptimal(null) == 0 : "Edge Test: Null input";
+
+        System.out.println("Execution completed successfully for HouseRobber.");
     }
 }
