@@ -52,5 +52,7 @@ public class LongestIncreasingSubsequence {
         assert lengthOfLISOptimal(new int[]{7, 7, 7, 7}) == 1 : "Test 6 Failed: Binary Search";
 
         assert lengthOfLISOptimal(new int[]{1, 3, 6, 7, 9, 4, 10, 5, 6}) == 6 : "Refactor Test: Complex sequence";
+        assert lengthOfLISOptimal(new int[]{}) == 0 : "Edge Test: Empty array";
+        assert lengthOfLISOptimal(null) == 0 : "Edge Test: Null array";
     }
 }
