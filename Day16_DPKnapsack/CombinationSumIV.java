@@ -26,4 +26,9 @@ public class CombinationSumIV {
         memo[rem] = count;
         return memo[rem];
     }
+
+    public static void main(String[] args) {
+        assert combinationSum4Memo(new int[]{1, 2, 3}, 4) == 7 : "Test 1 Failed: Memo target=4";
+        assert combinationSum4Memo(new int[]{9}, 3) == 0 : "Test 2 Failed: Memo target=3";
+    }
 }
