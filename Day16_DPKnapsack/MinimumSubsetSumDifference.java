@@ -3,6 +3,14 @@ package Day16_DPKnapsack;
 /**
  * Minimum Subset Sum Difference (0/1 Knapsack Variant)
  * Day 16 - Dynamic Programming (Knapsack Variants)
+ *
+ * Problem Description:
+ * Given a set of positive integers, partition the set into two subsets S1 and S2
+ * such that the absolute difference between their sums |sum(S1) - sum(S2)| is minimized.
+ *
+ * Complexities:
+ * Top-Down Memoization: Time O(N * TotalSum), Space O(N * TotalSum)
+ * Bottom-Up 1D DP: Time O(N * TotalSum), Space O(TotalSum / 2)
  */
 public class MinimumSubsetSumDifference {
 
