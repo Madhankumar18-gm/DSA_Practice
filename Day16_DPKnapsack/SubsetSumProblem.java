@@ -24,6 +24,18 @@ public class SubsetSumProblem {
         return memo[n][target];
     }
 
+    public static boolean isSubsetSumOptimal(int[] nums, int target) {
+        if (nums == null || target < 0) return false;
+        boolean[] dp = new boolean[target + 1];
+        dp[0] = true;
+        for (int num : nums) {
+            for (int t = target; t >= num; t--) {
+                dp[t] = dp[t] || dp[t - num];
+            }
+        }
+        return dp[target];
+    }
+
     public static void main(String[] args) {
         assert isSubsetSumMemo(new int[]{3, 34, 4, 12, 5, 2}, 9) == true : "Test 1 Failed: Memo target=9";
         assert isSubsetSumMemo(new int[]{3, 34, 4, 12, 5, 2}, 30) == false : "Test 2 Failed: Memo target=30";
