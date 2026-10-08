@@ -48,5 +48,7 @@ public class ZeroOneKnapsack {
         assert knapsackOptimal(new int[]{10, 20, 30}, new int[]{60, 100, 120}, 50) == 220 : "Test 4 Failed: Optimal W=50";
 
         assert knapsackOptimal(new int[]{5, 4, 6, 3}, new int[]{10, 40, 30, 50}, 10) == 90 : "Refactor Test: Complex item set";
+        assert knapsackOptimal(new int[]{10}, new int[]{100}, 5) == 0 : "Edge Test: Item weight > W";
+        assert knapsackOptimal(null, null, 10) == 0 : "Edge Test: Null arrays";
     }
 }
