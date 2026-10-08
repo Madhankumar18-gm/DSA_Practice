@@ -48,5 +48,7 @@ public class UnboundedKnapsack {
         assert unboundedKnapsackOptimal(new int[]{1, 3, 4, 5}, new int[]{10, 40, 50, 70}, 8) == 110 : "Test 4 Failed: Optimal W=8";
 
         assert unboundedKnapsackOptimal(new int[]{1, 2, 3}, new int[]{1, 5, 8}, 5) == 13 : "Refactor Test: Multiple repeats";
+        assert unboundedKnapsackOptimal(new int[]{10}, new int[]{50}, 5) == 0 : "Edge Test: Item weight > W";
+        assert unboundedKnapsackOptimal(null, null, 5) == 0 : "Edge Test: Null input";
     }
 }
