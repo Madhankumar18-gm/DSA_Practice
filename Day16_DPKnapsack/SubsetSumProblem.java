@@ -3,6 +3,14 @@ package Day16_DPKnapsack;
 /**
  * Subset Sum Problem (0/1 Knapsack Variant)
  * Day 16 - Dynamic Programming (Knapsack Variants)
+ *
+ * Problem Description:
+ * Given an array of non-negative integers nums and a target sum,
+ * determine if there is a subset of the given set with sum equal to target.
+ *
+ * Complexities:
+ * Top-Down Memoization: Time O(N * Target), Space O(N * Target)
+ * Bottom-Up 1D DP: Time O(N * Target), Space O(Target)
  */
 public class SubsetSumProblem {
 
