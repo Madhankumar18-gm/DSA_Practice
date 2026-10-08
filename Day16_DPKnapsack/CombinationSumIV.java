@@ -1,8 +1,29 @@
 package Day16_DPKnapsack;
 
+import java.util.Arrays;
+
 /**
  * LeetCode 377: Combination Sum IV (Unbounded Permutation Knapsack)
  * Day 16 - Dynamic Programming (Knapsack Variants)
  */
 public class CombinationSumIV {
+
+    public static int combinationSum4Memo(int[] nums, int target) {
+        if (nums == null || target < 0) return 0;
+        int[] memo = new int[target + 1];
+        Arrays.fill(memo, -1);
+        return helper(nums, target, memo);
+    }
+
+    private static int helper(int[] nums, int rem, int[] memo) {
+        if (rem == 0) return 1;
+        if (rem < 0) return 0;
+        if (memo[rem] != -1) return memo[rem];
+        int count = 0;
+        for (int num : nums) {
+            count += helper(nums, rem - num, memo);
+        }
+        memo[rem] = count;
+        return memo[rem];
+    }
 }
