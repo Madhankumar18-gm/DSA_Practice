@@ -24,4 +24,9 @@ public class MinimumSubsetSumDifference {
         memo[idx][currentSum] = Math.min(include, exclude);
         return memo[idx][currentSum];
     }
+
+    public static void main(String[] args) {
+        assert minSubsetDiffMemo(new int[]{1, 6, 11, 5}) == 1 : "Test 1 Failed: Memo [1,6,11,5]";
+        assert minSubsetDiffMemo(new int[]{1, 2, 7}) == 4 : "Test 2 Failed: Memo [1,2,7]";
+    }
 }
