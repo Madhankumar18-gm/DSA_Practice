@@ -5,6 +5,15 @@ import java.util.Arrays;
 /**
  * LeetCode 518: Coin Change II (Unbounded Knapsack Variant)
  * Day 16 - Dynamic Programming (Knapsack Variants)
+ *
+ * Problem Description:
+ * You are given an integer array coins representing coins of different denominations
+ * and an integer amount representing a total amount of money.
+ * Return the number of combinations that make up that amount.
+ *
+ * Complexities:
+ * Top-Down Memoization: Time O(N * Amount), Space O(N * Amount)
+ * Bottom-Up 1D DP: Time O(N * Amount), Space O(Amount)
  */
 public class CoinChangeII {
 
