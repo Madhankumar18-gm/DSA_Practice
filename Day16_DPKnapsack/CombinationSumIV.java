@@ -27,6 +27,20 @@ public class CombinationSumIV {
         return memo[rem];
     }
 
+    public static int combinationSum4Optimal(int[] nums, int target) {
+        if (nums == null || target < 0) return 0;
+        int[] dp = new int[target + 1];
+        dp[0] = 1;
+        for (int t = 1; t <= target; t++) {
+            for (int num : nums) {
+                if (t >= num) {
+                    dp[t] += dp[t - num];
+                }
+            }
+        }
+        return dp[target];
+    }
+
     public static void main(String[] args) {
         assert combinationSum4Memo(new int[]{1, 2, 3}, 4) == 7 : "Test 1 Failed: Memo target=4";
         assert combinationSum4Memo(new int[]{9}, 3) == 0 : "Test 2 Failed: Memo target=3";
