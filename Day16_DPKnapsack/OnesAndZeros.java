@@ -68,5 +68,7 @@ public class OnesAndZeros {
         assert findMaxFormOptimal(new String[]{"00", "11", "01"}, 2, 2) == 2 : "Refactor Test: Binary pairs";
         assert findMaxFormOptimal(new String[]{"0", "1"}, 0, 0) == 0 : "Edge Test: Zero capacity";
         assert findMaxFormOptimal(null, 5, 5) == 0 : "Edge Test: Null input";
+
+        System.out.println("Execution completed successfully for OnesAndZeros.");
     }
 }
