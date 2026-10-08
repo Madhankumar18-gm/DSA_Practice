@@ -5,6 +5,14 @@ import java.util.Arrays;
 /**
  * Unbounded Knapsack / Rod Cutting Problem
  * Day 16 - Dynamic Programming (Knapsack Variants)
+ *
+ * Problem Description:
+ * Given weights and values of N items, put these items in a knapsack of capacity W.
+ * Unlike 0/1 Knapsack, you can select each item an infinite number of times.
+ *
+ * Complexities:
+ * Top-Down Memoization: Time O(N * W), Space O(N * W)
+ * Bottom-Up 1D Space-Optimized DP: Time O(N * W), Space O(W)
  */
 public class UnboundedKnapsack {
 
