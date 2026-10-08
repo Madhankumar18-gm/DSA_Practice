@@ -56,5 +56,7 @@ public class OnesAndZeros {
 
         assert findMaxFormOptimal(new String[]{"10", "0001", "111001", "1", "0"}, 5, 3) == 4 : "Test 3 Failed: Optimal m=5, n=3";
         assert findMaxFormOptimal(new String[]{"10", "0", "1"}, 1, 1) == 2 : "Test 4 Failed: Optimal m=1, n=1";
+
+        assert findMaxFormOptimal(new String[]{"00", "11", "01"}, 2, 2) == 2 : "Refactor Test: Binary pairs";
     }
 }
