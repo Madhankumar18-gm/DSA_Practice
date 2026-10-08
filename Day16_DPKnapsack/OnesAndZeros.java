@@ -35,6 +35,21 @@ public class OnesAndZeros {
         return new int[]{z, o};
     }
 
+    public static int findMaxFormOptimal(String[] strs, int m, int n) {
+        if (strs == null || m < 0 || n < 0) return 0;
+        int[][] dp = new int[m + 1][n + 1];
+        for (String str : strs) {
+            int[] count = countZerosOnes(str);
+            int zeros = count[0], ones = count[1];
+            for (int i = m; i >= zeros; i--) {
+                for (int j = n; j >= ones; j--) {
+                    dp[i][j] = Math.max(dp[i][j], 1 + dp[i - zeros][j - ones]);
+                }
+            }
+        }
+        return dp[m][n];
+    }
+
     public static void main(String[] args) {
         assert findMaxFormMemo(new String[]{"10", "0001", "111001", "1", "0"}, 5, 3) == 4 : "Test 1 Failed: Memo m=5, n=3";
         assert findMaxFormMemo(new String[]{"10", "0", "1"}, 1, 1) == 2 : "Test 2 Failed: Memo m=1, n=1";
