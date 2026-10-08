@@ -34,4 +34,9 @@ public class OnesAndZeros {
         }
         return new int[]{z, o};
     }
+
+    public static void main(String[] args) {
+        assert findMaxFormMemo(new String[]{"10", "0001", "111001", "1", "0"}, 5, 3) == 4 : "Test 1 Failed: Memo m=5, n=3";
+        assert findMaxFormMemo(new String[]{"10", "0", "1"}, 1, 1) == 2 : "Test 2 Failed: Memo m=1, n=1";
+    }
 }
