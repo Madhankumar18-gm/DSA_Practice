@@ -25,6 +25,28 @@ public class MinimumSubsetSumDifference {
         return memo[idx][currentSum];
     }
 
+    public static int minSubsetDiffOptimal(int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
+        int totalSum = 0;
+        for (int num : nums) totalSum += num;
+        int target = totalSum / 2;
+        boolean[] dp = new boolean[target + 1];
+        dp[0] = true;
+
+        for (int num : nums) {
+            for (int s = target; s >= num; s--) {
+                dp[s] = dp[s] || dp[s - num];
+            }
+        }
+
+        for (int s = target; s >= 0; s--) {
+            if (dp[s]) {
+                return totalSum - 2 * s;
+            }
+        }
+        return 0;
+    }
+
     public static void main(String[] args) {
         assert minSubsetDiffMemo(new int[]{1, 6, 11, 5}) == 1 : "Test 1 Failed: Memo [1,6,11,5]";
         assert minSubsetDiffMemo(new int[]{1, 2, 7}) == 4 : "Test 2 Failed: Memo [1,2,7]";
