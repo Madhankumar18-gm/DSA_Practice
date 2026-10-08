@@ -45,5 +45,8 @@ public class PartitionEqualSubsetSum {
     public static void main(String[] args) {
         assert canPartitionMemo(new int[]{1, 5, 11, 5}) == true : "Test 1 Failed: Memo [1,5,11,5]";
         assert canPartitionMemo(new int[]{1, 2, 3, 5}) == false : "Test 2 Failed: Memo [1,2,3,5]";
+
+        assert canPartitionOptimal(new int[]{1, 5, 11, 5}) == true : "Test 3 Failed: Optimal [1,5,11,5]";
+        assert canPartitionOptimal(new int[]{1, 2, 3, 5}) == false : "Test 4 Failed: Optimal [1,2,3,5]";
     }
 }
