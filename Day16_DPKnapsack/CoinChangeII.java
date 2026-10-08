@@ -58,5 +58,7 @@ public class CoinChangeII {
         assert changeOptimal(500, new int[]{3, 5, 7, 8, 9, 10, 11}) == 355028 : "Refactor Test: Large amount";
         assert changeOptimal(0, new int[]{1, 2}) == 1 : "Edge Test: Amount 0";
         assert changeOptimal(5, null) == 0 : "Edge Test: Null coins";
+
+        System.out.println("Execution completed successfully for CoinChangeII.");
     }
 }
