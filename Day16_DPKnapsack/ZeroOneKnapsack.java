@@ -28,4 +28,9 @@ public class ZeroOneKnapsack {
         }
         return memo[n][W];
     }
+
+    public static void main(String[] args) {
+        assert knapsackMemo(new int[]{1, 2, 3}, new int[]{10, 15, 40}, 6) == 65 : "Test 1 Failed: Memo W=6";
+        assert knapsackMemo(new int[]{10, 20, 30}, new int[]{60, 100, 120}, 50) == 220 : "Test 2 Failed: Memo W=50";
+    }
 }
