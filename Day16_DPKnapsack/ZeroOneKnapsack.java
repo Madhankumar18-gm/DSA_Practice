@@ -5,6 +5,14 @@ import java.util.Arrays;
 /**
  * Standard 0/1 Knapsack Problem
  * Day 16 - Dynamic Programming (Knapsack Variants)
+ *
+ * Problem Description:
+ * Given weights and values of N items, put these items in a knapsack of capacity W
+ * to get the maximum total value in the knapsack. Each item can either be taken once or skipped.
+ *
+ * Complexities:
+ * Top-Down Memoization: Time O(N * W), Space O(N * W)
+ * Bottom-Up 1D Space-Optimized DP: Time O(N * W), Space O(W)
  */
 public class ZeroOneKnapsack {
 
