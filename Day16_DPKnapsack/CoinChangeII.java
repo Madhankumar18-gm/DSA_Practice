@@ -41,5 +41,9 @@ public class CoinChangeII {
         assert changeMemo(5, new int[]{1, 2, 5}) == 4 : "Test 1 Failed: Memo 5";
         assert changeMemo(3, new int[]{2}) == 0 : "Test 2 Failed: Memo 3";
         assert changeMemo(10, new int[]{10}) == 1 : "Test 3 Failed: Memo 10";
+
+        assert changeOptimal(5, new int[]{1, 2, 5}) == 4 : "Test 4 Failed: Optimal 5";
+        assert changeOptimal(3, new int[]{2}) == 0 : "Test 5 Failed: Optimal 3";
+        assert changeOptimal(10, new int[]{10}) == 1 : "Test 6 Failed: Optimal 10";
     }
 }
