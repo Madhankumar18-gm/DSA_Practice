@@ -44,5 +44,7 @@ public class SubsetSumProblem {
         assert isSubsetSumOptimal(new int[]{3, 34, 4, 12, 5, 2}, 30) == false : "Test 4 Failed: Optimal target=30";
 
         assert isSubsetSumOptimal(new int[]{1, 2, 3, 7}, 6) == true : "Refactor Test: Target 6";
+        assert isSubsetSumOptimal(new int[]{5}, 0) == true : "Edge Test: Target 0";
+        assert isSubsetSumOptimal(null, 5) == false : "Edge Test: Null input";
     }
 }
