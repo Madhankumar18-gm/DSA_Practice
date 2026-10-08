@@ -53,5 +53,7 @@ public class MinimumSubsetSumDifference {
 
         assert minSubsetDiffOptimal(new int[]{1, 6, 11, 5}) == 1 : "Test 3 Failed: Optimal [1,6,11,5]";
         assert minSubsetDiffOptimal(new int[]{1, 2, 7}) == 4 : "Test 4 Failed: Optimal [1,2,7]";
+
+        assert minSubsetDiffOptimal(new int[]{3, 1, 4, 2, 2}) == 0 : "Refactor Test: Zero difference partition";
     }
 }
