@@ -24,4 +24,10 @@ public class CoinChangeII {
         memo[n][rem] = include + exclude;
         return memo[n][rem];
     }
+
+    public static void main(String[] args) {
+        assert changeMemo(5, new int[]{1, 2, 5}) == 4 : "Test 1 Failed: Memo 5";
+        assert changeMemo(3, new int[]{2}) == 0 : "Test 2 Failed: Memo 3";
+        assert changeMemo(10, new int[]{10}) == 1 : "Test 3 Failed: Memo 10";
+    }
 }
