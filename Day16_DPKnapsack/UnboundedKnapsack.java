@@ -28,4 +28,9 @@ public class UnboundedKnapsack {
         }
         return memo[n][W];
     }
+
+    public static void main(String[] args) {
+        assert unboundedKnapsackMemo(new int[]{2, 4, 6}, new int[]{5, 11, 13}, 10) == 27 : "Test 1 Failed: Memo W=10";
+        assert unboundedKnapsackMemo(new int[]{1, 3, 4, 5}, new int[]{10, 40, 50, 70}, 8) == 110 : "Test 2 Failed: Memo W=8";
+    }
 }
