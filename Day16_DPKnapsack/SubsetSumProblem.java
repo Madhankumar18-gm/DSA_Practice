@@ -54,5 +54,7 @@ public class SubsetSumProblem {
         assert isSubsetSumOptimal(new int[]{1, 2, 3, 7}, 6) == true : "Refactor Test: Target 6";
         assert isSubsetSumOptimal(new int[]{5}, 0) == true : "Edge Test: Target 0";
         assert isSubsetSumOptimal(null, 5) == false : "Edge Test: Null input";
+
+        System.out.println("Execution completed successfully for SubsetSumProblem.");
     }
 }
