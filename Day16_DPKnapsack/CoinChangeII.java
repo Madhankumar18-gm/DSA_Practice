@@ -25,6 +25,18 @@ public class CoinChangeII {
         return memo[n][rem];
     }
 
+    public static int changeOptimal(int amount, int[] coins) {
+        if (coins == null || amount < 0) return 0;
+        int[] dp = new int[amount + 1];
+        dp[0] = 1;
+        for (int coin : coins) {
+            for (int a = coin; a <= amount; a++) {
+                dp[a] += dp[a - coin];
+            }
+        }
+        return dp[amount];
+    }
+
     public static void main(String[] args) {
         assert changeMemo(5, new int[]{1, 2, 5}) == 4 : "Test 1 Failed: Memo 5";
         assert changeMemo(3, new int[]{2}) == 0 : "Test 2 Failed: Memo 3";
