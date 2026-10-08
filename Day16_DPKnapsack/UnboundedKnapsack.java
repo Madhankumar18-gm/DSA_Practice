@@ -46,5 +46,7 @@ public class UnboundedKnapsack {
 
         assert unboundedKnapsackOptimal(new int[]{2, 4, 6}, new int[]{5, 11, 13}, 10) == 27 : "Test 3 Failed: Optimal W=10";
         assert unboundedKnapsackOptimal(new int[]{1, 3, 4, 5}, new int[]{10, 40, 50, 70}, 8) == 110 : "Test 4 Failed: Optimal W=8";
+
+        assert unboundedKnapsackOptimal(new int[]{1, 2, 3}, new int[]{1, 5, 8}, 5) == 13 : "Refactor Test: Multiple repeats";
     }
 }
