@@ -60,5 +60,7 @@ public class PartitionEqualSubsetSum {
         assert canPartitionOptimal(new int[]{3, 3, 3, 4, 5}) == true : "Refactor Test: Complex equal partition";
         assert canPartitionOptimal(new int[]{100}) == false : "Edge Test: Single element";
         assert canPartitionOptimal(null) == false : "Edge Test: Null array";
+
+        System.out.println("Execution completed successfully for PartitionEqualSubsetSum.");
     }
 }
