@@ -27,6 +27,23 @@ public class TargetSumKnapsack {
         return add + sub;
     }
 
+    public static int findTargetSumWaysOptimal(int[] nums, int target) {
+        if (nums == null) return 0;
+        int sum = 0;
+        for (int num : nums) sum += num;
+        if (Math.abs(target) > sum || (sum + target) % 2 != 0) return 0;
+        int s1 = (sum + target) / 2;
+        if (s1 < 0) return 0;
+        int[] dp = new int[s1 + 1];
+        dp[0] = 1;
+        for (int num : nums) {
+            for (int s = s1; s >= num; s--) {
+                dp[s] += dp[s - num];
+            }
+        }
+        return dp[s1];
+    }
+
     public static void main(String[] args) {
         assert findTargetSumWaysMemo(new int[]{1, 1, 1, 1, 1}, 3) == 5 : "Test 1 Failed: Memo [1,1,1,1,1] t=3";
         assert findTargetSumWaysMemo(new int[]{1}, 1) == 1 : "Test 2 Failed: Memo [1] t=1";
