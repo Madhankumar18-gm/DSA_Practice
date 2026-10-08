@@ -5,6 +5,15 @@ import java.util.Arrays;
 /**
  * LeetCode 377: Combination Sum IV (Unbounded Permutation Knapsack)
  * Day 16 - Dynamic Programming (Knapsack Variants)
+ *
+ * Problem Description:
+ * Given an array of distinct integers nums and a target integer target,
+ * return the number of possible combinations (permutations) that add up to target.
+ * Note that different sequences are counted as different combinations.
+ *
+ * Complexities:
+ * Top-Down Memoization: Time O(N * Target), Space O(Target)
+ * Bottom-Up 1D DP: Time O(N * Target), Space O(Target)
  */
 public class CombinationSumIV {
 
