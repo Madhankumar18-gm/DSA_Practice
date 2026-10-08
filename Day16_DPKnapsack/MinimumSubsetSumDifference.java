@@ -65,5 +65,7 @@ public class MinimumSubsetSumDifference {
         assert minSubsetDiffOptimal(new int[]{3, 1, 4, 2, 2}) == 0 : "Refactor Test: Zero difference partition";
         assert minSubsetDiffOptimal(new int[]{10}) == 10 : "Edge Test: Single element array";
         assert minSubsetDiffOptimal(null) == 0 : "Edge Test: Null array";
+
+        System.out.println("Execution completed successfully for MinimumSubsetSumDifference.");
     }
 }
