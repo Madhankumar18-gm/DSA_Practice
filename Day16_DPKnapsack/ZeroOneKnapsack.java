@@ -29,6 +29,17 @@ public class ZeroOneKnapsack {
         return memo[n][W];
     }
 
+    public static int knapsackOptimal(int[] wt, int[] val, int W) {
+        if (wt == null || val == null || W <= 0 || wt.length != val.length) return 0;
+        int[] dp = new int[W + 1];
+        for (int i = 0; i < wt.length; i++) {
+            for (int w = W; w >= wt[i]; w--) {
+                dp[w] = Math.max(dp[w], val[i] + dp[w - wt[i]]);
+            }
+        }
+        return dp[W];
+    }
+
     public static void main(String[] args) {
         assert knapsackMemo(new int[]{1, 2, 3}, new int[]{10, 15, 40}, 6) == 65 : "Test 1 Failed: Memo W=6";
         assert knapsackMemo(new int[]{10, 20, 30}, new int[]{60, 100, 120}, 50) == 220 : "Test 2 Failed: Memo W=50";
