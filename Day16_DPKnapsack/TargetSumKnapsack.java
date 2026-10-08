@@ -6,6 +6,15 @@ import java.util.Map;
 /**
  * LeetCode 494: Target Sum (Knapsack Transformation)
  * Day 16 - Dynamic Programming (Knapsack Variants)
+ *
+ * Problem Description:
+ * You are given an integer array nums and an integer target.
+ * Assign '+' or '-' signs to each element to reach target.
+ * Mathematically transforms to: sum(S1) = (totalSum + target) / 2 (0/1 Subset Sum Count).
+ *
+ * Complexities:
+ * Top-Down Memoization: Time O(N * TotalSum), Space O(N * TotalSum)
+ * Bottom-Up 1D DP: Time O(N * S1), Space O(S1)
  */
 public class TargetSumKnapsack {
 
