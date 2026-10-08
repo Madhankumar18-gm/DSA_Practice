@@ -6,8 +6,8 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 
 ## 📊 Repository Summary
 
-- **Total Problems Solved**: `137 Problems`
-- **Total Git Commits**: `1,239+ Commits`
+- **Total Problems Solved**: `146 Problems`
+- **Total Git Commits**: `1,321+ Commits`
 - **Primary Language**: `Java 17+`
 - **Remote Repository**: [GitHub - DSA_Practice](https://github.com/Madhankumar18-gm/DSA_Practice.git)
 
@@ -30,6 +30,7 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 - [x] **Day 13 - Tree Traversals Concepts** (Inorder Traversal, Preorder Traversal, Postorder Traversal, Level Order Traversal, Zigzag Level Order, Right Side View, Vertical Order Traversal, Top View, Bottom View) — `9 Problems` \| `81 Commits`
 - [x] **Day 14 - Graph Algorithms & Greedy Concepts** (Number of Islands, Clone Graph, Course Schedule, Network Delay Time, Rotting Oranges, Jump Game, Gas Station, Assign Cookies, Lemonade Change) — `9 Problems` \| `81 Commits`
 - [x] **Day 15 - Dynamic Programming (1D & 2D)** (Climbing Stairs, House Robber, Coin Change, Longest Increasing Subsequence, Partition Equal Subset Sum, Unique Paths, Longest Common Subsequence, Edit Distance, Target Sum) — `9 Problems` \| `81 Commits`
+- [x] **Day 16 - Dynamic Programming (Knapsack Variants)** (Zero One Knapsack, Subset Sum, Partition Equal Subset Sum, Minimum Subset Sum Difference, Target Sum Knapsack, Unbounded Knapsack, Coin Change II, Combination Sum IV, Ones and Zeroes) — `9 Problems` \| `81 Commits`
 
 ---
 
@@ -239,6 +240,19 @@ DSA Practice/
 | 135 | Longest Common Subsequence | [LeetCode #1143](https://leetcode.com/problems/longest-common-subsequence/) | 2D Sequence Alignment | $O(M \times N)$ | $O(N)$ | [`LongestCommonSubsequence.java`](./Day15_DynamicProgramming/LongestCommonSubsequence.java) |
 | 136 | Edit Distance | [LeetCode #72](https://leetcode.com/problems/edit-distance/) | 2D String Levenshtein DP | $O(M \times N)$ | $O(N)$ | [`EditDistance.java`](./Day15_DynamicProgramming/EditDistance.java) |
 | 137 | Target Sum | [LeetCode #494](https://leetcode.com/problems/target-sum/) | Subset Sum 1D DP Transformation | $O(N \times S_1)$ | $O(S_1)$ | [`TargetSum.java`](./Day15_DynamicProgramming/TargetSum.java) |
+
+### Day 16: Dynamic Programming (Knapsack Variants) Concepts
+| # | Problem Name | LeetCode Link | Topic Tag | Time | Space | Solution Code |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
+| 138 | 0/1 Knapsack Problem | Standard DP | 0/1 Knapsack 1D/2D | $O(N \times W)$ | $O(W)$ | [`ZeroOneKnapsack.java`](./Day16_DPKnapsack/ZeroOneKnapsack.java) |
+| 139 | Subset Sum Problem | GFG / Standard DP | 0/1 Knapsack Boolean | $O(N \times \text{Target})$ | $O(\text{Target})$ | [`SubsetSumProblem.java`](./Day16_DPKnapsack/SubsetSumProblem.java) |
+| 140 | Partition Equal Subset Sum | [LeetCode #416](https://leetcode.com/problems/partition-equal-subset-sum/) | 0/1 Knapsack Halving | $O(N \times \text{Target})$ | $O(\text{Target})$ | [`PartitionEqualSubsetSum.java`](./Day16_DPKnapsack/PartitionEqualSubsetSum.java) |
+| 141 | Minimum Subset Sum Difference | GFG / Standard DP | 0/1 Knapsack Half-Sum | $O(N \times \text{TotalSum})$ | $O(\text{TotalSum})$ | [`MinimumSubsetSumDifference.java`](./Day16_DPKnapsack/MinimumSubsetSumDifference.java) |
+| 142 | Target Sum | [LeetCode #494](https://leetcode.com/problems/target-sum/) | 0/1 Knapsack Shift DP | $O(N \times S_1)$ | $O(S_1)$ | [`TargetSumKnapsack.java`](./Day16_DPKnapsack/TargetSumKnapsack.java) |
+| 143 | Unbounded Knapsack / Rod Cutting | Standard DP | Unbounded Knapsack 1D | $O(N \times W)$ | $O(W)$ | [`UnboundedKnapsack.java`](./Day16_DPKnapsack/UnboundedKnapsack.java) |
+| 144 | Coin Change II | [LeetCode #518](https://leetcode.com/problems/coin-change-ii/) | Unbounded Combinations | $O(N \times \text{Amount})$ | $O(\text{Amount})$ | [`CoinChangeII.java`](./Day16_DPKnapsack/CoinChangeII.java) |
+| 145 | Combination Sum IV | [LeetCode #377](https://leetcode.com/problems/combination-sum-iv/) | Unbounded Permutations | $O(N \times \text{Target})$ | $O(\text{Target})$ | [`CombinationSumIV.java`](./Day16_DPKnapsack/CombinationSumIV.java) |
+| 146 | Ones and Zeroes | [LeetCode #474](https://leetcode.com/problems/ones-and-zeroes/) | 2D Capacity Knapsack | $O(L \times M \times N)$ | $O(M \times N)$ | [`OnesAndZeros.java`](./Day16_DPKnapsack/OnesAndZeros.java) |
 
 ---
 
