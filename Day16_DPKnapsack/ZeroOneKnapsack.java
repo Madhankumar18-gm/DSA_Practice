@@ -46,5 +46,7 @@ public class ZeroOneKnapsack {
 
         assert knapsackOptimal(new int[]{1, 2, 3}, new int[]{10, 15, 40}, 6) == 65 : "Test 3 Failed: Optimal W=6";
         assert knapsackOptimal(new int[]{10, 20, 30}, new int[]{60, 100, 120}, 50) == 220 : "Test 4 Failed: Optimal W=50";
+
+        assert knapsackOptimal(new int[]{5, 4, 6, 3}, new int[]{10, 40, 30, 50}, 10) == 90 : "Refactor Test: Complex item set";
     }
 }
