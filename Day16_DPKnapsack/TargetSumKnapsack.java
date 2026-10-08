@@ -52,5 +52,7 @@ public class TargetSumKnapsack {
         assert findTargetSumWaysOptimal(new int[]{1}, 1) == 1 : "Test 4 Failed: Optimal [1] t=1";
 
         assert findTargetSumWaysOptimal(new int[]{2, 107, 109, 113, 127}, 1000) == 0 : "Refactor Test: Out of bounds target";
+        assert findTargetSumWaysOptimal(new int[]{0, 0, 1}, 1) == 4 : "Edge Test: Zeros handling";
+        assert findTargetSumWaysOptimal(null, 1) == 0 : "Edge Test: Null input";
     }
 }
