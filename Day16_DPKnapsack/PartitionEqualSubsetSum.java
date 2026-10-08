@@ -3,6 +3,14 @@ package Day16_DPKnapsack;
 /**
  * LeetCode 416: Partition Equal Subset Sum
  * Day 16 - Dynamic Programming (Knapsack Variants)
+ *
+ * Problem Description:
+ * Given a non-empty array nums containing only positive integers,
+ * check if the array can be partitioned into two subsets such that their sums are equal.
+ *
+ * Complexities:
+ * Top-Down Memoization: Time O(N * Target), Space O(N * Target)
+ * Bottom-Up 1D DP: Time O(N * Target), Space O(Target)
  */
 public class PartitionEqualSubsetSum {
 
