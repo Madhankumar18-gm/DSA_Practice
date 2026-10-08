@@ -25,4 +25,9 @@ public class PartitionEqualSubsetSum {
         memo[idx][target] = include || exclude;
         return memo[idx][target];
     }
+
+    public static void main(String[] args) {
+        assert canPartitionMemo(new int[]{1, 5, 11, 5}) == true : "Test 1 Failed: Memo [1,5,11,5]";
+        assert canPartitionMemo(new int[]{1, 2, 3, 5}) == false : "Test 2 Failed: Memo [1,2,3,5]";
+    }
 }
