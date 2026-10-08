@@ -47,5 +47,7 @@ public class CombinationSumIV {
 
         assert combinationSum4Optimal(new int[]{1, 2, 3}, 4) == 7 : "Test 3 Failed: Optimal target=4";
         assert combinationSum4Optimal(new int[]{9}, 3) == 0 : "Test 4 Failed: Optimal target=3";
+
+        assert combinationSum4Optimal(new int[]{1, 2}, 3) == 3 : "Refactor Test: Target 3";
     }
 }
