@@ -50,5 +50,10 @@ public class HeapSortAlgorithm {
         int[] rev = {9, 8, 7, 6, 5, 4, 3, 2, 1};
         heapSortInPlace(rev);
         assert Arrays.equals(rev, new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}) : "Refactor Test Failed";
+
+        int[] single = {42};
+        heapSortInPlace(single);
+        assert single[0] == 42 : "Edge Test: Single element";
+        heapSortInPlace(null);
     }
 }
