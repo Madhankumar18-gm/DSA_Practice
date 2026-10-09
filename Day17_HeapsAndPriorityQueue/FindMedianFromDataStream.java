@@ -20,6 +20,25 @@ public class FindMedianFromDataStream {
         }
     }
 
+    public static class MedianFinderDualHeap {
+        private final PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        private final PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+
+        public void addNum(int num) {
+            maxHeap.offer(num);
+            minHeap.offer(maxHeap.poll());
+            if (minHeap.size() > maxHeap.size()) {
+                maxHeap.offer(minHeap.poll());
+            }
+        }
+
+        public double findMedian() {
+            if (maxHeap.isEmpty()) return 0.0;
+            if (maxHeap.size() > minHeap.size()) return maxHeap.peek();
+            return (maxHeap.peek() + minHeap.peek()) / 2.0;
+        }
+    }
+
     public static void main(String[] args) {
         MedianFinderList mf = new MedianFinderList();
         mf.addNum(1);
