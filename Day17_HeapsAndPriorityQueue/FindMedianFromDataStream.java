@@ -46,5 +46,12 @@ public class FindMedianFromDataStream {
         assert mf.findMedian() == 1.5 : "Test 1 Failed";
         mf.addNum(3);
         assert mf.findMedian() == 2.0 : "Test 2 Failed";
+
+        MedianFinderDualHeap dh = new MedianFinderDualHeap();
+        dh.addNum(1);
+        dh.addNum(2);
+        assert dh.findMedian() == 1.5 : "Test 3 Failed";
+        dh.addNum(3);
+        assert dh.findMedian() == 2.0 : "Test 4 Failed";
     }
 }
