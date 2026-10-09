@@ -55,5 +55,8 @@ public class MergeKSortedListsHeap {
         ListNode l4 = new ListNode(1); l4.next = new ListNode(3);
         ListNode res2 = mergeKListsMinHeap(new ListNode[]{l3, l4});
         assert res2 != null && res2.val == 1 && res2.next.val == 1 : "Test 2 Failed";
+
+        ListNode r = mergeKListsMinHeap(new ListNode[]{new ListNode(5), new ListNode(2), new ListNode(9)});
+        assert r.val == 2 && r.next.val == 5 && r.next.next.val == 9 : "Refactor Test Failed";
     }
 }
