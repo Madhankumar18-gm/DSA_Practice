@@ -3,6 +3,14 @@ package Day17_HeapsAndPriorityQueue;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
+/**
+ * Standard Heap Sort Algorithm Implementation
+ * Day 17 - Heaps & Priority Queue
+ *
+ * Complexities:
+ * PriorityQueue Sort: Time O(N log N), Space O(N)
+ * In-Place Heap Sort: Time O(N log N), Space O(1)
+ */
 public class HeapSortAlgorithm {
 
     public static void heapSortUsingPQ(int[] arr) {
@@ -55,5 +63,7 @@ public class HeapSortAlgorithm {
         heapSortInPlace(single);
         assert single[0] == 42 : "Edge Test: Single element";
         heapSortInPlace(null);
+
+        System.out.println("Execution completed successfully for HeapSortAlgorithm.");
     }
 }
