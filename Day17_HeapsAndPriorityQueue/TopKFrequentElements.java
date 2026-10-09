@@ -32,5 +32,8 @@ public class TopKFrequentElements {
     public static void main(String[] args) {
         int[] r1 = topKFrequentSorting(new int[]{1, 1, 1, 2, 2, 3}, 2);
         assert r1.length == 2 && r1[0] == 1 && r1[1] == 2 : "Test 1 Failed";
+
+        int[] r2 = topKFrequentMinHeap(new int[]{1, 1, 1, 2, 2, 3}, 2);
+        assert r2.length == 2 && (r2[0] == 1 || r2[0] == 2) : "Test 2 Failed";
     }
 }
