@@ -2,6 +2,14 @@ package Day17_HeapsAndPriorityQueue;
 
 import java.util.*;
 
+/**
+ * LeetCode 23: Merge k Sorted Lists
+ * Day 17 - Heaps & Priority Queue
+ *
+ * Complexities:
+ * Brute Force: Time O(N log N), Space O(N)
+ * Min-Heap: Time O(N log K), Space O(K)
+ */
 public class MergeKSortedListsHeap {
     public static class ListNode {
         int val;
@@ -61,5 +69,7 @@ public class MergeKSortedListsHeap {
 
         assert mergeKListsMinHeap(new ListNode[]{}) == null : "Edge Test: Empty array";
         assert mergeKListsMinHeap(null) == null : "Edge Test: Null input";
+
+        System.out.println("Execution completed successfully for MergeKSortedListsHeap.");
     }
 }
