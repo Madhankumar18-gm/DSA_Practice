@@ -32,5 +32,7 @@ public class KthLargestElementInArray {
         assert findKthLargestMinHeap(new int[]{3, 2, 3, 1, 2, 4, 5, 5, 6}, 4) == 4 : "Test 4 Failed";
 
         assert findKthLargestMinHeap(new int[]{7, 7, 7, 7, 7}, 1) == 7 : "Refactor Test 1";
+        assert findKthLargestMinHeap(new int[]{1}, 1) == 1 : "Edge Test: Single element";
+        assert findKthLargestMinHeap(null, 1) == -1 : "Edge Test: Null input";
     }
 }
