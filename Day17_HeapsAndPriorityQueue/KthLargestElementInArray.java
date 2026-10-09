@@ -27,5 +27,8 @@ public class KthLargestElementInArray {
     public static void main(String[] args) {
         assert findKthLargestSorting(new int[]{3, 2, 1, 5, 6, 4}, 2) == 5 : "Test 1 Failed";
         assert findKthLargestSorting(new int[]{3, 2, 3, 1, 2, 4, 5, 5, 6}, 4) == 4 : "Test 2 Failed";
+
+        assert findKthLargestMinHeap(new int[]{3, 2, 1, 5, 6, 4}, 2) == 5 : "Test 3 Failed";
+        assert findKthLargestMinHeap(new int[]{3, 2, 3, 1, 2, 4, 5, 5, 6}, 4) == 4 : "Test 4 Failed";
     }
 }
