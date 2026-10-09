@@ -50,5 +50,10 @@ public class MergeKSortedListsHeap {
         ListNode l2 = new ListNode(1); l2.next = new ListNode(3);
         ListNode res = mergeKListsBruteForce(new ListNode[]{l1, l2});
         assert res != null && res.val == 1 && res.next.val == 1 : "Test 1 Failed";
+
+        ListNode l3 = new ListNode(1); l3.next = new ListNode(4);
+        ListNode l4 = new ListNode(1); l4.next = new ListNode(3);
+        ListNode res2 = mergeKListsMinHeap(new ListNode[]{l3, l4});
+        assert res2 != null && res2.val == 1 && res2.next.val == 1 : "Test 2 Failed";
     }
 }
