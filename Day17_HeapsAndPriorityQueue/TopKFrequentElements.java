@@ -15,6 +15,20 @@ public class TopKFrequentElements {
         return res;
     }
 
+    public static int[] topKFrequentMinHeap(int[] nums, int k) {
+        if (nums == null || k <= 0) return new int[0];
+        Map<Integer, Integer> count = new HashMap<>();
+        for (int n : nums) count.put(n, count.getOrDefault(n, 0) + 1);
+        PriorityQueue<Integer> heap = new PriorityQueue<>(Comparator.comparingInt(count::get));
+        for (int key : count.keySet()) {
+            heap.offer(key);
+            if (heap.size() > k) heap.poll();
+        }
+        int[] res = new int[k];
+        for (int i = k - 1; i >= 0; i--) res[i] = heap.poll();
+        return res;
+    }
+
     public static void main(String[] args) {
         int[] r1 = topKFrequentSorting(new int[]{1, 1, 1, 2, 2, 3}, 2);
         assert r1.length == 2 && r1[0] == 1 && r1[1] == 2 : "Test 1 Failed";
