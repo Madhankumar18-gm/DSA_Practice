@@ -19,4 +19,13 @@ public class FindMedianFromDataStream {
             return (list.get(n / 2 - 1) + list.get(n / 2)) / 2.0;
         }
     }
+
+    public static void main(String[] args) {
+        MedianFinderList mf = new MedianFinderList();
+        mf.addNum(1);
+        mf.addNum(2);
+        assert mf.findMedian() == 1.5 : "Test 1 Failed";
+        mf.addNum(3);
+        assert mf.findMedian() == 2.0 : "Test 2 Failed";
+    }
 }
