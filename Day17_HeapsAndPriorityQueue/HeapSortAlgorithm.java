@@ -46,5 +46,9 @@ public class HeapSortAlgorithm {
         int[] arr2 = {12, 11, 13, 5, 6, 7};
         heapSortInPlace(arr2);
         assert Arrays.equals(arr2, new int[]{5, 6, 7, 11, 12, 13}) : "Test 2 Failed";
+
+        int[] rev = {9, 8, 7, 6, 5, 4, 3, 2, 1};
+        heapSortInPlace(rev);
+        assert Arrays.equals(rev, new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}) : "Refactor Test Failed";
     }
 }
