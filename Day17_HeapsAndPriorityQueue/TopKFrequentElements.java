@@ -35,5 +35,8 @@ public class TopKFrequentElements {
 
         int[] r2 = topKFrequentMinHeap(new int[]{1, 1, 1, 2, 2, 3}, 2);
         assert r2.length == 2 && (r2[0] == 1 || r2[0] == 2) : "Test 2 Failed";
+
+        int[] r3 = topKFrequentMinHeap(new int[]{-1, -1, 2}, 1);
+        assert r3[0] == -1 : "Refactor Test Failed";
     }
 }
