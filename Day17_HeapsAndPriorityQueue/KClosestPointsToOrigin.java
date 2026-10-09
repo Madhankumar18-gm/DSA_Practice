@@ -32,5 +32,8 @@ public class KClosestPointsToOrigin {
 
         int[][] res2 = kClosestMaxHeap(new int[][]{{1, 3}, {-2, 2}}, 1);
         assert res2.length == 1 && res2[0][0] == -2 && res2[0][1] == 2 : "Test 2 Failed";
+
+        int[][] res3 = kClosestMaxHeap(new int[][]{{3, 3}, {5, -1}, {-2, 4}}, 2);
+        assert res3.length == 2 : "Refactor Test Failed";
     }
 }
