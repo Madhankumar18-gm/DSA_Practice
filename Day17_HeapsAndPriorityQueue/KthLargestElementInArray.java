@@ -1,6 +1,7 @@
 package Day17_HeapsAndPriorityQueue;
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 public class KthLargestElementInArray {
 
@@ -9,6 +10,18 @@ public class KthLargestElementInArray {
         int[] copy = nums.clone();
         Arrays.sort(copy);
         return copy[copy.length - k];
+    }
+
+    public static int findKthLargestMinHeap(int[] nums, int k) {
+        if (nums == null || k <= 0 || k > nums.length) return -1;
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        for (int num : nums) {
+            minHeap.offer(num);
+            if (minHeap.size() > k) {
+                minHeap.poll();
+            }
+        }
+        return minHeap.peek();
     }
 
     public static void main(String[] args) {
