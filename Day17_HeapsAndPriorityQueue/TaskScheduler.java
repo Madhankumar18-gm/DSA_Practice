@@ -48,5 +48,7 @@ public class TaskScheduler {
         assert leastIntervalFormula(new char[]{'A', 'A', 'A', 'B', 'B', 'B'}, 0) == 6 : "Test 4 Failed";
 
         assert leastIntervalFormula(new char[]{'A', 'A', 'A', 'A', 'A', 'A', 'B', 'C', 'D', 'E', 'F', 'G'}, 2) == 16 : "Refactor Test";
+        assert leastIntervalFormula(new char[]{}, 2) == 0 : "Edge Test: Empty array";
+        assert leastIntervalFormula(null, 2) == 0 : "Edge Test: Null array";
     }
 }
