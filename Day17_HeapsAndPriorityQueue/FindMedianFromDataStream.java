@@ -53,5 +53,9 @@ public class FindMedianFromDataStream {
         assert dh.findMedian() == 1.5 : "Test 3 Failed";
         dh.addNum(3);
         assert dh.findMedian() == 2.0 : "Test 4 Failed";
+
+        dh.addNum(-1);
+        dh.addNum(-2);
+        assert dh.findMedian() == 1.0 : "Refactor Test Failed";
     }
 }
