@@ -6,8 +6,8 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 
 ## 📊 Repository Summary
 
-- **Total Problems Solved**: `146 Problems`
-- **Total Git Commits**: `1,321+ Commits`
+- **Total Problems Solved**: `153 Problems`
+- **Total Git Commits**: `1,378+ Commits`
 - **Primary Language**: `Java 17+`
 - **Remote Repository**: [GitHub - DSA_Practice](https://github.com/Madhankumar18-gm/DSA_Practice.git)
 
@@ -31,6 +31,7 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 - [x] **Day 14 - Graph Algorithms & Greedy Concepts** (Number of Islands, Clone Graph, Course Schedule, Network Delay Time, Rotting Oranges, Jump Game, Gas Station, Assign Cookies, Lemonade Change) — `9 Problems` \| `81 Commits`
 - [x] **Day 15 - Dynamic Programming (1D & 2D)** (Climbing Stairs, House Robber, Coin Change, Longest Increasing Subsequence, Partition Equal Subset Sum, Unique Paths, Longest Common Subsequence, Edit Distance, Target Sum) — `9 Problems` \| `81 Commits`
 - [x] **Day 16 - Dynamic Programming (Knapsack Variants)** (Zero One Knapsack, Subset Sum, Partition Equal Subset Sum, Minimum Subset Sum Difference, Target Sum Knapsack, Unbounded Knapsack, Coin Change II, Combination Sum IV, Ones and Zeroes) — `9 Problems` \| `81 Commits`
+- [x] **Day 17 - Heaps & Priority Queue** (Kth Largest Element, Top K Frequent, Find Median from Data Stream, Merge K Sorted Lists, K Closest Points, Task Scheduler, Heap Sort) — `7 Problems` | `56 Commits`
 
 ---
 
@@ -60,6 +61,15 @@ DSA Practice/
 │   ├── NumberOfStudentsUnableToEatLunch.java
 │   ├── InterleaveQueueHalves.java
 │   └── GenerateBinaryNumbersUsingQueue.java
+│
+├── Day17_HeapsAndPriorityQueue/     # Topic Folder Day 17 (7 problems)
+│   ├── KthLargestElementInArray.java
+│   ├── TopKFrequentElements.java
+│   ├── FindMedianFromDataStream.java
+│   ├── MergeKSortedListsHeap.java
+│   ├── KClosestPointsToOrigin.java
+│   ├── TaskScheduler.java
+│   └── HeapSortAlgorithm.java
 │
 ├── LeetCode/                            # Daily Date Folders for LeetCode Problems
 │   ├── 2026-09-22/                      # 2026-09-22 Daily Log (7 problems)
@@ -253,6 +263,19 @@ DSA Practice/
 | 144 | Coin Change II | [LeetCode #518](https://leetcode.com/problems/coin-change-ii/) | Unbounded Combinations | $O(N \times \text{Amount})$ | $O(\text{Amount})$ | [`CoinChangeII.java`](./Day16_DPKnapsack/CoinChangeII.java) |
 | 145 | Combination Sum IV | [LeetCode #377](https://leetcode.com/problems/combination-sum-iv/) | Unbounded Permutations | $O(N \times \text{Target})$ | $O(\text{Target})$ | [`CombinationSumIV.java`](./Day16_DPKnapsack/CombinationSumIV.java) |
 | 146 | Ones and Zeroes | [LeetCode #474](https://leetcode.com/problems/ones-and-zeroes/) | 2D Capacity Knapsack | $O(L \times M \times N)$ | $O(M \times N)$ | [`OnesAndZeros.java`](./Day16_DPKnapsack/OnesAndZeros.java) |
+
+---
+
+### Day 17: Heaps & Priority Queue Concepts
+| # | Problem Name | LeetCode Link | Topic Tag | Time | Space | Solution Code |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
+| 147 | Kth Largest Element in an Array | [LeetCode #215](https://leetcode.com/problems/kth-largest-element-in-an-array/) | Min-Heap / Sorting | $O(N \log K)$ | $O(K)$ | [`KthLargestElementInArray.java`](./Day17_HeapsAndPriorityQueue/KthLargestElementInArray.java) |
+| 148 | Top K Frequent Elements | [LeetCode #347](https://leetcode.com/problems/top-k-frequent-elements/) | Min-Heap / Hash Map | $O(N \log K)$ | $O(N)$ | [`TopKFrequentElements.java`](./Day17_HeapsAndPriorityQueue/TopKFrequentElements.java) |
+| 149 | Find Median from Data Stream | [LeetCode #295](https://leetcode.com/problems/find-median-from-data-stream/) | Dual Heaps (Min/Max) | $O(\log N)$ add | $O(N)$ | [`FindMedianFromDataStream.java`](./Day17_HeapsAndPriorityQueue/FindMedianFromDataStream.java) |
+| 150 | Merge k Sorted Lists | [LeetCode #23](https://leetcode.com/problems/merge-k-sorted-lists/) | Min-Heap / PriorityQueue | $O(N \log K)$ | $O(K)$ | [`MergeKSortedListsHeap.java`](./Day17_HeapsAndPriorityQueue/MergeKSortedListsHeap.java) |
+| 151 | K Closest Points to Origin | [LeetCode #973](https://leetcode.com/problems/k-closest-points-to-origin/) | Max-Heap / PriorityQueue | $O(N \log K)$ | $O(K)$ | [`KClosestPointsToOrigin.java`](./Day17_HeapsAndPriorityQueue/KClosestPointsToOrigin.java) |
+| 152 | Task Scheduler | [LeetCode #621](https://leetcode.com/problems/task-scheduler/) | Max-Heap / Greedy Math | $O(N)$ | $O(1)$ | [`TaskScheduler.java`](./Day17_HeapsAndPriorityQueue/TaskScheduler.java) |
+| 153 | Heap Sort Algorithm | Standard Algorithm | In-Place Sift-Down | $O(N \log N)$ | $O(1)$ | [`HeapSortAlgorithm.java`](./Day17_HeapsAndPriorityQueue/HeapSortAlgorithm.java) |
 
 ---
 
