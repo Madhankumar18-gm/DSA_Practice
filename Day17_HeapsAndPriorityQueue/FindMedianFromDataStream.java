@@ -57,5 +57,8 @@ public class FindMedianFromDataStream {
         dh.addNum(-1);
         dh.addNum(-2);
         assert dh.findMedian() == 1.0 : "Refactor Test Failed";
+
+        MedianFinderDualHeap empty = new MedianFinderDualHeap();
+        assert empty.findMedian() == 0.0 : "Edge Test: Empty stream";
     }
 }
