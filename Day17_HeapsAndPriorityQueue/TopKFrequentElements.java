@@ -14,4 +14,9 @@ public class TopKFrequentElements {
         for (int i = 0; i < k; i++) res[i] = list.get(i);
         return res;
     }
+
+    public static void main(String[] args) {
+        int[] r1 = topKFrequentSorting(new int[]{1, 1, 1, 2, 2, 3}, 2);
+        assert r1.length == 2 && r1[0] == 1 && r1[1] == 2 : "Test 1 Failed";
+    }
 }
