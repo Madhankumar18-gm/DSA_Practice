@@ -28,6 +28,23 @@ public class MergeKSortedListsHeap {
         return dummy.next;
     }
 
+    public static ListNode mergeKListsMinHeap(ListNode[] lists) {
+        if (lists == null || lists.length == 0) return null;
+        PriorityQueue<ListNode> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a.val));
+        for (ListNode node : lists) {
+            if (node != null) pq.offer(node);
+        }
+        ListNode dummy = new ListNode(0);
+        ListNode curr = dummy;
+        while (!pq.isEmpty()) {
+            ListNode top = pq.poll();
+            curr.next = top;
+            curr = curr.next;
+            if (top.next != null) pq.offer(top.next);
+        }
+        return dummy.next;
+    }
+
     public static void main(String[] args) {
         ListNode l1 = new ListNode(1); l1.next = new ListNode(4);
         ListNode l2 = new ListNode(1); l2.next = new ListNode(3);
