@@ -43,5 +43,8 @@ public class TaskScheduler {
     public static void main(String[] args) {
         assert leastIntervalMaxHeap(new char[]{'A', 'A', 'A', 'B', 'B', 'B'}, 2) == 8 : "Test 1 Failed";
         assert leastIntervalMaxHeap(new char[]{'A', 'A', 'A', 'B', 'B', 'B'}, 0) == 6 : "Test 2 Failed";
+
+        assert leastIntervalFormula(new char[]{'A', 'A', 'A', 'B', 'B', 'B'}, 2) == 8 : "Test 3 Failed";
+        assert leastIntervalFormula(new char[]{'A', 'A', 'A', 'B', 'B', 'B'}, 0) == 6 : "Test 4 Failed";
     }
 }
