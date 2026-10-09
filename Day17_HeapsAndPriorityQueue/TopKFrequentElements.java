@@ -2,6 +2,14 @@ package Day17_HeapsAndPriorityQueue;
 
 import java.util.*;
 
+/**
+ * LeetCode 347: Top K Frequent Elements
+ * Day 17 - Heaps & Priority Queue
+ *
+ * Complexities:
+ * Sorting: Time O(N log N), Space O(N)
+ * Min-Heap: Time O(N log K), Space O(N)
+ */
 public class TopKFrequentElements {
 
     public static int[] topKFrequentSorting(int[] nums, int k) {
@@ -41,5 +49,7 @@ public class TopKFrequentElements {
 
         assert topKFrequentMinHeap(new int[]{1}, 1).length == 1 : "Edge Test: Single element";
         assert topKFrequentMinHeap(null, 1).length == 0 : "Edge Test: Null input";
+
+        System.out.println("Execution completed successfully for TopKFrequentElements.");
     }
 }
