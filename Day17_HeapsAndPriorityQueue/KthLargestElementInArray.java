@@ -3,6 +3,14 @@ package Day17_HeapsAndPriorityQueue;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
+/**
+ * LeetCode 215: Kth Largest Element in an Array
+ * Day 17 - Heaps & Priority Queue
+ *
+ * Complexities:
+ * Sorting: Time O(N log N), Space O(1) or O(N)
+ * Min-Heap: Time O(N log K), Space O(K)
+ */
 public class KthLargestElementInArray {
 
     public static int findKthLargestSorting(int[] nums, int k) {
@@ -34,5 +42,7 @@ public class KthLargestElementInArray {
         assert findKthLargestMinHeap(new int[]{7, 7, 7, 7, 7}, 1) == 7 : "Refactor Test 1";
         assert findKthLargestMinHeap(new int[]{1}, 1) == 1 : "Edge Test: Single element";
         assert findKthLargestMinHeap(null, 1) == -1 : "Edge Test: Null input";
+
+        System.out.println("Execution completed successfully for KthLargestElementInArray.");
     }
 }
