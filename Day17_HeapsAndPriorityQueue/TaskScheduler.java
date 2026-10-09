@@ -25,6 +25,21 @@ public class TaskScheduler {
         return time;
     }
 
+    public static int leastIntervalFormula(char[] tasks, int n) {
+        if (tasks == null || tasks.length == 0) return 0;
+        int[] freq = new int[26];
+        int maxFreq = 0;
+        for (char c : tasks) {
+            freq[c - 'A']++;
+            maxFreq = Math.max(maxFreq, freq[c - 'A']);
+        }
+        int maxCount = 0;
+        for (int f : freq) {
+            if (f == maxFreq) maxCount++;
+        }
+        return Math.max(tasks.length, (maxFreq - 1) * (n + 1) + maxCount);
+    }
+
     public static void main(String[] args) {
         assert leastIntervalMaxHeap(new char[]{'A', 'A', 'A', 'B', 'B', 'B'}, 2) == 8 : "Test 1 Failed";
         assert leastIntervalMaxHeap(new char[]{'A', 'A', 'A', 'B', 'B', 'B'}, 0) == 6 : "Test 2 Failed";
