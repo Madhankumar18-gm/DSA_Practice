@@ -42,5 +42,9 @@ public class HeapSortAlgorithm {
         int[] arr1 = {12, 11, 13, 5, 6, 7};
         heapSortUsingPQ(arr1);
         assert Arrays.equals(arr1, new int[]{5, 6, 7, 11, 12, 13}) : "Test 1 Failed";
+
+        int[] arr2 = {12, 11, 13, 5, 6, 7};
+        heapSortInPlace(arr2);
+        assert Arrays.equals(arr2, new int[]{5, 6, 7, 11, 12, 13}) : "Test 2 Failed";
     }
 }
