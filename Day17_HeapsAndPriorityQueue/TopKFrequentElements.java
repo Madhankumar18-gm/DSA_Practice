@@ -38,5 +38,8 @@ public class TopKFrequentElements {
 
         int[] r3 = topKFrequentMinHeap(new int[]{-1, -1, 2}, 1);
         assert r3[0] == -1 : "Refactor Test Failed";
+
+        assert topKFrequentMinHeap(new int[]{1}, 1).length == 1 : "Edge Test: Single element";
+        assert topKFrequentMinHeap(null, 1).length == 0 : "Edge Test: Null input";
     }
 }
