@@ -3,6 +3,14 @@ package Day17_HeapsAndPriorityQueue;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
+/**
+ * LeetCode 973: K Closest Points to Origin
+ * Day 17 - Heaps & Priority Queue
+ *
+ * Complexities:
+ * Sorting: Time O(N log N), Space O(log N)
+ * Max-Heap: Time O(N log K), Space O(K)
+ */
 public class KClosestPointsToOrigin {
 
     public static int[][] kClosestSorting(int[][] points, int k) {
@@ -38,5 +46,7 @@ public class KClosestPointsToOrigin {
 
         assert kClosestMaxHeap(null, 1).length == 0 : "Edge Test: Null points";
         assert kClosestMaxHeap(new int[][]{{0, 0}}, 0).length == 0 : "Edge Test: k=0";
+
+        System.out.println("Execution completed successfully for KClosestPointsToOrigin.");
     }
 }
