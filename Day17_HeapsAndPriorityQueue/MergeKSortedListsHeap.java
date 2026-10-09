@@ -27,4 +27,11 @@ public class MergeKSortedListsHeap {
         }
         return dummy.next;
     }
+
+    public static void main(String[] args) {
+        ListNode l1 = new ListNode(1); l1.next = new ListNode(4);
+        ListNode l2 = new ListNode(1); l2.next = new ListNode(3);
+        ListNode res = mergeKListsBruteForce(new ListNode[]{l1, l2});
+        assert res != null && res.val == 1 && res.next.val == 1 : "Test 1 Failed";
+    }
 }
