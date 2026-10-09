@@ -29,5 +29,8 @@ public class KClosestPointsToOrigin {
     public static void main(String[] args) {
         int[][] res = kClosestSorting(new int[][]{{1, 3}, {-2, 2}}, 1);
         assert res.length == 1 && res[0][0] == -2 && res[0][1] == 2 : "Test 1 Failed";
+
+        int[][] res2 = kClosestMaxHeap(new int[][]{{1, 3}, {-2, 2}}, 1);
+        assert res2.length == 1 && res2[0][0] == -2 && res2[0][1] == 2 : "Test 2 Failed";
     }
 }
