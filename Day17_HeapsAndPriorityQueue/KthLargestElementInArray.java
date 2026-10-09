@@ -6,7 +6,13 @@ public class KthLargestElementInArray {
 
     public static int findKthLargestSorting(int[] nums, int k) {
         if (nums == null || k <= 0 || k > nums.length) return -1;
-        Arrays.sort(nums);
-        return nums[nums.length - k];
+        int[] copy = nums.clone();
+        Arrays.sort(copy);
+        return copy[copy.length - k];
+    }
+
+    public static void main(String[] args) {
+        assert findKthLargestSorting(new int[]{3, 2, 1, 5, 6, 4}, 2) == 5 : "Test 1 Failed";
+        assert findKthLargestSorting(new int[]{3, 2, 3, 1, 2, 4, 5, 5, 6}, 4) == 4 : "Test 2 Failed";
     }
 }
