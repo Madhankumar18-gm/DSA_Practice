@@ -2,6 +2,14 @@ package Day17_HeapsAndPriorityQueue;
 
 import java.util.*;
 
+/**
+ * LeetCode 621: Task Scheduler
+ * Day 17 - Heaps & Priority Queue
+ *
+ * Complexities:
+ * Max-Heap Simulation: Time O(N * cooldown), Space O(1) (26 characters)
+ * Math Formula: Time O(N), Space O(1)
+ */
 public class TaskScheduler {
 
     public static int leastIntervalMaxHeap(char[] tasks, int n) {
@@ -50,5 +58,7 @@ public class TaskScheduler {
         assert leastIntervalFormula(new char[]{'A', 'A', 'A', 'A', 'A', 'A', 'B', 'C', 'D', 'E', 'F', 'G'}, 2) == 16 : "Refactor Test";
         assert leastIntervalFormula(new char[]{}, 2) == 0 : "Edge Test: Empty array";
         assert leastIntervalFormula(null, 2) == 0 : "Edge Test: Null array";
+
+        System.out.println("Execution completed successfully for TaskScheduler.");
     }
 }
