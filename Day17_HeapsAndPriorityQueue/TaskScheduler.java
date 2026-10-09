@@ -46,5 +46,7 @@ public class TaskScheduler {
 
         assert leastIntervalFormula(new char[]{'A', 'A', 'A', 'B', 'B', 'B'}, 2) == 8 : "Test 3 Failed";
         assert leastIntervalFormula(new char[]{'A', 'A', 'A', 'B', 'B', 'B'}, 0) == 6 : "Test 4 Failed";
+
+        assert leastIntervalFormula(new char[]{'A', 'A', 'A', 'A', 'A', 'A', 'B', 'C', 'D', 'E', 'F', 'G'}, 2) == 16 : "Refactor Test";
     }
 }
