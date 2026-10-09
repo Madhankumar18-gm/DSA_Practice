@@ -2,6 +2,14 @@ package Day17_HeapsAndPriorityQueue;
 
 import java.util.*;
 
+/**
+ * LeetCode 295: Find Median from Data Stream
+ * Day 17 - Heaps & Priority Queue
+ *
+ * Complexities:
+ * Naive List: addNum O(N log N), findMedian O(1)
+ * Dual Heap: addNum O(log N), findMedian O(1), Space O(N)
+ */
 public class FindMedianFromDataStream {
 
     public static class MedianFinderList {
@@ -60,5 +68,7 @@ public class FindMedianFromDataStream {
 
         MedianFinderDualHeap empty = new MedianFinderDualHeap();
         assert empty.findMedian() == 0.0 : "Edge Test: Empty stream";
+
+        System.out.println("Execution completed successfully for FindMedianFromDataStream.");
     }
 }
