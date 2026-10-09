@@ -1,6 +1,7 @@
 package Day17_HeapsAndPriorityQueue;
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 public class KClosestPointsToOrigin {
 
@@ -9,6 +10,20 @@ public class KClosestPointsToOrigin {
         int[][] copy = points.clone();
         Arrays.sort(copy, (a, b) -> (a[0] * a[0] + a[1] * a[1]) - (b[0] * b[0] + b[1] * b[1]));
         return Arrays.copyOfRange(copy, 0, k);
+    }
+
+    public static int[][] kClosestMaxHeap(int[][] points, int k) {
+        if (points == null || k <= 0) return new int[0][0];
+        PriorityQueue<int[]> maxHeap = new PriorityQueue<>((a, b) ->
+            (b[0] * b[0] + b[1] * b[1]) - (a[0] * a[0] + a[1] * a[1])
+        );
+        for (int[] p : points) {
+            maxHeap.offer(p);
+            if (maxHeap.size() > k) maxHeap.poll();
+        }
+        int[][] res = new int[k][2];
+        for (int i = 0; i < k; i++) res[i] = maxHeap.poll();
+        return res;
     }
 
     public static void main(String[] args) {
