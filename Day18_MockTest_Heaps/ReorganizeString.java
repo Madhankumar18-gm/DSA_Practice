@@ -81,5 +81,9 @@ public class ReorganizeString {
 
         String multi = reorganizeStringMaxHeap("vvvlo");
         assert isValidReorganization(multi) : "Multi test invalid: " + multi;
+
+        assert "".equals(reorganizeStringMaxHeap(null)) : "Null test";
+        assert "".equals(reorganizeStringMaxHeap("")) : "Empty test";
+        assert "a".equals(reorganizeStringMaxHeap("a")) : "Single test";
     }
 }
