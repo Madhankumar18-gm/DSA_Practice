@@ -4,6 +4,22 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
+/**
+ * LeetCode 502: IPO
+ * 
+ * Problem:
+ * Suppose LeetCode will start its IPO soon. In order to sell a good price of its shares to Venture Capital,
+ * LeetCode would like to work on some projects to increase its capital before the IPO.
+ * Since it has limited resources, it can only finish at most k distinct projects before the IPO.
+ * You are given n projects where the ith project has a pure profit profits[i] and a minimum capital of capital[i] is needed to start it.
+ * Initially, you have w capital. When you finish a project, you will obtain its pure profit and the profit will be added to your total capital.
+ * Pick a list of at most k distinct projects from given projects to maximize your final capital.
+ * 
+ * Complexity:
+ * - Sorting projects by required capital: O(N log N) time.
+ * - Max-Heap for available profits: Each project offered and polled at most once -> O(N log N) time, O(N) space.
+ * - Overall: O(N log N) time, O(N) space.
+ */
 public class IPO {
 
     public static int findMaximizedCapital(int k, int w, int[] profits, int[] capital) {
@@ -55,7 +71,6 @@ public class IPO {
         int[] c4 = {1, 2, 1, 3};
         assert findMaximizedCapital(2, 10, p4, c4) == 26 : "Top 2 profit picks (9 + 7 = 16 + 10 = 26)";
 
-        // Boundary tests
         assert findMaximizedCapital(10, 5, new int[]{2}, new int[]{1}) == 7 : "k > n";
         assert findMaximizedCapital(0, 5, new int[]{2}, new int[]{1}) == 5 : "k == 0";
         assert findMaximizedCapital(2, 5, null, null) == 5 : "Null arrays";
