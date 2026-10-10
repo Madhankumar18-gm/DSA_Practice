@@ -3,6 +3,20 @@ package Day18_MockTest_Heaps;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
+/**
+ * LeetCode 1642: Furthest Building You Can Reach
+ * 
+ * Problem:
+ * You are given an integer array heights representing the heights of buildings, some bricks, and some ladders.
+ * You start your journey from building 0 and move to the next building:
+ * - If next building <= current, you do not need ladders or bricks.
+ * - If next building > current, you can either use 1 ladder or (h[i+1] - h[i]) bricks.
+ * Return the furthest building index (0-indexed) you can reach if you use your resources optimally.
+ * 
+ * Complexity:
+ * - Min-Heap of size L (Ladders): O(N log L) time, O(L) space.
+ * - Max-Heap of Bricks: O(N log N) time, O(N) space.
+ */
 public class FurthestBuildingYouCanReach {
 
     public static int furthestBuildingMinHeap(int[] heights, int bricks, int ladders) {
@@ -58,7 +72,6 @@ public class FurthestBuildingYouCanReach {
         int[] h3 = {14, 3, 19, 3};
         assert furthestBuildingMinHeap(h3, 17, 0) == 3 : "Test 3 Full Reach";
 
-        // Boundary tests
         assert furthestBuildingMinHeap(new int[]{5, 5, 5, 5}, 0, 0) == 3 : "Flat terrain";
         assert furthestBuildingMinHeap(new int[]{1, 10}, 0, 0) == 0 : "No resources";
         assert furthestBuildingMinHeap(new int[]{10}, 0, 0) == 0 : "Single building";
