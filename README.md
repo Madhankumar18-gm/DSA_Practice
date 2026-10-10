@@ -6,8 +6,8 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 
 ## 📊 Repository Summary
 
-- **Total Problems Solved**: `153 Problems`
-- **Total Git Commits**: `1,378+ Commits`
+- **Total Problems Solved**: `160 Problems`
+- **Total Git Commits**: `1,435+ Commits`
 - **Primary Language**: `Java 17+`
 - **Remote Repository**: [GitHub - DSA_Practice](https://github.com/Madhankumar18-gm/DSA_Practice.git)
 
@@ -32,6 +32,7 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 - [x] **Day 15 - Dynamic Programming (1D & 2D)** (Climbing Stairs, House Robber, Coin Change, Longest Increasing Subsequence, Partition Equal Subset Sum, Unique Paths, Longest Common Subsequence, Edit Distance, Target Sum) — `9 Problems` \| `81 Commits`
 - [x] **Day 16 - Dynamic Programming (Knapsack Variants)** (Zero One Knapsack, Subset Sum, Partition Equal Subset Sum, Minimum Subset Sum Difference, Target Sum Knapsack, Unbounded Knapsack, Coin Change II, Combination Sum IV, Ones and Zeroes) — `9 Problems` \| `81 Commits`
 - [x] **Day 17 - Heaps & Priority Queue** (Kth Largest Element, Top K Frequent, Find Median from Data Stream, Merge K Sorted Lists, K Closest Points, Task Scheduler, Heap Sort) — `7 Problems` | `56 Commits`
+- [x] **Day 18 - Mock Test - Heaps & Priority Queue** (Last Stone Weight, Kth Smallest Element in Sorted Matrix, Reorganize String, Furthest Building You Can Reach, Find K Pairs with Smallest Sums, Maximum Subsequence Score, IPO) — `7 Problems` | `56 Commits`
 
 ---
 
@@ -70,6 +71,15 @@ DSA Practice/
 │   ├── KClosestPointsToOrigin.java
 │   ├── TaskScheduler.java
 │   └── HeapSortAlgorithm.java
+│
+├── Day18_MockTest_Heaps/            # Topic Folder Day 18 (7 problems)
+│   ├── LastStoneWeight.java
+│   ├── KthSmallestElementInSortedMatrix.java
+│   ├── ReorganizeString.java
+│   ├── FurthestBuildingYouCanReach.java
+│   ├── FindKPairsWithSmallestSums.java
+│   ├── MaximumSubsequenceScore.java
+│   └── IPO.java
 │
 ├── LeetCode/                            # Daily Date Folders for LeetCode Problems
 │   ├── 2026-09-22/                      # 2026-09-22 Daily Log (7 problems)
@@ -276,6 +286,19 @@ DSA Practice/
 | 151 | K Closest Points to Origin | [LeetCode #973](https://leetcode.com/problems/k-closest-points-to-origin/) | Max-Heap / PriorityQueue | $O(N \log K)$ | $O(K)$ | [`KClosestPointsToOrigin.java`](./Day17_HeapsAndPriorityQueue/KClosestPointsToOrigin.java) |
 | 152 | Task Scheduler | [LeetCode #621](https://leetcode.com/problems/task-scheduler/) | Max-Heap / Greedy Math | $O(N)$ | $O(1)$ | [`TaskScheduler.java`](./Day17_HeapsAndPriorityQueue/TaskScheduler.java) |
 | 153 | Heap Sort Algorithm | Standard Algorithm | In-Place Sift-Down | $O(N \log N)$ | $O(1)$ | [`HeapSortAlgorithm.java`](./Day17_HeapsAndPriorityQueue/HeapSortAlgorithm.java) |
+
+---
+
+### Day 18: Mock Test - Heaps & Priority Queue Concepts
+| # | Problem Name | LeetCode Link | Topic Tag | Time | Space | Solution Code |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
+| 154 | Last Stone Weight | [LeetCode #1046](https://leetcode.com/problems/last-stone-weight/) | Max-Heap Simulation | $O(N \log N)$ | $O(N)$ | [`LastStoneWeight.java`](./Day18_MockTest_Heaps/LastStoneWeight.java) |
+| 155 | Kth Smallest Element in a Sorted Matrix | [LeetCode #378](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/) | Min-Heap / Binary Search | $O(K \log N)$ | $O(N)$ | [`KthSmallestElementInSortedMatrix.java`](./Day18_MockTest_Heaps/KthSmallestElementInSortedMatrix.java) |
+| 156 | Reorganize String | [LeetCode #767](https://leetcode.com/problems/reorganize-string/) | Max-Heap Greedy Interleaving | $O(N \log A)$ | $O(A)$ | [`ReorganizeString.java`](./Day18_MockTest_Heaps/ReorganizeString.java) |
+| 157 | Furthest Building You Can Reach | [LeetCode #1642](https://leetcode.com/problems/furthest-building-you-can-reach/) | Min-Heap Greedy Ladders | $O(N \log L)$ | $O(L)$ | [`FurthestBuildingYouCanReach.java`](./Day18_MockTest_Heaps/FurthestBuildingYouCanReach.java) |
+| 158 | Find K Pairs with Smallest Sums | [LeetCode #373](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/) | Min-Heap Multi-Pointer | $O(K \log N)$ | $O(N)$ | [`FindKPairsWithSmallestSums.java`](./Day18_MockTest_Heaps/FindKPairsWithSmallestSums.java) |
+| 159 | Maximum Subsequence Score | [LeetCode #2542](https://leetcode.com/problems/maximum-subsequence-score/) | Min-Heap + Pair Sorting | $O(N \log N)$ | $O(N)$ | [`MaximumSubsequenceScore.java`](./Day18_MockTest_Heaps/MaximumSubsequenceScore.java) |
+| 160 | IPO | [LeetCode #502](https://leetcode.com/problems/ipo/) | Dual-Heap Greedy Capital | $O(N \log N)$ | $O(N)$ | [`IPO.java`](./Day18_MockTest_Heaps/IPO.java) |
 
 ---
 
