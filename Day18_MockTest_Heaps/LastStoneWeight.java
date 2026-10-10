@@ -51,5 +51,8 @@ public class LastStoneWeight {
 
         int[] oddSame = {3, 3, 3};
         assert lastStoneWeightMaxHeap(oddSame) == 3 : "Odd Same Test Failed";
+
+        assert lastStoneWeightMaxHeap(new int[]{}) == 0 : "Empty array test";
+        assert lastStoneWeightMaxHeap(null) == 0 : "Null array test";
     }
 }
