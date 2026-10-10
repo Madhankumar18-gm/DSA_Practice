@@ -1,7 +1,5 @@
 package Day18_MockTest_Heaps;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.PriorityQueue;
 
 public class ReorganizeString {
@@ -33,5 +31,11 @@ public class ReorganizeString {
         }
 
         return sb.length() == s.length() ? sb.toString() : "";
+    }
+
+    public static void main(String[] args) {
+        String res1 = reorganizeStringMaxHeap("aab");
+        assert "aba".equals(res1) : "Test 1 Failed: " + res1;
+        assert "".equals(reorganizeStringMaxHeap("aaab")) : "Test 2 Failed";
     }
 }
