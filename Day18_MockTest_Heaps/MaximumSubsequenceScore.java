@@ -43,7 +43,6 @@ public class MaximumSubsequenceScore {
     }
 
     public static long maxScoreBruteForce(int[] nums1, int[] nums2, int k) {
-        int n = nums1.length;
         long[] max = new long[]{0};
         backtrack(nums1, nums2, k, 0, 0, 0, Integer.MAX_VALUE, max);
         return max[0];
@@ -56,9 +55,7 @@ public class MaximumSubsequenceScore {
         }
         if (idx == nums1.length) return;
 
-        // Choose idx
         backtrack(nums1, nums2, k, idx + 1, count + 1, sum + nums1[idx], Math.min(minN2, nums2[idx]), max);
-        // Skip idx
         backtrack(nums1, nums2, k, idx + 1, count, sum, minN2, max);
     }
 
@@ -71,5 +68,9 @@ public class MaximumSubsequenceScore {
         int[] a = {4, 2, 3, 1, 1};
         int[] b = {7, 5, 10, 9, 6};
         assert maxScore(a, b, 1) == 30 : "Test 2 Failed";
+
+        int[] same = {2, 2, 2};
+        int[] sameB = {3, 3, 3};
+        assert maxScore(same, sameB, 2) == 12 : "Identical elements test";
     }
 }
