@@ -4,6 +4,14 @@ import java.util.PriorityQueue;
 
 public class ReorganizeString {
 
+    public static boolean isValidReorganization(String s) {
+        if (s == null) return false;
+        for (int i = 1; i < s.length(); i++) {
+            if (s.charAt(i) == s.charAt(i - 1)) return false;
+        }
+        return true;
+    }
+
     public static String reorganizeStringMaxHeap(String s) {
         if (s == null || s.length() == 0) return "";
         int[] freq = new int[26];
@@ -70,5 +78,8 @@ public class ReorganizeString {
         assert "aba".equals(res1) : "Test 1 Failed: " + res1;
         assert "".equals(reorganizeStringMaxHeap("aaab")) : "Test 2 Failed";
         assert "aba".equals(reorganizeStringCounting("aab")) : "Counting Test 1 Failed";
+
+        String multi = reorganizeStringMaxHeap("vvvlo");
+        assert isValidReorganization(multi) : "Multi test invalid: " + multi;
     }
 }
