@@ -13,7 +13,6 @@ public class FindKPairsWithSmallestSums {
             return result;
         }
 
-        // Min-heap storing [i, j, sum = nums1[i] + nums2[j]]
         PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> Integer.compare(a[2], b[2]));
 
         for (int i = 0; i < Math.min(nums1.length, k); i++) {
@@ -32,5 +31,15 @@ public class FindKPairsWithSmallestSums {
         }
 
         return result;
+    }
+
+    public static void main(String[] args) {
+        int[] nums1 = {1, 7, 11};
+        int[] nums2 = {2, 4, 6};
+        List<List<Integer>> res = kSmallestPairsMinHeap(nums1, nums2, 3);
+        assert res.size() == 3 : "Test 1 Size Failed";
+        assert res.get(0).equals(Arrays.asList(1, 2)) : "Test 1 [0] Failed";
+        assert res.get(1).equals(Arrays.asList(1, 4)) : "Test 1 [1] Failed";
+        assert res.get(2).equals(Arrays.asList(1, 6)) : "Test 1 [2] Failed";
     }
 }
