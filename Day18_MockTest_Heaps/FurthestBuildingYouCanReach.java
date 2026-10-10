@@ -6,7 +6,6 @@ public class FurthestBuildingYouCanReach {
 
     public static int furthestBuildingMinHeap(int[] heights, int bricks, int ladders) {
         if (heights == null || heights.length <= 1) return 0;
-        // Min-heap to store the largest climb jumps where ladders will be used
         PriorityQueue<Integer> ladderAllocations = new PriorityQueue<>();
 
         for (int i = 0; i < heights.length - 1; i++) {
@@ -22,5 +21,13 @@ public class FurthestBuildingYouCanReach {
             }
         }
         return heights.length - 1;
+    }
+
+    public static void main(String[] args) {
+        int[] h1 = {4, 2, 7, 6, 9, 14, 12};
+        assert furthestBuildingMinHeap(h1, 5, 1) == 4 : "Test 1 Failed";
+
+        int[] h2 = {4, 12, 2, 7, 3, 18, 20, 3, 19};
+        assert furthestBuildingMinHeap(h2, 10, 2) == 7 : "Test 2 Failed";
     }
 }
