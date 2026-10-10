@@ -16,4 +16,14 @@ public class KthSmallestElementInSortedMatrix {
         Arrays.sort(flat);
         return flat[k - 1];
     }
+
+    public static void main(String[] args) {
+        int[][] mat1 = {
+            {1, 5, 9},
+            {10, 11, 13},
+            {12, 13, 15}
+        };
+        assert kthSmallestNaive(mat1, 8) == 13 : "Test 1 Failed";
+        assert kthSmallestNaive(new int[][]{{-5}}, 1) == -5 : "Test 2 Failed";
+    }
 }
