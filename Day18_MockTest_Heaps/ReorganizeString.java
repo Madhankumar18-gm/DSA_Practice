@@ -2,6 +2,17 @@ package Day18_MockTest_Heaps;
 
 import java.util.PriorityQueue;
 
+/**
+ * LeetCode 767: Reorganize String
+ * 
+ * Problem:
+ * Given a string s, rearrange the characters of s so that any two adjacent characters
+ * are not the same. Return any possible rearrangement of s or return "" if not possible.
+ * 
+ * Complexity:
+ * - Max-Heap Approach: O(N log A) where A = alphabet size (26). Effectively O(N) time and O(A) space.
+ * - Counting Interlace: O(N + A) time, O(N + A) space.
+ */
 public class ReorganizeString {
 
     public static boolean isValidReorganization(String s) {
