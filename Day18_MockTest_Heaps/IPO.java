@@ -51,9 +51,13 @@ public class IPO {
         int[] c3 = {10, 20};
         assert findMaximizedCapital(2, 5, p3, c3) == 5 : "Insufficient capital test";
 
-        // Huge initial capital: greedy pick top k profits
         int[] p4 = {2, 7, 3, 9};
         int[] c4 = {1, 2, 1, 3};
         assert findMaximizedCapital(2, 10, p4, c4) == 26 : "Top 2 profit picks (9 + 7 = 16 + 10 = 26)";
+
+        // Boundary tests
+        assert findMaximizedCapital(10, 5, new int[]{2}, new int[]{1}) == 7 : "k > n";
+        assert findMaximizedCapital(0, 5, new int[]{2}, new int[]{1}) == 5 : "k == 0";
+        assert findMaximizedCapital(2, 5, null, null) == 5 : "Null arrays";
     }
 }
