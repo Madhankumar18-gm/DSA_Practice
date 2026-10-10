@@ -1,6 +1,8 @@
 package Day18_MockTest_Heaps;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.PriorityQueue;
 
 public class LastStoneWeight {
 
@@ -22,8 +24,26 @@ public class LastStoneWeight {
         return n == 1 ? arr[0] : 0;
     }
 
+    public static int lastStoneWeightMaxHeap(int[] stones) {
+        if (stones == null || stones.length == 0) return 0;
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        for (int stone : stones) {
+            maxHeap.offer(stone);
+        }
+        while (maxHeap.size() > 1) {
+            int y = maxHeap.poll();
+            int x = maxHeap.poll();
+            if (y != x) {
+                maxHeap.offer(y - x);
+            }
+        }
+        return maxHeap.isEmpty() ? 0 : maxHeap.peek();
+    }
+
     public static void main(String[] args) {
         assert lastStoneWeightNaive(new int[]{2, 7, 4, 1, 8, 1}) == 1 : "Test 1 Failed";
         assert lastStoneWeightNaive(new int[]{1}) == 1 : "Test 2 Failed";
+        assert lastStoneWeightMaxHeap(new int[]{2, 7, 4, 1, 8, 1}) == 1 : "Heap Test 1 Failed";
+        assert lastStoneWeightMaxHeap(new int[]{1}) == 1 : "Heap Test 2 Failed";
     }
 }
