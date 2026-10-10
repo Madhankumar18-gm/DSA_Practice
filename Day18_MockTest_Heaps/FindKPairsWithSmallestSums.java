@@ -59,11 +59,10 @@ public class FindKPairsWithSmallestSums {
         List<List<Integer>> bf = kSmallestPairsBruteForce(nums1, nums2, 3);
         assert res.equals(bf) : "Brute force comparison failed";
 
-        int[] a = {1, 1, 2};
-        int[] b = {1, 2, 3};
-        List<List<Integer>> res2 = kSmallestPairsMinHeap(a, b, 2);
-        assert res2.size() == 2 : "Test 2 Size";
-        assert res2.get(0).equals(Arrays.asList(1, 1));
-        assert res2.get(1).equals(Arrays.asList(1, 1));
+        // Boundary tests
+        assert kSmallestPairsMinHeap(new int[]{1, 2}, new int[]{3}, 5).size() == 2 : "K exceeds total pairs";
+        assert kSmallestPairsMinHeap(new int[]{}, new int[]{1}, 1).isEmpty() : "Empty nums1";
+        assert kSmallestPairsMinHeap(null, new int[]{1}, 1).isEmpty() : "Null array";
+        assert kSmallestPairsMinHeap(new int[]{1}, new int[]{1}, 0).isEmpty() : "k = 0";
     }
 }
