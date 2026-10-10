@@ -96,5 +96,7 @@ public class ReorganizeString {
         assert "".equals(reorganizeStringMaxHeap(null)) : "Null test";
         assert "".equals(reorganizeStringMaxHeap("")) : "Empty test";
         assert "a".equals(reorganizeStringMaxHeap("a")) : "Single test";
+
+        System.out.println("Execution completed successfully for ReorganizeString.");
     }
 }
