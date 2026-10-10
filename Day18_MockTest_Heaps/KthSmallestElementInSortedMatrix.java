@@ -78,5 +78,11 @@ public class KthSmallestElementInSortedMatrix {
         assert kthSmallestMinHeap(mat1, 8) == 13 : "Heap Test 1 Failed";
         assert kthSmallestMinHeap(new int[][]{{-5}}, 1) == -5 : "Heap Test 2 Failed";
         assert kthSmallestBinarySearch(mat1, 8) == 13 : "BS Test 1 Failed";
+
+        // Boundary tests
+        assert kthSmallestMinHeap(mat1, 1) == 1 : "First element";
+        assert kthSmallestMinHeap(mat1, 9) == 15 : "Last element";
+        assert kthSmallestBinarySearch(mat1, 1) == 1 : "BS first element";
+        assert kthSmallestBinarySearch(mat1, 9) == 15 : "BS last element";
     }
 }
