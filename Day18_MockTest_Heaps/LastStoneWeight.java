@@ -21,4 +21,9 @@ public class LastStoneWeight {
         }
         return n == 1 ? arr[0] : 0;
     }
+
+    public static void main(String[] args) {
+        assert lastStoneWeightNaive(new int[]{2, 7, 4, 1, 8, 1}) == 1 : "Test 1 Failed";
+        assert lastStoneWeightNaive(new int[]{1}) == 1 : "Test 2 Failed";
+    }
 }
