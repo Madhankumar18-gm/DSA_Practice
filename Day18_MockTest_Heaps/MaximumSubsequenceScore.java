@@ -74,5 +74,7 @@ public class MaximumSubsequenceScore {
         assert maxScore(null, new int[]{1}, 1) == 0 : "Null nums1";
         assert maxScore(new int[]{1}, null, 1) == 0 : "Null nums2";
         assert maxScore(new int[]{1}, new int[]{1}, 2) == 0 : "k > n";
+
+        System.out.println("Execution completed successfully for MaximumSubsequenceScore.");
     }
 }
