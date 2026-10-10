@@ -45,5 +45,11 @@ public class LastStoneWeight {
         assert lastStoneWeightNaive(new int[]{1}) == 1 : "Test 2 Failed";
         assert lastStoneWeightMaxHeap(new int[]{2, 7, 4, 1, 8, 1}) == 1 : "Heap Test 1 Failed";
         assert lastStoneWeightMaxHeap(new int[]{1}) == 1 : "Heap Test 2 Failed";
+
+        int[] identical = {2, 2, 2, 2};
+        assert lastStoneWeightMaxHeap(identical) == 0 : "Identical Stones Test Failed";
+
+        int[] oddSame = {3, 3, 3};
+        assert lastStoneWeightMaxHeap(oddSame) == 3 : "Odd Same Test Failed";
     }
 }
