@@ -17,7 +17,6 @@ public class MaximumSubsequenceScore {
             pairs[i][1] = nums2[i];
         }
 
-        // Sort pairs by nums2 descending
         Arrays.sort(pairs, (a, b) -> Integer.compare(b[1], a[1]));
 
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
@@ -41,5 +40,15 @@ public class MaximumSubsequenceScore {
         }
 
         return maxScore;
+    }
+
+    public static void main(String[] args) {
+        int[] nums1 = {1, 3, 3, 2};
+        int[] nums2 = {2, 1, 3, 4};
+        assert maxScore(nums1, nums2, 3) == 12 : "Test 1 Failed";
+
+        int[] a = {4, 2, 3, 1, 1};
+        int[] b = {7, 5, 10, 9, 6};
+        assert maxScore(a, b, 1) == 30 : "Test 2 Failed";
     }
 }
