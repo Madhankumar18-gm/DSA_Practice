@@ -2,7 +2,6 @@ package Day18_MockTest_Heaps;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -59,5 +58,12 @@ public class FindKPairsWithSmallestSums {
 
         List<List<Integer>> bf = kSmallestPairsBruteForce(nums1, nums2, 3);
         assert res.equals(bf) : "Brute force comparison failed";
+
+        int[] a = {1, 1, 2};
+        int[] b = {1, 2, 3};
+        List<List<Integer>> res2 = kSmallestPairsMinHeap(a, b, 2);
+        assert res2.size() == 2 : "Test 2 Size";
+        assert res2.get(0).equals(Arrays.asList(1, 1));
+        assert res2.get(1).equals(Arrays.asList(1, 1));
     }
 }
