@@ -68,5 +68,7 @@ public class LastStoneWeight {
 
         assert lastStoneWeightMaxHeap(new int[]{}) == 0 : "Empty array test";
         assert lastStoneWeightMaxHeap(null) == 0 : "Null array test";
+
+        System.out.println("Execution completed successfully for LastStoneWeight.");
     }
 }
