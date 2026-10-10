@@ -46,5 +46,10 @@ public class IPO {
         int[] profits2 = {1, 2, 3};
         int[] capital2 = {0, 1, 2};
         assert findMaximizedCapital(3, 0, profits2, capital2) == 6 : "Test 2 Failed";
+
+        // Insufficient starting capital
+        int[] p3 = {1, 5};
+        int[] c3 = {10, 20};
+        assert findMaximizedCapital(2, 5, p3, c3) == 5 : "Insufficient capital test";
     }
 }
