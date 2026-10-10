@@ -5,6 +5,18 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
 
+/**
+ * LeetCode 373: Find K Pairs with Smallest Sums
+ * 
+ * Problem:
+ * You are given two integer arrays nums1 and nums2 sorted in non-decreasing order and an integer k.
+ * Define a pair (u, v) which consists of one element from nums1 and one element from nums2.
+ * Return the k pairs (u1, v1), (u2, v2), ..., (uk, vk) with the smallest sums.
+ * 
+ * Complexity:
+ * - Brute Force: O(M * N log(M * N)) time, O(M * N) space.
+ * - Min-Heap: O(K log(min(N, K))) time, O(min(N, K)) space.
+ */
 public class FindKPairsWithSmallestSums {
 
     public static List<List<Integer>> kSmallestPairsMinHeap(int[] nums1, int[] nums2, int k) {
@@ -59,7 +71,6 @@ public class FindKPairsWithSmallestSums {
         List<List<Integer>> bf = kSmallestPairsBruteForce(nums1, nums2, 3);
         assert res.equals(bf) : "Brute force comparison failed";
 
-        // Boundary tests
         assert kSmallestPairsMinHeap(new int[]{1, 2}, new int[]{3}, 5).size() == 2 : "K exceeds total pairs";
         assert kSmallestPairsMinHeap(new int[]{}, new int[]{1}, 1).isEmpty() : "Empty nums1";
         assert kSmallestPairsMinHeap(null, new int[]{1}, 1).isEmpty() : "Null array";
