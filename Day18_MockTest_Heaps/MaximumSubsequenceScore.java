@@ -42,10 +42,31 @@ public class MaximumSubsequenceScore {
         return maxScore;
     }
 
+    public static long maxScoreBruteForce(int[] nums1, int[] nums2, int k) {
+        int n = nums1.length;
+        long[] max = new long[]{0};
+        backtrack(nums1, nums2, k, 0, 0, 0, Integer.MAX_VALUE, max);
+        return max[0];
+    }
+
+    private static void backtrack(int[] nums1, int[] nums2, int k, int idx, int count, long sum, int minN2, long[] max) {
+        if (count == k) {
+            max[0] = Math.max(max[0], sum * minN2);
+            return;
+        }
+        if (idx == nums1.length) return;
+
+        // Choose idx
+        backtrack(nums1, nums2, k, idx + 1, count + 1, sum + nums1[idx], Math.min(minN2, nums2[idx]), max);
+        // Skip idx
+        backtrack(nums1, nums2, k, idx + 1, count, sum, minN2, max);
+    }
+
     public static void main(String[] args) {
         int[] nums1 = {1, 3, 3, 2};
         int[] nums2 = {2, 1, 3, 4};
         assert maxScore(nums1, nums2, 3) == 12 : "Test 1 Failed";
+        assert maxScoreBruteForce(nums1, nums2, 3) == 12 : "BF Test 1 Failed";
 
         int[] a = {4, 2, 3, 1, 1};
         int[] b = {7, 5, 10, 9, 6};
