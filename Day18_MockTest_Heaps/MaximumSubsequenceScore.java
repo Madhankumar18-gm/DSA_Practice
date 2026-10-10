@@ -3,6 +3,21 @@ package Day18_MockTest_Heaps;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
+/**
+ * LeetCode 2542: Maximum Subsequence Score
+ * 
+ * Problem:
+ * You are given two 0-indexed integer arrays nums1 and nums2 of equal length n and a positive integer k.
+ * You must choose a subsequence of indices from nums1 of length k.
+ * For chosen indices nums1[i0] ... nums1[ik-1], the score is defined as:
+ *   (sum of chosen nums1 elements) * (min of chosen nums2 elements).
+ * Return the maximum possible score.
+ * 
+ * Complexity:
+ * - Sorting pairs by nums2 descending: O(N log N) time.
+ * - Min-Heap of size K: O(N log K) time, O(N + K) space.
+ * - Overall: O(N log N) time, O(N) space.
+ */
 public class MaximumSubsequenceScore {
 
     public static long maxScore(int[] nums1, int[] nums2, int k) {
@@ -55,7 +70,6 @@ public class MaximumSubsequenceScore {
         int[] sameB = {3, 3, 3};
         assert maxScore(same, sameB, 2) == 12 : "Identical elements test";
 
-        // Boundary tests
         assert maxScore(new int[]{5}, new int[]{2}, 1) == 10 : "k == n == 1";
         assert maxScore(null, new int[]{1}, 1) == 0 : "Null nums1";
         assert maxScore(new int[]{1}, null, 1) == 0 : "Null nums2";
