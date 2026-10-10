@@ -3,6 +3,18 @@ package Day18_MockTest_Heaps;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
+/**
+ * LeetCode 378: Kth Smallest Element in a Sorted Matrix
+ * 
+ * Problem:
+ * Given an n x n matrix where each of the rows and columns is sorted in ascending order,
+ * return the kth smallest element in the matrix.
+ * 
+ * Complexity:
+ * - Flatten & Sort: O(N^2 log(N^2)) time, O(N^2) space.
+ * - Min-Heap: O(K log(min(N, K))) time, O(min(N, K)) space.
+ * - Binary Search Range: O(N log(Max - Min)) time, O(1) space.
+ */
 public class KthSmallestElementInSortedMatrix {
 
     public static int kthSmallestNaive(int[][] matrix, int k) {
@@ -79,7 +91,6 @@ public class KthSmallestElementInSortedMatrix {
         assert kthSmallestMinHeap(new int[][]{{-5}}, 1) == -5 : "Heap Test 2 Failed";
         assert kthSmallestBinarySearch(mat1, 8) == 13 : "BS Test 1 Failed";
 
-        // Boundary tests
         assert kthSmallestMinHeap(mat1, 1) == 1 : "First element";
         assert kthSmallestMinHeap(mat1, 9) == 15 : "Last element";
         assert kthSmallestBinarySearch(mat1, 1) == 1 : "BS first element";
