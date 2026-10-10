@@ -95,5 +95,7 @@ public class KthSmallestElementInSortedMatrix {
         assert kthSmallestMinHeap(mat1, 9) == 15 : "Last element";
         assert kthSmallestBinarySearch(mat1, 1) == 1 : "BS first element";
         assert kthSmallestBinarySearch(mat1, 9) == 15 : "BS last element";
+
+        System.out.println("Execution completed successfully for KthSmallestElementInSortedMatrix.");
     }
 }
