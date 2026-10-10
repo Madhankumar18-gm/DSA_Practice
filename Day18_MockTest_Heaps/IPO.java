@@ -74,5 +74,7 @@ public class IPO {
         assert findMaximizedCapital(10, 5, new int[]{2}, new int[]{1}) == 7 : "k > n";
         assert findMaximizedCapital(0, 5, new int[]{2}, new int[]{1}) == 5 : "k == 0";
         assert findMaximizedCapital(2, 5, null, null) == 5 : "Null arrays";
+
+        System.out.println("Execution completed successfully for IPO.");
     }
 }
