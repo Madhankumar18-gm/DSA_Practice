@@ -18,10 +18,7 @@ public class IPO {
             projects[i][1] = profits[i];
         }
 
-        // Sort projects by capital required in ascending order
         Arrays.sort(projects, (a, b) -> Integer.compare(a[0], b[0]));
-
-        // Max-heap to store profits of all projects we can currently afford
         PriorityQueue<Integer> availableProfits = new PriorityQueue<>(Collections.reverseOrder());
 
         int projIdx = 0;
@@ -39,5 +36,15 @@ public class IPO {
         }
 
         return w;
+    }
+
+    public static void main(String[] args) {
+        int[] profits1 = {1, 2, 3};
+        int[] capital1 = {0, 1, 1};
+        assert findMaximizedCapital(2, 0, profits1, capital1) == 4 : "Test 1 Failed";
+
+        int[] profits2 = {1, 2, 3};
+        int[] capital2 = {0, 1, 2};
+        assert findMaximizedCapital(3, 0, profits2, capital2) == 6 : "Test 2 Failed";
     }
 }
