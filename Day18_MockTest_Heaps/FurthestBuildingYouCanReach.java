@@ -26,7 +26,6 @@ public class FurthestBuildingYouCanReach {
 
     public static int furthestBuildingMaxHeap(int[] heights, int bricks, int ladders) {
         if (heights == null || heights.length <= 1) return 0;
-        // Max-heap of brick usages: if bricks run out, retroactively replace largest brick jump with ladder
         PriorityQueue<Integer> brickJumps = new PriorityQueue<>(Collections.reverseOrder());
 
         for (int i = 0; i < heights.length - 1; i++) {
@@ -55,5 +54,8 @@ public class FurthestBuildingYouCanReach {
         int[] h2 = {4, 12, 2, 7, 3, 18, 20, 3, 19};
         assert furthestBuildingMinHeap(h2, 10, 2) == 7 : "Test 2 Failed";
         assert furthestBuildingMaxHeap(h2, 10, 2) == 7 : "Max Heap Test 2 Failed";
+
+        int[] h3 = {14, 3, 19, 3};
+        assert furthestBuildingMinHeap(h3, 17, 0) == 3 : "Test 3 Full Reach";
     }
 }
