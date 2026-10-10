@@ -4,6 +4,20 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
+/**
+ * LeetCode 1046: Last Stone Weight
+ * 
+ * Problem:
+ * You are given an array of integers stones where stones[i] is the weight of the ith stone.
+ * In each turn, choose the two heaviest stones and smash them together:
+ * - If x == y, both stones are destroyed.
+ * - If x != y, stone of weight x is destroyed, and stone of weight y has new weight (y - x).
+ * Return the weight of the last remaining stone, or 0 if none remain.
+ * 
+ * Complexity:
+ * - Naive Sorting: O(N^2 log N) time, O(N) space.
+ * - Max-Heap: O(N log N) time to build and smash, O(N) space.
+ */
 public class LastStoneWeight {
 
     public static int lastStoneWeightNaive(int[] stones) {
