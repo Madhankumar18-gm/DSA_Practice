@@ -57,5 +57,10 @@ public class FurthestBuildingYouCanReach {
 
         int[] h3 = {14, 3, 19, 3};
         assert furthestBuildingMinHeap(h3, 17, 0) == 3 : "Test 3 Full Reach";
+
+        // Boundary tests
+        assert furthestBuildingMinHeap(new int[]{5, 5, 5, 5}, 0, 0) == 3 : "Flat terrain";
+        assert furthestBuildingMinHeap(new int[]{1, 10}, 0, 0) == 0 : "No resources";
+        assert furthestBuildingMinHeap(new int[]{10}, 0, 0) == 0 : "Single building";
     }
 }
