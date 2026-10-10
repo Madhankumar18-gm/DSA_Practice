@@ -2,6 +2,7 @@ package Day18_MockTest_Heaps;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -33,6 +34,20 @@ public class FindKPairsWithSmallestSums {
         return result;
     }
 
+    public static List<List<Integer>> kSmallestPairsBruteForce(int[] nums1, int[] nums2, int k) {
+        List<List<Integer>> all = new ArrayList<>();
+        if (nums1 == null || nums2 == null || nums1.length == 0 || nums2.length == 0 || k <= 0) {
+            return all;
+        }
+        for (int x : nums1) {
+            for (int y : nums2) {
+                all.add(Arrays.asList(x, y));
+            }
+        }
+        all.sort((a, b) -> Integer.compare(a.get(0) + a.get(1), b.get(0) + b.get(1)));
+        return all.subList(0, Math.min(k, all.size()));
+    }
+
     public static void main(String[] args) {
         int[] nums1 = {1, 7, 11};
         int[] nums2 = {2, 4, 6};
@@ -41,5 +56,8 @@ public class FindKPairsWithSmallestSums {
         assert res.get(0).equals(Arrays.asList(1, 2)) : "Test 1 [0] Failed";
         assert res.get(1).equals(Arrays.asList(1, 4)) : "Test 1 [1] Failed";
         assert res.get(2).equals(Arrays.asList(1, 6)) : "Test 1 [2] Failed";
+
+        List<List<Integer>> bf = kSmallestPairsBruteForce(nums1, nums2, 3);
+        assert res.equals(bf) : "Brute force comparison failed";
     }
 }
