@@ -75,5 +75,7 @@ public class FindKPairsWithSmallestSums {
         assert kSmallestPairsMinHeap(new int[]{}, new int[]{1}, 1).isEmpty() : "Empty nums1";
         assert kSmallestPairsMinHeap(null, new int[]{1}, 1).isEmpty() : "Null array";
         assert kSmallestPairsMinHeap(new int[]{1}, new int[]{1}, 0).isEmpty() : "k = 0";
+
+        System.out.println("Execution completed successfully for FindKPairsWithSmallestSums.");
     }
 }
