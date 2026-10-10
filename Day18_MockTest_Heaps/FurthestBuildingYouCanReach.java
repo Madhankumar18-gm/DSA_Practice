@@ -75,5 +75,7 @@ public class FurthestBuildingYouCanReach {
         assert furthestBuildingMinHeap(new int[]{5, 5, 5, 5}, 0, 0) == 3 : "Flat terrain";
         assert furthestBuildingMinHeap(new int[]{1, 10}, 0, 0) == 0 : "No resources";
         assert furthestBuildingMinHeap(new int[]{10}, 0, 0) == 0 : "Single building";
+
+        System.out.println("Execution completed successfully for FurthestBuildingYouCanReach.");
     }
 }
