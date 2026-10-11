@@ -85,5 +85,7 @@ public class DesignAddAndSearchWordsDataStructure {
         assert !dict.search("....") : "Length mismatch";
         assert !dict.search(null) : "Null word search";
         assert !dict.search("b") : "Partial prefix should not match";
+
+        System.out.println("Execution completed successfully for DesignAddAndSearchWordsDataStructure.");
     }
 }
