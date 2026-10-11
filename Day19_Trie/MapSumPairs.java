@@ -75,5 +75,7 @@ public class MapSumPairs {
         assert ms.sum("banana") == 0 : "Non-existent prefix";
         assert ms.sum(null) == 0 : "Null prefix query";
         ms.insert(null, 10);
+
+        System.out.println("Execution completed successfully for MapSumPairs.");
     }
 }
