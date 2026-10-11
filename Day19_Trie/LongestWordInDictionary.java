@@ -1,5 +1,18 @@
 package Day19_Trie;
 
+/**
+ * LeetCode 720: Longest Word in Dictionary
+ * 
+ * Problem:
+ * Given an array of strings words representing an English Dictionary, return the longest word in words that can be
+ * built one character at a time by other words in words.
+ * If there is more than one possible answer, return the longest word with the smallest lexicographical order.
+ * If there is no answer, return the empty string.
+ * 
+ * Complexity:
+ * - Trie Insertion: O(sum of word lengths), O(sum of word lengths * 26) space.
+ * - DFS Traversal: O(sum of word lengths) time to traverse connected valid prefix paths.
+ */
 public class LongestWordInDictionary {
 
     public static class TrieNode {
@@ -50,7 +63,6 @@ public class LongestWordInDictionary {
         String[] broken = {"m", "mo", "mop", "mops", "mopsk", "xyz"};
         assert "mopsk".equals(longestWord(broken)) : "Broken prefix chain filter";
 
-        // Boundary tests
         assert "b".equals(longestWord(new String[]{"b", "c", "d"})) : "Single letters tie break";
         assert "".equals(longestWord(new String[]{})) : "Empty array";
         assert "".equals(longestWord(null)) : "Null array";
