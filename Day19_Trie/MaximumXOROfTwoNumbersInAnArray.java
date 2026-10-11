@@ -68,5 +68,7 @@ public class MaximumXOROfTwoNumbersInAnArray {
         assert findMaximumXOR(new int[]{5, 5, 5}) == 0 : "Identical elements XOR = 0";
         assert findMaximumXOR(new int[]{42}) == 0 : "Single element";
         assert findMaximumXOR(null) == 0 : "Null array";
+
+        System.out.println("Execution completed successfully for MaximumXOROfTwoNumbersInAnArray.");
     }
 }
