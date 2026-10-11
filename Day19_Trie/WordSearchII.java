@@ -53,7 +53,7 @@ public class WordSearchII {
         node = node.children[ch - 'a'];
         if (node.word != null) {
             result.add(node.word);
-            node.word = null; // Deduplicate
+            node.word = null;
         }
 
         board[r][c] = '#';
@@ -79,5 +79,9 @@ public class WordSearchII {
         assert res.contains("oath") : "Result contains oath";
         assert res.contains("eat") : "Result contains eat";
         assert !res.contains("rain") : "Result should not contain rain";
+
+        char[][] b2 = {{'a', 'b'}, {'c', 'd'}};
+        List<String> res2 = findWords(b2, new String[]{"abcb"});
+        assert res2.isEmpty() : "Cannot reuse cell in same path";
     }
 }
