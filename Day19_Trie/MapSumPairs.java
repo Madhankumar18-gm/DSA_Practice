@@ -52,9 +52,13 @@ public class MapSumPairs {
         ms.insert("app", 2);
         assert ms.sum("ap") == 5 : "Test 2 Failed";
 
-        // Key overwrite: apple 3 -> 5
         ms.insert("apple", 5);
         assert ms.sum("ap") == 7 : "Overwrite delta sum";
         assert ms.sum("apple") == 5 : "Exact match sum";
+
+        // Boundary tests
+        assert ms.sum("banana") == 0 : "Non-existent prefix";
+        assert ms.sum(null) == 0 : "Null prefix query";
+        ms.insert(null, 10);
     }
 }
