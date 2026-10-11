@@ -84,5 +84,7 @@ public class ImplementTriePrefixTree {
         assert !trie.startsWith("xyz") : "Non-existent prefix";
         assert !trie.search(null) : "Null word search";
         assert !trie.startsWith(null) : "Null prefix startsWith";
+
+        System.out.println("Execution completed successfully for ImplementTriePrefixTree.");
     }
 }
