@@ -26,9 +26,34 @@ public class ImplementTriePrefixTree {
         curr.isEndOfWord = true;
     }
 
+    public boolean search(String word) {
+        if (word == null) return false;
+        TrieNode node = findNode(word);
+        return node != null && node.isEndOfWord;
+    }
+
+    public boolean startsWith(String prefix) {
+        if (prefix == null) return false;
+        return findNode(prefix) != null;
+    }
+
+    private TrieNode findNode(String str) {
+        TrieNode curr = root;
+        for (char c : str.toCharArray()) {
+            int idx = c - 'a';
+            if (curr.children[idx] == null) return null;
+            curr = curr.children[idx];
+        }
+        return curr;
+    }
+
     public static void main(String[] args) {
         ImplementTriePrefixTree trie = new ImplementTriePrefixTree();
         trie.insert("apple");
-        assert trie.root.children['a' - 'a'] != null : "Insert root failed";
+        assert trie.search("apple") : "Search apple failed";
+        assert !trie.search("app") : "Search app should be false";
+        assert trie.startsWith("app") : "StartsWith app should be true";
+        trie.insert("app");
+        assert trie.search("app") : "Search app after insert failed";
     }
 }
