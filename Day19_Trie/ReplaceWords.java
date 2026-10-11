@@ -48,4 +48,11 @@ public class ReplaceWords {
         }
         return word;
     }
+
+    public static void main(String[] args) {
+        List<String> dict = Arrays.asList("cat", "bat", "rat");
+        String s = "the cattle was rattled by the battery";
+        String res = replaceWords(dict, s);
+        assert "the cat was rat by the bat".equals(res) : "Test 1 Failed: " + res;
+    }
 }
