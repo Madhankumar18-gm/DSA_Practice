@@ -66,5 +66,10 @@ public class DesignAddAndSearchWordsDataStructure {
         assert dict.search("a.") : "Single wildcard match";
         assert dict.search(".b") : "Leading wildcard match";
         assert dict.search("..") : "Double wildcard match";
+
+        // Boundary tests
+        assert !dict.search("....") : "Length mismatch";
+        assert !dict.search(null) : "Null word search";
+        assert !dict.search("b") : "Partial prefix should not match";
     }
 }
