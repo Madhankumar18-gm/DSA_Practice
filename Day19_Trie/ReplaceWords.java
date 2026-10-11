@@ -4,6 +4,20 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * LeetCode 648: Replace Words
+ * 
+ * Problem:
+ * In English, we have a concept called root, which can be followed by some other word to form another longer word.
+ * You are given a dictionary consisting of many roots and a sentence consisting of words separated by spaces.
+ * We need to replace all the derivatives in the sentence with the root forming it.
+ * If a derivative can be replaced by more than one root, replace it with the root that has the shortest length.
+ * 
+ * Complexity:
+ * - Trie Building: O(D * L) where D is dictionary size and L is max root length.
+ * - Sentence Replacement: O(N * W) where N is word count in sentence, W is max word length.
+ * - Space: O(D * L * 26) space for the Trie.
+ */
 public class ReplaceWords {
 
     public static class TrieNode {
@@ -63,7 +77,6 @@ public class ReplaceWords {
         List<String> overlap = Arrays.asList("c", "ca", "cat");
         assert "c".equals(replaceWords(overlap, "cattle")) : "Shortest root priority";
 
-        // Boundary tests
         assert "hello world".equals(replaceWords(Collections.emptyList(), "hello world")) : "Empty dictionary";
         assert "word".equals(replaceWords(dict, "word")) : "No matching root";
         assert replaceWords(null, "sentence").equals("sentence") : "Null dictionary";
