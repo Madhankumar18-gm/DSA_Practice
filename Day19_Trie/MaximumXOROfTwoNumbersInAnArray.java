@@ -45,22 +45,17 @@ public class MaximumXOROfTwoNumbersInAnArray {
         return maxXor;
     }
 
-    public static int findMaximumXORBruteForce(int[] nums) {
-        int max = 0;
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                max = Math.max(max, nums[i] ^ nums[j]);
-            }
-        }
-        return max;
-    }
-
     public static void main(String[] args) {
         int[] nums1 = {3, 10, 5, 25, 2, 8};
         assert findMaximumXOR(nums1) == 28 : "Test 1 Failed: 5 ^ 25 = 28";
-        assert findMaximumXORBruteForce(nums1) == 28 : "BF Test 1 Failed";
 
         int[] nums2 = {14, 70, 53, 83, 49, 91, 36, 80, 92, 51, 66, 70};
         assert findMaximumXOR(nums2) == 127 : "Test 2 Failed";
+
+        // Boundary tests
+        assert findMaximumXOR(new int[]{2, 4}) == 6 : "Two elements 2 ^ 4";
+        assert findMaximumXOR(new int[]{5, 5, 5}) == 0 : "Identical elements XOR = 0";
+        assert findMaximumXOR(new int[]{42}) == 0 : "Single element";
+        assert findMaximumXOR(null) == 0 : "Null array";
     }
 }
