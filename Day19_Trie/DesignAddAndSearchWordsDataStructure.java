@@ -1,5 +1,20 @@
 package Day19_Trie;
 
+/**
+ * LeetCode 211: Design Add and Search Words Data Structure
+ * 
+ * Problem:
+ * Design a data structure that supports adding new words and finding if a string matches any previously added string.
+ * Implement the WordDictionary class:
+ * - WordDictionary() Initializes the object.
+ * - void addWord(word) Adds word to the data structure.
+ * - bool search(word) Returns true if there is any string in the data structure that matches word or false otherwise.
+ *   word may contain dots '.' where dots can be matched with any letter.
+ * 
+ * Complexity:
+ * - addWord: O(L) time where L is word length, O(L * 26) space.
+ * - search: O(L) time for words without dots, up to O(26^L) in worst-case wildcard matching. Space O(L) recursion depth.
+ */
 public class DesignAddAndSearchWordsDataStructure {
 
     public static class TrieNode {
@@ -67,7 +82,6 @@ public class DesignAddAndSearchWordsDataStructure {
         assert dict.search(".b") : "Leading wildcard match";
         assert dict.search("..") : "Double wildcard match";
 
-        // Boundary tests
         assert !dict.search("....") : "Length mismatch";
         assert !dict.search(null) : "Null word search";
         assert !dict.search("b") : "Partial prefix should not match";
