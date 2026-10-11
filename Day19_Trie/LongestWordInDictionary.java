@@ -49,5 +49,10 @@ public class LongestWordInDictionary {
 
         String[] broken = {"m", "mo", "mop", "mops", "mopsk", "xyz"};
         assert "mopsk".equals(longestWord(broken)) : "Broken prefix chain filter";
+
+        // Boundary tests
+        assert "b".equals(longestWord(new String[]{"b", "c", "d"})) : "Single letters tie break";
+        assert "".equals(longestWord(new String[]{})) : "Empty array";
+        assert "".equals(longestWord(null)) : "Null array";
     }
 }
