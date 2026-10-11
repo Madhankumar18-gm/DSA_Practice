@@ -3,6 +3,18 @@ package Day19_Trie;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * LeetCode 212: Word Search II
+ * 
+ * Problem:
+ * Given an m x n board of characters and a list of strings words, return all words on the board.
+ * Each word must be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally
+ * or vertically neighboring. The same letter cell may not be used more than once in a word.
+ * 
+ * Complexity:
+ * - Building Trie: O(W * L) where W is number of words, L is max word length.
+ * - Backtracking DFS: O(M * N * 4 * 3^(L-1)) time, O(W * L) space.
+ */
 public class WordSearchII {
 
     public static class TrieNode {
@@ -81,7 +93,6 @@ public class WordSearchII {
         List<String> res2 = findWords(b2, new String[]{"abcb"});
         assert res2.isEmpty() : "Cannot reuse cell in same path";
 
-        // Boundary tests
         char[][] single = {{'a'}};
         assert findWords(single, new String[]{"a"}).contains("a") : "Single cell match";
         assert findWords(null, words).isEmpty() : "Null board";
