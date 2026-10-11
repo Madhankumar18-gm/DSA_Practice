@@ -33,4 +33,10 @@ public class MapSumPairs {
             curr.val += delta;
         }
     }
+
+    public static void main(String[] args) {
+        MapSumPairs ms = new MapSumPairs();
+        ms.insert("apple", 3);
+        assert ms.root.children['a' - 'a'].val == 3 : "Root child 'a' val 3";
+    }
 }
