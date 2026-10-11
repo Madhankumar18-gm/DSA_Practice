@@ -25,4 +25,10 @@ public class WordSearchII {
         }
         return root;
     }
+
+    public static void main(String[] args) {
+        TrieNode root = buildTrie(new String[]{"oath", "pea", "eat", "rain"});
+        assert root.children['o' - 'a'] != null : "Trie child 'o'";
+        assert root.children['p' - 'a'] != null : "Trie child 'p'";
+    }
 }
