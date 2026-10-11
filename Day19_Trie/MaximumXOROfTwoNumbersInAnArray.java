@@ -1,5 +1,17 @@
 package Day19_Trie;
 
+/**
+ * LeetCode 421: Maximum XOR of Two Numbers in an Array
+ * 
+ * Problem:
+ * Given an integer array nums, return the maximum result of nums[i] XOR nums[j], where 0 <= i <= j < n.
+ * 
+ * Complexity:
+ * - Bitwise 32-bit Trie Insertion: O(32 * N) = O(N) time.
+ * - Bitwise XOR Query: O(32 * N) = O(N) time.
+ * - Overall Time: O(N) time.
+ * - Space: O(32 * N) = O(N) space.
+ */
 public class MaximumXOROfTwoNumbersInAnArray {
 
     public static class BinaryTrieNode {
@@ -52,7 +64,6 @@ public class MaximumXOROfTwoNumbersInAnArray {
         int[] nums2 = {14, 70, 53, 83, 49, 91, 36, 80, 92, 51, 66, 70};
         assert findMaximumXOR(nums2) == 127 : "Test 2 Failed";
 
-        // Boundary tests
         assert findMaximumXOR(new int[]{2, 4}) == 6 : "Two elements 2 ^ 4";
         assert findMaximumXOR(new int[]{5, 5, 5}) == 0 : "Identical elements XOR = 0";
         assert findMaximumXOR(new int[]{42}) == 0 : "Single element";
