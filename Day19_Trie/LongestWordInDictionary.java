@@ -31,7 +31,8 @@ public class LongestWordInDictionary {
     private static void dfs(TrieNode node, String[] longest) {
         for (TrieNode child : node.children) {
             if (child != null && child.word != null) {
-                if (child.word.length() > longest[0].length()) {
+                if (child.word.length() > longest[0].length() || 
+                    (child.word.length() == longest[0].length() && child.word.compareTo(longest[0]) < 0)) {
                     longest[0] = child.word;
                 }
                 dfs(child, longest);
@@ -42,5 +43,8 @@ public class LongestWordInDictionary {
     public static void main(String[] args) {
         String[] w1 = {"w", "wo", "wor", "worl", "world"};
         assert "world".equals(longestWord(w1)) : "Test 1 Failed";
+
+        String[] w2 = {"a", "banana", "app", "appl", "ap", "apply", "apple"};
+        assert "apple".equals(longestWord(w2)) : "Test 2 Failed (tie break apple vs apply)";
     }
 }
