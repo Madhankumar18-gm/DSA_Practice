@@ -59,5 +59,12 @@ public class DesignAddAndSearchWordsDataStructure {
         assert dict.search("bad") : "bad should exist";
         assert dict.search(".ad") : ".ad should match bad/dad/mad";
         assert dict.search("b..") : "b.. should match bad";
+
+        dict.addWord("a");
+        dict.addWord("ab");
+        assert dict.search("a") : "Single char search";
+        assert dict.search("a.") : "Single wildcard match";
+        assert dict.search(".b") : "Leading wildcard match";
+        assert dict.search("..") : "Double wildcard match";
     }
 }
