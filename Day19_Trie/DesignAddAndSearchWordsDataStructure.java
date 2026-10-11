@@ -25,4 +25,10 @@ public class DesignAddAndSearchWordsDataStructure {
         }
         curr.isEndOfWord = true;
     }
+
+    public static void main(String[] args) {
+        DesignAddAndSearchWordsDataStructure dict = new DesignAddAndSearchWordsDataStructure();
+        dict.addWord("bad");
+        assert dict.root.children['b' - 'a'] != null : "Root child 'b' should exist";
+    }
 }
