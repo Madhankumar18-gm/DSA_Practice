@@ -97,5 +97,7 @@ public class WordSearchII {
         assert findWords(single, new String[]{"a"}).contains("a") : "Single cell match";
         assert findWords(null, words).isEmpty() : "Null board";
         assert findWords(board, null).isEmpty() : "Null words";
+
+        System.out.println("Execution completed successfully for WordSearchII.");
     }
 }
