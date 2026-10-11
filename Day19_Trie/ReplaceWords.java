@@ -54,5 +54,9 @@ public class ReplaceWords {
         String s = "the cattle was rattled by the battery";
         String res = replaceWords(dict, s);
         assert "the cat was rat by the bat".equals(res) : "Test 1 Failed: " + res;
+
+        List<String> dict2 = Arrays.asList("a", "b", "c");
+        String s2 = "aadsfasf absbs bbab cadsfafs";
+        assert "a a b c".equals(replaceWords(dict2, s2)) : "Test 2 Failed";
     }
 }
