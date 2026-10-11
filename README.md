@@ -6,8 +6,8 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 
 ## 📊 Repository Summary
 
-- **Total Problems Solved**: `160 Problems`
-- **Total Git Commits**: `1,435+ Commits`
+- **Total Problems Solved**: `167 Problems`
+- **Total Git Commits**: `1,492+ Commits`
 - **Primary Language**: `Java 17+`
 - **Remote Repository**: [GitHub - DSA_Practice](https://github.com/Madhankumar18-gm/DSA_Practice.git)
 
@@ -33,6 +33,7 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 - [x] **Day 16 - Dynamic Programming (Knapsack Variants)** (Zero One Knapsack, Subset Sum, Partition Equal Subset Sum, Minimum Subset Sum Difference, Target Sum Knapsack, Unbounded Knapsack, Coin Change II, Combination Sum IV, Ones and Zeroes) — `9 Problems` \| `81 Commits`
 - [x] **Day 17 - Heaps & Priority Queue** (Kth Largest Element, Top K Frequent, Find Median from Data Stream, Merge K Sorted Lists, K Closest Points, Task Scheduler, Heap Sort) — `7 Problems` | `56 Commits`
 - [x] **Day 18 - Mock Test - Heaps & Priority Queue** (Last Stone Weight, Kth Smallest Element in Sorted Matrix, Reorganize String, Furthest Building You Can Reach, Find K Pairs with Smallest Sums, Maximum Subsequence Score, IPO) — `7 Problems` | `56 Commits`
+- [x] **Day 19 - Trie - Insert, Search, Prefix Matching** (Implement Trie, Design Add and Search Words, Word Search II, Replace Words, Longest Word in Dictionary, Maximum XOR of Two Numbers, Map Sum Pairs) — `7 Problems` | `56 Commits`
 
 ---
 
@@ -80,6 +81,15 @@ DSA Practice/
 │   ├── FindKPairsWithSmallestSums.java
 │   ├── MaximumSubsequenceScore.java
 │   └── IPO.java
+│
+├── Day19_Trie/                      # Topic Folder Day 19 (7 problems)
+│   ├── ImplementTriePrefixTree.java
+│   ├── DesignAddAndSearchWordsDataStructure.java
+│   ├── WordSearchII.java
+│   ├── ReplaceWords.java
+│   ├── LongestWordInDictionary.java
+│   ├── MaximumXOROfTwoNumbersInAnArray.java
+│   └── MapSumPairs.java
 │
 ├── LeetCode/                            # Daily Date Folders for LeetCode Problems
 │   ├── 2026-09-22/                      # 2026-09-22 Daily Log (7 problems)
@@ -299,6 +309,19 @@ DSA Practice/
 | 158 | Find K Pairs with Smallest Sums | [LeetCode #373](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/) | Min-Heap Multi-Pointer | $O(K \log N)$ | $O(N)$ | [`FindKPairsWithSmallestSums.java`](./Day18_MockTest_Heaps/FindKPairsWithSmallestSums.java) |
 | 159 | Maximum Subsequence Score | [LeetCode #2542](https://leetcode.com/problems/maximum-subsequence-score/) | Min-Heap + Pair Sorting | $O(N \log N)$ | $O(N)$ | [`MaximumSubsequenceScore.java`](./Day18_MockTest_Heaps/MaximumSubsequenceScore.java) |
 | 160 | IPO | [LeetCode #502](https://leetcode.com/problems/ipo/) | Dual-Heap Greedy Capital | $O(N \log N)$ | $O(N)$ | [`IPO.java`](./Day18_MockTest_Heaps/IPO.java) |
+
+---
+
+### Day 19: Trie (Prefix Tree) Concepts
+| # | Problem Name | LeetCode Link | Topic Tag | Time | Space | Solution Code |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
+| 161 | Implement Trie (Prefix Tree) | [LeetCode #208](https://leetcode.com/problems/implement-trie-prefix-tree/) | Trie / Prefix Tree | $O(L)$ | $O(L \cdot 26)$ | [`ImplementTriePrefixTree.java`](./Day19_Trie/ImplementTriePrefixTree.java) |
+| 162 | Design Add and Search Words Data Structure | [LeetCode #211](https://leetcode.com/problems/design-add-and-search-words-data-structure/) | Trie Backtracking DFS | $O(L)$ / $O(26^L)$ | $O(L \cdot 26)$ | [`DesignAddAndSearchWordsDataStructure.java`](./Day19_Trie/DesignAddAndSearchWordsDataStructure.java) |
+| 163 | Word Search II | [LeetCode #212](https://leetcode.com/problems/word-search-ii/) | Trie + 2D Grid Backtracking | $O(M \cdot N \cdot 4 \cdot 3^{L-1})$ | $O(W \cdot L)$ | [`WordSearchII.java`](./Day19_Trie/WordSearchII.java) |
+| 164 | Replace Words | [LeetCode #648](https://leetcode.com/problems/replace-words/) | Trie Shortest Prefix Root | $O(N \cdot W)$ | $O(D \cdot L)$ | [`ReplaceWords.java`](./Day19_Trie/ReplaceWords.java) |
+| 165 | Longest Word in Dictionary | [LeetCode #720](https://leetcode.com/problems/longest-word-in-dictionary/) | Trie DFS Prefix Chain | $O(\sum L)$ | $O(\sum L \cdot 26)$ | [`LongestWordInDictionary.java`](./Day19_Trie/LongestWordInDictionary.java) |
+| 166 | Maximum XOR of Two Numbers in an Array | [LeetCode #421](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/) | 32-bit Binary Trie Greedy | $O(N)$ | $O(N)$ | [`MaximumXOROfTwoNumbersInAnArray.java`](./Day19_Trie/MaximumXOROfTwoNumbersInAnArray.java) |
+| 167 | Map Sum Pairs | [LeetCode #677](https://leetcode.com/problems/map-sum-pairs/) | Trie Delta Value Prefix Sum | $O(K)$ insert / $O(P)$ sum | $O(K \cdot 26)$ | [`MapSumPairs.java`](./Day19_Trie/MapSumPairs.java) |
 
 ---
 
