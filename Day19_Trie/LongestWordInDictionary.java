@@ -66,5 +66,7 @@ public class LongestWordInDictionary {
         assert "b".equals(longestWord(new String[]{"b", "c", "d"})) : "Single letters tie break";
         assert "".equals(longestWord(new String[]{})) : "Empty array";
         assert "".equals(longestWord(null)) : "Null array";
+
+        System.out.println("Execution completed successfully for LongestWordInDictionary.");
     }
 }
