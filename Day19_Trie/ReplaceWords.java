@@ -1,6 +1,7 @@
 package Day19_Trie;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class ReplaceWords {
@@ -59,8 +60,12 @@ public class ReplaceWords {
         String s2 = "aadsfasf absbs bbab cadsfafs";
         assert "a a b c".equals(replaceWords(dict2, s2)) : "Test 2 Failed";
 
-        // Overlapping roots ("c", "ca", "cat") -> should pick shortest "c"
         List<String> overlap = Arrays.asList("c", "ca", "cat");
         assert "c".equals(replaceWords(overlap, "cattle")) : "Shortest root priority";
+
+        // Boundary tests
+        assert "hello world".equals(replaceWords(Collections.emptyList(), "hello world")) : "Empty dictionary";
+        assert "word".equals(replaceWords(dict, "word")) : "No matching root";
+        assert replaceWords(null, "sentence").equals("sentence") : "Null dictionary";
     }
 }
