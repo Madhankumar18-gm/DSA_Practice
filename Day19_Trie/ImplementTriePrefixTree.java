@@ -62,5 +62,10 @@ public class ImplementTriePrefixTree {
         assert trie.startsWith("ban") : "Prefix ban";
         assert trie.search("band") : "Search band";
         assert !trie.search("ba") : "Search ba";
+
+        assert !trie.search("xyz") : "Non-existent word";
+        assert !trie.startsWith("xyz") : "Non-existent prefix";
+        assert !trie.search(null) : "Null word search";
+        assert !trie.startsWith(null) : "Null prefix startsWith";
     }
 }
