@@ -34,9 +34,22 @@ public class MapSumPairs {
         }
     }
 
+    public int sum(String prefix) {
+        if (prefix == null) return 0;
+        TrieNode curr = root;
+        for (char c : prefix.toCharArray()) {
+            int idx = c - 'a';
+            if (curr.children[idx] == null) return 0;
+            curr = curr.children[idx];
+        }
+        return curr.val;
+    }
+
     public static void main(String[] args) {
         MapSumPairs ms = new MapSumPairs();
         ms.insert("apple", 3);
-        assert ms.root.children['a' - 'a'].val == 3 : "Root child 'a' val 3";
+        assert ms.sum("ap") == 3 : "Test 1 Failed";
+        ms.insert("app", 2);
+        assert ms.sum("ap") == 5 : "Test 2 Failed";
     }
 }
