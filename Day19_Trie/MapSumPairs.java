@@ -51,5 +51,10 @@ public class MapSumPairs {
         assert ms.sum("ap") == 3 : "Test 1 Failed";
         ms.insert("app", 2);
         assert ms.sum("ap") == 5 : "Test 2 Failed";
+
+        // Key overwrite: apple 3 -> 5
+        ms.insert("apple", 5);
+        assert ms.sum("ap") == 7 : "Overwrite delta sum";
+        assert ms.sum("apple") == 5 : "Exact match sum";
     }
 }
