@@ -46,5 +46,8 @@ public class LongestWordInDictionary {
 
         String[] w2 = {"a", "banana", "app", "appl", "ap", "apply", "apple"};
         assert "apple".equals(longestWord(w2)) : "Test 2 Failed (tie break apple vs apply)";
+
+        String[] broken = {"m", "mo", "mop", "mops", "mopsk", "xyz"};
+        assert "mopsk".equals(longestWord(broken)) : "Broken prefix chain filter";
     }
 }
