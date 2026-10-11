@@ -25,4 +25,10 @@ public class ImplementTriePrefixTree {
         }
         curr.isEndOfWord = true;
     }
+
+    public static void main(String[] args) {
+        ImplementTriePrefixTree trie = new ImplementTriePrefixTree();
+        trie.insert("apple");
+        assert trie.root.children['a' - 'a'] != null : "Insert root failed";
+    }
 }
