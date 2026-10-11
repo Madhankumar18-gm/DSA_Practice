@@ -55,5 +55,12 @@ public class ImplementTriePrefixTree {
         assert trie.startsWith("app") : "StartsWith app should be true";
         trie.insert("app");
         assert trie.search("app") : "Search app after insert failed";
+
+        trie.insert("banana");
+        trie.insert("band");
+        trie.insert("bandage");
+        assert trie.startsWith("ban") : "Prefix ban";
+        assert trie.search("band") : "Search band";
+        assert !trie.search("ba") : "Search ba";
     }
 }
