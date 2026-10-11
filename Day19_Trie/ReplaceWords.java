@@ -80,5 +80,7 @@ public class ReplaceWords {
         assert "hello world".equals(replaceWords(Collections.emptyList(), "hello world")) : "Empty dictionary";
         assert "word".equals(replaceWords(dict, "word")) : "No matching root";
         assert replaceWords(null, "sentence").equals("sentence") : "Null dictionary";
+
+        System.out.println("Execution completed successfully for ReplaceWords.");
     }
 }
