@@ -58,5 +58,9 @@ public class ReplaceWords {
         List<String> dict2 = Arrays.asList("a", "b", "c");
         String s2 = "aadsfasf absbs bbab cadsfafs";
         assert "a a b c".equals(replaceWords(dict2, s2)) : "Test 2 Failed";
+
+        // Overlapping roots ("c", "ca", "cat") -> should pick shortest "c"
+        List<String> overlap = Arrays.asList("c", "ca", "cat");
+        assert "c".equals(replaceWords(overlap, "cattle")) : "Shortest root priority";
     }
 }
