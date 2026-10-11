@@ -38,4 +38,9 @@ public class LongestWordInDictionary {
             }
         }
     }
+
+    public static void main(String[] args) {
+        String[] w1 = {"w", "wo", "wor", "worl", "world"};
+        assert "world".equals(longestWord(w1)) : "Test 1 Failed";
+    }
 }
