@@ -65,9 +65,6 @@ public class WordSearchII {
     }
 
     public static void main(String[] args) {
-        TrieNode root = buildTrie(new String[]{"oath", "pea", "eat", "rain"});
-        assert root.children['o' - 'a'] != null : "Trie child 'o'";
-
         char[][] board = {
             {'o', 'a', 'a', 'n'},
             {'e', 't', 'a', 'e'},
@@ -83,5 +80,11 @@ public class WordSearchII {
         char[][] b2 = {{'a', 'b'}, {'c', 'd'}};
         List<String> res2 = findWords(b2, new String[]{"abcb"});
         assert res2.isEmpty() : "Cannot reuse cell in same path";
+
+        // Boundary tests
+        char[][] single = {{'a'}};
+        assert findWords(single, new String[]{"a"}).contains("a") : "Single cell match";
+        assert findWords(null, words).isEmpty() : "Null board";
+        assert findWords(board, null).isEmpty() : "Null words";
     }
 }
