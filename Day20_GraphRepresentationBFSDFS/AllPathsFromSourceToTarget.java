@@ -4,6 +4,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * LeetCode 797: All Paths From Source to Target
+ * 
+ * Problem:
+ * Given a directed acyclic graph (DAG) of n nodes labeled from 0 to n - 1, find all possible paths
+ * from node 0 to node n - 1 and return them in any order.
+ * The graph is given as follows: graph[i] is a list of all nodes you can visit from node i.
+ * 
+ * Complexity:
+ * - Time Complexity: O(2^(N-1) * N) in the worst case (e.g. dense DAG with exponential paths).
+ * - Space Complexity: O(N) auxiliary recursion stack space for DAG path tracking.
+ */
 public class AllPathsFromSourceToTarget {
 
     public static List<List<Integer>> allPathsSourceTarget(int[][] graph) {
@@ -45,7 +57,6 @@ public class AllPathsFromSourceToTarget {
         assert chainRes.size() == 1 : "Single chain path";
         assert chainRes.get(0).equals(Arrays.asList(0, 1, 2));
 
-        // Boundary tests
         int[][] two = {{1}, {}};
         assert allPathsSourceTarget(two).size() == 1 : "2-node direct edge";
         assert allPathsSourceTarget(null).isEmpty() : "Null graph";
