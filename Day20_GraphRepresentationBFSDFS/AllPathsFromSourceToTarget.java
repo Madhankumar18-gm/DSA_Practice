@@ -40,10 +40,14 @@ public class AllPathsFromSourceToTarget {
         List<List<Integer>> res2 = allPathsSourceTarget(g2);
         assert res2.size() == 5 : "Test 2 Size 5 paths";
 
-        // Linear chain: 0->1->2
         int[][] chain = {{1}, {2}, {}};
         List<List<Integer>> chainRes = allPathsSourceTarget(chain);
         assert chainRes.size() == 1 : "Single chain path";
         assert chainRes.get(0).equals(Arrays.asList(0, 1, 2));
+
+        // Boundary tests
+        int[][] two = {{1}, {}};
+        assert allPathsSourceTarget(two).size() == 1 : "2-node direct edge";
+        assert allPathsSourceTarget(null).isEmpty() : "Null graph";
     }
 }
