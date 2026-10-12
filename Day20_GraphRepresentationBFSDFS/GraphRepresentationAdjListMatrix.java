@@ -1,5 +1,8 @@
 package Day20_GraphRepresentationBFSDFS;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GraphRepresentationAdjListMatrix {
 
     public static class AdjMatrixGraph {
@@ -34,6 +37,53 @@ public class GraphRepresentationAdjListMatrix {
             }
             return deg;
         }
+
+        public int[][] getMatrix() {
+            return matrix;
+        }
+    }
+
+    public static class AdjListGraph {
+        private final int vertices;
+        private final List<List<Integer>> adj;
+
+        public AdjListGraph(int vertices) {
+            this.vertices = vertices;
+            this.adj = new ArrayList<>();
+            for (int i = 0; i < vertices; i++) {
+                adj.add(new ArrayList<>());
+            }
+        }
+
+        public void addEdge(int u, int v, boolean directed) {
+            if (u >= 0 && u < vertices && v >= 0 && v < vertices) {
+                adj.get(u).add(v);
+                if (!directed) {
+                    adj.get(v).add(u);
+                }
+            }
+        }
+
+        public List<Integer> getNeighbors(int u) {
+            return adj.get(u);
+        }
+
+        public int getDegree(int u) {
+            return adj.get(u).size();
+        }
+
+        public static AdjListGraph fromMatrix(int[][] matrix) {
+            int n = matrix.length;
+            AdjListGraph g = new AdjListGraph(n);
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (matrix[i][j] == 1) {
+                        g.adj.get(i).add(j);
+                    }
+                }
+            }
+            return g;
+        }
     }
 
     public static void main(String[] args) {
@@ -44,5 +94,10 @@ public class GraphRepresentationAdjListMatrix {
         assert mat.hasEdge(1, 0) : "Edge (1,0) exists";
         assert mat.getDegree(1) == 2 : "Degree of vertex 1 is 2";
         assert !mat.hasEdge(0, 3) : "Edge (0,3) should not exist";
+
+        AdjListGraph list = AdjListGraph.fromMatrix(mat.getMatrix());
+        assert list.getNeighbors(1).contains(0) : "List has neighbor 0";
+        assert list.getNeighbors(1).contains(2) : "List has neighbor 2";
+        assert list.getDegree(1) == 2 : "List degree 2";
     }
 }
