@@ -104,5 +104,8 @@ public class GraphRepresentationAdjListMatrix {
         dirMat.addEdge(0, 1, true);
         assert dirMat.hasEdge(0, 1) : "Directed 0->1";
         assert !dirMat.hasEdge(1, 0) : "Directed 1->0 should be false";
+
+        mat.addEdge(-1, 5, false);
+        assert !mat.hasEdge(-1, 5) : "Out of bounds edge query";
     }
 }
