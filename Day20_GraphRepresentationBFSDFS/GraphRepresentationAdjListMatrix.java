@@ -99,5 +99,10 @@ public class GraphRepresentationAdjListMatrix {
         assert list.getNeighbors(1).contains(0) : "List has neighbor 0";
         assert list.getNeighbors(1).contains(2) : "List has neighbor 2";
         assert list.getDegree(1) == 2 : "List degree 2";
+
+        AdjMatrixGraph dirMat = new AdjMatrixGraph(3);
+        dirMat.addEdge(0, 1, true);
+        assert dirMat.hasEdge(0, 1) : "Directed 0->1";
+        assert !dirMat.hasEdge(1, 0) : "Directed 1->0 should be false";
     }
 }
