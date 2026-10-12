@@ -6,8 +6,8 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 
 ## 📊 Repository Summary
 
-- **Total Problems Solved**: `167 Problems`
-- **Total Git Commits**: `1,492+ Commits`
+- **Total Problems Solved**: `174 Problems`
+- **Total Git Commits**: `1,549+ Commits`
 - **Primary Language**: `Java 17+`
 - **Remote Repository**: [GitHub - DSA_Practice](https://github.com/Madhankumar18-gm/DSA_Practice.git)
 
@@ -34,6 +34,7 @@ Welcome to the **DSA Practice Repository**. This repository contains a structure
 - [x] **Day 17 - Heaps & Priority Queue** (Kth Largest Element, Top K Frequent, Find Median from Data Stream, Merge K Sorted Lists, K Closest Points, Task Scheduler, Heap Sort) — `7 Problems` | `56 Commits`
 - [x] **Day 18 - Mock Test - Heaps & Priority Queue** (Last Stone Weight, Kth Smallest Element in Sorted Matrix, Reorganize String, Furthest Building You Can Reach, Find K Pairs with Smallest Sums, Maximum Subsequence Score, IPO) — `7 Problems` | `56 Commits`
 - [x] **Day 19 - Trie - Insert, Search, Prefix Matching** (Implement Trie, Design Add and Search Words, Word Search II, Replace Words, Longest Word in Dictionary, Maximum XOR of Two Numbers, Map Sum Pairs) — `7 Problems` | `56 Commits`
+- [x] **Day 20 - Graph Representation & BFS/DFS** (Graph Representation Adj List/Matrix, Breadth First Search, Depth First Search, Number of Connected Components, Graph Valid Tree, Keys and Rooms, All Paths From Source to Target) — `7 Problems` | `56 Commits`
 
 ---
 
@@ -90,6 +91,15 @@ DSA Practice/
 │   ├── LongestWordInDictionary.java
 │   ├── MaximumXOROfTwoNumbersInAnArray.java
 │   └── MapSumPairs.java
+│
+├── Day20_GraphRepresentationBFSDFS/ # Topic Folder Day 20 (7 problems)
+│   ├── GraphRepresentationAdjListMatrix.java
+│   ├── BreadthFirstSearchGraph.java
+│   ├── DepthFirstSearchGraph.java
+│   ├── NumberOfConnectedComponents.java
+│   ├── GraphValidTree.java
+│   ├── KeysAndRooms.java
+│   └── AllPathsFromSourceToTarget.java
 │
 ├── LeetCode/                            # Daily Date Folders for LeetCode Problems
 │   ├── 2026-09-22/                      # 2026-09-22 Daily Log (7 problems)
@@ -322,6 +332,19 @@ DSA Practice/
 | 165 | Longest Word in Dictionary | [LeetCode #720](https://leetcode.com/problems/longest-word-in-dictionary/) | Trie DFS Prefix Chain | $O(\sum L)$ | $O(\sum L \cdot 26)$ | [`LongestWordInDictionary.java`](./Day19_Trie/LongestWordInDictionary.java) |
 | 166 | Maximum XOR of Two Numbers in an Array | [LeetCode #421](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/) | 32-bit Binary Trie Greedy | $O(N)$ | $O(N)$ | [`MaximumXOROfTwoNumbersInAnArray.java`](./Day19_Trie/MaximumXOROfTwoNumbersInAnArray.java) |
 | 167 | Map Sum Pairs | [LeetCode #677](https://leetcode.com/problems/map-sum-pairs/) | Trie Delta Value Prefix Sum | $O(K)$ insert / $O(P)$ sum | $O(K \cdot 26)$ | [`MapSumPairs.java`](./Day19_Trie/MapSumPairs.java) |
+
+---
+
+### Day 20: Graph Representation & BFS/DFS Concepts
+| # | Problem Name | LeetCode Link | Topic Tag | Time | Space | Solution Code |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
+| 168 | Graph Representation (Adjacency Matrix & List) | Standard Graph DS | Dual Representation & Matrix Conversion | $O(V^2)$ / $O(V + E)$ | $O(V^2)$ / $O(V + E)$ | [`GraphRepresentationAdjListMatrix.java`](./Day20_GraphRepresentationBFSDFS/GraphRepresentationAdjListMatrix.java) |
+| 169 | Breadth First Search (BFS) | Standard Algorithm | Queue Level Order & Shortest Path | $O(V + E)$ | $O(V)$ | [`BreadthFirstSearchGraph.java`](./Day20_GraphRepresentationBFSDFS/BreadthFirstSearchGraph.java) |
+| 170 | Depth First Search (DFS) | Standard Algorithm | Recursive/Iterative Stack & Cycle Check | $O(V + E)$ | $O(V)$ | [`DepthFirstSearchGraph.java`](./Day20_GraphRepresentationBFSDFS/DepthFirstSearchGraph.java) |
+| 171 | Number of Connected Components | [LeetCode #323](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/) | Disjoint Set Union / DFS Traversal | $O(V + E)$ | $O(V)$ | [`NumberOfConnectedComponents.java`](./Day20_GraphRepresentationBFSDFS/NumberOfConnectedComponents.java) |
+| 172 | Graph Valid Tree | [LeetCode #261](https://leetcode.com/problems/graph-valid-tree/) | Tree Verification (N-1 Edges / Cycle Check) | $O(V + E)$ | $O(V)$ | [`GraphValidTree.java`](./Day20_GraphRepresentationBFSDFS/GraphValidTree.java) |
+| 173 | Keys and Rooms | [LeetCode #841](https://leetcode.com/problems/keys-and-rooms/) | Room Reachability BFS/DFS | $O(N + K)$ | $O(N)$ | [`KeysAndRooms.java`](./Day20_GraphRepresentationBFSDFS/KeysAndRooms.java) |
+| 174 | All Paths From Source to Target | [LeetCode #797](https://leetcode.com/problems/all-paths-from-source-to-target/) | DAG All Paths Backtracking DFS | $O(2^{N-1} \cdot N)$ | $O(N)$ | [`AllPathsFromSourceToTarget.java`](./Day20_GraphRepresentationBFSDFS/AllPathsFromSourceToTarget.java) |
 
 ---
 
