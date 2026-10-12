@@ -60,5 +60,7 @@ public class AllPathsFromSourceToTarget {
         int[][] two = {{1}, {}};
         assert allPathsSourceTarget(two).size() == 1 : "2-node direct edge";
         assert allPathsSourceTarget(null).isEmpty() : "Null graph";
+
+        System.out.println("Execution completed successfully for AllPathsFromSourceToTarget.");
     }
 }
