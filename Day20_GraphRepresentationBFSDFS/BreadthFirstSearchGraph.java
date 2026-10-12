@@ -118,5 +118,9 @@ public class BreadthFirstSearchGraph {
         dis.get(0).add(1);
         dis.get(1).add(0);
         assert bfsAllComponents(3, dis).size() == 3 : "All components traversed";
+
+        // Boundary tests
+        assert shortestPath(3, dis, 0, 2).isEmpty() : "Unreachable node path is empty";
+        assert bfsTraversal(1, Collections.singletonList(Collections.emptyList()), 0).size() == 1 : "Single node";
     }
 }
