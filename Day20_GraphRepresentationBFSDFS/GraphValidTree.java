@@ -37,11 +37,37 @@ public class GraphValidTree {
         return false;
     }
 
+    public static boolean validTreeUnionFind(int n, int[][] edges) {
+        if (edges == null || edges.length != n - 1) return false;
+
+        int[] parent = new int[n];
+        for (int i = 0; i < n; i++) parent[i] = i;
+
+        for (int[] e : edges) {
+            int rootU = find(parent, e[0]);
+            int rootV = find(parent, e[1]);
+            if (rootU == rootV) return false; // Cycle detected
+            parent[rootU] = rootV;
+        }
+
+        return true;
+    }
+
+    private static int find(int[] parent, int i) {
+        while (i != parent[i]) {
+            parent[i] = parent[parent[i]];
+            i = parent[i];
+        }
+        return i;
+    }
+
     public static void main(String[] args) {
         int[][] e1 = {{0, 1}, {0, 2}, {0, 3}, {1, 4}};
         assert validTreeDFS(5, e1) : "Test 1 Valid Tree Failed";
+        assert validTreeUnionFind(5, e1) : "UF Test 1 Valid Tree Failed";
 
         int[][] e2 = {{0, 1}, {1, 2}, {2, 3}, {1, 3}, {1, 4}};
         assert !validTreeDFS(5, e2) : "Test 2 Invalid Cycle Tree Failed";
+        assert !validTreeUnionFind(5, e2) : "UF Test 2 Invalid Cycle Tree Failed";
     }
 }
