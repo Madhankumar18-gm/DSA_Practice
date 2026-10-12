@@ -92,5 +92,7 @@ public class GraphValidTree {
         assert validTreeUnionFind(1, new int[][]{}) : "Single node 0 edges is valid tree";
         assert !validTreeUnionFind(2, new int[][]{}) : "2 nodes 0 edges invalid";
         assert !validTreeUnionFind(2, null) : "Null edges invalid";
+
+        System.out.println("Execution completed successfully for GraphValidTree.");
     }
 }
