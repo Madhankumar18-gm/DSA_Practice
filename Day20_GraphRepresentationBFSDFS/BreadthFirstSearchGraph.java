@@ -2,6 +2,7 @@ package Day20_GraphRepresentationBFSDFS;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Queue;
 
@@ -30,5 +31,18 @@ public class BreadthFirstSearchGraph {
         }
 
         return order;
+    }
+
+    public static void main(String[] args) {
+        List<List<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i < 4; i++) adj.add(new ArrayList<>());
+        adj.get(0).addAll(Arrays.asList(1, 2));
+        adj.get(1).addAll(Arrays.asList(2));
+        adj.get(2).addAll(Arrays.asList(0, 3));
+        adj.get(3).addAll(Arrays.asList(3));
+
+        List<Integer> order = bfsTraversal(4, adj, 2);
+        assert order.get(0) == 2 : "Starts with 2";
+        assert order.contains(0) && order.contains(3) : "Contains neighbors";
     }
 }
