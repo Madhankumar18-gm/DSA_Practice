@@ -6,6 +6,21 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * LeetCode 841: Keys and Rooms
+ * 
+ * Problem:
+ * There are n rooms labeled from 0 to n - 1 and all the rooms are locked except for room 0.
+ * Your goal is to visit all the rooms. However, you cannot enter a locked room without having its key.
+ * When you visit a room, you may find a set of distinct keys in it. Each key has a number on it,
+ * denoting which room it unlocks, and you can take all of them with you to unlock other rooms.
+ * Given an array rooms where rooms[i] is the set of keys that you can obtain if you visited room i,
+ * return true if you can visit all the rooms, or false otherwise.
+ * 
+ * Complexity:
+ * - Time Complexity: O(N + K) where N is number of rooms and K is total number of keys.
+ * - Space Complexity: O(N) for visited array and DFS recursion / BFS queue.
+ */
 public class KeysAndRooms {
 
     public static boolean canVisitAllRoomsDFS(List<List<Integer>> rooms) {
@@ -78,7 +93,6 @@ public class KeysAndRooms {
         );
         assert canVisitAllRoomsBFS(dup) : "Duplicate keys visit ok";
 
-        // Boundary tests
         assert canVisitAllRoomsBFS(Collections.singletonList(Collections.emptyList())) : "Single room visit true";
         assert canVisitAllRoomsBFS(null) : "Null rooms visit true";
     }
