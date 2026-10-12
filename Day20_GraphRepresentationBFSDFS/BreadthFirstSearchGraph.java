@@ -132,5 +132,7 @@ public class BreadthFirstSearchGraph {
 
         assert shortestPath(3, dis, 0, 2).isEmpty() : "Unreachable node path is empty";
         assert bfsTraversal(1, Collections.singletonList(Collections.emptyList()), 0).size() == 1 : "Single node";
+
+        System.out.println("Execution completed successfully for BreadthFirstSearchGraph.");
     }
 }
