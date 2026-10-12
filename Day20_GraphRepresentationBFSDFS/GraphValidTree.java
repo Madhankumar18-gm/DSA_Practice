@@ -36,4 +36,12 @@ public class GraphValidTree {
         }
         return false;
     }
+
+    public static void main(String[] args) {
+        int[][] e1 = {{0, 1}, {0, 2}, {0, 3}, {1, 4}};
+        assert validTreeDFS(5, e1) : "Test 1 Valid Tree Failed";
+
+        int[][] e2 = {{0, 1}, {1, 2}, {2, 3}, {1, 3}, {1, 4}};
+        assert !validTreeDFS(5, e2) : "Test 2 Invalid Cycle Tree Failed";
+    }
 }
