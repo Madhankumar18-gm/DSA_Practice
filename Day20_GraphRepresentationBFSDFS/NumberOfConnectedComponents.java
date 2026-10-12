@@ -38,4 +38,12 @@ public class NumberOfConnectedComponents {
             }
         }
     }
+
+    public static void main(String[] args) {
+        int[][] e1 = {{0, 1}, {1, 2}, {3, 4}};
+        assert countComponentsDFS(5, e1) == 2 : "Test 1 Failed";
+
+        int[][] e2 = {{0, 1}, {1, 2}, {2, 3}, {3, 4}};
+        assert countComponentsDFS(5, e2) == 1 : "Test 2 Failed";
+    }
 }
