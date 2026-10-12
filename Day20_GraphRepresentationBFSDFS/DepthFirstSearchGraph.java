@@ -3,6 +3,7 @@ package Day20_GraphRepresentationBFSDFS;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Deque;
 import java.util.List;
 
@@ -107,5 +108,9 @@ public class DepthFirstSearchGraph {
         tree.get(0).add(1); tree.get(1).add(0);
         tree.get(1).add(2); tree.get(2).add(1);
         assert !hasCycleUndirected(3, tree) : "Tree has no cycle";
+
+        // Boundary tests
+        assert dfsRecursive(0, null, 0).isEmpty() : "Empty vertices";
+        assert !hasCycleUndirected(1, Collections.singletonList(Collections.emptyList())) : "Single vertex no cycle";
     }
 }
