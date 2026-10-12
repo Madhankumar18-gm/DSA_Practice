@@ -3,6 +3,21 @@ package Day20_GraphRepresentationBFSDFS;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Graph Representation: Adjacency Matrix vs. Adjacency List
+ * 
+ * Overview:
+ * 1. Adjacency Matrix:
+ *    - Uses a 2D V x V array where matrix[u][v] = 1 if edge exists.
+ *    - Space Complexity: O(V^2).
+ *    - Edge Lookup: O(1).
+ *    - Finding All Neighbors: O(V).
+ * 2. Adjacency List:
+ *    - Uses an array/list of lists where adj[u] stores all adjacent vertices.
+ *    - Space Complexity: O(V + E).
+ *    - Edge Lookup: O(degree(u)).
+ *    - Finding All Neighbors: O(degree(u)).
+ */
 public class GraphRepresentationAdjListMatrix {
 
     public static class AdjMatrixGraph {
