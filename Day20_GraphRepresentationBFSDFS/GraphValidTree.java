@@ -70,9 +70,13 @@ public class GraphValidTree {
         assert !validTreeDFS(5, e2) : "Test 2 Invalid Cycle Tree Failed";
         assert !validTreeUnionFind(5, e2) : "UF Test 2 Invalid Cycle Tree Failed";
 
-        // Disconnected with n-1 edges: triangle (0,1,2) and isolated node 3 (n=4, edges=3)
         int[][] dis = {{0, 1}, {1, 2}, {2, 0}};
         assert !validTreeDFS(4, dis) : "Disconnected component cycle";
         assert !validTreeUnionFind(4, dis) : "UF Disconnected component cycle";
+
+        // Boundary tests
+        assert validTreeUnionFind(1, new int[][]{}) : "Single node 0 edges is valid tree";
+        assert !validTreeUnionFind(2, new int[][]{}) : "2 nodes 0 edges invalid";
+        assert !validTreeUnionFind(2, null) : "Null edges invalid";
     }
 }
