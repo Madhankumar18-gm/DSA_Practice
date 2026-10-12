@@ -3,6 +3,18 @@ package Day20_GraphRepresentationBFSDFS;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * LeetCode 323: Number of Connected Components in an Undirected Graph
+ * 
+ * Problem:
+ * You have a graph of n nodes. You are given an integer n and an array edges where edges[i] = [ai, bi]
+ * indicates that there is an edge between ai and bi in the graph.
+ * Return the number of connected components in the graph.
+ * 
+ * Complexity:
+ * - DFS / BFS Traversal: O(V + E) time, O(V + E) space.
+ * - Disjoint Set Union (DSU / Union-Find): O(E * alpha(V)) time, O(V) space.
+ */
 public class NumberOfConnectedComponents {
 
     public static int countComponentsDFS(int n, int[][] edges) {
@@ -96,7 +108,6 @@ public class NumberOfConnectedComponents {
         int[][] cycle = {{0, 1}, {1, 2}, {2, 0}};
         assert countComponentsUnionFind(3, cycle) == 1 : "Cycle component count";
 
-        // Boundary tests
         assert countComponentsDFS(1, new int[][]{}) == 1 : "Single node";
         assert countComponentsUnionFind(0, null) == 0 : "Zero vertices";
     }
