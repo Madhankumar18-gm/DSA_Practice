@@ -122,5 +122,7 @@ public class DepthFirstSearchGraph {
 
         assert dfsRecursive(0, null, 0).isEmpty() : "Empty vertices";
         assert !hasCycleUndirected(1, Collections.singletonList(Collections.emptyList())) : "Single vertex no cycle";
+
+        System.out.println("Execution completed successfully for DepthFirstSearchGraph.");
     }
 }
