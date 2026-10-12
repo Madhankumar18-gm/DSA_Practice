@@ -122,5 +122,7 @@ public class GraphRepresentationAdjListMatrix {
 
         mat.addEdge(-1, 5, false);
         assert !mat.hasEdge(-1, 5) : "Out of bounds edge query";
+
+        System.out.println("Execution completed successfully for GraphRepresentationAdjListMatrix.");
     }
 }
