@@ -95,5 +95,7 @@ public class KeysAndRooms {
 
         assert canVisitAllRoomsBFS(Collections.singletonList(Collections.emptyList())) : "Single room visit true";
         assert canVisitAllRoomsBFS(null) : "Null rooms visit true";
+
+        System.out.println("Execution completed successfully for KeysAndRooms.");
     }
 }
