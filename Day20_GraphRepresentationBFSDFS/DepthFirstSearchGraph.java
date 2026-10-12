@@ -95,12 +95,17 @@ public class DepthFirstSearchGraph {
         List<Integer> iter = dfsIterative(4, adj, 2);
         assert iter.get(0) == 2 : "Iterative starts at 2";
 
-        // Undirected graph cycle check
         List<List<Integer>> undir = new ArrayList<>();
         for (int i = 0; i < 3; i++) undir.add(new ArrayList<>());
         undir.get(0).add(1); undir.get(1).add(0);
         undir.get(1).add(2); undir.get(2).add(1);
         undir.get(2).add(0); undir.get(0).add(2);
         assert hasCycleUndirected(3, undir) : "Triangle has cycle";
+
+        List<List<Integer>> tree = new ArrayList<>();
+        for (int i = 0; i < 3; i++) tree.add(new ArrayList<>());
+        tree.get(0).add(1); tree.get(1).add(0);
+        tree.get(1).add(2); tree.get(2).add(1);
+        assert !hasCycleUndirected(3, tree) : "Tree has no cycle";
     }
 }
