@@ -46,7 +46,7 @@ public class GraphValidTree {
         for (int[] e : edges) {
             int rootU = find(parent, e[0]);
             int rootV = find(parent, e[1]);
-            if (rootU == rootV) return false; // Cycle detected
+            if (rootU == rootV) return false;
             parent[rootU] = rootV;
         }
 
@@ -69,5 +69,10 @@ public class GraphValidTree {
         int[][] e2 = {{0, 1}, {1, 2}, {2, 3}, {1, 3}, {1, 4}};
         assert !validTreeDFS(5, e2) : "Test 2 Invalid Cycle Tree Failed";
         assert !validTreeUnionFind(5, e2) : "UF Test 2 Invalid Cycle Tree Failed";
+
+        // Disconnected with n-1 edges: triangle (0,1,2) and isolated node 3 (n=4, edges=3)
+        int[][] dis = {{0, 1}, {1, 2}, {2, 0}};
+        assert !validTreeDFS(4, dis) : "Disconnected component cycle";
+        assert !validTreeUnionFind(4, dis) : "UF Disconnected component cycle";
     }
 }
