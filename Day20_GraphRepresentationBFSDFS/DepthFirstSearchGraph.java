@@ -1,7 +1,9 @@
 package Day20_GraphRepresentationBFSDFS;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Deque;
 import java.util.List;
 
 public class DepthFirstSearchGraph {
@@ -26,6 +28,58 @@ public class DepthFirstSearchGraph {
         }
     }
 
+    public static List<Integer> dfsIterative(int vertices, List<List<Integer>> adj, int start) {
+        List<Integer> order = new ArrayList<>();
+        if (vertices <= 0 || adj == null || start < 0 || start >= vertices) return order;
+
+        boolean[] visited = new boolean[vertices];
+        Deque<Integer> stack = new ArrayDeque<>();
+
+        stack.push(start);
+
+        while (!stack.isEmpty()) {
+            int u = stack.pop();
+            if (!visited[u]) {
+                visited[u] = true;
+                order.add(u);
+
+                List<Integer> neighbors = adj.get(u);
+                for (int i = neighbors.size() - 1; i >= 0; i--) {
+                    int v = neighbors.get(i);
+                    if (!visited[v]) {
+                        stack.push(v);
+                    }
+                }
+            }
+        }
+
+        return order;
+    }
+
+    public static boolean hasCycleUndirected(int vertices, List<List<Integer>> adj) {
+        boolean[] visited = new boolean[vertices];
+        for (int i = 0; i < vertices; i++) {
+            if (!visited[i]) {
+                if (cycleDfs(i, -1, adj, visited)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private static boolean cycleDfs(int u, int parent, List<List<Integer>> adj, boolean[] visited) {
+        visited[u] = true;
+        for (int v : adj.get(u)) {
+            if (!visited[v]) {
+                if (cycleDfs(v, u, adj, visited)) return true;
+            } else if (v != parent) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         List<List<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < 4; i++) adj.add(new ArrayList<>());
@@ -37,5 +91,16 @@ public class DepthFirstSearchGraph {
         List<Integer> res = dfsRecursive(4, adj, 2);
         assert res.get(0) == 2 : "Starts at 2";
         assert res.size() == 4 : "Visits all reachable nodes";
+
+        List<Integer> iter = dfsIterative(4, adj, 2);
+        assert iter.get(0) == 2 : "Iterative starts at 2";
+
+        // Undirected graph cycle check
+        List<List<Integer>> undir = new ArrayList<>();
+        for (int i = 0; i < 3; i++) undir.add(new ArrayList<>());
+        undir.get(0).add(1); undir.get(1).add(0);
+        undir.get(1).add(2); undir.get(2).add(1);
+        undir.get(2).add(0); undir.get(0).add(2);
+        assert hasCycleUndirected(3, undir) : "Triangle has cycle";
     }
 }
