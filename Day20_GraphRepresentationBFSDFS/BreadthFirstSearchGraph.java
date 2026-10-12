@@ -7,6 +7,17 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * Breadth First Search (BFS) for Graph Traversal & Shortest Path
+ * 
+ * Mechanics:
+ * - Uses a FIFO Queue to explore vertices in increasing order of distance from source.
+ * - Guarantees shortest path in unweighted graphs.
+ * 
+ * Complexity:
+ * - Time Complexity: O(V + E) where V is vertices, E is edges.
+ * - Space Complexity: O(V) for visited array and queue.
+ */
 public class BreadthFirstSearchGraph {
 
     public static List<Integer> bfsTraversal(int vertices, List<List<Integer>> adj, int start) {
@@ -119,7 +130,6 @@ public class BreadthFirstSearchGraph {
         dis.get(1).add(0);
         assert bfsAllComponents(3, dis).size() == 3 : "All components traversed";
 
-        // Boundary tests
         assert shortestPath(3, dis, 0, 2).isEmpty() : "Unreachable node path is empty";
         assert bfsTraversal(1, Collections.singletonList(Collections.emptyList()), 0).size() == 1 : "Single node";
     }
