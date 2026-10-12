@@ -39,5 +39,11 @@ public class AllPathsFromSourceToTarget {
         int[][] g2 = {{4, 3, 1}, {3, 2, 4}, {3}, {4}, {}};
         List<List<Integer>> res2 = allPathsSourceTarget(g2);
         assert res2.size() == 5 : "Test 2 Size 5 paths";
+
+        // Linear chain: 0->1->2
+        int[][] chain = {{1}, {2}, {}};
+        List<List<Integer>> chainRes = allPathsSourceTarget(chain);
+        assert chainRes.size() == 1 : "Single chain path";
+        assert chainRes.get(0).equals(Arrays.asList(0, 1, 2));
     }
 }
