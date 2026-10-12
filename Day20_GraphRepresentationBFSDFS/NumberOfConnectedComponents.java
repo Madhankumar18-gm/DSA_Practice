@@ -39,11 +39,56 @@ public class NumberOfConnectedComponents {
         }
     }
 
+    public static class UnionFind {
+        private final int[] parent;
+        private int count;
+
+        public UnionFind(int n) {
+            this.count = n;
+            this.parent = new int[n];
+            for (int i = 0; i < n; i++) parent[i] = i;
+        }
+
+        public int find(int p) {
+            while (p != parent[p]) {
+                parent[p] = parent[parent[p]]; // Path compression
+                p = parent[p];
+            }
+            return p;
+        }
+
+        public boolean union(int p, int q) {
+            int rootP = find(p);
+            int rootQ = find(q);
+            if (rootP == rootQ) return false;
+            parent[rootP] = rootQ;
+            count--;
+            return true;
+        }
+
+        public int getCount() {
+            return count;
+        }
+    }
+
+    public static int countComponentsUnionFind(int n, int[][] edges) {
+        if (n <= 0) return 0;
+        UnionFind uf = new UnionFind(n);
+        if (edges != null) {
+            for (int[] edge : edges) {
+                uf.union(edge[0], edge[1]);
+            }
+        }
+        return uf.getCount();
+    }
+
     public static void main(String[] args) {
         int[][] e1 = {{0, 1}, {1, 2}, {3, 4}};
         assert countComponentsDFS(5, e1) == 2 : "Test 1 Failed";
+        assert countComponentsUnionFind(5, e1) == 2 : "UF Test 1 Failed";
 
         int[][] e2 = {{0, 1}, {1, 2}, {2, 3}, {3, 4}};
         assert countComponentsDFS(5, e2) == 1 : "Test 2 Failed";
+        assert countComponentsUnionFind(5, e2) == 1 : "UF Test 2 Failed";
     }
 }
