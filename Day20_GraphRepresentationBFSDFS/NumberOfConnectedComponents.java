@@ -110,5 +110,7 @@ public class NumberOfConnectedComponents {
 
         assert countComponentsDFS(1, new int[][]{}) == 1 : "Single node";
         assert countComponentsUnionFind(0, null) == 0 : "Zero vertices";
+
+        System.out.println("Execution completed successfully for NumberOfConnectedComponents.");
     }
 }
