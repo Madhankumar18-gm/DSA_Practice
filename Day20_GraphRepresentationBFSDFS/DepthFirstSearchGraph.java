@@ -1,6 +1,7 @@
 package Day20_GraphRepresentationBFSDFS;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DepthFirstSearchGraph {
@@ -23,5 +24,18 @@ public class DepthFirstSearchGraph {
                 dfsHelper(v, adj, visited, order);
             }
         }
+    }
+
+    public static void main(String[] args) {
+        List<List<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i < 4; i++) adj.add(new ArrayList<>());
+        adj.get(0).addAll(Arrays.asList(1, 2));
+        adj.get(1).addAll(Arrays.asList(2));
+        adj.get(2).addAll(Arrays.asList(0, 3));
+        adj.get(3).addAll(Arrays.asList(3));
+
+        List<Integer> res = dfsRecursive(4, adj, 2);
+        assert res.get(0) == 2 : "Starts at 2";
+        assert res.size() == 4 : "Visits all reachable nodes";
     }
 }
