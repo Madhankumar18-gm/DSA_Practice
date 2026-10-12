@@ -1,6 +1,7 @@
 package Day20_GraphRepresentationBFSDFS;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class AllPathsFromSourceToTarget {
@@ -24,7 +25,15 @@ public class AllPathsFromSourceToTarget {
         for (int next : graph[curr]) {
             currentPath.add(next);
             dfs(next, target, graph, currentPath, paths);
-            currentPath.remove(currentPath.size() - 1); // Backtrack
+            currentPath.remove(currentPath.size() - 1);
         }
+    }
+
+    public static void main(String[] args) {
+        int[][] g1 = {{1, 2}, {3}, {3}, {}};
+        List<List<Integer>> res1 = allPathsSourceTarget(g1);
+        assert res1.size() == 2 : "Test 1 Size 2";
+        assert res1.contains(Arrays.asList(0, 1, 3)) : "Path 0->1->3";
+        assert res1.contains(Arrays.asList(0, 2, 3)) : "Path 0->2->3";
     }
 }
