@@ -34,6 +34,34 @@ public class BreadthFirstSearchGraph {
         return order;
     }
 
+    public static List<Integer> bfsAllComponents(int vertices, List<List<Integer>> adj) {
+        List<Integer> order = new ArrayList<>();
+        if (vertices <= 0 || adj == null) return order;
+
+        boolean[] visited = new boolean[vertices];
+        Queue<Integer> queue = new ArrayDeque<>();
+
+        for (int i = 0; i < vertices; i++) {
+            if (!visited[i]) {
+                visited[i] = true;
+                queue.offer(i);
+
+                while (!queue.isEmpty()) {
+                    int u = queue.poll();
+                    order.add(u);
+
+                    for (int v : adj.get(u)) {
+                        if (!visited[v]) {
+                            visited[v] = true;
+                            queue.offer(v);
+                        }
+                    }
+                }
+            }
+        }
+        return order;
+    }
+
     public static List<Integer> shortestPath(int vertices, List<List<Integer>> adj, int src, int dest) {
         List<Integer> path = new ArrayList<>();
         if (vertices <= 0 || adj == null || src < 0 || src >= vertices || dest < 0 || dest >= vertices) {
@@ -61,7 +89,7 @@ public class BreadthFirstSearchGraph {
             }
         }
 
-        if (!visited[dest]) return path; // No path exists
+        if (!visited[dest]) return path;
 
         for (int curr = dest; curr != -1; curr = parent[curr]) {
             path.add(curr);
@@ -84,5 +112,11 @@ public class BreadthFirstSearchGraph {
 
         List<Integer> path = shortestPath(4, adj, 2, 1);
         assert path.get(0) == 2 && path.get(path.size() - 1) == 1 : "Path from 2 to 1";
+
+        List<List<Integer>> dis = new ArrayList<>();
+        for (int i = 0; i < 3; i++) dis.add(new ArrayList<>());
+        dis.get(0).add(1);
+        dis.get(1).add(0);
+        assert bfsAllComponents(3, dis).size() == 3 : "All components traversed";
     }
 }
