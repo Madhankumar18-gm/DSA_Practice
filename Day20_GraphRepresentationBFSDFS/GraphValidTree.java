@@ -3,6 +3,21 @@ package Day20_GraphRepresentationBFSDFS;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * LeetCode 261: Graph Valid Tree
+ * 
+ * Problem:
+ * You have a graph of n nodes labeled from 0 to n - 1. You are given an integer n and a list of edges.
+ * Return true if the edges of the given graph make up a valid tree, and false otherwise.
+ * A tree is an undirected graph in which any two vertices are connected by exactly one path:
+ * 1. Must have exactly n - 1 edges.
+ * 2. Must be fully connected.
+ * 3. Must be acyclic.
+ * 
+ * Complexity:
+ * - DFS: O(V + E) time, O(V + E) space.
+ * - Union-Find: O(E * alpha(V)) time, O(V) space.
+ */
 public class GraphValidTree {
 
     public static boolean validTreeDFS(int n, int[][] edges) {
@@ -74,7 +89,6 @@ public class GraphValidTree {
         assert !validTreeDFS(4, dis) : "Disconnected component cycle";
         assert !validTreeUnionFind(4, dis) : "UF Disconnected component cycle";
 
-        // Boundary tests
         assert validTreeUnionFind(1, new int[][]{}) : "Single node 0 edges is valid tree";
         assert !validTreeUnionFind(2, new int[][]{}) : "2 nodes 0 edges invalid";
         assert !validTreeUnionFind(2, null) : "Null edges invalid";
