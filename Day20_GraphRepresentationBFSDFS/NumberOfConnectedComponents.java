@@ -91,11 +91,13 @@ public class NumberOfConnectedComponents {
         assert countComponentsDFS(5, e2) == 1 : "Test 2 Failed";
         assert countComponentsUnionFind(5, e2) == 1 : "UF Test 2 Failed";
 
-        // Fully disconnected: 4 isolated nodes
         assert countComponentsUnionFind(4, new int[][]{}) == 4 : "Isolated vertices count";
 
-        // Redundant cycle edge
         int[][] cycle = {{0, 1}, {1, 2}, {2, 0}};
         assert countComponentsUnionFind(3, cycle) == 1 : "Cycle component count";
+
+        // Boundary tests
+        assert countComponentsDFS(1, new int[][]{}) == 1 : "Single node";
+        assert countComponentsUnionFind(0, null) == 0 : "Zero vertices";
     }
 }
