@@ -51,7 +51,7 @@ public class NumberOfConnectedComponents {
 
         public int find(int p) {
             while (p != parent[p]) {
-                parent[p] = parent[parent[p]]; // Path compression
+                parent[p] = parent[parent[p]];
                 p = parent[p];
             }
             return p;
@@ -90,5 +90,12 @@ public class NumberOfConnectedComponents {
         int[][] e2 = {{0, 1}, {1, 2}, {2, 3}, {3, 4}};
         assert countComponentsDFS(5, e2) == 1 : "Test 2 Failed";
         assert countComponentsUnionFind(5, e2) == 1 : "UF Test 2 Failed";
+
+        // Fully disconnected: 4 isolated nodes
+        assert countComponentsUnionFind(4, new int[][]{}) == 4 : "Isolated vertices count";
+
+        // Redundant cycle edge
+        int[][] cycle = {{0, 1}, {1, 2}, {2, 0}};
+        assert countComponentsUnionFind(3, cycle) == 1 : "Cycle component count";
     }
 }
