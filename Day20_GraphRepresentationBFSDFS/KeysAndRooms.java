@@ -72,11 +72,14 @@ public class KeysAndRooms {
         assert !canVisitAllRoomsDFS(r2) : "Test 2 Failed";
         assert !canVisitAllRoomsBFS(r2) : "BFS Test 2 Failed";
 
-        // Multi duplicate keys: room 0 has multiple keys to room 1
         List<List<Integer>> dup = Arrays.asList(
             Arrays.asList(1, 1, 1),
             Collections.emptyList()
         );
         assert canVisitAllRoomsBFS(dup) : "Duplicate keys visit ok";
+
+        // Boundary tests
+        assert canVisitAllRoomsBFS(Collections.singletonList(Collections.emptyList())) : "Single room visit true";
+        assert canVisitAllRoomsBFS(null) : "Null rooms visit true";
     }
 }
