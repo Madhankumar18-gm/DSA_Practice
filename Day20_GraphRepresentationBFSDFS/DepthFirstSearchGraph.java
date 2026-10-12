@@ -7,6 +7,17 @@ import java.util.Collections;
 import java.util.Deque;
 import java.util.List;
 
+/**
+ * Depth First Search (DFS) for Graph Traversal & Cycle Detection
+ * 
+ * Mechanics:
+ * - Explores deep into each branch before backtracking using recursive call stack or explicit LIFO Stack.
+ * - Detects cycles in undirected graphs when encountering a visited neighbor that is not the parent.
+ * 
+ * Complexity:
+ * - Time Complexity: O(V + E) where V is vertices, E is edges.
+ * - Space Complexity: O(V) for recursion depth / stack and visited tracking.
+ */
 public class DepthFirstSearchGraph {
 
     public static List<Integer> dfsRecursive(int vertices, List<List<Integer>> adj, int start) {
@@ -109,7 +120,6 @@ public class DepthFirstSearchGraph {
         tree.get(1).add(2); tree.get(2).add(1);
         assert !hasCycleUndirected(3, tree) : "Tree has no cycle";
 
-        // Boundary tests
         assert dfsRecursive(0, null, 0).isEmpty() : "Empty vertices";
         assert !hasCycleUndirected(1, Collections.singletonList(Collections.emptyList())) : "Single vertex no cycle";
     }
